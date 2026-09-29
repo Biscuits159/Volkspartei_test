@@ -34,7 +34,7 @@ Unemployement ticks up once more and the extremist parties see increased support
 - @austerity: Chancellor [+ chancellor +]'s response is, as always, more austerity.
 - @end_toleration: We are tired of austerity. End the toleration arrangement!
 
-@nothing_to_do
+@enact_austerity
 view-if: dvp_in_government
 on-arrival: welfare -= 1; spd_relation -= 5; new_middle_dvp -= 3; old_middle_dvp -= 3; pro_republic -= 3
 

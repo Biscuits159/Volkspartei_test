@@ -17,7 +17,6 @@ What should we do with this information?
 
 - @publicize: We will publicize the scandal to damage the <span style="color: #8B0000;">**KPD**</span> and Thälmann.
 - @nothing: Do nothing with the information.
-- @secret
 
 @publicize
 on-arrival: wittorf_affair_published = 1; workers_kpd -= 4; unemployed_kpd -= 4
