@@ -40,7 +40,7 @@ Our policies help us improve the popularity of our party among our base, the mid
 
 @target_kpd
 subtitle: Including the <span style="color: #8B0000;">**RFB**</span>.
-on-arrival: workers_kpd -= landtag_power*(1-dissent); unemployed_lpd -= landtag_power*(1-dissent); rfb_strength *= (1-0.01*landtag_power); rfb_militancy *= (1-0.01*landtag_power)
+on-arrival: workers_kpd -= landtag_power*(1-dissent); unemployed_kpd -= landtag_power*(1-dissent); rfb_strength *= (1-0.01*landtag_power); rfb_militancy *= (1-0.01*landtag_power)
 
 <span style="color: #8B0000;">**KPD**</span> party newspapers, gatherings and party headquarters are closed or otherwise cracked down on all German states which we govern. <span style="color: #8B0000;">**RFB**</span> members are arrested and their weapons seized.
 
