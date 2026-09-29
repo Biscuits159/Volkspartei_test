@@ -12,6 +12,9 @@ this.achieve('game_completed');
 if (Q.president == 'Braun' && Q.chancellor == 'Braun' && Q.spd_prussia) {
     this.achieve('red_tzar_of_prussia');
 }
+if (Q.small_privatizations == 3 && Q.big_privatizations == 2) {
+    this.achieve('full_privatization');
+}
 !}
 
 = End

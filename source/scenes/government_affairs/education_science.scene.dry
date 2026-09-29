@@ -110,12 +110,12 @@ view-if: secularized = 0
 
 Are you sure about this? The Coalition had an agreement to not touch religious schools; the Catholic Center Party will revolt.
 
-- @secularize_2: Yes, do it.
+- @secularize_sure: Yes, do it.
 - @ed_menu: No, do not touch religious education.
 - @cancel_advisor_action
 
-@secularize_2
-on-arrival: secularized = 1; catholics_dvp -= 15; z_relation -= 15; dnvp_relation -= 15; kvp_relation -= 5; spd_relation += 6*(1-dissent); ddp_relation += 6*(1-dissent); kpd_relation += 6*(1-dissent); new_middle_dvp += 3*(1-dissent); workers_dvp += 3*(1-dissent); education_science += 0.5; new_middle_ddp += 4; new_middle_dvp += 4
+@secularize_sure
+on-arrival: secularized = 1; catholics_dvp -= 15; catholics -= 5; z_relation -= 15; dnvp_relation -= 15; kvp_relation -= 5; spd_relation += 6*(1-dissent); ddp_relation += 6*(1-dissent); new_middle_dvp += 8*(1-dissent); workers_dvp += 3*(1-dissent); education_science += 0.5; new_middle_ddp += 4;
 go-to: vote_of_no_confidence.vonc_menu if z_in_government == 1;
 
 # instant VONC from zentrum
