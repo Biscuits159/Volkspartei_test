@@ -1,45 +1,67 @@
 title: Banking Crisis
-subtitle: The collapse of the German banking system...
+subtitle: The imminent collapse of the German banking system...
 new-page: true
-on-arrival: banking_crisis_seen = 1; workers_kpd += 5; workers_nsdap += 3; new_middle_nsdap += 3; old_middle_nsdap += 4; rural_nsdap += 3; unemployed += 3; crisis_urgency += 1; workers_spd -= 4 if spd_in_government; new_middle_spd -= 5 if spd_in_government; old_middle_spd -= 5 if spd_in_government; rural_spd -= 4 if spd_in_government; economic_growth -= 1;
+on-arrival: banking_crisis_seen = 1
 tags: event
-view-if: (customs_union or (austria_annexed and not europabund)) and banking_crisis_timer = 0
+view-if: year = 1931 and month = 7
 max-visits: 1
 face-image: img/danat_bank.jpg
 
 = Banking Crisis
 
-The Darmstädter und Nationalbank, or Danat Bank, has collapsed! Along with it goes much of the German banking system. The cause seemed to be due to the government's pursuit of a [? if not austria_annexed: customs ?] union with Austria, which led to de facto international sanctions.
+The Darmstädter und Nationalbank, or Danat Bank, is on the verge of collapse! Along with it would go much of the German banking system. The cause seemed to be due to the government's pursuit of a [? if austria_annexed == 0: customs ?] union with Austria, which led to de facto international sanctions.
 
-This is a bourgeois dispute, but the costs will be borne by the proletariat. The people are facing ever-increasing hunger and poverty, and perhaps we are partly to blame.
+- @banking_crisis_avoided: The banking system manages to remain solvent!
+- @banking_crisis_hit: The banks fail.
 
-- @nothing_to_do: There is nothing we can do.
+@banking_crisis_avoided
+subtitle: Thanks to our previous creation of deposit insurance, the banks limp forward.
+choose-if: deposit_insurance
+unavailable-subtitle: We have not establish a deposit insurance.
+on-arrival: workers_dvp += 2*(1-dissent); new_middle_dvp += 4*(1-dissent); old_middle_dvp += 8*(1-dissent); rural_dvp += 4*(1-dissent); liberal_dissent -= 5; labor_dissent -= 10; industrialist_dissent -= 10; nationalist_dissent -= 5; economic_growth += 1.2;
+
+Our wise choice to create a bank bailout with our control of the Reichsbank has proven to borne fruit, the impending crisis never hits and we see our support increase across all demographics.
+
+@banking_crisis_hit
+view-if: deposit_insurance == 0
+on-arrival: workers_kpd += 5; workers_nsdap += 3; new_middle_nsdap += 3; old_middle_nsdap += 4; rural_nsdap += 3; unemployed += 3; crisis_urgency += 1; workers_dvp -= 4 if dvp_in_government; new_middle_dvp -= 5 if dvp_in_government; old_middle_dvp -= 5 if dvp_in_government; rural_dvp -= 4 if dvp_in_government; economic_growth -= 1;
+
+Unemployement ticks up once more and the extremist parties see increased support.
+
+- @enact_austerity: We shall cut welfare.
 - @stabilization: Take action to stabilize the economy!
+- @spd_stabilization: The social democrats take emergency action to stabilize the economy.
 - @austerity: Chancellor [+ chancellor +]'s response is, as always, more austerity.
 - @end_toleration: We are tired of austerity. End the toleration arrangement!
 
 @nothing_to_do
-view-if: spd_in_government = 1
-on-arrival: welfare -= 1; workers_spd -= 3; unemployed_spd -= 3; pro_republic -= 3
+view-if: dvp_in_government
+on-arrival: welfare -= 1; spd_relation -= 5; new_middle_dvp -= 3; old_middle_dvp -= 3; pro_republic -= 3
 
-There is, essentially, nothing we can do.
+Our expected course of action, though it doesn't earn us any supporters or goodwill.
 
 @stabilization
-view-if: spd_in_government = 1
+view-if: dvp_in_government
 subtitle: -1 budget
 choose-if: budget >= 1
-on-arrival: workers_spd += 3*(1-dissent); new_middle_spd += 3*(1-dissent); old_middle_spd += 2*(1-dissent); rural_spd += 2*(1-dissent); unemployed -= 2; inflation += 1 if inflation < 0; budget -= 1; workers_nsdap -= 3; economic_growth += 0.9;
+on-arrival: workers_dvp += 2*(1-dissent); new_middle_dvp += 3*(1-dissent); old_middle_dvp += 3*(1-dissent); rural_dvp += 2*(1-dissent); unemployed -= 2; inflation += 1 if inflation < 0; budget -= 1; workers_nsdap -= 3; economic_growth += 0.9;
 
 In the face of the banking crisis, we have taken emergency action to stabilize the economy by injecting money into the banking system. It might not be enough, but it temporarily staunches the bleeding.
 
+@stabilization
+view-if: spd_in_government and dvp_in_government = 0
+on-arrival: workers_spd += 3*(1-dissent); new_middle_spd += 3*(1-dissent); old_middle_spd += 2*(1-dissent); rural_spd += 2*(1-dissent); unemployed -= 2; inflation += 1 if inflation < 0; budget -= 1; workers_nsdap -= 3; economic_growth += 1;
+
+The <span style="color: #E3000F;">**SPD**</span> moves quickly to stabilize the economy by injecting money into the banking system. It might not be enough, but it temporarily staunches the bleeding.
+
 @austerity
-view-if: spd_in_government = 0
+view-if: spd_in_government == 0 and dvp_in_government == 0
 on-arrival: welfare -= 1; workers_spd -= 3; unemployed_spd -= 3; pro_republic -= 3; economic_growth -= 1;
 
 Chancellor [+ chancellor +] responds to the banking crisis with more cuts to welfare.
 
 @end_toleration
-view-if: spd_toleration = 1
+view-if: dvp_toleration = 1
 on-arrival: time_to_election = 3; spd_in_government = 0; in_grand_coalition = 0; spd_toleration = 0;
 call: set_next_election_time
 

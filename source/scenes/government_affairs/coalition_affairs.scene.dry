@@ -3,27 +3,40 @@ new-page: true
 is-card: true
 tags: govt_affairs
 on-arrival: month_actions += 1; coalition_affairs_timer = 5
-view-if: dvp_in_government = 1 and coalition_dissent >= 1 and coalition_affairs_timer = 0 and (in_grand_coalition or in_weimar_coalition)
+view-if: dvp_in_government and in_dvp_majority == 0 and coalition_dissent >= 1 and coalition_affairs_timer = 0
 card-image: img/muller_cabinet.jpg
 #subtitle: There is dissent within our coalition.
 
 = Coalition Affairs
 
-Our coalition is in trouble. The right-leaning members of the Center [? if in_grand_coalition: and SPD ?] are constantly criticizing us for our policies, and are threatening to call a vote of no confidence to collapse this government[? if spd_prussia :, or to do the same for our government in the state of Prussia ?].
+Our coalition is in trouble. [? if in_weimar_coalition or in_grand_coalition: The left-leaning members of the <span style="color: #E3000F;">**SPD**</span> and the <span style="color: #000000;">**Center**</span> ?][? if in_bourgeois_coalition: Members of the <span style="color: #000000;">**Center**</span> ?][? if in_center_right_coalition or in_hindenburg_coalition: The right-leaning members of the <span style="color: #000000;">**Center**</span> and the <span style="color: #3F7BC1;">**DNVP**</span> ?] are constantly criticizing us for our policies, and are threatening to call a vote of no confidence to collapse this government.
 
 How do we reduce tensions with the coalition?
 
-- @promise_cuts: Agree to the bourgeois plans to cut welfare.
+- @raise_spending: Agree to the <span style="color: #E3000F;">**SPD**</span>'s plans to raise welfare spending.
+- @cut_taxes: We will cut taxes to reduce dissent.
 - @resources: Use our party resources to support our allies.
 - @bring_down: Instead, we will bring down the government with a no-confidence vote, and call for new elections.
 - @no_change: Take none of these actions.
 - @easy_discard
 
+@raise_spending
+subtitle: -1 budget
+view-if: in_weimar_coalition or in_grand_coalition
+unavailable-subtitle: Not enough budget (need 1).
+choose-if: budget > 0
+on-arrival: budget -= 1; welfare += 1; workers_dvp += 3*(1-dissent); workers_spd += 5; unemployed_spd += 5; industrialist_dissent += 10; nationalist_dissent += 5; coalition_dissent = 0
 
-@promise_cuts
-on-arrival: workers_spd -= 5; unemployed_spd -= 6; workers_kpd += 5; unemployed_kpd += 3; unemployed_nsdap += 3; left_dissent += 10; labor_dissent += 5; welfare -= 1; budget += 1; coalition_dissent = 0
+Fine. By raising welfare spending, we have reduced dissent within the coalition.
 
-Fine. By cutting welfare, we have reduced dissent within the coalition.
+@cut_taxes
+subtitle: -2 budget
+view-if: in_bourgeois_coalition or in_center_right_coalition or in_hindenburg_coalition
+unavailable-subtitle: Not enough budget (need 2).
+choose-if: budget > 1
+on-arrival: budget -= 2; upper_tax_rates -= 1; new_middle_dvp += 4*(1-dissent); old_middle_dvp += 4*(1-dissent); spd_relation -= 3; unemployed -= 1 if unemployed >= 5; capital_strike_progress -= 1 if upper_tax_rates < 0; inflation += 0.6; economic_growth += 0.4; industrialist_dissent -= 10; labor_dissent += 3; coalition_dissent = 0
+
+By cutting income taxes, we have reduced dissent within the coalition.
 
 @resources
 subtitle: -2 resources
@@ -40,7 +53,7 @@ No. We will not do this.
 
 @bring_down
 subtitle: Bring down this government before our opponents do.
-on-arrival: dvp_in_government = 0; in_grand_coalition = 0; in_weimar_coalition = 0; chancellor = "Brüning"; chancellor_party = "Z"; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time+3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; spd_toleration = 0; left_strength += 8; pro_republic -= 5; new_middle_spd -= 3; rural_spd -= 3; old_middle_spd -= 3; catholics_spd -= 3; reformist_dissent += 5
+on-arrival: dvp_in_government = 0; chancellor = "Brüning"; chancellor_party = "Z"; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time+3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; dvp_toleration = 0; nationalist_strength += 8; pro_republic -= 5; workers_dvp -= 3; new_middle_dvp -= 3; rural_dvp -= 3; catholics_dvp -= 3; liberal_dissent += 5
 
 We have called for a vote of no confidence in ourselves, and have brought down this government. Chancellor [+ chancellor +] currently rules as acting chancellor.
 

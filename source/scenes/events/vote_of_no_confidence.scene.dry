@@ -1,7 +1,7 @@
-title: The Right calls a vote of no confidence against the current government!
+title: A vote of no confidence is called against the current government!
 subtitle: We have angered our coalition partners too much...
 new-page: true
-view-if: spd_in_government = 1 and ((in_grand_coalition = 1 or in_minority_government = 1) and coalition_dissent >= 3) or (in_weimar_coalition = 1 and coalition_dissent >= 4) and spd_r < 50 and not constructive_vonc
+view-if: dvp_in_government and (coalition_dissent > 3 and in_weimar_coalition) or (coalition_dissent > 2 and in_weimar_coalition == 0) and dvp_r < 50 and not constructive_vonc
 tags: event
 go-to: vonc_menu
 
@@ -9,7 +9,7 @@ go-to: vonc_menu
 
 = Vote of No Confidence
 
-[? if in_grand_coalition : The SPD ?][? if in_bourgeois_coalition or in_right_coalition or in_center_right_coalition or in_minority_government: The Center Party ?] has called for a vote of no confidence against us, due to our various policies and disagreements. If this succeeds, there will be an election in a few months.
+[? if spd_in_government: The SPD ?][? if spd_in_government == 0 and z_in_government: The Center Party ?][? if z_in_government == 0 and dnvp_in_government: The Center Party ?] has called for a vote of no confidence against us, due to our various policies and disagreements. If this succeeds, there will be an election in a few months.
 
 @vonc_menu
 
@@ -20,22 +20,15 @@ go-to: vonc_menu
 
 How do we assuage our partners?
 
-- @give_up_prussia: Give up on leadership of Prussia.
-- @austerity: Enact a massive austerity plan.
+- @concessions: Make broad concessions to our coalition partners.
 - @resources: Use our resources to reduce dissent within the coalition.
 - @let_it_happen: Never mind. Let the vote happen.
 
-@give_up_prussia
-view-if: spd_prussia == 1
-on-arrival: coalition_dissent = 0; spd_prussia = 0; prussian_government = "I"; reformist_dissent += 10; centrist_dissent += 10; labor_dissent += 10; left_dissent += 5; workers_spd -= 5; rural_spd -= 5; 
+@concessions
+view-if: not secularized
+on-arrival: coalition_dissent = 0; workers_dvp -= 10; new_middle_dvp -= 15; old_middle_dvp -= 15; rural_dvp -= 10; liberal_dissent += 10; labor_dissent += 15; industrialist_dissent += 10; nationalist_dissent += 15;
 
-Fine. We no longer control the government of Prussia. The vote has been called off.
-
-@austerity
-view-if: welfare >= 0 and not secularized
-on-arrival: coalition_dissent = 0; workers_spd -= 10; unemployed_spd -= 10; workers_kpd += 7; workers_nsdap += 3; unemployed_kpd += 5; unemployed_nsdap += 5; left_dissent += 15; center_dissent += 10; labor_dissent += 15; reformist_dissent += 5; welfare -= 2; budget += 1; unemployed += 3; kpd_coalition_dissent += 1; kpd_relation -= 10 if in_popular_front
-
-Fine. We enacted a massive austerity program to cut welfare, in order to maintain the stability of our coalition. The vote has been called off.
+We yield in several policy areas to maintain the stability of our coalition. The vote has been called off.
 
 @resources
 view-if: secularized = 0
@@ -45,7 +38,6 @@ subtitle: -3 resources
 on-arrival: resources -= 3; coalition_dissent -= 1;
 
 By transferring resources to our coalition partners, we can reduce their dissent against our policies. This is a crude, but effective solution.
-
 
 @let_it_happen
 call: set_next_election_time

@@ -503,7 +503,6 @@ A majority Weimar coalition is formed, with Braun as Minister-President.
 - @prussia_mp
 
 
-
 @grand_coalition_prussia
 title: We can form a Grand Coalition.
 view-if: grand_coalition_prussia >= 50 and grand_coalition_prussia_failed == 0 and not (lvp_formed or nfvp_formed)

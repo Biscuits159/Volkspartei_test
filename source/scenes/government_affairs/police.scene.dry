@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 tags: govt_affairs, cabinet
 on-arrival: police_timer += 6; month_actions += 1
-view-if: dvp_in_government = 1 and interior_minister_party = dvp_name and police_timer <= 0
+view-if: dvp_in_government and interior_minister_party = dvp_name and police_timer <= 0
 card-image: img/portraits/JarresKarl.jpg
 
 = Internal Security
@@ -17,6 +17,7 @@ As with the state police units and the Reichswehr, the internal police tends to 
 - @investigate_far_right: Investigate illegal activity among the far right.
 - @investigate_far_left: Investigate illegal activity among the far left.
 - @ban_nsdap: Ban the <span style="color: #954B00;">**NSDAP**</span>.
+- @ban_kpd: Ban the <span style="color: #8B0000;">**KPD**</span>.
 - @domestic_enemies: Investigate or ban our domestic enemies.
 - @deport_hitler
 - @root: Take no action for now.
@@ -39,10 +40,10 @@ on-arrival: investigate_corruption += 1; new_middle_dvp += 5*(1-dissent); dnvp_r
 
 Corruption in big business is rampant, of course. We have uncovered a number of scandals, and publicizing them brings new attention to the work of Interior Minister [+ interior_minister +], building up his popular appeal and that of the SPD.
 
-
 @investigate_corruption_failure
 
 Unfortunately, our investigations have failed to turn up anything. Rumors are that the targets of our investigation were tipped off by infiltrators within the police.
+
 
 @investigate_far_right
 go-to: investigate_far_right_success if interior_police_loyalty >= 0.55; investigate_far_right_failure if interior_police_loyalty < 0.55
@@ -57,13 +58,17 @@ on-arrival: investigate_far_right += 1; sa_strength -= 20; workers_nsdap -= 3; n
 
 [? if coup_progress >= 6: There are reports of an imminent coup by the far-right. We have attempted to disrupt some of these plans, but the threat is still present. ?]
 
-
 @investigate_far_right_failure
 
 Unfortunately, our investigations have failed to turn up anything. Rumors are that the targets of our investigation were tipped off by infiltrators within the police.
 
+@ban_nsdap
+view-if: investigate_far_right >= 3 and return_to_normalcy and dvp_ideology == "Left"
+choose-if: judicial_reform >= 4 and nsdap_votes <= 7
+unavailable-subtitle: [ if judicial_reform < 4: The judiciary is too reactionary for that to happen. ?][? if nsdap_votes > 7: The <span style="color: #954B00;">**NSDAP**</span> is too popular. ?]
+on-arrival: nsdap_banned = 1; workers_nsdap -= 10; new_middle_nsdap -= 10; old_middle_nsdap -= 10; nsdap_relation -= 50;
 
-
+We have banned the <span style="color: #954B00;">**NSDAP**</span>!
 
 
 @investigate_far_left
@@ -74,19 +79,15 @@ on-arrival: investigate_far_left += 1; rfb_strength -= 10; workers_kpd -= 3; une
 
 Of course the Communists are doing crimes; everyone knows that. Now, we finally have proof.
 
-
 @investigate_far_left_failure
 
 Unfortunately, our investigations have failed to turn up anything. Rumors are that the targets of our investigation were tipped off by infiltrators within the police.
 
+@ban_kpd
+view-if: investigate_far_left >= 3 and return_to_normalcy
+choose-if: kpd_votes <= 7
+unavailable-subtitle: [? if kpd_votes > 7: The <span style="color: #8B0000;">**KPD**</span> is too popular. ?]
+on-arrival: kpd_banned = 1; workers_kpd -= 10; unemployed_kpd -= 10;
 
+We have banned the <span style="color: #8B0000;">**KPD**</span>!
 
-
-
-@ban_nsdap
-view-if: investigate_far_right >= 3 and return_to_normalcy and dvp_ideology = "Left"
-choose-if: judicial_reform >= 4 and nsdap_votes <= 7
-unavailable-subtitle: [ if judicial_reform < 4: The judiciary is too reactionary for that to happen. ?][? if nsdap_votes > 7: The <span style="color: #954B00;">**NSDAP**</span> is too popular. ?]
-on-arrival: nsdap_banned = 1; workers_nsdap -= 10; new_middle_nsdap -= 10; old_middle_nsdap -= 10; nsdap_relation -= 50;
-
-We have banned the <span style="color: #954B00;">**NSDAP**</span>!

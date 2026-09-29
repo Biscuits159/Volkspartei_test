@@ -30,9 +30,11 @@ title: Industrialist Funding
 subtitle: Request more resources from the industry.
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; resources += 3; industrialist_strength += 5
+on-arrival: advisor_action_timer = 6; industrial_funds += 1 if industrial_funds < 5; resources += 2; industrialist_strength += 5
 
-We have requested more funding from the industrialists, they have raise d their influence within the party in doing so.
+We have requested more funding from the industrialists, they have raised their influence within the party in doing so.
+
+We have gained +2 resources.
 
 
 @build_up_industrialists

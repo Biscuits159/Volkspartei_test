@@ -15,6 +15,8 @@ The <span style="color: var(--dvp-color);">**[+ dvp_name +]**</span> is not simp
 - @dfgb: Support DFGB, our trade union.
 - @liberal_association: Fund the Liberal Association, interparty organization calling for liberal unity.
 - @youth: Support the youth organizations.
+- @fund_reichsbanner: Fund the Reichsbanner, our chosen paramilitary organization.
+- @fund_stahlhelm: Fund the Stahlhelm, our chosen paramilitary organization.
 - @nothing: Do not increase funding for any program.
 - @easy_discard
 
@@ -26,7 +28,6 @@ on-arrival: resources -= 1; media_timer = 0;
 go-to: media
 
 # TODO: differing outcomes based on whether you've seen media, and what kind of media you've supported.
-
 
 @dhv
 view-if: not dfgb_formed
@@ -62,6 +63,23 @@ subtitle: -1 resources
 on-arrival: resources -= 1; youth += 1; liberal_strength += 5; democratic_strength += 5
 
 Our new youth members flock to the nationalist or labor wings of the party.
+
+@fund_reichsbanner
+choose-if: resources > 0
+view-if: dvp_in_reichsbanner
+unavailable-subtitle: Not enough resources.
+subtitle: -1 resources
+on-arrival: resources -= 1; rb_strength += 100; rb_militancy += 0.01
+
+We have increased recruiting to the Reichsbanner.
+
+@fund_stahlhelm
+choose-if: resources > 0
+unavailable-subtitle: Not enough resources.
+subtitle: -1 resources
+on-arrival: resources -= 1; sh_strength += 50; sh_militancy += 0.02
+
+We have increased recruiting to the Stahlhelm.
 
 @nothing
 

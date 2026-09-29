@@ -251,9 +251,8 @@ if ((!Q.rubicon && Q.month_actions >= 1) || (Q.rubicon && Q.month_actions >= 4))
     if (Q.month >= 13) {
         Q.month = 1;
         Q.year += 1;
-        if (Q.historical_mode) {
-            Q.resources += 2;
-        }
+        Q.resources += Q.dues;
+        Q.resources += Q.industrial_funds;
     }
     if (Q.chancellor == "Papen" && !Q.papen_chancellor_time) {
         Q.papen_chancellor_time += 1;
@@ -836,6 +835,12 @@ if ((!Q.rubicon && Q.month_actions >= 1) || (Q.rubicon && Q.month_actions >= 4))
     } else {
         Q.ddp_ideology = "Moderate"
     }
+
+    if (Q.spd_left + Q.spd_right >= 20) {
+        Q.spd_left *= 0.9;
+        Q.spd_right *= 0.9;
+    }
+
     
     
     
@@ -852,6 +857,9 @@ if ((!Q.rubicon && Q.month_actions >= 1) || (Q.rubicon && Q.month_actions >= 4))
     }
     if (!Q.spd_toleration) {
         Q.bruning_toleration_time = 0;
+    }
+    if (Q.spd_toleration) {
+        Q.spd_patience -= (5 - spd_relation * 0.02);
     }
     
     if (Q.bruning_chancellor_time == 1) {

@@ -279,56 +279,56 @@ Wirth has been removed as an advisor. The Progressive faction disapproves.
 title: Remove Kübler
 view-if: kubler_advisor = 1
 tags: remove_advisor
-on-arrival: kubler_advisor = 0; special_interest_dissent += 5; n_advisors -= 1
+on-arrival: kubler_advisor = 0; n_advisors -= 1
 go-to: rm_main
 
-Kübler has been removed as an advisor. The Special Interest faction disapproves.
+Kübler has been removed as an advisor.
 
 
 @remove_schiele
 title: Remove Schiele
 view-if: schiele_advisor = 1
 tags: remove_advisor
-on-arrival: schiele_advisor = 0; special_interest_dissent += 5; n_advisors -= 1
+on-arrival: schiele_advisor = 0; n_advisors -= 1
 go-to: rm_main
 
-Schiele has been removed as an advisor. The Special Interest faction disapproves.
+Schiele has been removed as an advisor.
 
 
 @remove_colosser
 title: Remove Colosser
 view-if: colosser_advisor = 1
 tags: remove_advisor
-on-arrival: colosser_advisor = 0; special_interest_dissent += 5; n_advisors -= 1
+on-arrival: colosser_advisor = 0; n_advisors -= 1
 go-to: rm_main
 
-Colosser has been removed as an advisor. The Special Interest faction disapproves.
+Colosser has been removed as an advisor.
 
 
 @remove_drewitz
 title: Remove Drewitz
 view-if: drewitz_advisor = 1
 tags: remove_advisor
-on-arrival: drewitz_advisor = 0; special_interest_dissent += 5; n_advisors -= 1
+on-arrival: drewitz_advisor = 0; n_advisors -= 1
 go-to: rm_main
 
-Drewitz has been removed as an advisor. The Special Interest faction disapproves.
+Drewitz has been removed as an advisor.
 
 
 @remove_bauser
 title: Remove Bauser
 view-if: bauser_advisor = 1
 tags: remove_advisor
-on-arrival: bauser_advisor = 0; special_interest_dissent += 5; n_advisors -= 1
+on-arrival: bauser_advisor = 0; n_advisors -= 1
 go-to: rm_main
 
-Bauser has been removed as an advisor. The Special Interest faction disapproves.
+Bauser has been removed as an advisor.
 
 
 @remove_moldenhauer
 title: Remove Moldenhauer
 view-if: moldenhauer_advisor = 1
-on-arrival: moldenhauer_advisor = 0; special_interest_dissent += 5; n_advisors -= 1
+on-arrival: moldenhauer_advisor = 0; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
 

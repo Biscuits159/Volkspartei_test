@@ -1,7 +1,7 @@
 title: Fundraising
 new-page: true
 view-if: fundraising_timer <= 0 and (not historical_mode)
-on-arrival: fundraising_timer = 6; month_actions += 1
+on-arrival: fundraising_timer = 12
 frequency: 300
 is-card: true
 card-image: img/Mann_der_Arbeit.jpg
@@ -9,29 +9,48 @@ tags: party_affairs
 
 = Fundraising
 
-For better or for worse, the party cannot exist without money.
+To finance our party's operations, we receive donations from wealthy industrialists and dues from party members. To ensure a steady supply of funds, we must carefully balance our policies to avoid alienating our industrialist and labor factions. For convenience, we collect our funds at the end of each year and can adjust them throughout. 
 
 - @maintain: Maintain our current dues.
 - @reduce: Reduce dues.
 - @increase: Increase dues.
 
 @maintain
-subtitle: [+ dues +] resources gained.
+subtitle: [+ dues + industrial_funds +] resources will be collected.
 on-arrival: resources += dues;
 
 We maintain our current dues.
 
 @reduce
-subtitle: [+ dues - 1 +] resources gained.
+subtitle: [+ dues + industrial_funds - 1 +] resources will be collected.
+unavailable-subtitle: Our grassroots and industrialist fundraising are already low.
 choose-if: dues > 1
-on-arrival: dues -= 1; resources += dues; nationalist_dissent -= 8; industrialist_dissent -= 8; liberal_dissent -= 8; labor_dissent -= 8; democratic_dissent -= 8; progressive_dissent -= 8; special_interest_dissent -= 8
+on-arrival: dues -= 1; nationalist_dissent -= 8; industrialist_dissent -= 8; liberal_dissent -= 8; labor_dissent -= 8; democratic_dissent -= 8; progressive_dissent -= 8; month_actions += 1
 
 Our current members appreciate this, but no one decides to join a party because of the low dues.
 
 @increase
-subtitle: [+ dues + 1 +] resources gained. [? if unemployed >= 15 : Given the present economic situation, this may be painful. ?][? if dues >= 4 : Dues are already rather high; increasing them might reduce our membership. ?]
-on-arrival: dues += 1; resources += dues; new_middle_dvp -= 3; unemployed_dvp -= 3; new_middle_dvp -= 10 if unemployed >= 15; unemployed_dvp -= 10 if unemployed >= 15; new_middle_dvp -= 3*dues if dues >= 5; unemployed_dvp -= 3*dues if dues >= 5
-view-if: dues <= 4
+subtitle: [+ dues + industrial_funds + 1 +] resources will be collected. +1 resource [? if unemployed >= 15 : Given the present economic situation, this may be painful. ?][? if dues >= 4 : Dues are already rather high; increasing them might reduce our membership. ?]
+view-if: (dues < 5 and labor_dvp == 1) or (industrial_funds < 5 and industrialists_dvp == 1) or dues < 2 or industrial_funds < 2
+
+From whom should we request more funding?
+
+- @industrialists: The industrialists
+- @party_members: Our party members
+
+@industrialists
+subtitle: We shall request more resources from our industrial backers
+unavailable-subtitle: [? if industrial_funds = 5: Their donations are already too generous in their mind ?][? if (industrial_funds = 2 and industrialists_dvp == 0): Many wealthy industrialists have left us to find another home for their interests in other right-wing parties ?].
+choose-if: (industrial_funds < 5 and industrialists_dvp == 1) or industrial_funds < 2
+on-arrival: industrial_funds += 1; resources += 1; industrialist_dissent += 5; month_actions += 1
+
+Our wealthy backers complain about our rising expenses. Still, this doesn't affect our electoral performance and we have access to additional resources. 
+
+@party_members
+subtitle: We shall increase dues
+unavailable-subtitle: [? if dues = 5: Dues are already as high as we can make them ?][? if (dues = 2 and labor_dvp == 0): With the defectionof our labor faction, raising dues beyond the current level is impossible ?].
+choose-if: (industrial_funds < 5 and industrialists_dvp == 1) or industrial_funds < 2
+on-arrival: dues += 1; resources += 1; new_middle_dvp -= 3; unemployed_dvp -= 3; new_middle_dvp -= 10 if unemployed >= 15; unemployed_dvp -= 10 if unemployed >= 15; new_middle_dvp -= 3*dues if dues >= 5; unemployed_dvp -= 3*dues if dues >= 5; month_actions += 1
 
 Our members grumble at this, and some of the less committed members leave. But now, we have access to additional resources. 
 

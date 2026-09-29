@@ -34,7 +34,7 @@ unavailable-subtitle: The right wing of our party is too strong. They will not a
 [? if nsdap_votes < 7 : Rallying against a politically moribund party does not rouse our base, and only strengthens the Nazis through the publicity we give them. ?][? if nsdap_votes >= 7 : The Nazis’ rising ascendancy as the party of the right is also eating into our base. We must fight back against the brown tide, even if our parties are both nationalistic by nature. ?]
 
 @kpd
-on-arrival: enemies = "KPD"; nationalist_strength += 3; nationalist_dissent -= 3; industrialist_strength += 3; industrialist_dissent -= 3; workers_kpd -= 1; kpd_relation -= 5; DNVP_relation += 3
+on-arrival: enemies = "KPD"; nationalist_strength += 3; nationalist_dissent -= 3; industrialist_strength += 3; industrialist_dissent -= 3; workers_kpd -= 1; kpd_relation -= 5; dnvp_relation += 3
 
 Demonizing the Communists has emboldened our voter base, though some nationalists and industrialists question our exclusion of the SPD. At the very least, the right is warming up to us.
 

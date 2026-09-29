@@ -2,7 +2,7 @@ title: Building a Unified Liberal Party
 new-page: true
 is-card: true
 card-image: img/poster_0.jpg
-view-if: dvp_ideology == "Left" and ddp_relation >= 65 and not lvp_formed and not nfvp_formed and liberal_peoples_party_timer == 0 and liberal_peoples_party_progress > 3
+view-if: dvp_ideology == "Left" and and not lvp_formed and not nfvp_formed and liberal_peoples_party_timer == 0
 on-arrival: month_actions += 1; liberal_peoples_party_timer = 6
 tags: party_affairs
 #subtitle: Can the <span style="color: var(--dvp-color);">**DVP**</span> unite with [+ ddp_name +]?
@@ -20,10 +20,8 @@ WIP
 - @cancel_advisor_action
 
 @build_support
-unavailable-subtitle: Our relations with [+ ddp_name +] are not good enough.
-view-if: dvp_ideology = "Left" or liberal_peoples_party_progress <= 6
-choose-if: ddp_relation >= 50
-on-arrival: liberal_peoples_party_progress += 1; liberal_strength += 5; nationalist_strength -= 5; nationalist_dissent += 5; dvp_left += 1; ddp_relation += 3; dnvp_relation -= 2; dnvp_relation -= 5 if dnvp_leader = "Hugenberg"
+view-if: dvp_ideology = "Left" or liberal_peoples_party_progress <= 6 or ddp_relation < 65
+on-arrival: liberal_peoples_party_progress += 1; liberal_strength += 5; nationalist_strength -= 5; nationalist_dissent += 5; dvp_left += 1; ddp_relation += 7*(1-dissent); dnvp_relation -= 2; dnvp_relation -= 5 if dnvp_leader = "Hugenberg"
 
 We are pushing forward proposals for a united liberal party against the nationalists within our party. We are also building ties with [+ ddp_name +] organizations.
 

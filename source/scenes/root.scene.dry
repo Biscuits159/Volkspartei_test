@@ -42,20 +42,21 @@ Q.use_decimals = 0;
 // party resources
 Q.resources = 2;
 // party dues
-Q.dues = 2;
+Q.dues = 1;
+// party dues
+Q.industrial_funds = 2;
 
 // the state of the party
 // overall dissent reduces every increase in party support.
 Q.dissent = 0.05;
 Q.dissent_percent = 5;
 
-
 Q.dvp_ideology = "Left";
 Q.dvp_left = 5;
 Q.dvp_right = 1;
 
 // factions
-Q.factions = ['nationalist', 'peoples_conservative', 'industrialist', 'labor', 'liberal', 'democratic', 'progressive', 'special_interest'];
+Q.factions = ['nationalist', 'peoples_conservative', 'industrialist', 'labor', 'liberal', 'democratic', 'progressive'];
 // should this be normalized to 100%?
 Q.nationalist_strength = 20;
 Q.nationalist_dissent = 15;
@@ -71,8 +72,6 @@ Q.democratic_strength = 0;
 Q.democratic_dissent = 0;
 Q.progressive_strength = 0;
 Q.progressive_dissent = 0;
-Q.special_interest_strength = 0;
-Q.special_interest_dissent = 0;
 
 // secret events...
 Q.labor_dvp = 1;
@@ -108,21 +107,24 @@ Q.pacifism = 0;
 Q.democratization = 0;
 // Support for a communist coalition relative to 1928
 Q.communist_coalition = 0;
+
 // economic_plan: have we adopted *any* economic plan?
-// 1 - WTB plan, 2 - AfA-bund plan, 3 - radical plan (mass nationalization of industries)
+// 1 - Austerity, 2 - Lautenbach, 3 - Schacht
 Q.economic_plan = 0;
 // have we officially adopted the WTB plan?
-Q.wtb_adopted = 0;
+Q.austerity_plan_adopted = 0;
+Q.lautenbach_plan_adopted = 0;
+Q.schacht_plan_adopted = 0;
 // have we formed the iron front?
 Q.iron_front_formed = 0;
 // people's party support
 Q.liberal_peoples_party_progress = 0;
-// support for nationalizations
-Q.nationalization_support = 0;
-Q.nationalization_adopted = 0;
-// moderate economic plan
-Q.moderate_plan_support = 0;
-Q.moderate_plan_adopted = 0;
+
+// SPD's plans
+Q.spd_left_plan = 0;
+Q.spd_wtb_plan = 0;
+Q.spd_left_plan_implemented = 0;
+Q.spd_wtb_plan_implemented = 0;
 
 // organizations
 
@@ -162,7 +164,7 @@ Q.hindenburg_angry_bruning = 0;
 
 // toleration
 Q.political_decree = 0;
-
+Q.spd_patience = 100;
 
 // rubicon
 Q.no_majority_papen_elections = 0;
@@ -478,6 +480,10 @@ Q.rfb_militancy = 0.5;
 Q.rfb_banned = 0;
 Q.rfb_banned_prussia = 0;
 
+Q.dvp_in_stahlhelm = 0;
+Q.dvp_increase_police = 0;
+Q.dvp_in_reichsbanner = 0;
+
 Q.interior_police_strength = 50;
 Q.interior_police_militancy = 1;
 Q.interior_police_loyalty = 0.6;
@@ -577,11 +583,12 @@ Q.wp_exist = 1
 Q.cnblp_exist = 1
 Q.csvd_exist = 0
 
+Q.spd_right = 3
+Q.spd_left = 0
+Q.spd_ideology = "Right"
+
 Q.aspd_exist = 0
 Q.aspd_ideology = "Moderate"
-
-Q.vrp_exist = 1
-Q.vnr_exist = 0
 
 Q.ddp_exist = 1
 Q.dstp_formed = 0
@@ -591,6 +598,8 @@ Q.ddp_cohesion = 15
 Q.ddp_leader = "Koch-Weser"
 Q.ddp_ideology = "Moderate"
 
+Q.vrp_exist = 1
+Q.vnr_exist = 0
 
 Q.wp_ideology = "Moderate"
 
@@ -807,8 +816,6 @@ Q.dnvp_in_government = 1;
 Q.kpd_in_government = 0;
 Q.nsdap_in_government = 0;
 
-Q.in_right_coalition = 1;
-// Weimar coalition = SPD + Z + DDP
 Q.in_weimar_coalition = 0;
 // Grand coalition = SPD + Z + BVP + DDP + DVP
 // also includes the "new grand coalition" of SPD + Z + BVP + DDP + DVP + Others
@@ -891,11 +898,10 @@ Q.rearmament_exposed = 0;
 // reparations vs baseline: young plan is -1.
 Q.reparations = 0;
 Q.reparations_negotiation = 0;
-// nationalization_progress is part of the left economic plan.
-Q.nationalization_progress = 0;
-// socializations is part of the economic democracy card.
-Q.socializations = 0;
-Q.nationalize_budget = 4;
+// Our economic policy.
+Q.business_deregulation = 0;
+Q.small_privatizations = 0;
+Q.big_privatizations = 0;
 // have there been any factory takeovers?
 Q.factory_takeovers = 0;
 // progress on the moderate economic plan
@@ -1016,6 +1022,7 @@ Q.next_election_time = 5;
 // government affairs timers
 Q.agricultural_policy_timer = 0;
 Q.domestic_enemies_timer = 0;
+Q.economic_plan_implementation_timer = 0;
 Q.economic_policy_timer = 0;
 Q.fiscal_policy_timer = 0;
 Q.monetary_policy_timer = 0;
@@ -1024,13 +1031,15 @@ Q.judiciary_timer = 0;
 Q.labor_affairs_timer = 0;
 Q.military_policy_timer = 0;
 Q.police_timer = 0;
-Q.prussian_affairs_timer = 0;
 Q.shuffle_cabinet_timer = 0;
 Q.social_welfare_timer = 0;
 Q.war_guilt_timer = 0;
 Q.womens_rights_timer = 0;
 Q.economic_democracy_timer = 0;
 Q.coalition_affairs_timer = 0;
+//landtags
+Q.landtag_policy_timer = 0;
+Q.prussian_affairs_timer = 0;
 // event timers
 Q.emergency_cuts_timer = 0;
 Q.unemployment_insurance_timer = 0;
@@ -1074,7 +1083,7 @@ Q.thiel_advisor = 0; // Otto Thiel
 Q.bechly_advisor = 0; // Hans Bechly
 Q.baltrusch_advisor = 0; // Otto Thiel
 
-// Revisionist advisors
+// Democratic advisors
 Q.dietrich_advisor = 0; // Hermann Dietrich
 Q.gessler_advisor = 0; // Otto Gessler
 
@@ -1106,11 +1115,11 @@ Creator of the mod does not support or justify extremist ideologies. This mod is
 - @1928_historical: Begin (historical mode)
 
 @1928_easy
-on-arrival: difficulty = -1; resources = 4; dues = 3; rb_strength = 2500; kpd_relation = 0; z_relation = 55; spd_relation = 45; budget = 5;
+on-arrival: difficulty = -1; resources = 4; dues = 2; industrial_funds = 3; rb_strength = 2500; kpd_relation = 0; z_relation = 55; spd_relation = 45; budget = 5;
 go-to: 1928_main
 
 @1928_hard
-on-arrival: difficulty = 1; resources = 0; dues = 1; rb_strength = 1000; liberal_dissent = 25; nationalist_dissent = 30; labor_dissent = 25; industrialist_dissent = 25; z_relation = 45; kpd_relation = 0; spd_relation = 30; budget = 3;
+on-arrival: difficulty = 1; resources = 0; dues = 0; industrial_funds = 1; rb_strength = 1000; liberal_dissent = 25; nationalist_dissent = 30; labor_dissent = 25; industrialist_dissent = 25; z_relation = 45; kpd_relation = 0; spd_relation = 30; budget = 3;
 go-to: 1928_main
 
 @1928_historical
@@ -1119,7 +1128,8 @@ on-arrival: {!
 Q.difficulty = 2;
 Q.historical_mode = 1;
 Q.resources = 2;
-Q.dues = 1;
+Q.dues = 0;
+Q.industrial_funds = 1;
 Q.rb_strength = 2000;
 Q.reformist_dissent = 25;
 Q.left_dissent = 30;

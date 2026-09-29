@@ -1,4 +1,4 @@
-title: Negotiations with Zentrum
+title: Negotiations with Right-Wing parties
 new-page: true
 is-card: true
 card-image: img/zentrum.jpg
@@ -6,14 +6,43 @@ view-if: negotiation_z_timer = 0
 on-arrival: negotiation_z_timer = 6
 tags: parliamentary_affairs
 
-= Negotiations with <span style="color: #000000;">**Zentrum**</span>
+= Negotiations with Right-Wing parties
 
-<span style="color: #000000;">**Zentrum**</span> has been the leading bourgeoise party and our closest major ally throughout the republic. What concessions should we grant them to strengthen out ties?
+<span style="color: #000000;">**Zentrum**</span> has been the leading bourgeoise party and our closest major ally throughout the republic, while the <span style="color: #3F7BC1;">**DNVP**</span> [? if kvp_formed: and the <span style="color: #455B95;">**KVP**</span> ?] remain our closest ideological allies. What should we do to strengthen out ties?
 
+- @center: Strengthen our bonds with the Catholic Center Party.
+- @kvp: Strengthen our bonds with the Conservative People's Party.
+- @dnvp
 - @convince_z_lautenbach: Convince <span style="color: #000000;">**Center Party**</span> to implement Lautenbach's Plan.
 - @convince_z_lautenbach_wtb: Convince <span style="color: #000000;">**Center Party**</span> to implement Lautenbach-WTB Plan.
 - @root: Perhaps we can discuss this at a later time.
 - @easy_discard
+
+@center
+subtitle: -1 resources
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: resources -= 1; z_relation += 7*(1-dissent)
+
+The Zentrum has been one of our closest allies through the course of the Republic.
+
+@kvp
+subtitle: -1 resources
+view-if: kvp_formed = 1
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: resources -= 1; kvp_relation += 5*(1-dissent)
+
+The KVP is a moderate right wing party.
+
+@dnvp
+title: [? if dnvp_ideology = "Moderate" and not dnvp_leader = "Treviranus": Increase communications with the national-conservatives from DNVP. ?][? if dnvp_ideology = "Radical" and dvp_ideology = "Right": Collaborate with the anti-democratic rightists from DNVP. ?][? if dnvp_leader = "Treviranus" and dvp_ideology = "Right": Reconcile with the parliamentary turncoats from DNVP. ?][? if dnvp_ideology = "Radical" and dvp_ideology = "Left": Meet with the radical anti-republican rightists from DNVP. ?][? if dnvp_leader = "Treviranus" and dvp_ideology = "Left": Find common ground with the people's conservatives from DNVP. ?]
+subtitle: -1 resources
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: resources -= 1; dnvp_relation += 5*(1-dissent)
+
+[? if dnvp_ideology = "Radical" and dvp_ideology = "Right": Our mutual disdain for the Weimar Republic’s parliamentary catastrophe has made us natural allies with the radicalized DNVP. ?][? if dnvp_ideology = "Moderate" and not dnvp_leader = "Treviranus" and dvp_ideology = "Right": The DNVP’s reluctance to participate in the Reichstag under the moderates has made them a possible ally, despite our differences. ?][? if dnvp_leader = "Treviranus" and dvp_ideology = "Right": Ties with the DNVP have grown increasingly strained with our rapidly diverging views on the Republic, but negotiations are still possible with their nationalistic tendencies. ?][? if dnvp_ideology = "Radical" and dvp_ideology = "Left": Having the DNVP barrel towards rabid anti-parliamentarian tendencies has made any attempts of reconciliation increasingly moot. ?][? if dnvp_ideology = "Moderate" and not dnvp_leader = "Treviranus" and dvp_ideology = "Left": With the DNVP embracing a middle ground between the young parliamentarians and the radicals, perhaps we could find some compromise. ?][? if dnvp_leader = "Treviranus" and dvp_ideology = "Left": Having followed us in our more republican stance, the DNVP could be a great ally, should the SPD either be entirely excluded from government or embrace a radical rightward shift. ?]
 
 @convince_z_lautenbach
 subtitle: -2 budget.
@@ -30,8 +59,6 @@ achievement: wirtschaftspolitik
 [? if unemployed >= 10 : The Social Democrats approve of this plan as the "least bad" alternative, seeing it as necessary to save Germany's economy. ?]
 
 [? if unemployed < 10 : Unemployment is low enough that the plan does not seem to have the intended effect. ?]
-
-
 
 @convince_z_lautenbach_wtb
 subtitle: -2 budget.

@@ -1,0 +1,11 @@
+title: <span style="color: #8B0000;">**KPD**</span> Party Conference
+subtitle: Our publication of the Wittorf Affair has changed the balance of power
+new-page: true
+view-if: wittorf_affair_published = 1 and year = 1929 and month >= 6 and month <= 8
+max-visits: 1
+on-arrival: kpd_leader = "LuxemLuxemburgists"; spd_left += 4; pro_republic += (kpd_votes / 2)
+tags: event
+
+= <span style="color: #8B0000;">**KPD**</span> Party Conference
+
+Though the <span style="color: #8B0000;">**KPD**</span>'s internal affairs are rarely of our concern, it seems this year's naitonal party conference may affect the entire Weimar political system. With the hardline supporter os Thälmann have come under fire since the Wittorf Affair, the "Conciliator" faction, under Arthur Ewert, Hugo Eberlein, and Ernst Meyer have managed to dislodge the current leadership. Thälmann, who will remain largely as a figurehead, will see a <span style="color: #8B0000;">**KPD**</span> more open to constructive cooperation within the Weimar system. The left of the <span style="color: #c00000;">**SPD**</span> has reacted to the prospect of a "Popular Front" with enthusiasm.

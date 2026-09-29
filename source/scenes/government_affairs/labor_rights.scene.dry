@@ -3,56 +3,53 @@ new-page: true
 is-card: true
 tags: govt_affairs, cabinet
 on-arrival: labor_rights_timer += 10; month_actions += 1
-view-if: dvp_in_government = 1 and labor_minister_party = dvp_name and labor_rights_timer <= 0 and labor_affairs_seen = 1
+view-if: dvp_in_government and labor_minister_party = dvp_name and labor_rights_timer <= 0
 card-image: img/portraits/ThielOtto.jpg
 max-visits: 6
 go-to: labor_rights_menu
-#subtitle: Working hours, safety regulations, and unemployment insurance.
 
 = Labor Rights
 
-With control of the Labor Ministry, we can set national standards for labor. Our supporters expect us to enforce a 40-hour work week and enforce safety regulations, as well as fully fund the unemployment insurance program.
-
-# enforce a 40-hour work week
-# develop and enforce safety regulations in mines and industries
-# works councils are part of another card...
+With control of the Labor Ministry, we can set national standards for labor. Though not our usual domain, our supporters still expect us to curtail the socialist unions and facilitate business for employers.
 
 @labor_rights_menu
 
 - @working_hours: Enforce the 40-hour work week.
-- @shorten_hours: Shorten work hours less than 40 hours.
-- @safety: Develop and enforce safety regulations.
+- @safety: Reduce safety standards. 
+- @target_spd_unions: Target <span style="color: #E3000F;">**SPD**</span>-affiliated unions
 - @unemployment_insurance: Fund the unemployment insurance program.
 - @root: Do not enact any policies.
 - @easy_discard
 - @cancel_advisor_action
 
 @working_hours
-view-if: working_hours < 2
-on-arrival: working_hours += 1; labor_dissent -= 8; progressive_dissent -= 5; industrialist_dissent += 5; labor_strength += 5; progressive_strength += 3; workers_dvp += 5*(1-dissent); spd_relation += 4; inflation += 0.1; economic_growth -= 0.1
+view-if: black_thursday_seen = 1 and return_to_normalcy = 0
+on-arrival: working_hours += 1; labor_dissent -= 8; progressive_dissent -= 5; industrialist_dissent += 5; labor_strength += 5; progressive_strength += 3; workers_dvp += 5*(1-dissent); spd_relation += 4; inflation += 0.1; economic_growth -= 0.1; unemployed -= 0.2;
 
-While a 40-hour work week was declared during the German Revolution in 1918, enforcement has become increasingly porous over the years. The capitalists have successfully added numerous exceptions and loopholes, returning to the old regime of forced overtime for workers.
+While a 40-hour work week was declared during the German Revolution in 1918, enforcement has become increasingly porous over the years. We have successfully added numerous exceptions and loopholes, returning to the old regime of forced overtime for workers.
 
-Now, with the force of the Labor Ministry, we are finally enforcing the rights of workers to their own time. The bourgeoisie and their political representatives are displeased.
-
-@shorten_hours
-view-if: working_hours >= 2 and black_thursday_seen = 1
-subtitle: Could we induce more hiring and reduce unemployment by reducing work hours?
-on-arrival: working_hours += 1; labor_dissent -= 8; progressive_dissent -= 5; industrialist_dissent += 10; labor_strength += 5; progressive_strength += 3; workers_spd += 7*(1-dissent); dvp_relation -= 4; coalition_dissent += 1; capital_strike_progress += 1; labor_goal_completed = 1; unemployed -= 0.3; economic_growth -= 0.2;
-
-Some in the labor movement argue that by reducing the maximum number of hours worked, employers would be induced to hire more workers, reducing unemployment. The argument also goes that this would be complementary to deflation, maintaining the same purchasing power for workers by cutting hours without cutting wages. Employers, however, resist this policy, arguing for more flexibility in hiring and firing.
+Now, however, with the rising unemployement in the wake of Black Thursday, perhaps it is time to enforce these these rights in hopes of containing the crisis. This policy will be unpopular with our industrial backers and its effects are expected to be limited.
 
 
 @safety
-on-arrival: workers_safety += 1; labor_dissent -= 5; progressive_dissent -= 3; labor_strength += 2; progressive_strength += 1; workers_spd += 5*(1-dissent); capital_strike_progress += 1 if workers_safety >= 3
+on-arrival: workers_safety -= 1; coalition_dissent += 1 if spd_in_government; labor_dissent += 5; progressive_dissent += 3; industrialist_dissent -= 5; industrialist_strength += 3; workers_dvp -= 3*(1-dissent)
 
-The Labor Ministry works on developing and enforcing safety regulations, in order to ensure healty working conditions for the proletariat. [? if workers_safety >= 3 : Businesses have begun to argue that our focus on safety is overbearing and unnecessary, interfering with the economy. ?]
+We slowly chip away at existing safety regulations, while also turning a blind eye to violations. Employers approve of these measures, while our labor faction and our few working class supporters express their dissatisfaction.
+
+
+@target_spd_unions
+choose-if: spd_in_government == 0
+unavailable-subtitle: Our coalition partners will not allow this.
+on-arrival: labor_strength += 5; industrialist_dissent -= 5; workers_dvp += 4*(1-dissent); spd_relation -= 8; workers_spd -= 5;
+
+We promore right-wing trade unions, mainly the [? if dfgb_formed == 0: DHV ?][? if dfgb_formed == 0: DFGB ?], as an alternative to the ADGB, successfully peeling some workers away from the <span style="color: #E3000F;">**SPD**</span>. Naturally, the social democrats are displeased with us.
+
 
 @unemployment_insurance
 view-if: unemployed >= unemployment_insurance_threshold + 4
-subtitle: With increasing unemployment, we must find new ways to fund our signature program.
+subtitle: With increasing unemployment, we must find new ways to fund the program.
 
-With the onset of the Depression and its throngs of unemployed, our unemployment insurance program is under strain. The program was never designed for this many claimants; something must be done to balance the budget.
+With the onset of the Depression and its throngs of unemployed, the unemployment insurance program is under strain. It was never designed for this many claimants; something must be done to balance the budget.
 
 - @cut_benefits: Cut benefits.
 - @increase_employers: Increase employer contributions.
@@ -60,21 +57,19 @@ With the onset of the Depression and its throngs of unemployed, our unemployment
 - @labor_rights_menu: We can defer this decision for now.
 
 @cut_benefits
-subtitle: The workers will regard this as a betrayal.
-on-arrival: workers_spd -= 0.12*workers_spd; unemployed_spd -= 0.2*unemployed_spd; workers_kpd += 6; workers_nsdap += 6; unemployed_kpd += 5; unemployed_nsdap += 5; left_dissent += 15; center_dissent += 10; labor_dissent += 15; reformist_dissent += 5; welfare -= 2; budget += 1; unemployed += 3; pro_republic -= 4; kpd_relation -= 8; inflation -= 2; unemployment_insurance_threshold = unemployed; unemployment_insurance_timer = 10; economic_growth -= 0.2;
+subtitle: Our expected course of action.
+on-arrival: coalition_dissent += 1 if spd_in_government; workers_dvp -= 4*(1-dissent); unemployed_dvp -= 4*(1-dissent); workers_nsdap += 6; unemployed_kpd += 5; unemployed_nsdap += 5; labor_dissent += 15; progressive_dissent += 10; democratic_dissent += 5; industrialist_dissent -= 10; industrialist_strength += 10; welfare -= 2; budget += 1; unemployed += 3; pro_republic -= 4; spd_relation -= 8; inflation -= 2; unemployment_insurance_threshold = unemployed; unemployment_insurance_timer = 10; economic_growth -= 0.2;
 
 For budgetary reasons, we have cut unemployment insurance benefits. Unfortunately, our reasons for fiscal discipline are alien to the workers. They are furious at our betrayal, as are a good portion of our membership throughout the factions. Our loss is the KPD's gain, and even the NSDAP, those lapdogs of the bourgeoisie, have joined in criticizing us for our austerity.
 
-
-
 @increase_employers
-subtitle: Employers are strongly against this. [? if in_grand_coalition: The DVP will likely break the coalition. ?]
-on-arrival: capital_strike_progress += 2; coalition_dissent = 2 if in_grand_coalition; coalition_dissent += 1; welfare += 1; workers_spd += 6*(1-dissent); unemployed_spd += 6*(1-dissent); old_middle_spd -= 6*(1-dissent); new_middle_spd -= 2*(1-dissent); unemployment_insurance_threshold = unemployed; unemployment_insurance_timer = 10; economic_growth -= 0.2;
+subtitle: Employers are strongly against this.
+on-arrival: capital_strike_progress += 2; welfare += 1; workers_dvp += 3*(1-dissent); old_middle_dvp -= 6; new_middle_dvp -= 1; labor_dissent -= 5; labor_strength += 5; progressive_dissent -= 5; progressive_strength += 5; industrialist_dissent += 15; unemployment_insurance_threshold = unemployed; unemployment_insurance_timer = 10; economic_growth -= 0.2;
 
-We have increased employer contributions to the unemployment insurance fund, allowing the program to continue without hurting workers and the unemployed. Perhaps understandably, the capitalists and their political parties are furious, while our base in the unions and among the unemployed are pleased.
+We have increased employer contributions to the unemployment insurance fund, allowing the program to continue without hurting workers and the unemployed. Predictably, our industrial backers are furious, while our small base among the workers is pleased.
 
 @balance
-subtitle: Neither workers nor employers will be entirely satisfied or dissatisfied. [? if in_grand_coalition and dvp_relation < 30: The DVP will likely consider the compromise unacceptable. ?][? if in_grand_coalition and dvp_relation >= 30: The DVP might grudgingly accept the compromise for now. ?]
-on-arrival: workers_spd -= 4; unemployed_spd -= 5; workers_kpd += 4; unemployed_kpd += 3; unemployed_nsdap += 3; left_dissent += 10; labor_dissent += 8; center_dissent += 5; welfare -= 1; budget += 1; month += 1; kpd_relation -= 4; inflation -= 1; unemployment_insurance_threshold = unemployed; unemployment_insurance_timer = 10; coalition_dissent = 2 if in_grand_coalition and dvp_relation < 30; coalition_dissent += 1 if in_grand_coalition; economic_growth -= 0.1;
+subtitle: Neither workers nor employers will be entirely satisfied or dissatisfied. Our party might just weather the storm.
+on-arrival: workers_dvp -= 2; workers_kpd += 4; unemployed_kpd += 3; unemployed_nsdap += 3; labor_dissent += 8; industrialist_strength += 5; welfare -= 1; budget += 1; inflation -= 1; unemployment_insurance_threshold = unemployed; unemployment_insurance_timer = 10; coalition_dissent += 1 if spd_in_government; economic_growth -= 0.1;
 
-Neither side is entirely satisfied by our compromise solution. Many of the workers and unemployed see this as a betrayal, although we present it as the successful aversion of a much worse alternative. [? if in_grand_coalition: Meanwhile, the DVP is aghast at the prospect of raising any taxes on businesses at all. ?]
+Neither side is entirely satisfied by our compromise solution. Many of the industrialists see this as a betrayal, although we present it as the successful aversion of a much worse alternative.

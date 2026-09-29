@@ -33,7 +33,15 @@ Resources available: [+ resources +]
 
 [? if dvp_in_government and not in_dvp_majority: Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
+[? if spd_toleration: <span class="tooltip-text" title="The <span style="color: #E3000F;">**SPD**</span> has agreed to tolerate our cabinet, and while they would likely stand to lose by calling another election, their grassroots may push them to do so anyway. To avoid this possibility, we must enact worker-friendly policies and inprove our relations with them."><span style="color: #E3000F;">**SPD**</span> patience</span> [+ spd_patience : spd_angry +]?]
+
+
+
 Internal dissent: [+ dissent_percent : dissent +]
+
+industrial backing: [+ industrial_funds : funding +]
+
+Grassroots funding: [+ dues : funding +]
 
 = Government
 
@@ -135,7 +143,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 <span class="tooltip-text" title="Communist Party of Germany" style="color: #8B0000;">**KPD**</span>: <span style="color: #8B0000;">Stalinism</span> ([+ kpd_leader +])
 
-<span class="tooltip-text" title="Social Democratic Party of Germany" style="color: #E3000F;">**SPD**</span>: <span style="color: #E3000F;">Social Democracy</span> ([+ spd_leader +])
+<span class="tooltip-text" title="Social Democratic Party of Germany" style="color: #E3000F;">**SPD**</span>: [? if spd_ideology = "Right": <span style="color: #E3000F;">Social Democracy</span> ?][? if spd_ideology = "Left": <span style="color: #E3000F;">Democratic Socialism</span> ?] ([+ spd_leader +]) 
 
 [? if aspd_exist: <span class="tooltip-text" title="Old Social Democratic Party of Germany" style="color: #FE9E00;">**ASPD**</span>: [? if aspd_ideology = "Moderate": <span style="color: #FE9E00;">Nationalist Social Democracy</span> ?][? if aspd_ideology = "Radical": <span style="color: #954B00;">National Bolshevism</span> ?] ([+ aspd_leader +]) ?]
 

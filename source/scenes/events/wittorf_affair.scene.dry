@@ -1,0 +1,30 @@
+title: Wittorf Affair
+subtitle: A crisis in the <span style="color: #8B0000;">**KPD**</span>?
+new-page: true
+view-if: investigate_far_left > 1 and year = 1928 and month >= 8 and month <= 10
+max-visits: 1
+tags: event
+
+= Wittorf Affair
+
+Our infiltrators and investigators amongst the communists have brought news of a scandal engulfing the <span style="color: #8B0000;">**KPD**</span> leadership. An associate of <span style="color: #8B0000;">**KPD**</span> chairman Ernst Thälmann, an official named John Wittorf, is accused of embezzling campaign funds, diverting thousands of Reichsmarks for personal use, and Thälmann is accused of covering up the affair. The party's central committee considers this charge serious.
+
+We could rush to publish this information, however, it is likely to spread without our help, and intervening may tip the scales of the internal politics of the <span style="color: #8B0000;">**KPD**</span>. What should we do?
+
+The Conciliators in the <span style="color: #8B0000;">**KPD**</span>, a faction opposed to the party's present hard-line policy, are said to have leaked this information to aid them in the intra-party struggle. Dissident communists in the Leninbund also have information about this affair, and are planning to publish it.
+
+What should we do with this information?
+
+- @publicize: We will publicize the scandal to damage the <span style="color: #8B0000;">**KPD**</span> and Thälmann.
+- @nothing: Do nothing with the information.
+- @secret
+
+@publicize
+on-arrival: wittorf_affair_published = 1; workers_kpd -= 4; unemployed_kpd -= 4
+
+We use our party's newspapers, and even recommended the information to be published in onther right-leaning news organizations, to ensure that knowledge Thälmann's hypocrisy reaches every corner of Germany. The <span style="color: #8B0000;">**KPD**</span>'s standing among the workers is damaged, and the Conciliatory faction is greatly strengthened, but <span style="color: #8B0000;">Stalin</span>'s pressure keeps Thälmann from facing much in the way of consequences.
+
+@nothing
+on-arrival: workers_kpd -= 2; unemployed_kpd -= 2
+
+The information spreads without our help, leading to some loss of <span style="color: #8B0000;">**KPD**</span> support among the workers.

@@ -18,6 +18,7 @@ max-cards: 6
 
 - @party
 - @govt
+- @landtag
 - @parliament
 - #advisor
 - @shuffle_leadership_pinned
@@ -42,6 +43,7 @@ max-cards: 6
 
 - @party
 - @govt
+- @landtag
 - @parliament
 - #advisor
 - @shuffle_leadership_pinned
@@ -60,6 +62,13 @@ card-image: img/reichstag_2.jpg
 is-deck: true
 
 - #govt_affairs
+
+@landtag
+title: Landtag actions
+card-image: img/braun.jpg
+is-deck: true
+
+- #landtag_affairs
 
 @parliament
 title: Parliamentary Affairs

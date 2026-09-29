@@ -30,7 +30,7 @@ new-page: true
 
 = Can a new party be formed?
 
-The <span style="color: #D3D3A9;">**Young German Order**</span> has already agreed to unite with us. Now, Stresemann will negotiate with [+ ddp_leader+].
+The <span style="color: #D3D3A9;">**Young German Order**</span> has already agreed to unite with us. Now, Curtius will negotiate with [+ ddp_leader+].
   
 - @nfvp_ddp_success: The <span style="color: #DCCA4A;">**[+ ddp_name +]**</span> agrees to form a new party!
 - @nfvp_ddp_fail: The <span style="color: #DCCA4A;">**[+ ddp_name +]**</span> refuses!
@@ -51,7 +51,7 @@ Our negotiations for a unified republican right wing party have finally succeede
 
 @nfvp_peoples_conservatives
 
-Now Curtis will negotiate with <span style="color: #0087DC;">People's Conservative</span> faction of the <span style="color: #3F7BC1;">**DNVP**</span>.
+Now Curtius will negotiate with <span style="color: #0087DC;">People's Conservative</span> faction of the <span style="color: #3F7BC1;">**DNVP**</span>.
 
 - @nfvp_peoples_conservatives_success: The <span style="color: #0087DC;">People's Conservatives</span> agree to form a new party!
 - @nfvp_peoples_conservatives_fail: The <span style="color: #0087DC;">People's Conservatives</span> refuse!

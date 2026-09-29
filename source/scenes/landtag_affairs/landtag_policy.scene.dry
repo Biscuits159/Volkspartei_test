@@ -1,0 +1,68 @@
+title: Our Landtag Policies
+new-page: true
+is-card: true
+view-if: (dvp_prussia or dvp_austria or dvp_bavaria or dvp_hanover or dvp_saxony or dvp_wurttemberg or dvp_hamburg) and landtag_policy_timer <= 0
+on-arrival: {!
+Q.landtag_policy_timer += 12; 
+Q.month_actions += 1;
+Q.landtag_power = 0;
+if (Q.dvp_prussia) Q.landtag_power += dvp_pl * 0.2;
+if (Q.dvp_austria) Q.landtag_power += dvp_al * 0.1;
+if (Q.dvp_bavaria) Q.landtag_power += dvp_bl * 0.1;
+if (Q.dvp_hanover) Q.landtag_power += dvp_hl * 0.1;
+if (Q.dvp_saxony) Q.landtag_power += dvp_sl * 0.1;
+if (Q.dvp_wurttemberg) Q.landtag_power += dvp_wl * 0.1;
+if (Q.dvp_hamburg) Q.landtag_power += dvp_hb * 0.05;
+!}
+tags: landtag_affairs
+card-image: img/braun.jpg
+#subtitle: The state government of Prussia is a bulwark of democracy...
+
+= Landtag Policy
+
+With our representation in many of Germany's Landtags, we can enact more targetted policies than those in the Reichstag. The effectiveness of our actions is determined by our representation in the Landtags.
+
+We can enact policies in Prussia.
+
+- @local_policies: Enact business-friendly policies at the local level.
+- @target_kpd: Target the <span style="color: #8B0000;">**KPD**</span>.
+- @target_spd: Target the <span style="color: #E3000F;">**SPD**</span>.
+- @target_nsdap: Target the <span style="color: #954B00;">**NSDAP**</span>.
+- @strengthen_police: Bolster local police.
+- @root: No new policies are needed.
+- @easy_discard
+- @cancel_advisor_action
+
+@local_policies
+on-arrival: new_middle_dvp += landtag_power*(1-dissent); old_middle_dvp += landtag_power*(1-dissent)
+
+Our policies help us improve the popularity of our party among our base, the middle class.
+
+@target_kpd
+subtitle: Including the <span style="color: #8B0000;">**RFB**</span>.
+on-arrival: workers_kpd -= landtag_power*(1-dissent); unemployed_lpd -= landtag_power*(1-dissent); rfb_strength *= (1-0.01*landtag_power); rfb_militancy *= (1-0.01*landtag_power)
+
+<span style="color: #8B0000;">**KPD**</span> party newspapers, gatherings and party headquarters are closed or otherwise cracked down on all German states which we govern. <span style="color: #8B0000;">**RFB**</span> members are arrested and their weapons seized.
+
+@target_spd
+choose-if: liberal_strength < nationalist_strength + industrialist_strength - 10
+unavailable-subtitle: The liberal wing of our party is too strong. They will not allow this.
+on-arrival: workers_spd -= landtag_power*(1-dissent); unemployed_spd -= landtag_power*(1-dissent); spd_patience -= 25 if spd_toleration; spd_relation -= 10
+
+<span style="color: #E3000F;">**Socialist**</span> unions and rallies are disrupted by local authorities. Naturally, the <span style="color: #E3000F;">**SPD**</span> is outraged, and the prospect of a Grand Coalition becomes ever distant.
+
+@target_nsdap
+subtitle: And their violent paramilitary, the <span style="color: #954B00;">**SA**</span>.
+choose-if: black_thursday_seen
+unavailable-subtitle: Who are these people?
+on-arrival: new_middle_nsdap -= landtag_power*(1-dissent); old_middle_nsdap -= landtag_power*(1-dissent); rural_nsdap -= landtag_power*(1-dissent); unemployed_spd -= landtag_power*(1-dissent); sa_strength *= (1-0.01*landtag_power); sa_militancy *= (1-0.01*landtag_power)
+
+<span style="color: #954B00;">**SA**</span> meetings are disrupted by local police, their members arrested and weapons seized.
+
+@strengthen_police
+view-if: dvp_increase_police
+on-arrival: prussian_police_strength += landtag_power; prussian_police_loyalty *= (1+0.01*landtag_power)
+
+We have increased the size of the local polices, and swayed officers to our side.
+
+Current police loyalty: [+ prussian_police_loyalty : loyalty +].

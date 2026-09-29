@@ -12,6 +12,7 @@ Otto Thiel is a politician and unionist affiliated with the DHV, the right-wing 
 - @labor_affairs
 - @white_collar
 - @union_unity
+- @grassroots_fundraising
 - @root: Return to main
 
 @labor_affairs
@@ -41,3 +42,15 @@ unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +
 on-arrival: advisor_action_timer = 6; labor_dissent -= 10;
 
 We have reduced tensions with the Labor faction.
+
+
+@grassroots_fundraising
+title: Grassroots Fundraising
+subtitle: Request more resources from party members.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; dues += 1 if dues < 5; resources += 2; labor_strength += 5; new_middle_dvp -= 2
+
+We have increased dues and requested donations from party members.
+
+We have gained +2 resources.
