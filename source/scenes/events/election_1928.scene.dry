@@ -685,7 +685,8 @@ on-arrival: leverage += 5; spd_in_government = 1; ddp_in_government = 1 if ddp_e
 We have decided to form a Social-Liberal coalition with the <span style="color: #E3000F;">**SPD**</span>. A coalition like this has never been tried before, we have increased leverage when picking our ministries, and the <span style="color: #000000;">**center**</span> can't bring down the cabinet if we secularize education. Now we must choose who will be chancellor.
 
 - @curtius_social_liberal_coalition
-- @SPD_social_liberal_coalition
+- @SPD_social_liberal_coalition_1
+- @SPD_social_liberal_coalition_2
 
 @curtius_social_liberal_coalition
 title: Julius Curtius for Chancellor
@@ -696,7 +697,7 @@ go-to: ministries
 
 Julius Curtius has been appointed chancellor.
 
-@SPD_social_liberal_coalition
+@SPD_social_liberal_coalition_1
 title: Support Hermann Müller for chancellorship.
 subtitle: This will improve our relations with <span style="color: #E3000F;">**SPD**</span>.
 on-arrival: chancellor = "Müller"; spd_relation += 5
@@ -706,7 +707,7 @@ go-to: ministries
 
 Hermann Müller has been appointed chancellor.
 
-@SPD_social_liberal_coalition
+@SPD_social_liberal_coalition_2
 title: Support Otto Wels for chancellorship.
 subtitle: This will improve our relations with <span style="color: #E3000F;">**SPD**</span>.
 on-arrival: chancellor = "Wels"; spd_relation += 5
@@ -731,8 +732,10 @@ There are enough votes for a Weimar Coalition of the <span style="color: #000000
 Who should be the chancellor?
 
 - @dietrich_weimar_chancellor
-- @SPD_weimar_chancellor
-- @Z_weimar_chancellor
+- @SPD_weimar_chancellor_1
+- @SPD_weimar_chancellor_2
+- @Z_weimar_chancellor_1
+- @Z_weimar_chancellor_2
 
 @dietrich_weimar_chancellor
 title: Hermann Dietrich for Chancellor
@@ -743,7 +746,7 @@ go-to: ministries
 
 Hermann Dietrich has been appointed chancellor.
 
-@SPD_weimar_chancellor
+@SPD_weimar_chancellor_1
 title: Support Hermann Müller for chancellorship.
 subtitle: This will improve our relations with <span style="color: #E3000F;">**SPD**</span>.
 on-arrival: chancellor = "Müller"; spd_relation += 5
@@ -753,7 +756,7 @@ go-to: ministries
 
 Hermann Müller has been appointed chancellor.
 
-@SPD_weimar_chancellor
+@SPD_weimar_chancellor_2
 title: Support Otto Wels for chancellorship.
 subtitle: This will improve our relations with <span style="color: #E3000F;">**SPD**</span>.
 on-arrival: chancellor = "Wels"; spd_relation += 5
@@ -763,7 +766,7 @@ go-to: ministries
 
 Otto Wels has been appointed chancellor.
 
-@Z_weimar_chancellor
+@Z_weimar_chancellor_1
 title: Support Heinrich Brüning for chancellorship.
 subtitle: This will improve our relations with the <span style="color: #000000;">**Center**</span>.
 on-arrival: chancellor = "Brüning"; chancellor_party = "Z"
@@ -773,7 +776,7 @@ go-to: ministries
 
 Heinrich Brüning has been appointed chancellor.
 
-@Z_weimar_chancellor
+@Z_weimar_chancellor_2
 title: Support Konrad Adenauer for chancellorship.
 subtitle: This will improve our relations with the <span style="color: #000000;">**Center**</span>.
 on-arrival: chancellor = "Adenauer"; chancellor_party = "Z"
@@ -799,11 +802,13 @@ on-arrival: spd_in_government = 1; z_in_government; ddp_in_government if ddp_exi
 
 Who should be the chancellor?
 
-- @spd_grand_chancellor
-- @z_grand_chancellor
+- @spd_grand_chancellor_1
+- @spd_grand_chancellor_2
+- @z_grand_chancellor_1
+- @z_grand_chancellor_2
 - @coalition_menu: What are the other governing arrangements?
 
-@spd_grand_chancellor
+@spd_grand_chancellor_1
 title: Support Hermann Müller for Chancellor
 view-if: muller_dead == 0
 subtitle: Müller is the preferred candidate of the <span style="color: #E3000F;">**SPD**</span> and other parties. This may give us a better position in negotiating for other cabinet positions.
@@ -812,7 +817,7 @@ go-to: ministries
 
 Müller's appointment as chancellor is approved by all members of the coalition.
 
-@spd_grand_chancellor
+@spd_grand_chancellor_2
 title: Support Otto Wels for Chancellor
 view-if: muller_dead == 1
 subtitle: Otto Wels is the leader of <span style="color: #E3000F;">**SPD**</span>, but can he also be chancellor? This may give us a better position in negotiating for other cabinet positions.
@@ -821,7 +826,7 @@ go-to: ministries
 
 Otto Wels's appointment as chancellor is approved by all members of the coalition.
 
-@z_grand_chancellor
+@z_grand_chancellor_1
 title: Support Heinrich Brüning for chancellorship.
 subtitle: This will improve our relations with the <span style="color: #000000;">**Center**</span>.
 on-arrival: chancellor = "Brüning"; chancellor_party = "Z"; z_relation += 5
@@ -832,7 +837,7 @@ The <span style="color: #E3000F;">**SPD**</span> reluctantly accepts Brüning's 
 
 [? if year == 1928 : Since Wilhelm Marx resigned, Heinrich Brüning has been appointed chancellor. ?]
 
-@z_grand_chancellor
+@z_grand_chancellor_2
 title: Support Konrad Adenauer for chancellorship.
 subtitle: This will improve our relations with the <span style="color: #000000;">**Center**</span>.
 on-arrival: chancellor = "Adenauer"; chancellor_party = "Z"; z_relation += 5
@@ -904,7 +909,8 @@ We have enough votes to form a "Bourgeois Coalition" government consisting of th
 Who should be the chancellor?
 
 - @kardorff_bourgeois_chancellor
-- @z_bourgeois_chancellor
+- @z_bourgeois_chancellor_1
+- @z_bourgeois_chancellor_2
 
 @kardorff_bourgeois_chancellor
 title: Siegfried Kardorff for Chancellor
@@ -916,7 +922,7 @@ go-to: ministries
 
 Siegfried Kardorff has been appointed chancellor.
 
-@z_bourgeois_chancellor
+@z_bourgeois_chancellor_1
 title: Support Heinrich Brüning for chancellorship.
 subtitle: This will improve our relations with the <span style="color: #000000;">**Center**</span>.
 on-arrival: chancellor = "Brüning"; chancellor_party = "Z"; z_relation += 5; leverage += 5
@@ -926,7 +932,7 @@ go-to: ministries
 
 Heinrich Brüning has been appointed chancellor.
 
-@z_bourgeois_chancellor
+@z_bourgeois_chancellor_2
 title: Support Konrad Adenauer for chancellorship.
 subtitle: This will improve our relations with the <span style="color: #000000;">**Center**</span>.
 on-arrival: chancellor = "Adenauer"; chancellor_party = "Z"; z_relation += 5; leverage += 5
@@ -949,7 +955,8 @@ There are enough votes for a Center-Right Coalition of the <span style="color: #
 Who should be the chancellor?
 
 - @scholz_center_right_chancellor 
-- @z_center_right_chancellor
+- @z_center_right_chancellor_1
+- @z_center_right_chancellor_2
 
 @scholz_center_right_chancellor
 title: Ernst Scholz for Chancellor
@@ -960,7 +967,7 @@ go-to: ministries
 
 Ernst Scholz has been appointed chancellor.
 
-@z_center_right_chancellor
+@z_center_right_chancellor_1
 title: Support Heinrich Brüning for chancellorship.
 subtitle: This will improve our relations with the <span style="color: #000000;">**Center**</span>.
 on-arrival: chancellor = "Brüning"; chancellor_party = "Z"; z_relation += 5
@@ -970,7 +977,7 @@ go-to: ministries
 
 Heinrich Brüning has been appointed chancellor.
 
-@z_center_right_chancellor
+@z_center_right_chancellor_2
 title: Support Konrad Adenauer for chancellorship.
 subtitle: This will improve our relations with the <span style="color: #000000;">**Center**</span>.
 on-arrival: chancellor = "Adenauer"; chancellor_party = "Z"; z_relation += 5
