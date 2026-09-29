@@ -13,6 +13,7 @@ if (Q.dvp_hanover) Q.landtag_power += dvp_hl * 0.1;
 if (Q.dvp_saxony) Q.landtag_power += dvp_sl * 0.1;
 if (Q.dvp_wurttemberg) Q.landtag_power += dvp_wl * 0.1;
 if (Q.dvp_hamburg) Q.landtag_power += dvp_hb * 0.05;
+Q.landtag_power_100 = 0.01*landtag_power
 !}
 tags: landtag_affairs
 card-image: img/braun.jpg
@@ -40,7 +41,7 @@ Our policies help us improve the popularity of our party among our base, the mid
 
 @target_kpd
 subtitle: Including the <span style="color: #8B0000;">**RFB**</span>.
-on-arrival: workers_kpd -= landtag_power*(1-dissent); unemployed_kpd -= landtag_power*(1-dissent); rfb_strength *= (1-0.01*landtag_power); rfb_militancy *= (1-0.01*landtag_power)
+on-arrival: workers_kpd -= landtag_power*(1-dissent); unemployed_kpd -= landtag_power*(1-dissent); rfb_strength *= (1-landtag_power_100); rfb_militancy *= (1-landtag_power_100)
 
 <span style="color: #8B0000;">**KPD**</span> party newspapers, gatherings and party headquarters are closed or otherwise cracked down on all German states which we govern. <span style="color: #8B0000;">**RFB**</span> members are arrested and their weapons seized.
 
@@ -55,13 +56,13 @@ on-arrival: workers_spd -= landtag_power*(1-dissent); unemployed_spd -= landtag_
 subtitle: And their violent paramilitary, the <span style="color: #954B00;">**SA**</span>.
 choose-if: black_thursday_seen
 unavailable-subtitle: Who are these people?
-on-arrival: new_middle_nsdap -= landtag_power*(1-dissent); old_middle_nsdap -= landtag_power*(1-dissent); rural_nsdap -= landtag_power*(1-dissent); unemployed_spd -= landtag_power*(1-dissent); sa_strength *= (1-0.01*landtag_power); sa_militancy *= (1-0.01*landtag_power)
+on-arrival: new_middle_nsdap -= landtag_power*(1-dissent); old_middle_nsdap -= landtag_power*(1-dissent); rural_nsdap -= landtag_power*(1-dissent); unemployed_spd -= landtag_power*(1-dissent); sa_strength *= (1-landtag_power_100); sa_militancy *= (1-landtag_power_100)
 
 <span style="color: #954B00;">**SA**</span> meetings are disrupted by local police, their members arrested and weapons seized.
 
 @strengthen_police
 view-if: dvp_increase_police
-on-arrival: prussian_police_strength += landtag_power; prussian_police_loyalty *= (1+0.01*landtag_power)
+on-arrival: prussian_police_strength += landtag_power; prussian_police_loyalty *= (1+landtag_power_100)
 
 We have increased the size of the local polices, and swayed officers to our side.
 
