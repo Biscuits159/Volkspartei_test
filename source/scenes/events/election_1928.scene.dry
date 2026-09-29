@@ -1090,11 +1090,6 @@ Alternatively, [+ president +] could use the emergency powers of the presidency.
 - @new_elections: We will have new elections.
 - @far_right_win: Let the Nazis form their government.
 
-@far_right_win
-on-arrival: chancellor = "Hitler"; chancellor_party = "NSDAP"; foreign_minister = 'Neurath'; foreign_minister_party = 'I'; interior_minister = 'Frick'; interior_minister_party = 'NSDAP'; justice_minister = 'Gürtner'; justice_minister_party = 'DNVP' if dnvp_ideology = "Radical"; justice_minister_party = 'DNF' if dnf_formed; labor_minister = 'Seldte'; labor_minister_party = 'DNVP' if dnvp_ideology = "Radical"; labor_minister_party = 'DNF' if dnf_formed; reichswehr_minister = 'Blomberg'; reichswehr_minister_party = 'I'; economic_minister = 'Hugenberg'; economic_minister_party = 'DNVP' if dnvp_ideology = "Radical"; economic_minister_party = 'DNF' if dnf_formed; finance_minister = 'Krosigk'; finance_minister_party = 'I'; agriculture_minister = 'Hugenberg'; agriculture_minister_party = 'DNVP' if dnvp_ideology = "Radical"; agriculture_minister_party = 'DNF' if dnf_formed;
-
-[? if president == "Hindenburg" : President Hindenburg's camarilla ?][? if president != "Hindenburg" : President [+ president +] somehow ?] has decided that the leader of NSDAP must be chancellor [? if president == "Hindenburg": , and the aging president accepts their recommendations. ?][? if president != "Hindenburg" : because it is what the constitution would stipulate. ?]
-
 
 @no_majority
 title: There is no clear governing majority.
