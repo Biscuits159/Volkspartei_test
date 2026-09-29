@@ -48,8 +48,8 @@ on-arrival: workers_dvp += 2*(1-dissent); new_middle_dvp += 3*(1-dissent); old_m
 
 In the face of the banking crisis, we have taken emergency action to stabilize the economy by injecting money into the banking system. It might not be enough, but it temporarily staunches the bleeding.
 
-@stabilization
-view-if: spd_in_government and dvp_in_government = 0
+@spd_stabilization
+view-if: spd_in_government and dvp_in_government == 0
 on-arrival: workers_spd += 3*(1-dissent); new_middle_spd += 3*(1-dissent); old_middle_spd += 2*(1-dissent); rural_spd += 2*(1-dissent); unemployed -= 2; inflation += 1 if inflation < 0; budget -= 1; workers_nsdap -= 3; economic_growth += 1;
 
 The <span style="color: #E3000F;">**SPD**</span> moves quickly to stabilize the economy by injecting money into the banking system. It might not be enough, but it temporarily staunches the bleeding.
