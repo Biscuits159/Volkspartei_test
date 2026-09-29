@@ -585,7 +585,6 @@ Q.csvd_exist = 0
 
 Q.spd_right = 3
 Q.spd_left = 0
-Q.spd_ideology = "Right"
 
 Q.aspd_exist = 0
 Q.aspd_ideology = "Moderate"
@@ -873,6 +872,7 @@ Q.unemployment_insurance_seen = 0;
 // unemployment insurance event is seen if the unemployment level is at least 4 more than the threshold...
 Q.unemployment_insurance_threshold = 10;
 Q.blutmai = 0;
+Q.wittorf_affair_published = 0;
 
 // have we reformed these institutions to be more democratic?
 Q.judicial_reform = 0;
@@ -1046,7 +1046,6 @@ Q.unemployment_insurance_timer = 0;
 Q.rb_ban_timer = 0;
 Q.sa_ban_timer = 0;
 Q.sh_ban_timer = 0;
-Q.kpd_ultimatum_timer = 0;
 Q.march_on_berlin_timer = 0;
 
 Q.papen_chancellor_time = 0;

@@ -859,7 +859,7 @@ if ((!Q.rubicon && Q.month_actions >= 1) || (Q.rubicon && Q.month_actions >= 4))
         Q.bruning_toleration_time = 0;
     }
     if (Q.spd_toleration) {
-        Q.spd_patience -= (5 - spd_relation * 0.02);
+        Q.spd_patience -= (5-0.02*spd_relation);
     }
     
     if (Q.bruning_chancellor_time == 1) {
