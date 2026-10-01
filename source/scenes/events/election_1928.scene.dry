@@ -259,7 +259,7 @@ if (Q.kvp_formed) Q.center_right_coalition = parseFloat((Q.z_r + Q.dvp_r + Q.oth
 if (!Q.kvp_formed) Q.center_right_coalition = parseFloat((Q.z_r + Q.dvp_r + Q.other_r + Q.dnvp_r + Q.wp_r + Q.dbp_r + Q.cnblp_r + Q.csvd_r + Q.csrp_r).toFixed(1));
 if (Q.aspd_exist && Q.aspd_ideology == "Moderate") Q.center_right_coalition = parseFloat((Q.center_right_coalition + Q.aspd_r).toFixed(1));
 
-if (Q.dnvp_ideology == "Moderate") Q.hindenburg_coalition = parseFloat((Q.dvp_r + Q.bvp_r + Q.other_r + Q.dnvp_r + Q.wp_r + Q.dbp_r + Q.cnblp_r + Q.csvd_r + Q.csrp_r).toFixed(1));
+if (Q.dnvp_ideology == "Moderate") Q.rg_coalition = parseFloat((Q.dvp_r + Q.bvp_r + Q.other_r + Q.dnvp_r + Q.wp_r + Q.dbp_r + Q.cnblp_r + Q.csvd_r + Q.csrp_r).toFixed(1));
 
 Q.neo_weimar_coalition = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r + Q.other_r + Q.kvp_r + Q.wp_r + Q.dbp_r + Q.cnblp_r + Q.csvd_r + Q.csrp_r).toFixed(1));
 if (Q.dnvp_ideology == "Moderate") Q.neo_weimar_coalition = parseFloat((Q.neo_weimar_coalition + Q.dnvp_r).toFixed(1));
@@ -280,8 +280,8 @@ Q.leverage = Q.dvp_r;
 Q.grand_coalition_failed = 0;
 
 // Reset government and ministers... Based on Brüning's 1930 govt
-Q.hindenburg_angry_old = Q.hindenburg_angry;
-Q.hindenburg_angry = 0;
+Q.rg_angry_old = Q.rg_angry;
+Q.rg_angry = 0;
 
 Q.spd_in_government = 0;
 Q.z_in_government = 0;
@@ -991,7 +991,7 @@ With Brüning too unpopular, Konrad Adenauer has been appointed chancellor.
 
 @hindenburg_coalition
 title: A "Hindenburg Bloc" may be formed.
-view-if: hindenburg_coalition >= 50 and (dnvp_relation >= 40 if dnvp_ideology = "Moderate" or dnvp_relation >= 50 if dnvp_relation == "Radical") and dnvp_leader != "Hugenberg"
+view-if: hindenburg_coalition >= 50 and dnvp_relation >= 40 and dnvp_leader != "Hugenberg"
 subtitle: This will be very unpopular within the left of our party. {!<br><br>!} <span style="color: #69A2BE;">**BVP**</span> + <span style="color: var(--dvp-color);">**[+ dvp_name +]**</span> + <span style="color: #3F7BC1;">**DNVP**</span> + [? if wp_exist: <span style="color: #B8996F;">**WP**</span> +  ?][? if cnblp_exist: <span style="color: #7FCEB1;">**CNBLP**</span> +  ?][? if csvd_exist: <span style="color: #8ED8E4;">**CSVD**</span> +  ?] <span style="color: #909090;">**Others**</span> ([+ center_right_coalition +]%)
 unavailable-subtitle: [? if dnvp_leader == "Hugenberg": Hugenberg is not interested in constructive governance.?][? if (dnvp_relation < 40 and dnvp_ideology == "Radical" or dnvp_relation < 50): Our relations aren't high enough.?]
 on-arrival: leverage += 5; dvp_in_government = 1; dnvp_in_government = 1; in_hindenburg_coalition = 1; chancellor = "Westarp"; chancellor_party = "DNVP"; foreign_minister = "Hassell"; foreign_minister_party = "DNVP"; interior_minister = "Keudell"; interior_minister_party = "DNVP"; justice_minister = "Hergt"; justice_minister_party = "DNVP"; labor_minister = "Seldte"; labor_minister_party = "DNVP"; reichswehr_minister = "Blomberg"; reichswehr_minister_party = "DNVP"; economic_minister = "Neuhaus"; economic_minister_party = "DNVP"; finance_minister = "Schlieben"; finance_minister_party = "DNVP"; agriculture_minister = "Kanitz"; agriculture_minister_party = "I"; pro_republic -= 5 if dnvp_republican = 0; liberal_dissent += 10; labor_dissent += 7; spd_relation -= 7;
