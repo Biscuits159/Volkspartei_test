@@ -6,13 +6,13 @@ on-arrival: {!
 Q.landtag_policy_timer += 12; 
 Q.month_actions += 1;
 Q.landtag_power = 0;
-if (Q.dvp_prussia) Q.landtag_power += dvp_pl * 0.2;
-if (Q.dvp_austria) Q.landtag_power += dvp_al * 0.1;
-if (Q.dvp_bavaria) Q.landtag_power += dvp_bl * 0.1;
-if (Q.dvp_hanover) Q.landtag_power += dvp_hl * 0.1;
-if (Q.dvp_saxony) Q.landtag_power += dvp_sl * 0.1;
-if (Q.dvp_wurttemberg) Q.landtag_power += dvp_wl * 0.1;
-if (Q.dvp_hamburg) Q.landtag_power += dvp_hb * 0.05;
+if (Q.dvp_prussia) Q.landtag_power += dvp_pl * 0.6;
+if (Q.dvp_austria) Q.landtag_power += dvp_al * 0.3;
+if (Q.dvp_bavaria) Q.landtag_power += dvp_bl * 0.3;
+if (Q.dvp_hanover) Q.landtag_power += dvp_hl * 0.3;
+if (Q.dvp_saxony) Q.landtag_power += dvp_sl * 0.3;
+if (Q.dvp_wurttemberg) Q.landtag_power += dvp_wl * 0.3;
+if (Q.dvp_hamburg) Q.landtag_power += dvp_hb * 0.1;
 Q.landtag_power_100 = 0.01*landtag_power
 !}
 tags: landtag_affairs
