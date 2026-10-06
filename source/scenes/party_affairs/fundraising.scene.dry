@@ -17,7 +17,6 @@ To finance our party's operations, we receive donations from wealthy industriali
 
 @maintain
 subtitle: [+ dues + industrial_funds +] resources will be collected.
-on-arrival: resources += dues;
 
 We maintain our current dues.
 

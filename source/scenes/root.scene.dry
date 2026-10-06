@@ -947,7 +947,7 @@ Q.timers = ['advisor_action', 'crisis_program',
             // govt
             'agricultural_policy', 'domestic_enemies', 'fiscal_policy', 'monetary_policy',
             'foreign_policy', 'judiciary', 'labor_affairs', 'military_policy',
-            'police', 'prussian_affairs', 'shuffle_cabinet', 'social_welfare',
+            'police', 'prussian_affairs', 'landtag_policy', 'shuffle_cabinet', 'social_welfare',
             'homosexual_rights', 'economic_policy', 'coalition_affairs',
             'war_guilt', 'dealing_with_toleration',
             'constitutional_reform', 'labor_rights',

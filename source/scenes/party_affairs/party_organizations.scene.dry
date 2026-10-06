@@ -75,6 +75,7 @@ We have increased recruiting to the Reichsbanner.
 
 @fund_stahlhelm
 choose-if: resources > 0
+view-if: dvp_in_stahlhelm
 unavailable-subtitle: Not enough resources.
 subtitle: -1 resources
 on-arrival: resources -= 1; sh_strength += 50; sh_militancy += 0.02

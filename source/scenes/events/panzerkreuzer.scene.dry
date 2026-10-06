@@ -26,7 +26,7 @@ Remilitarisation and restoring our lost prestige are the priorities of this gove
 
 @vote_yes
 title: We will vote yes, for constructing the battlecruiser, naturally.
-on-arrival: liberal_strength += 5; panzerkreuzer_funded = 1; coalition_dissent -= 1 if in_grand_coalition; workers_spd -= 3; ddp_cohesion -= 1
+on-arrival: liberal_strength += 5; panzerkreuzer_funded = 1; workers_spd -= 3; ddp_cohesion -= 1
 
 <span style="color: #E3000F;">**SPD**</span>'s grassroots party members are shocked by their intransigence! Many party branches have begun agitating against the cabinet, and our Reichstag members even plan a full vote on the proposal, contravening the government's decision.
 
@@ -47,7 +47,7 @@ Not building the battlecruiser would severely alienate our industrialist and nat
 
 @nevermind
 title: Nevermind, we will vote for building the ship.
-on-arrival: liberal_strength += 5; panzerkreuzer_funded = 1; coalition_dissent -= 1 if in_grand_coalition; workers_spd -= 3; ddp_cohesion -= 1
+on-arrival: liberal_strength += 5; panzerkreuzer_funded = 1; workers_spd -= 3; ddp_cohesion -= 1
 
 <span style="color: #E3000F;">**SPD**</span>'s grassroots party members are shocked by their intransigence! Many party branches have begun agitating against the cabinet, and our Reichstag members even plan a full vote on the proposal, contravening the government's decision.
 

@@ -1,4 +1,4 @@
-title: Our Landtag Policies
+title: Landtag Policy
 new-page: true
 is-card: true
 view-if: (dvp_prussia or dvp_austria or dvp_bavaria or dvp_hanover or dvp_saxony or dvp_wurttemberg or dvp_hamburg) and landtag_policy_timer <= 0
@@ -16,7 +16,7 @@ if (Q.dvp_hamburg) Q.landtag_power += dvp_hb * 0.05;
 Q.landtag_power_100 = 0.01*landtag_power
 !}
 tags: landtag_affairs
-card-image: img/braun.jpg
+card-image: img/bavarian_landtag.jpg
 #subtitle: The state government of Prussia is a bulwark of democracy...
 
 = Landtag Policy
