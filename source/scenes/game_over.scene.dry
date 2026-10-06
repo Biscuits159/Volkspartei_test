@@ -147,8 +147,10 @@ view-if: achievement_game_completed == 1
 tags: endings
 go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
+
 = Completed Achievements in this Playthrough
 
+{!<table style="width: 100%; border-collapse: collapse; background-color: #f4f4f4;">!}
 
 [? if game_achievement_red_tzar_of_prussia:
 {!<tr>!}
@@ -179,10 +181,12 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
   {!</td>!}
 {!</tr>!}
 ?]
+{!</table>!}
 
 
 = Completed Achievements Overall
 
+{!<table style="width: 100%; border-collapse: collapse; background-color: #f4f4f4;">!}
 
 [? if achievement_red_tzar_of_prussia:
 {!<tr>!}
@@ -213,10 +217,13 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
   {!</td>!}
 {!</tr>!}
 ?]
+{!</table>!}
 
 
 = Incomplete Achievements
 
+
+{!<table style="width: 100%; border-collapse: collapse; background-color: #f4f4f4;">!}
 
 [? if not achievement_red_tzar_of_prussia:
 {!<tr>!}
@@ -247,7 +254,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
   {!</td>!}
 {!</tr>!}
 ?]
-
+{!</table>!}
 
 
 @end_game
