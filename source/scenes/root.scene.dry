@@ -1114,11 +1114,11 @@ Creator of the mod does not support or justify extremist ideologies. This mod is
 - @1928_historical: Begin (historical mode)
 
 @1928_easy
-on-arrival: difficulty = -1; resources = 4; dues = 2; industrial_funds = 3; rb_strength = 2500; kpd_relation = 0; z_relation = 55; spd_relation = 45; budget = 5;
+on-arrival: difficulty = -1; resources = 4; dues = 1; industrial_funds = 3; rb_strength = 2500; kpd_relation = 0; z_relation = 55; spd_relation = 45; budget = 5;
 go-to: 1928_main
 
 @1928_hard
-on-arrival: difficulty = 1; resources = 0; dues = 0; industrial_funds = 1; rb_strength = 1000; liberal_dissent = 25; nationalist_dissent = 30; labor_dissent = 25; industrialist_dissent = 25; z_relation = 45; kpd_relation = 0; spd_relation = 30; budget = 3;
+on-arrival: difficulty = 1; resources = 0; dues = 1; industrial_funds = 1; rb_strength = 1000; liberal_dissent = 25; nationalist_dissent = 30; labor_dissent = 25; industrialist_dissent = 25; z_relation = 45; kpd_relation = 0; spd_relation = 30; budget = 3;
 go-to: 1928_main
 
 @1928_historical

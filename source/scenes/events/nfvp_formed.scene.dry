@@ -1,9 +1,7 @@
 on-arrival: {!
 Q.newspaper += 2;
-Q.dues += 3;
+Q.dues += 2;
 if (Q.dues > 5) dues = 5;
-Q.industrial_funds += 1;
-if (Q.industrial_funds > 5) industrial_funds = 
 
 Q.nfvp_formed = 1;
 Q.ddp_exist = 0;
