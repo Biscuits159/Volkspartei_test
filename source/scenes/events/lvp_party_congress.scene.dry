@@ -58,6 +58,7 @@ if (Q.industrialists_dvp) Q.industrialist_influence = parseFloat((Q.industrialis
 
 if (Q.dbp_dvp) Q.dbp_influence = parseFloat((2*(Q.dbp_share/Q.total_special_interest)).toFixed(1))
 if (Q.wp_dvp) Q.wp_influence = parseFloat((2*(Q.wp_share/Q.total_special_interest)).toFixed(1))
+!}
 
 
 on-display: {!
