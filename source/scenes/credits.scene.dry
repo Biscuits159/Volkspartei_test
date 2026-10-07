@@ -1,17 +1,6 @@
 title: Credits
 
-<a href="https://github.com/Biscuits159/volkspartei_alternate_history">The Source Code.</a>
-
-Many works were referenced in the making of this game.
-
-- @people: People
-- @books: Books
-- @articles: Articles
-- @images: Image sources
-- @music: Music sources
-- @root: Back
-
-@people
+People who helped the original modder, WilhelmVon500:
 
 kaiduck, TechRush - coding
 
@@ -20,6 +9,41 @@ originn0 - coding advice
 mitsuki, Sarah - writing
 
 a lot of other people - historical advice, ideas, playtesting
+
+{!<hr width="100%" size="2">!}
+
+Hello, thank you for checking out the mod. This is a fork of the original DVP mod that aims to expand upon it, adding more mechanics, cards, events and other features, in a "dynamic" version of the original. However, expect development to be slow and uneven.
+
+<a href="https://github.com/Biscuits159/volkspartei_alternate_history">The Source Code.</a>
+
+**V0.1 - October 2026**
+
+- Added more descriptions.
+
+- Changed Z, DNVP, NFVP, Battlecruiser and other events.
+
+- Changed fundraising.
+
+- Fixed/improved advisors.
+
+- Added an economic policy card.
+
+- Added a few achievements.
+
+- Party Congresses are now affected by and affect a faction's popularity.
+
+- Bug fixes.
+
+- Other things I don't remember.
+
+Many works were referenced in the making of this game.
+
+- @books: Books
+- @articles: Articles
+- @images: Image sources
+- @music: Music sources
+- @root: Back
+
 
 @books
 

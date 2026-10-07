@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 card-image: img/ballot.jpg
 view-if: negotiation_others_timer = 0 and (wp_exist or dbp_exist or cnblp_exist or vrp_exist)
-on-arrival: negotiation_others_timer = 6
+on-arrival: negotiation_others_timer = 6; month_actions += 1
 tags: parliamentary_affairs
 
 = Negotiations with Smaller Parties

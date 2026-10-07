@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 card-image: img/zentrum.jpg
 view-if: negotiation_z_timer = 0
-on-arrival: negotiation_z_timer = 6
+on-arrival: negotiation_z_timer = 6; month_actions += 1
 tags: parliamentary_affairs
 
 = Negotiations with Right-Wing parties

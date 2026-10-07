@@ -8,9 +8,8 @@ Q.game_over = 1;
 // Eiserne Front - Form the Iron Front.
 this.achieve('game_completed');
 
-// Roter Zar von Preußen - At the end of the game, Otto Braun is president, chancellor, and minister-president of prussia at the same time.
-if (Q.president == 'Braun' && Q.chancellor == 'Braun' && Q.spd_prussia) {
-    this.achieve('red_tzar_of_prussia');
+if (Q.cnblp_dvp && Q.dbp_dvp && Q.vrp_dvp && Q.wp_dvp) {
+    this.achieve('biggest_tent');
 }
 if (Q.small_privatizations == 3 && Q.big_privatizations == 2) {
     this.achieve('full_privatization');
@@ -152,16 +151,61 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 {!<table style="width: 100%; border-collapse: collapse; background-color: #f4f4f4;">!}
 
-[? if game_achievement_red_tzar_of_prussia:
+[? if game_achievement_stresemann_lives:
 {!<tr>!}
   {!<td style="width: 60px; height: 60px; vertical-align: middle; text-align: center; border: 2px solid #C0A054; background-color: rgba(192, 0, 0, 0.1);">!}
-    <img src="img/portraits/BraunOtto.png" alt="Red Tzar Icon"
+    <img src="img/achievements/stresemann_lives.jpg" alt="Stresemann Lives Icon"
          style="width: 100%; height: 100%; object-fit: cover; display: block;">
   {!</td>!}
   {!<td style="border: 2px solid #C0A054; background-color: rgba(91, 154, 141, 0.1);">!}
     <div style="padding-left: 0.5em;">
-      <div style="font-weight: bold;">Roter Zar von Preußen</div>
-      <div style="font-size: 90%; color: #444; "> - Otto Braun is President, Chancellor, and Minister-President.</div>
+      <div style="font-weight: bold;">Not dead yet</div>
+      <div style="font-size: 90%; color: #444; "> - Stresemann survives.</div>
+    </div>
+  {!</td>!}
+{!</tr>!}
+?]
+
+[? if game_achievement_majority_party:
+{!<tr>!}
+  {!<td style="width: 60px; height: 60px; vertical-align: middle; text-align: center; border: 2px solid #C0A054; background-color: rgba(192, 0, 0, 0.1);">!}
+   <img src="img/achievements/dvp_majority.png" alt="DVP Majority Icon"
+         style="width: 100%; height: 100%; object-fit: cover; display: block;">
+  {!</td>!}
+  {!<td style="border: 2px solid #C0A054; background-color: rgba(91, 154, 141, 0.1);">!}
+    <div style="padding-left: 0.5em;">
+      <div style="font-weight: bold;">Majority</div>
+      <div style="font-size: 90%; color: #444; "> - Form a majority government.</div>
+    </div>
+  {!</td>!}
+{!</tr>!}
+?]
+
+[? if game_achievement_biggest_tent:
+{!<tr>!}
+  {!<td style="width: 60px; height: 60px; vertical-align: middle; text-align: center; border: 2px solid #C0A054; background-color: rgba(192, 0, 0, 0.1);">!}
+   <img src="img/achievements/big_tent.png" alt="Big Tent Icon"
+         style="width: 100%; height: 100%; object-fit: cover; display: block;">
+  {!</td>!}
+  {!<td style="border: 2px solid #C0A054; background-color: rgba(91, 154, 141, 0.1);">!}
+    <div style="padding-left: 0.5em;">
+      <div style="font-weight: bold;">The Biggest of Tents</div>
+      <div style="font-size: 90%; color: #444; "> - Absorb all minor bourgeois parties.</div>
+    </div>
+  {!</td>!}
+{!</tr>!}
+?]
+
+[? if game_achievement_bourgeois_coalition:
+{!<tr>!}
+  {!<td style="width: 60px; height: 60px; vertical-align: middle; text-align: center; border: 2px solid #C0A054; background-color: rgba(192, 0, 0, 0.1);">!}
+   <img src="img/achievements/dream_team.png" alt="Dream Team Icon"
+         style="width: 100%; height: 100%; object-fit: cover; display: block;">
+  {!</td>!}
+  {!<td style="border: 2px solid #C0A054; background-color: rgba(91, 154, 141, 0.1);">!}
+    <div style="padding-left: 0.5em;">
+      <div style="font-weight: bold;">Bourgeois Coalition</div>
+      <div style="font-size: 90%; color: #444; "> - Form a bourgeois coalition.</div>
     </div>
   {!</td>!}
 {!</tr>!}
@@ -188,16 +232,61 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 {!<table style="width: 100%; border-collapse: collapse; background-color: #f4f4f4;">!}
 
-[? if achievement_red_tzar_of_prussia:
+[? if achievement_stresemann_lives:
 {!<tr>!}
   {!<td style="width: 60px; height: 60px; vertical-align: middle; text-align: center; border: 2px solid #C0A054; background-color: rgba(192, 0, 0, 0.1);">!}
-    <img src="img/portraits/BraunOtto.png" alt="Red Tzar Icon"
+   <img src="img/achievements/stresemann_lives.jpg" alt="Stresemann Lives Icon"
          style="width: 100%; height: 100%; object-fit: cover; display: block;">
   {!</td>!}
   {!<td style="border: 2px solid #C0A054; background-color: rgba(91, 154, 141, 0.1);">!}
     <div style="padding-left: 0.5em;">
-      <div style="font-weight: bold;">Roter Zar von Preußen</div>
-      <div style="font-size: 90%; color: #444; "> - Otto Braun is President, Chancellor, and Minister-President.</div>
+      <div style="font-weight: bold;">Not dead yet</div>
+      <div style="font-size: 90%; color: #444; "> - Stresemann survives.</div>
+    </div>
+  {!</td>!}
+{!</tr>!}
+?]
+
+[? if achievement_majority_party:
+{!<tr>!}
+  {!<td style="width: 60px; height: 60px; vertical-align: middle; text-align: center; border: 2px solid #C0A054; background-color: rgba(192, 0, 0, 0.1);">!}
+   <img src="img/achievements/dvp_majority.png" alt="DVP Majority Icon"
+         style="width: 100%; height: 100%; object-fit: cover; display: block;">
+  {!</td>!}
+  {!<td style="border: 2px solid #C0A054; background-color: rgba(91, 154, 141, 0.1);">!}
+    <div style="padding-left: 0.5em;">
+      <div style="font-weight: bold;">Majority</div>
+      <div style="font-size: 90%; color: #444; "> - Form a majority government.</div>
+    </div>
+  {!</td>!}
+{!</tr>!}
+?]
+
+[? if achievement_biggest_tent:
+{!<tr>!}
+  {!<td style="width: 60px; height: 60px; vertical-align: middle; text-align: center; border: 2px solid #C0A054; background-color: rgba(192, 0, 0, 0.1);">!}
+   <img src="img/achievements/big_tent.png" alt="Big Tent Icon"
+         style="width: 100%; height: 100%; object-fit: cover; display: block;">
+  {!</td>!}
+  {!<td style="border: 2px solid #C0A054; background-color: rgba(91, 154, 141, 0.1);">!}
+    <div style="padding-left: 0.5em;">
+      <div style="font-weight: bold;">The Biggest of Tents</div>
+      <div style="font-size: 90%; color: #444; "> - Absorb all minor bourgeois parties.</div>
+    </div>
+  {!</td>!}
+{!</tr>!}
+?]
+
+[? if achievement_bourgeois_coalition:
+{!<tr>!}
+  {!<td style="width: 60px; height: 60px; vertical-align: middle; text-align: center; border: 2px solid #C0A054; background-color: rgba(192, 0, 0, 0.1);">!}
+   <img src="img/achievements/dream_team.png" alt="Dream Team Icon"
+         style="width: 100%; height: 100%; object-fit: cover; display: block;">
+  {!</td>!}
+  {!<td style="border: 2px solid #C0A054; background-color: rgba(91, 154, 141, 0.1);">!}
+    <div style="padding-left: 0.5em;">
+      <div style="font-weight: bold;">Bourgeois Coalition</div>
+      <div style="font-size: 90%; color: #444; "> - Form a bourgeois coalition.</div>
     </div>
   {!</td>!}
 {!</tr>!}
@@ -225,16 +314,61 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 {!<table style="width: 100%; border-collapse: collapse; background-color: #f4f4f4;">!}
 
-[? if not achievement_red_tzar_of_prussia:
+[? if not achievement_stresemann_lives:
 {!<tr>!}
   {!<td style="width: 60px; height: 60px; vertical-align: middle; text-align: center; border: 2px solid #C0A054; background-color: rgba(192, 0, 0, 0.1);">!}
-    <img src="img/portraits/BraunOtto.png" alt="Red Tzar Icon"
+   <img src="img/achievements/stresemann_lives.jpg" alt="Stresemann Lives Icon"
          style="width: 100%; height: 100%; object-fit: cover; display: block;">
   {!</td>!}
   {!<td style="border: 2px solid #C0A054; background-color: rgba(91, 154, 141, 0.1);">!}
     <div style="padding-left: 0.5em;">
-      <div style="font-weight: bold;">Roter Zar von Preußen</div>
-      <div style="font-size: 90%; color: #444; "> - Otto Braun is President, Chancellor, and Minister-President.</div>
+      <div style="font-weight: bold;">Not dead yet</div>
+      <div style="font-size: 90%; color: #444; "> - Stresemann survives.</div>
+    </div>
+  {!</td>!}
+{!</tr>!}
+?]
+
+[? if not achievement_majority_party:
+{!<tr>!}
+  {!<td style="width: 60px; height: 60px; vertical-align: middle; text-align: center; border: 2px solid #C0A054; background-color: rgba(192, 0, 0, 0.1);">!}
+   <img src="img/achievements/dvp_majority.png" alt="DVP Majority Icon"
+         style="width: 100%; height: 100%; object-fit: cover; display: block;">
+  {!</td>!}
+  {!<td style="border: 2px solid #C0A054; background-color: rgba(91, 154, 141, 0.1);">!}
+    <div style="padding-left: 0.5em;">
+      <div style="font-weight: bold;">Majority</div>
+      <div style="font-size: 90%; color: #444; "> - Form a majority government.</div>
+    </div>
+  {!</td>!}
+{!</tr>!}
+?]
+
+[? if not achievement_biggest_tent:
+{!<tr>!}
+  {!<td style="width: 60px; height: 60px; vertical-align: middle; text-align: center; border: 2px solid #C0A054; background-color: rgba(192, 0, 0, 0.1);">!}
+   <img src="img/achievements/big_tent.png" alt="Big Tent Icon"
+         style="width: 100%; height: 100%; object-fit: cover; display: block;">
+  {!</td>!}
+  {!<td style="border: 2px solid #C0A054; background-color: rgba(91, 154, 141, 0.1);">!}
+    <div style="padding-left: 0.5em;">
+      <div style="font-weight: bold;">The Biggest of Tents</div>
+      <div style="font-size: 90%; color: #444; "> - Absorb all minor bourgeois parties.</div>
+    </div>
+  {!</td>!}
+{!</tr>!}
+?]
+
+[? if not achievement_bourgeois_coalition:
+{!<tr>!}
+  {!<td style="width: 60px; height: 60px; vertical-align: middle; text-align: center; border: 2px solid #C0A054; background-color: rgba(192, 0, 0, 0.1);">!}
+   <img src="img/achievements/dream_team.png" alt="Dream Team Icon"
+         style="width: 100%; height: 100%; object-fit: cover; display: block;">
+  {!</td>!}
+  {!<td style="border: 2px solid #C0A054; background-color: rgba(91, 154, 141, 0.1);">!}
+    <div style="padding-left: 0.5em;">
+      <div style="font-weight: bold;">Bourgeois Coalition</div>
+      <div style="font-size: 90%; color: #444; "> - Form a bourgeois coalition.</div>
     </div>
   {!</td>!}
 {!</tr>!}
