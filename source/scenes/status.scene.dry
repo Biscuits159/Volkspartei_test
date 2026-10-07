@@ -143,7 +143,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 <span class="tooltip-text" title="Communist Party of Germany" style="color: #8B0000;">**KPD**</span>: <span style="color: #8B0000;">Stalinism</span> ([+ kpd_leader +])
 
-<span class="tooltip-text" title="Social Democratic Party of Germany" style="color: #E3000F;">**SPD**</span>: [? if spd_ideology = "Right": <span style="color: #E3000F;">Social Democracy</span> ?][? if spd_ideology = "Left": <span style="color: #E3000F;">Democratic Socialism</span> ?] ([+ spd_leader +]) 
+<span class="tooltip-text" title="Social Democratic Party of Germany" style="color: #E3000F;">**SPD**</span>: [? if spd_right >= spd_left: <span style="color: #E3000F;">Social Democracy</span> ?][? if spd_left > spd_right: <span style="color: #E3000F;">Democratic Socialism</span> ?] ([+ spd_leader +]) 
 
 [? if aspd_exist: <span class="tooltip-text" title="Old Social Democratic Party of Germany" style="color: #FE9E00;">**ASPD**</span>: [? if aspd_ideology = "Moderate": <span style="color: #FE9E00;">Nationalist Social Democracy</span> ?][? if aspd_ideology = "Radical": <span style="color: #954B00;">National Bolshevism</span> ?] ([+ aspd_leader +]) ?]
 
@@ -165,7 +165,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if kvp_formed: <span class="tooltip-text" title="Conservative People's Party" style="color: #455B95;">**KVP**</span>: <span style="color: #0087DC;">Christian Conservatism</span> ([+kvp_leader+]) ?]
 
-<span class="tooltip-text" title="German National People's Party" style="color: #3F7BC1;">**DNVP**</span>: [? if dnvp_leader = "Westarp" or dnvp_leader = "Hergt": <span style="color: #3F7BC1;">National Conservatism</span> ?][? if dnvp_leader = "Hugenberg": <span style="color: #003755;">Authoritarian Conservatism</span> ?][? if dnvp_leader = "Treviranus": <span style="color: #0087DC;">Tory Democracy</span> ?] ([+ dnvp_leader +])
+<span class="tooltip-text" title="German National People's Party" style="color: #3F7BC1;">**DNVP**</span>: [? if dnvp_leader != "Hugenberg" and dnvp_leader != "Treviranus": <span style="color: #3F7BC1;">National Conservatism</span> ?][? if dnvp_leader = "Hugenberg": <span style="color: #003755;">Authoritarian Conservatism</span> ?][? if dnvp_leader = "Treviranus": <span style="color: #0087DC;">Tory Democracy</span> ?] ([+ dnvp_leader +])
 
 [? if dnf_formed: <span class="tooltip-text" title="German National Front" style="color: #003755;">**DNF**</span>: <span style="color: #003755;">Authoritarian Conservatism</span> (Hugenberg) ?]
 

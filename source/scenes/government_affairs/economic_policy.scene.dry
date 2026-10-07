@@ -21,7 +21,7 @@ For us, economic policy involves deregulation and privatization.
 @deregulate_businesses
 title: Deregulate businesses.
 subtitle: Reduce state regulations over enterprises.
-on-arrival: business_deregulation += 1; coalition_dissent += 1 if spd_in_government; new_middle_dvp += 5*(1-dissent); old_middle_dvp += 7*(1-dissent); workers_dvp -= 4; capital_strike_progress -= 1; labor_dissent += 5; industrialist_dissent -= 8; liberal_dissent -= 4; spd_relation -= 5; ddp_relation += 3; ddp_cohesion -= 1; economic_growth += 0.2 if economic_growth < 3
+on-arrival: business_deregulation += 1; coalition_dissent += 1 if spd_in_government; new_middle_dvp += 5*(1-dissent); old_middle_dvp += 7*(1-dissent); workers_dvp -= 2; capital_strike_progress -= 1; labor_dissent += 5; industrialist_dissent -= 8; liberal_dissent -= 4; spd_relation -= 5; ddp_relation += 3; ddp_cohesion -= 1; economic_growth += 0.2 if economic_growth < 3
 max-visits: 3
 
 We have reduced regulations on strategic businesses, saving some from failure and encouraging growth on others. The economy benefits from this slightly, at the expense of our support among workers.

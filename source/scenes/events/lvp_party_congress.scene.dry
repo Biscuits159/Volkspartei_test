@@ -18,7 +18,6 @@ Q.democratic_influence = 0;
 Q.liberal_influence = 0;
 Q.labor_influence = 0;
 Q.industrialist_influence = 0;
-Q.special_interest_influence = 0;
 
 Q.dbp_influence = 0;
 Q.wp_influence = 0;
@@ -40,21 +39,16 @@ if (Q.labor_dvp) {
 if (Q.industrialists_dvp) {
     Q.total_influence = parseFloat((Q.total_influence + Q.industrialist_strength).toFixed(1))
 }
-
-if (Q.special_interest_dvp) {
-    Q.total_influence = parseFloat((Q.total_influence + Q.special_interest_strength).toFixed(1))
-    Q.total_special_interest = 0;
-    if (Q.dbp_dvp) {
-        Q.dbp_share = parseFloat((Q.rural_dvp*(Q.progressive_strength + Q.democratic_strength + Q.liberal_strength)*0.05).toFixed(1))
-        Q.total_special_interest += Q.dbp_share
-    }
-    if (Q.wp_dvp) {
-        Q.wp_share = parseFloat((Q.new_middle_dvp + Q.old_middle_dvp).toFixed(1))
-        Q.total_special_interest += Q.wp_share
-    }
+Q.total_influence = parseFloat((Q.total_influence + Q.total_influence*0.02).toFixed(1))
+Q.total_special_interest = 0;
+if (Q.dbp_dvp) {
+    Q.dbp_share = parseFloat((Q.rural_dvp*(Q.progressive_strength + Q.democratic_strength + Q.liberal_strength)*0.05).toFixed(1))
+    Q.total_special_interest += Q.dbp_share
 }
-
-
+if (Q.wp_dvp) {
+    Q.wp_share = parseFloat((Q.new_middle_dvp + Q.old_middle_dvp).toFixed(1))
+    Q.total_special_interest += Q.wp_share
+}
 
 if (Q.progressives_dvp) Q.progressive_influence = parseFloat((Q.progressive_strength/Q.total_influence*100).toFixed(1))
 if (Q.democrats_dvp) Q.democratic_influence = parseFloat((Q.democratic_strength/Q.total_influence*100).toFixed(1))
@@ -62,9 +56,10 @@ if (Q.liberals_dvp) Q.liberal_influence = parseFloat((Q.liberal_strength/Q.total
 if (Q.labor_dvp) Q.labor_influence = parseFloat((Q.labor_strength/Q.total_influence*100).toFixed(1))
 if (Q.industrialists_dvp) Q.industrialist_influence = parseFloat((Q.industrialist_strength/Q.total_influence*100).toFixed(1))
 
-if (Q.dbp_dvp) Q.dbp_influence = parseFloat((Q.special_interest_strength*(Q.dbp_share/Q.total_special_interest)/Q.total_influence*100).toFixed(1))
-if (Q.wp_dvp) Q.wp_influence = parseFloat((Q.special_interest_strength*(Q.wp_share/Q.total_special_interest)/Q.total_influence*100).toFixed(1))
-!}
+if (Q.dbp_dvp) Q.dbp_influence = parseFloat((2*(Q.dbp_share/Q.total_special_interest)).toFixed(1))
+if (Q.wp_dvp) Q.wp_influence = parseFloat((2*(Q.wp_share/Q.total_special_interest)).toFixed(1))
+
+
 on-display: {!
 data = []
 if (Q.progressives_dvp) {

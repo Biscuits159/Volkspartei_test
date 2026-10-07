@@ -11,9 +11,9 @@ tags: party_affairs
 
 To finance our party's operations, we receive donations from wealthy industrialists and dues from party members. To ensure a steady supply of funds, we must carefully balance our policies to avoid alienating our industrialist and labor factions. For convenience, we collect our funds at the end of each year and can adjust them throughout. 
 
-- @maintain: Maintain our current dues.
+- @maintain: Maintain our current funding.
 - @reduce: Reduce dues.
-- @increase: Increase dues.
+- @increase: Request more funds.
 
 @maintain
 subtitle: [+ dues + industrial_funds +] resources will be collected.
@@ -22,7 +22,7 @@ We maintain our current dues.
 
 @reduce
 subtitle: [+ dues + industrial_funds - 1 +] resources will be collected.
-unavailable-subtitle: Our grassroots and industrialist fundraising are already low.
+unavailable-subtitle: Our grassroots fundraising is already low.
 choose-if: dues > 1
 on-arrival: dues -= 1; nationalist_dissent -= 8; industrialist_dissent -= 8; liberal_dissent -= 8; labor_dissent -= 8; democratic_dissent -= 8; progressive_dissent -= 8; month_actions += 1
 
