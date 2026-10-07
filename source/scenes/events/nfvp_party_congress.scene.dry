@@ -254,7 +254,7 @@ WIP
 @lemmer
 subtitle: Lemmer is a prominent labor leader. <span style="color: #E0B0FF;">**Progressives**</span> + <span style="color: #DCCA4A;">**Democrats**</span> + <span style="color: #6D5298;">**Labor**</span> ([+ progressive_influence + democratic_influence + labor_influence +]%)
 unavailable-subtitle: Lemmer isn’t seen as a viable candidate, with the party viewing him as too left-wing. He has endorsed Dietrich or Thiel. <span style="color: #E0B0FF;">**Progressives**</span> + <span style="color: #DCCA4A;">**Democrats**</span> + <span style="color: #6D5298;">**Labor**</span> ([+ progressive_influence + democratic_influence + labor_influence +]%)
-vief-if: progressives_dvp
+view-if: progressives_dvp
 choose-if: progressive_influence + democratic_influence + labor_influence >= 50
 on-arrival: dvp_leader = "Lemmer"; progressive_strength += 10; democratization += 1; progressive_dissent -= 5; spd_relation += 5
 face-image: img/portraits/LemmerErnst.jpg
