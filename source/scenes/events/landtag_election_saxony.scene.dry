@@ -592,7 +592,7 @@ subtitle: He has been the mayor of Dresde since the Great War and advocates for 
 view-if: dvp_saxony
 choose-if: in_dvp_majority_saxony or (in_bourgeois_coalition_saxony and not far_right_toleration_saxony) or (in_grand_coalition_saxony and (dvp_sl + ddp_sl + aspd_sl) > spd_sl)
 unavailable-subtitle: [? if in_grand_coalition_saxony: The <span style="color: #E3000F;">**SPD**</span> can prevent him from becoming the Minister-President. ?][? if far_right_toleration_saxony: The far-right will never support him. ?]
-on-arrival: saxony_leader = "Blüher"; saxony_leader_party = dvp_name; old_middle_dvp += 4*(1-dissent); new_middle_dvp += 2*(1-dissent); pro_republic += 3*(1-dissent)
+on-arrival: saxony_leader = "Blüher"; saxony_leader_party = dvp_name; old_middle_dvp += 4*(1-dissent); new_middle_dvp += 2*(1-dissent); pro_republic += 1*(1-dissent)
 face-image: img/portraits/BlüherBernhard.jpg
 
 Bernhard Blüher was elected.

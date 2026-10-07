@@ -174,6 +174,7 @@ WIP
 @lemmer
 subtitle: Lemmer is a prominent labor leader. <span style="color: #E0B0FF;">**Progressives**</span> + <span style="color: #DCCA4A;">**Democrats**</span> + <span style="color: #6D5298;">**Labor**</span> ([+ progressive_influence + democratic_influence + labor_influence +]%)
 unavailable-subtitle: Lemmer isn’t seen as a viable candidate, with the party viewing him as too left-wing. He has endorsed Dietrich or Thiel. <span style="color: #E0B0FF;">**Progressives**</span> + <span style="color: #DCCA4A;">**Democrats**</span> + <span style="color: #6D5298;">**Labor**</span> ([+ progressive_influence + democratic_influence + labor_influence +]%)
+view-if: progressives_dvp
 choose-if: progressive_influence + democratic_influence + labor_influence >= 50
 on-arrival: dvp_leader = "Lemmer"; progressive_strength += 10; democratization += 1; progressive_dissent -= 5; spd_relation += 5
 face-image: img/portraits/LemmerErnst.jpg
@@ -184,6 +185,7 @@ Ernst Lemmer has managed to, with the backing of Thiel’s unions, and the forme
 @heuss
 subtitle: Heuss was a former member of the <span style="color: #DCCA4A;">**[+ ddp_name +]**</span>'s business wing. <span style="color: #E0B0FF;">**Progressives**</span> + <span style="color: #DCCA4A;">**Democrats**</span> + <span style="color: #98C22C;">**Liberals**</span> ([+ progressive_influence + democratic_influence + liberal_influence +]%)
 unavailable-subtitle: The party prefers a former <span style="color: #C0A054;">**DVP**</span> member than Heuss, with the <span style="color: #DCCA4A;">**[+ ddp_name +]**</span> not holding enough sway. Heuss has endorsed Curtius. <span style="color: #E0B0FF;">**Progressives**</span> + <span style="color: #DCCA4A;">**Democrats**</span> + <span style="color: #98C22C;">**Liberals**</span> ([+ progressive_influence + democratic_influence + liberal_influence +]%)
+view-if: democrats_dvp
 choose-if: progressive_influence + democratic_influence + liberal_influence >= 50
 on-arrival: dvp_leader = "Heuss"; democratic_strength += 10; democratization += 1; democratic_dissent -= 5; z_relation += 5; kvp_relation += 3
 face-image: img/portraits/HeussTheodor.jpg
@@ -204,6 +206,7 @@ Hans Luther, [? if not president = "Luther": president of the Reichsbank?][? if 
 @curtius
 subtitle: Curtius belongs to the Stresemannite wing of our party. <span style="color: #98C22C;">**Liberals**</span> + <span style="color: #6D5298;">**Labor**</span> [? if peoples_conservatives_dvp: + <span style="color: #0087DC;">**People's Conservatives**</span> ?] ([+ liberal_influence + labor_influence + peoples_conservative_influence +]%)
 unavailable-subtitle: Curtius prefers Thiel or Dietrich currently, with the former <span style="color: #C0A054;">**DVP**</span> too weak to push him, anyways. <span style="color: #98C22C;">**Liberals**</span> + <span style="color: #6D5298;">**Labor**</span> [? if peoples_conservatives_dvp: + <span style="color: #0087DC;">**People's Conservatives**</span> ?] ([+ liberal_influence + labor_influence + peoples_conservative_influence +]%)
+view-if: liberals_dvp
 choose-if: liberal_influence + labor_influence + peoples_conservative_influence >= 50
 on-arrival: dvp_leader = "Curtius"; liberal_strength += 10; democratization += 1; liberal_dissent -= 5;
 face-image: img/portraits/CurtiusJulius.jpg

@@ -441,7 +441,7 @@ subtitle: He is a lawyer and former <span style="color: #DCCA4A;">**[+ ddp_name 
 view-if: (dvp_bavaria and (lvp_formed or nfvp_formed)) or in_grand_coalition_bavaria or in_bourgeois_coalition_bavaria
 choose-if: in_dvp_majority_bavaria or in_grand_coalition_bavaria or ((in_bourgeois_coalition_bavaria or (in_right_coalition_bavaria and (lvp_formed or nfvp_formed))) and (dvp_bl + ddp_bl) > z_bl)
 unavailable-subtitle: The <span style="color: #69A2BE;">**BVP**</span> can prevent him from becoming the Minister-President.
-on-arrival: bavaria_leader = "Hamm"; bavaria_leader_party = ddp_name if ddp_exist; bavaria_leader_party = dvp_name if lvp_formed or nfvp_formed; old_middle_dvp += 4*(1-dissent); new_middle_dvp += 2*(1-dissent); pro_republic += 3*(1-dissent)
+on-arrival: bavaria_leader = "Hamm"; bavaria_leader_party = ddp_name if ddp_exist; bavaria_leader_party = dvp_name if lvp_formed or nfvp_formed; old_middle_dvp += 4*(1-dissent); new_middle_dvp += 2*(1-dissent); pro_republic += 1*(1-dissent)
 face-image: img/portraits/HammEduard.jpg
 
 Eduard Hamm was elected.
@@ -459,7 +459,7 @@ Heinrich Held was elected.
 title: Hans Vogel, the <span style="color: #E3000F;">**SPD**</span> candidate.
 subtitle: He is a well-known socialist politician in Bavaria [? if year >= 1931: and Chairman of the <span style="color: #E3000F;">**SPD**</span> ?].
 view-if: in_grand_coalition_bavaria
-on-arrival: bavaria_leader = "Vogel"; bavaria_leader_party = "SPD"; workers_spd += 4; unemployed_spd += 2; socialism += 2; pro_republic += 3
+on-arrival: bavaria_leader = "Vogel"; bavaria_leader_party = "SPD"; workers_spd += 4; unemployed_spd += 2; socialism += 2; pro_republic += 1
 face-image: img/portraits/VogelHans.jpg
 
 Hans Vogel was elected.

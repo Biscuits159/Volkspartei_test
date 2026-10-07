@@ -449,7 +449,7 @@ subtitle: He is a minor regional business figure.
 view-if: dvp_hanover
 choose-if: in_dvp_majority_hanover or in_grand_coalition_hanover or ((in_bourgeois_coalition_hanover) and dvp_hl > dhp_hl)
 unavailable-subtitle: The <span style="color: #63C489;">**DHP**</span> can prevent him from becoming the Minister-President.
-on-arrival: hanover_leader = "Albrecht"; hanover_leader_party = dvp_name; old_middle_dvp += 4*(1-dissent); new_middle_dvp += 2*(1-dissent); pro_republic += 3*(1-dissent)
+on-arrival: hanover_leader = "Albrecht"; hanover_leader_party = dvp_name; old_middle_dvp += 4*(1-dissent); new_middle_dvp += 2*(1-dissent); pro_republic += 1*(1-dissent)
 face-image: img/portraits/AlbrechtHelmuth.jpg
 
 Helmuth Albrecht was chosen.
@@ -458,7 +458,7 @@ Helmuth Albrecht was chosen.
 title: Heinrich Langwost, the <span style="color: #63C489;">**BVP**</DHP> candidate.
 subtitle: The regional parties have retained their strength even through the crisis.
 view-if: in_bourgeois_coalition_hanover
-on-arrival: hanover_leader = "Langwost"; hanover_leader_party = "DHP"; pro_republic += 2; 
+on-arrival: hanover_leader = "Langwost"; hanover_leader_party = "DHP"; pro_republic += 1; 
 face-image: img/portraits/LangwostHeinrich.jpg
 
 Heinrich Langwost was chosen.
@@ -467,7 +467,7 @@ Heinrich Langwost was chosen.
 title: Gustav Noske, the <span style="color: #E3000F;">**SPD**</span> candidate.
 subtitle: The controversial former Minister of Defence who became increasingly revisionist over the years.
 view-if: in_grand_coalition_hanover
-on-arrival: hanover_leader = "Noske"; hanover_leader_party = "SPD"; workers_spd += 4; unemployed_spd += 2; socialism += 2; pro_republic += 3
+on-arrival: hanover_leader = "Noske"; hanover_leader_party = "SPD"; workers_spd += 4; unemployed_spd += 2; socialism += 2; pro_republic += 1
 face-image: img/portraits/NoskeGustav.jpg
 
 Gustav Noske was chosen.

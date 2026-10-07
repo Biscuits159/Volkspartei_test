@@ -13,10 +13,10 @@ Factions withitn the <span style="color: #3F7BC1;">**DNVP**</span> have clashed 
 - @resultsdnvp: The congress unfolds...
 
 @resultsdnvp
-go-to: hugenberg if young_plan_signatures >= 8; treviranus if young_plan_signatures < 8
+go-to: hugenberg if pro_republic >= 75; treviranus if pro_republic < 75
 
 @treviranus
-on-arrival: dnvp_leader = "Treviiranus";  dnvp_ideology = "Moderate"; dvp_right += 1
+on-arrival: dnvp_leader = "Treviranus"; dnvp_ideology = "Moderate"; dvp_right += 1
 face-image: img/portraits/TreviranusGottfried.jpg
 go-to: dnf_formed
 

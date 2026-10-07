@@ -444,7 +444,7 @@ subtitle: He is a businessman and was a member of the Reichstag for our party fr
 view-if: dvp_hamburg
 choose-if: lvp_formed or nfvp_formed or (not in_grand_coalition_hamburg and not in_weimar_coalition_hamburg) or ((in_grand_coalition_hamburg or in_weimar_coalition_hamburg) and dvp_hb > spd_hb)
 unavailable-subtitle: The <span style="color: #E3000F;">**SPD**</span> can prevent a member of our party from becoming mayor.
-on-arrival: hamburg_leader = "Dauch"; hamburg_leader_party = dvp_name; pro_republic += 1*(1-dissent)
+on-arrival: hamburg_leader = "Dauch"; hamburg_leader_party = dvp_name
 face-image: img/portraits/DauchWalther.jpg
 
 Walther Dauch was chosen.
@@ -452,8 +452,8 @@ Walther Dauch was chosen.
 @petersen
 title: Carl Wilhelm Petersen, the <span style="color: #DCCA4A;">**[+ ddp_name +]**</span> candidate.
 subtitle: He is the incumbent.
-view-if: (dvp_hamburg and (nfvp_formed or lvp_formed)) or in_weimar_coalition_hamburg or in_grand_coalition_hamburg or in_bourgeois_coalition
-on-arrival: hamburg_leader = "Petersen"; hamburg_leader_party = ddp_name if ddp_exist; hamburg_leader_party = dvp_name if lvp_formed or nfvp_formed; pro_republic += 1
+view-if: (dvp_hamburg and not nfvp_formed and not lvp_formed) or in_weimar_coalition_hamburg or in_grand_coalition_hamburg or in_bourgeois_coalition
+on-arrival: hamburg_leader = "Petersen"; hamburg_leader_party = ddp_name if ddp_exist; hamburg_leader_party = dvp_name if lvp_formed or nfvp_formed
 face-image: img/portraits/PetersenCarl.jpg
 
 Carl Wilhelm Petersen was chosen.
@@ -462,7 +462,7 @@ Carl Wilhelm Petersen was chosen.
 title: Rudolf Ross, the <span style="color: #E3000F;">**SPD**</span> candidate.
 subtitle: He was Second Mayor under Petersen.
 view-if: in_weimar_coalition_hamburg or in_grand_coalition_hamburg
-on-arrival: hamburg_leader = "Ross"; hamburg_leader_party = "SPD"; socialism += 1; pro_republic += 1
+on-arrival: hamburg_leader = "Ross"; hamburg_leader_party = "SPD"; socialism += 1
 
 Rudolf Ross was chosen.
 
