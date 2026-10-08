@@ -42,7 +42,7 @@ if (Q.industrialists_dvp) {
     Q.total_influence = parseFloat((Q.total_influence + Q.industrialist_strength).toFixed(1))
 }
 
-if (Q.dbp_dvp or Q.wp_dvp) {
+if (Q.special_interest_dvp) {
     Q.total_influence = parseFloat((Q.total_influence + Q.special_interest_strength).toFixed(1))
     Q.total_special_interest = 0;
     if (Q.dbp_dvp) {
