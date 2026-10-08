@@ -5,7 +5,7 @@ view-if: (dvp_prussia or dvp_austria or dvp_bavaria or dvp_hanover or dvp_saxony
 on-arrival: {!
 Q.landtag_policy_timer += 12;
 Q.month_actions += 1;
-Q.landtag_power = 0;
+Q.landtag_power = 0
 if (Q.dvp_prussia) Q.landtag_power += dvp_pl * 0.6
 if (Q.dvp_austria) Q.landtag_power += dvp_al * 0.3
 if (Q.dvp_bavaria) Q.landtag_power += dvp_bl * 0.3
@@ -18,6 +18,7 @@ Q.landtag_power_100 = 0.01*landtag_power
 tags: landtag_affairs
 card-image: img/bavarian_landtag.jpg
 #subtitle: The state government of Prussia is a bulwark of democracy...
+
 
 = Landtag Policy
 
