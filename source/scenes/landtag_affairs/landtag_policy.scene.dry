@@ -2,33 +2,7 @@ title: Landtag Policy
 new-page: true
 is-card: true
 view-if: (dvp_prussia or dvp_austria or dvp_bavaria or dvp_hanover or dvp_saxony or dvp_wurttemberg or dvp_hamburg) and landtag_policy_timer <= 0
-on-arrival: {!
-Q.landtag_policy_timer += 12;
-Q.month_actions += 1;
-Q.landtag_power = 0;
-if (Q.dvp_prussia) {
-    Q.landtag_power += dvp_pl*0.6;
-    }
-if (Q.dvp_austria) {
-    Q.landtag_power += dvp_al*0.3;
-    }
-if (Q.dvp_bavaria) {
-    Q.landtag_power += dvp_bl*0.3;
-    }
-if (Q.dvp_hanover) {
-    Q.landtag_power += dvp_hl*0.3;
-    }
-if (Q.dvp_saxony) {
-    Q.landtag_power += dvp_sl*0.3;
-    }
-if (Q.dvp_wurttemberg) {
-    Q.landtag_power += dvp_wl*0.3;
-    }
-if (Q.dvp_hamburg) {
-    Q.landtag_power += dvp_hb*0.1;
-    }
-Q.landtag_power_100 = 0.01*landtag_power;
-!}
+on-arrival: landtag_policy_timer += 12; month_actions += 1; landtag_power = 0; landtag_power += dvp_pl*0.6 if dvp_prussia; landtag_power += dvp_al*0.3 if dvp_austria; landtag_power += dvp_bl*0.3 if dvp_bavaria; landtag_power += dvp_hl*0.3 if dvp_hanover; landtag_power += dvp_sl*0.3 if dvp_saxony; landtag_power += dvp_wl*0.3 if dvp_wurttemberg; landtag_power += dvp_hb*0.1 if dvp_hamburg; landtag_power_100 = 0.01*landtag_power
 tags: landtag_affairs
 card-image: img/bavarian_landtag.jpg
 #subtitle: The state government of Prussia is a bulwark of democracy...
