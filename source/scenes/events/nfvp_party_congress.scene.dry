@@ -42,6 +42,7 @@ Q.dbp_influence = 0;
 Q.wp_influence = 0;
 Q.cnblp_influence = 0;
 
+Q.special_interest_strength = 5;
 
 
 if (Q.progressives_dvp) {
@@ -69,7 +70,7 @@ if (Q.vnr_dvp) {
 if (Q.social_catholics_dvp) {
     Q.total_influence = parseFloat((Q.total_influence + Q.catholics_dvp*(Q.progressive_strength+Q.labor_strength)*0.002).toFixed(1))
 }
-if (Q.special_interest_dvp) {
+if (Q.dbp_dvp or Q.wp_dvp or Q.cnblp_dvp) {
     Q.total_influence = parseFloat((Q.total_influence + Q.special_interest_strength).toFixed(1))
     Q.total_special_interest = 0;
     if (Q.dbp_dvp) {
