@@ -56,7 +56,7 @@ Q.dvp_left = 5;
 Q.dvp_right = 1;
 
 // factions
-Q.factions = ['nationalist', 'peoples_conservative', 'industrialist', 'labor', 'liberal', 'democratic', 'progressive'];
+Q.factions = ['nationalist', 'peoples_conservative', 'industrialist', 'labor', 'liberal', 'democratic', 'progressive', 'special_interest'];
 // should this be normalized to 100%?
 Q.nationalist_strength = 20;
 Q.nationalist_dissent = 15;
@@ -72,6 +72,7 @@ Q.democratic_strength = 0;
 Q.democratic_dissent = 0;
 Q.progressive_strength = 0;
 Q.progressive_dissent = 0;
+Q.special_interest_strength = 0;
 
 // secret events...
 Q.labor_dvp = 1;
