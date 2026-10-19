@@ -107,7 +107,7 @@ Economic growth: [+ economic_growth_2 +]%
 = Inter-party Relations
 
 
-[? if kpd_exist: <span class="tooltip-text" title=[+ kpd_full_name +] style="color: var(kpd_color);">**[+ kpd_name +]**</span>: [+ kpd_relation : relationships +] ?]
+[? if kpd_exist: <span class="tooltip-text" title=[+ kpd_full_name +] style="color: var(--kpd_color);">**[+ kpd_name +]**</span>: [+ kpd_relation : relationships +] ?]
 
 <span class="tooltip-text" title=[+ spd_full_name +] style="color: var(--spd-color);">**[+ spd_name +]**</span>: [+ spd_relation : relationships +]
 
