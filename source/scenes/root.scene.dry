@@ -500,7 +500,7 @@ Q.dissent = 0.05;
 Q.dissent_percent = 5;
 
 Q.dvp_name = "DVP";
-document.body.style.setProperty('--dvp-full_name', 'German People's Party');
+document.body.style.setProperty('--dvp-full-name', 'German People's Party');
 Q.dvp_leader = "Stresemann";
 Q.dvp_ideology = "Conservative Liberalism";
 Q.dvp_color = "#C0A054";
