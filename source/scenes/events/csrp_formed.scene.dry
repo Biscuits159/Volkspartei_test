@@ -1,6 +1,6 @@
 on-arrival: {!
 // set up the infrastructure
-Q.csrp_exist = 1;
+Q.csrp_formed = 1;
 Q.parties.push('csrp');
   
 

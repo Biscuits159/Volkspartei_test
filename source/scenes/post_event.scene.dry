@@ -840,6 +840,9 @@ if ((!Q.rubicon && Q.month_actions >= 1) || (Q.rubicon && Q.month_actions >= 4))
         Q.spd_right *= 0.9;
     }
 
+    if (z_in_government && z_leader == "Stegerwald" && dnvp_in_government && dnvp_leader == "Treviranus") {
+        Q.cvp_merger_countdown -= 1;
+    }
     
     
     
