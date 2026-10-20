@@ -139,7 +139,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 <span class="tooltip-text" title=var(--dvp-full-name) style="color: var(--dvp-color);">**[+ dvp_name +]**</span>: <span style="color: var(--dvp-ideology-color);">[+ dvp_ideology +]</span> ([+ dvp_leader +]) 
 
-[? if kpd_exist: <span class="tooltip-text" title=[+ kpd_full_name +] style="color: var(--kpd-color);">**KPD**</span>: <span style="color: var(--kpd-color);">[+ kpd_ideology +]</span> ([+ kpd_leader +]) ?]
+[? if kpd_exist: <span class="tooltip-text" title=var(--kpd-fullname) style="color: var(--kpd-color);">**KPD**</span>: <span style="color: var(--kpd-color);">[+ kpd_ideology +]</span> ([+ kpd_leader +]) ?]
 
 [? if sapd_formed: <span class="tooltip-text" title="Socialist Workers' Party of Germany" style="color: #9B0000;">**SAPD**</span>: <span style="color: #9B0000;">[+ sapd_ideology +]</span> ([+ sapd_ideology +]) ?]
 
