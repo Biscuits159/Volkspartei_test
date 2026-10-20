@@ -568,7 +568,7 @@ Q.kpd_name = "KPD";
 Q.kpd_full_name = "Communist Party of Germany";
 Q.kpd_leader = "Thälmann";
 Q.kpd_ideology = "Marxism–Leninism";
-document.body.style.setProperty("--kpd_color", "#8B0000");
+document.body.style.setProperty('--kpd-color', '#8B0000');
 Q.kpd_conciliators = 0;
 
 Q.sapd_formed = 0;

@@ -107,7 +107,7 @@ Economic growth: [+ economic_growth_2 +]%
 = Inter-party Relations
 
 
-[? if kpd_exist: <span class="tooltip-text" title=[+ kpd_full_name +] style="color: var(--kpd_color);">**[+ kpd_name +]**</span>: [+ kpd_relation : relationships +] ?]
+[? if kpd_exist: <span class="tooltip-text" title=[+ kpd_full_name +] style="color: var(--kpd-color);">**[+ kpd_name +]**</span>: [+ kpd_relation : relationships +] ?]
 
 <span class="tooltip-text" title=[+ spd_full_name +] style="color: var(--spd-color);">**[+ spd_name +]**</span>: [+ spd_relation : relationships +]
 
@@ -169,7 +169,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if dnf_formed: <span class="tooltip-text" title="German National Front" style="color: #003755;">**DNF**</span>: <span style="color: #003755;">[+ dnf_ideology +]</span> ([+ dnf_leader +]) ?]
 
-[? if nsdap_exist: <span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #003755;">**NSDAP**</span>: <span style="color: #954B00;">National-Socialism</span> ([+ nsdap_leader +]) ?]
+[? if nsdap_exist: <span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #954B00;">**NSDAP**</span>: <span style="color: #954B00;">National-Socialism</span> ([+ nsdap_leader +]) ?]
 
 = Internal Factions of the <span style="color: var(--dvp-color);">**[+ dvp_name +]**</span>
 
