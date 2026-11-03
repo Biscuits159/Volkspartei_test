@@ -20,7 +20,7 @@ Max Heldt, minster-president of Saxony has won the leadership election. He will 
 
 
 @niekisch
-on-arrival: aspd_leader = "Niekisch"
+on-arrival: aspd_leader = "Niekisch"; aspd_ideology = "National Bolchevism"; aspd_radical = 1
 go-to: aspd_formed
 
 WIP

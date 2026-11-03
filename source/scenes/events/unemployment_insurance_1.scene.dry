@@ -66,8 +66,8 @@ Still, this has deradicalized the proletariat away from the extremes at both end
 The <span style="color: #E3000F;">**SPD**</span> is pleasantly surprised at our backing of their increase in the tax burden upon the rich, and we have seen a substantial improvement in relations and decrease in coalition tensions as a result.
 
 @compromise
-unavailable-subtitle: [? if spd_relation < 35 : We do not have good enough relations with the <span style="color: #E3000F;">**SPD**</span>. ?] [? if dvp_ideology != "Left" : The party is too right-wing to consider compromises with the socialists. ?]
-choose-if: spd_relation >= 35 and dvp_ideology = "Left"
+unavailable-subtitle: [? if spd_relation < 35 : We do not have good enough relations with the <span style="color: #E3000F;">**SPD**</span>. ?] [? if dvp_left < 0 : The party is too right-wing to consider compromises with the socialists. ?]
+choose-if: spd_relation >= 35 and dvp_left >= 0
 
 Thanks to our good relations, the <span style="color: #E3000F;">**SPD**</span> has offered a compromise that raises some taxes on the wealthy, along with lesser welfare cuts. Our members have mixed opinions on accepting this compromise. The Liberals support maintaining our government to keep the fascists and communists out, while Labor supports the compromise in the hopes of moderating the pain of the workers they represent, but the Industrialists who provide the bulk of the funding our party needs to function are strongly opposed. The nationalists, of course, oppose it as capitulation to the <span style="color: #E3000F;">socialists</span>.
 

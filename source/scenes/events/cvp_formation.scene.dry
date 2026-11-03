@@ -22,7 +22,7 @@ on-arrival:{!
     Q.cvp_balance += (Q.z_votes - Q.bvp_votes)/10.;
     Q.cvp_balance -= Q.dnvp_votes/10.;
 
-    if (spd_right > spd_left) Q.cvp_balance += 1;
+    if (spd_left < 0) Q.cvp_balance += 1;
 !}
 go-to: dietrich
 

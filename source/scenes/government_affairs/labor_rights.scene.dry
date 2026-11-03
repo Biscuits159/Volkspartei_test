@@ -24,7 +24,7 @@ With control of the Labor Ministry, we can set national standards for labor. Tho
 
 @working_hours
 view-if: black_thursday_seen = 1 and return_to_normalcy = 0
-on-arrival: working_hours += 1; labor_dissent -= 8; progressive_dissent -= 5; industrialist_dissent += 5; labor_strength += 5; progressive_strength += 3; workers_dvp += 5*(1-dissent); spd_relation += 4; inflation += 0.1; economic_growth -= 0.1; unemployed -= 0.2;
+on-arrival: working_hours += 1; labor_dissent -= 8; progressive_dissent -= 5; industrialist_dissent += 5; labor_strength += 5; progressive_strength += 3; workers_dvp += 5*(1-dissent); spd_relation += 4; demand_for_action_countdown -= 2; inflation += 0.1; economic_growth -= 0.1; unemployed -= 0.2;
 
 While a 40-hour work week was declared during the German Revolution in 1918, enforcement has become increasingly porous over the years. We have successfully added numerous exceptions and loopholes, returning to the old regime of forced overtime for workers.
 
@@ -32,7 +32,7 @@ Now, however, with the rising unemployement in the wake of Black Thursday, perha
 
 
 @safety
-on-arrival: workers_safety -= 1; coalition_dissent += 1 if spd_in_government; labor_dissent += 5; progressive_dissent += 3; industrialist_dissent -= 5; industrialist_strength += 3; workers_dvp -= 3*(1-dissent)
+on-arrival: workers_safety -= 1; coalition_dissent += 1 if spd_in_government; labor_dissent += 5; progressive_dissent += 3; industrialist_dissent -= 5; industrialist_strength += 3; demand_for_action_countdown += 4; workers_dvp -= 3*(1-dissent);
 
 We slowly chip away at existing safety regulations, while also turning a blind eye to violations. Employers approve of these measures, while our labor faction and our few working class supporters express their dissatisfaction.
 

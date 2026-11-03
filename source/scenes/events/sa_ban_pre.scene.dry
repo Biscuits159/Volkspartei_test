@@ -45,7 +45,7 @@ choose-if: False
 
 
 @sa_ban_bruning
-view-if: bruning_chancellor_time and dvp_ideology = "Left"
+view-if: bruning_chancellor_time and dvp_left >= 0
 go-to: sa_ban_bruning_groener if interior_minister = "Groener"; sa_ban_bruning_wirth if interior_minister = "Wirth"
 
 @sa_ban_bruning_groener
