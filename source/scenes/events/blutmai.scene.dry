@@ -8,7 +8,7 @@ face-image: img/redfront.jpg
 
 = May Day, 1929
 
-Tensions run high in Berlin. The <span style="color: #8B0000;">**Communists**</span> are planning a demonstration to commemorate the 10th anniversary of the Spartacist Uprising. The <span style="color: #E3000F;">**SPD**</span> supressed these revolts violently, with then-president Ebert allegedly calling for the deaths of the then-<span style="color: #8B0000;">**KPD**</span> leaders.
+Tensions run high in Berlin. The <span style="color: #8B0000;">**Communists**</span> are planning a demonstration to commemorate the 10th anniversary of the Spartacist Uprising. The <span style="color: var(--spd-color);">**SPD**</span> supressed these revolts violently, with then-president Ebert allegedly calling for the deaths of the then-<span style="color: #8B0000;">**KPD**</span> leaders.
 
 All in the party are afraid of a repeat of 1919. There is but one thing to do.
 

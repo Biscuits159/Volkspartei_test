@@ -63,7 +63,7 @@ The SA is no longer banned. They immediately go on a recruiting spree.
 
 
 @ban_sh
-on-arrival: sh_strength *= 0.85; sh_strength *= 0.7 if prussian_police_loyalty >= 0.75; sh_banned = 1; prussian_police_loyalty -= 0.1; coalition_dissent += 1 if dnvp_in_government; sh_ban_timer = 6;
+on-arrival: sh_strength *= 0.85; sh_strength *= 0.7 if prussian_police_loyalty >= 0.75; sh_banned = 1; prussian_police_loyalty -= 0.1; coalition_dissent += 1 if dnvp_in_government; sh_ban_timer = 6; hindenburg_angry += 20;
 choose-if: dvp_left >= 0
 unavailable-subtitle: Why?
 view-if: sh_banned == 0
@@ -72,7 +72,7 @@ view-if: sh_banned == 0
 
 @unban_sh
 view-if: sh_banned = 1
-on-arrival: sh_banned = 0; sh_strength += 100
+on-arrival: sh_banned = 0; sh_strength += 100; hindenburg_angry -= 10;
 
 The Stahlhelm is no longer banned.
 

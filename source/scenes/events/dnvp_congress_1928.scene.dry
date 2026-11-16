@@ -15,7 +15,14 @@ The right wing of the party rallied behind Alfred Hugenberg, an industrialist an
 - @resultsdnvp: The party votes...
 
 @resultsdnvp
-go-to: hergt if pro_republic >= 75 or (in_bourgeois_coalition and pro_republic >= 65); triumvirate if pro_republic >= 65 and pro_republic < 75 and in_bourgeois_coalition == 0; hugenberg if pro_republic < 65
+on-arrival: {!
+Q.event_points = 0;
+Q.event_points += (Q.pro_republic - 65)/10;
+Q.event_points -= (Q.nationalism - 60)/10;
+if (Q.dnvp_in_government) Q.event_points += 1;
+if (Q.dvp_left >= 0) Q.event_points += Q.dnvp_relation/20;
+!}
+go-to: hergt if event_points >= 1; triumvirate if event_points >= 0 and event_points < 1; hugenberg if event_points < 0
 
 @hergt
 on-arrival: dnvp_leader = "Hergt"; dnvp_ideology = "National Conservatism"; document.body.style.setProperty('--dnvp-color', '#3F7BC1'); dnvp_left = 0; dvp_left -= 1; dnvp_relation += 5 if dvp_left < 0;

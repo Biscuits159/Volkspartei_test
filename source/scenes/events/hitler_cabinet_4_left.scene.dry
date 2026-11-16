@@ -29,12 +29,12 @@ WIP
 
 We must see, how will the other parties vote.
 
-- @spd: As expected, the <span style="color: #E3000F;">**SPD**</span> will vote against this act.
+- @spd: As expected, the <span style="color: var(--spd-color);">**SPD**</span> will vote against this act.
 
 @spd
 on_arrival: spd_enabling_act = "Against"
 
-The <span style="color: #E3000F;">**SPD**</span> will vote against.
+The <span style="color: var(--spd-color);">**SPD**</span> will vote against.
 
 - @zentrum: How will the <span style="color: #000000;">**Center Party**</span> vote?
 

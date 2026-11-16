@@ -2,8 +2,8 @@ title: Young Plan
 new-page: true
 subtitle: The right-wing coalition has collapsed...
 tags: event
-view-if: year = 1929 and month >= 7 and in_right_coalition
-on-arrival: in_right_coalition = 0
+view-if: year = 1929 and month >= 7 and dnvp_in_government
+on-arrival: dnvp_in_government = 0
 max-visits: 1
 
 = The Young Plan and the fall of the coalition
@@ -12,14 +12,14 @@ The Foreign Ministry under [+ foreign_minister +] has agreed to the Young Plan, 
 
 While this seems to be a positive development for the country, the right wing of the <span style="color: #3F7BC1;">**DNVP**</span>, despite their party's moderation, opposes the plan, claiming that any reparations are a form of national slavery. They have called for a vote of no confidence against the government, supported by the <span style="color: #954B00;">**NSDAP**</span>, <span style="color: #003755;">**DNF**</span> and the <span style="color: #8B0000;">**KPD**</span>, and for a referendum on the Young Plan.
 
-The <span style="color: #E3000F;">**SPD**</span> can either vote to bring down the government and hold new elections, or "tolerate" a government led by the remaining bourgeois parties.
+The <span style="color: var(--spd-color);">**SPD**</span> can either vote to bring down the government and hold new elections, or "tolerate" a government led by the remaining bourgeois parties.
 
-- @grand_coalition: Include the <span style="color: #E3000F;">**SPD**</span> in a new cabinet.
+- @grand_coalition: Include the <span style="color: var(--spd-color);">**SPD**</span> in a new cabinet.
 - @new_elections: We will have new elections.
 
 
 @grand_coalition
-subtitle: The <span style="color: #E3000F;">**SPD**</span> will replace our more right-wing coalition partners.
+subtitle: The <span style="color: var(--spd-color);">**SPD**</span> will replace our more right-wing coalition partners.
 on-arrival: spd_in_government = 1; dvp_in_government = 1; spd_toleration = 0; in_grand_coalition = 1; chancellor = "Brüning"; chancellor_party = "Z"; foreign_minister = "Brüning"; foreign_minister_party = "Z"; interior_minister = "Severing"; interior_minister_party = "SPD"; justice_minister = "Guérard"; justice_minister_party = "Z"; justice_minister = "Koch-Weser" if ddp_exist; justice_minister_party = ddp_name if ddp_exist; labor_minister = "Wissel"; labor_minister_party = "SPD"; reichswehr_minister = "Groener"; reichswehr_minister_party = "I"; economic_minister = "Schmidt"; economic_minister_party = "SPD"; finance_minister = "Köhler"; finance_minister_party = "Z"; agriculture_minister = "Hermes"; agriculture_minister_party = "Z"; agriculture_minister = "Dietrich" if ddp_exist; agriculture_minister_party = ddp_name if ddp_exist; leverage = dvp_r; leverage = 15 if leverage >= 15; dnvp_relation -= 5; spd_relation += 3; dvp_left += 2; liberal_strength += 5; nationalist_dissent += 5;
 
 Heinrich Brüning welcomes us into the new cabinet. Now, we have our pick of ministries.

@@ -226,61 +226,46 @@ if (Q.dissent < 0) {
 }
 
 
-Q.sa_force = Q.sa_strength*Q.sa_militancy;
-Q.sh_force = Q.sh_strength*Q.sh_militancy;
-Q.rb_force = Q.rb_strength*Q.rb_militancy;
-Q.rfb_force = Q.rfb_strength*Q.rfb_militancy;
-Q.prussia_force = Q.prussian_police_strength*Q.prussian_police_militancy*Q.prussian_police_loyalty;
-if (Q.prussia_leader == "Strasser" || Q.prussia_leader == "Schleicher" || Q.prussia_leader == "Papen") Q.prussia_force = Q.prussian_police_strength*Q.prussian_police_militancy*(1 - Q.prussian_police_loyalty);
-Q.reichswehr_force = Q.reichswehr_strength*Q.reichswehr_militancy*(1 - Q.reichswehr_loyalty);
-Q.total_force = (Q.sa_force+Q.sh_force+Q.rb_force+Q.rfb_force);
-var total_force = (Q.sa_force+Q.sh_force+Q.rb_force+Q.rfb_force+Q.prussia_force);
-if (Q.reichswehr_street) total_force += Q.reichswehr_force;
+Q.sa_force = Q.sa_strength * Q.sa_militancy;
+Q.sh_force = Q.sh_strength * Q.sh_militancy;
+Q.rb_force = Q.rb_strength * Q.rb_militancy;
+Q.rfb_force = Q.rfb_strength * Q.rfb_militancy;
+Q.prussia_force = Q.prussian_police_strength * Q.prussian_police_militancy * Q.prussian_police_loyalty;
+Q.total_force = Q.sa_force + Q.sh_force + Q.rb_force + Q.rfb_force + Q.prussia_force;
 
 Q.sa_force = Math.round((Q.sa_force/total_force)*100);
 Q.sh_force = Math.round((Q.sh_force/total_force)*100);
 Q.rb_force = Math.round((Q.rb_force/total_force)*100);
 Q.rfb_force = Math.round((Q.rfb_force/total_force)*100);
-if (Q.reichswehr_street) Q.reichswehr_force = Math.round((Q.reichswehr_force/total_force)*100);
 Q.prussia_force = Math.round((Q.prussia_force/total_force)*100);
 
 Q.far_right_force = Q.sh_force + Q.sa_force;
-Q.democracy_force = Q.rb_force + Q.prussia_force;
-Q.state_force = 0;
-if (Q.reichswehr_street) Q.state_force += Q.reichswehr_force;
-if (Q.prussia_leader == "Strasser" || Q.prussia_leader == "Schleicher" || Q.prussia_leader == "Papen") {
-    Q.state_force += Q.prussia_force;
-    Q.democracy_force -= Q.prussia_force;
-}
-if (Q.kpd_truce) Q.democracy_force += Q.rfb_force;
+Q.pro_republic_force = Q.rb_force + Q.prussia_force;
+// Q.rfb_force;
 
 Q.far_right_paramilitary = 0;
-Q.democracy_paramilitary = 0;
-Q.state_paramilitary = 0;
-Q.far_right_paramilitary_highest = 0;
-Q.far_right_paramilitary_high = 0;
-Q.far_right_paramilitary_med = 0;
-Q.far_right_paramilitary_low = 0;
-Q.democracy_paramilitary_highest = 0;
-Q.democracy_paramilitary_high = 0;
-Q.democracy_paramilitary_med = 0;
-Q.democracy_paramilitary_low = 0;
-Q.state_paramilitary_highest = 0;
-Q.state_paramilitary_high = 0;
-Q.state_paramilitary_med = 0;
-Q.state_paramilitary_low = 0;
+Q.pro_republic_paramilitary = 0;
+Q.far_left_paramilitary = 0;
+Q.paramilitary_diff_low = 0;
+Q.paramilitary_diff_medium = 0;
+Q.paramilitary_diff_high = 0;
+Q.paramilitary_diff_very_high = 0;
+Q;paramilitary_delta = 0;
 
-if (Q.far_right_force >= Q.democracy_force && Q.far_right_force >= Q.state_force) {
-    if (Q.far_right_force - Q.democracy_force >= 40) {
-        Q.far_right_paramilitary_highest = 1;
-    } else if (Q.far_right_force - Q.democracy_force >= 30) {
-        Q.far_right_paramilitary_high = 1;
-    } else if (Q.far_right_force - Q.democracy_force >= 10) {
-        Q.far_right_paramilitary_med = 1;
-    } else if (Q.far_right_force - Q.democracy_force >= 0) {
-        Q.far_right_paramilitary_low = 1;
+if (Q.far_right_force >= Q.pro_republic_force && Q.far_right_force >= Q.rfb_force) {
+    Q.paramilitary_delta = Q.far_right_force - Q.pro_republic_paramilitary - Q.rfb_force
+    if (Q.paramilitary_delta < 0) {
+        Q.paramilitary_diff_low = 1;
+        Q.paramilitary_delta = 0;
+    } else if (Q.paramilitary_delta < 10 && Q.paramilitary_delta >= 0) {
+        Q.paramilitary_diff_medium = 1;
+    } else if (Q.paramilitary_delta < 30 && Q.paramilitary_delta >= 10) {
+        Q.paramilitary_diff_high = 1;
+    } else if (Q.paramilitary_delta >= 30) {
+        Q.paramilitary_diff_very_high = 1;
     }
     if (Q.sa_force >= Q.sh_force) {
+        Q.paramilitary_delta *= 1.2;
         Q.sa_paramilitary = 1;
         Q.sh_paramilitary = 0;
     } else {
@@ -288,32 +273,33 @@ if (Q.far_right_force >= Q.democracy_force && Q.far_right_force >= Q.state_force
         Q.sa_paramilitary = 0;
     }
     Q.far_right_paramilitary = 1;
-} else if (Q.democracy_force > Q.far_right_force && Q.democracy_force >= Q.state_force) {
-    if (Q.democracy_force - Q.far_right_force >= 40) {
-        Q.democracy_paramilitary_highest = 1;
-    } else if (Q.democracy_force - Q.far_right_force >= 30) {
-        Q.democracy_paramilitary_high = 1;
-    } else if (Q.democracy_force - Q.far_right_force >= 10) {
-        Q.democracy_paramilitary_med = 1;
-    } else if (Q.democracy_force - Q.far_right_force >= 0) {
-        Q.democracy_paramilitary_low = 1;
+} else if (Q.pro_republic_force >= Q.rfb_force) {
+    Q.paramilitary_delta = Q.pro_republic_paramilitary - Q.far_right_force - Q.rfb_force
+    if (Q.paramilitary_delta < 0) {
+        Q.paramilitary_diff_low = 1;
+        Q.paramilitary_delta = 0;
+    } else if (Q.paramilitary_delta < 10 && Q.paramilitary_delta >= 0) {
+        Q.paramilitary_diff_medium = 1;
+    } else if (Q.paramilitary_delta < 30 && Q.paramilitary_delta >= 10) {
+        Q.paramilitary_diff_high = 1;
+    } else if (Q.paramilitary_delta >= 30) {
+        Q.paramilitary_diff_very_high = 1;
     }
-    Q.democracy_paramilitary = 1;
-} else if (Q.state_force > Q.democracy_force && Q.state_force >= Q.far_right_force) {
-    if (Q.democracy_force > Q.far_right_force) Q.secondary_force = Q.democracy_force;
-    if (Q.far_right_force >= Q.democracy_force) Q.secondary_force = Q.far_right_force;
-    if (Q.state_force - Q.secondary_force >= 40) {
-        Q.state_paramilitary_highest = 1;
-    } else if (Q.state_force - Q.secondary_force >= 30) {
-        Q.state_paramilitary_high = 1;
-    } else if (Q.state_force - Q.secondary_force >= 10) {
-        Q.state_paramilitary_med = 1;
-    } else if (Q.state_force - Q.secondary_force >= 0) {
-        Q.state_paramilitary_low = 1;
+    Q.pro_republic_paramilitary = 1;
+} else {
+    Q.paramilitary_delta = Q.rfb_force - Q.pro_republic_paramilitary - Q.far_right_force
+    if (Q.paramilitary_delta < 0) {
+        Q.paramilitary_diff_low = 1;
+        Q.paramilitary_delta = 0;
+    } else if (Q.paramilitary_delta < 10 && Q.paramilitary_delta >= 0) {
+        Q.paramilitary_diff_medium = 1;
+    } else if (Q.paramilitary_delta < 30 && Q.paramilitary_delta >= 10) {
+        Q.paramilitary_diff_high = 1;
+    } else if (Q.paramilitary_delta >= 30) {
+        Q.paramilitary_diff_very_high = 1;
     }
-    Q.state_paramilitary = 1;
+    Q.far_left_paramilitary = 1;
 }
-
 
 
 if (Q.rubicon && Q.month_actions >= 1 && Q.month_actions != Q.month_actions_checked) {
@@ -593,14 +579,14 @@ if ((!Q.rubicon && Q.month_actions >= 1) || (Q.rubicon && Q.month_actions >= 4))
         Q.rural_nsdap += 8/12;
         Q.unemployed_nsdap += 15/12;
         Q.workers_other -= 2/12;
-        if (Q.dnvp_leader == "Hugenberg" && Q.z_leader != "Stegerwald") {
+        if (Q.dnvp_leader == "Hugenberg" && Q.stegerwald_path == 0) {
             Q.new_middle_other += 4/12;
             Q.old_middle_other += 4/12;
             Q.rural_other += 4/12;
             Q.new_middle_dnvp -= 2/12;
             Q.old_middle_dnvp -= 2/12;
             Q.rural_dnvp -= 2/12;
-        } else if (Q.dnvp_ideology == "Radical" && Q.z_leader == "Stegerwald") {
+        } else if (Q.dnvp_ideology == "Radical" && Q.stegerwald_path) {
             Q.new_middle_z += 3/12;
             Q.old_middle_z += 3/12;
             Q.rural_z += 3/12;
@@ -608,7 +594,7 @@ if ((!Q.rubicon && Q.month_actions >= 1) || (Q.rubicon && Q.month_actions >= 4))
             Q.old_middle_dnvp -= 3/12;
             Q.rural_dnvp -= 3/12;
         } 
-        if (Q.z_leader == "Stegerwald") {
+        if (Q.stegerwald_path) {
             Q.catholics -= 5/12;
             Q.workers_spd -= 7/12;
             Q.catholics_spd += 4/12;
@@ -1167,28 +1153,116 @@ if ((!Q.rubicon && Q.month_actions >= 1) || (Q.rubicon && Q.month_actions >= 4))
         }
     }
 
-    if (Q.spd_wtb_plan_implemented && !Q.return_to_normalcy) {
-        if (Q.unemployed > 15) {
-            Q.unemployed -= 5/6;
-        } else if (Q.unemployed < 15) {
-            Q.unemployed -= 3/6;
+    if (Q.far_right_paramilitary && Q.year >= 1930 && !Q.return_to_normalcy) {
+        Q.workers_nsdap += 4*Q.paramilitary_delta/12;
+        Q.workers_spd -= 4*Q.paramilitary_delta/12;
+        Q.new_middle_nsdap += 4*Q.paramilitary_delta/12;
+        Q.new_middle_ddp -= 4*Q.paramilitary_delta/12;
+        if (Q.nfvp_formed || Q.lvp_formed) Q.new_middle_dvp -= 4*Q.paramilitary_delta/12;
+        Q.old_middle_nsdap += 4*Q.paramilitary_delta/12;
+        if (!Q.dvp_in_stahlhelm) Q.old_middle_dvp -= 2*Q.paramilitary_delta/12;
+        Q.old_middle_wp -= 2*Q.paramilitary_delta/12;
+        Q.rural_nsdap += 2*Q.paramilitary_delta/12;
+        Q.rural_cnblp -= 2*Q.paramilitary_delta/12;
+        Q.unemployed_nsdap += 6*Q.paramilitary_delta/12;
+        Q.unemployed_kpd -= 6*Q.paramilitary_delta/12;
+        Q.catholics_nsdap += 2*Q.paramilitary_delta/12;
+        Q.catholics_z -= 2*Q.paramilitary_delta/12;
+        Q.pro_republic -= 0.3;
+        Q.nationalism += 0.25;
+        if (Q.sa_paramilitary) {
+            Q.workers_nsdap += 1*Q.paramilitary_delta/12;
+            Q.unemployed_nsdap += 2*Q.paramilitary_delta/12;
+            Q.new_middle_nsdap += 1*Q.paramilitary_delta/12;
+            Q.old_middle_nsdap += 1*Q.paramilitary_delta/12;
+            Q.rural_nsdap += 1*Q.paramilitary_delta/12;
+            Q.catholics_nsdap += 1*Q.paramilitary_delta/12;
+            Q.pro_republic -= 0.25;
         }
-        if (Q.unemployed < 5) {
-            Q.unemployed += 3/6;
-        }
-        if (Q.unemployed < 0) {
-            Q.unemployed += 3/6;
-        }
-        Q.workers += 4/6;
-        Q.inflation += 1.5/6;
-        if (Q.unemployed < 6) {
-            Q.inflation += 1;
-        }
-        Q.economic_growth += 1/6; 
-        if (Q.economic_growth > 5) Q.economic_growth -= 0.5/6;
-        Q.workers_spd += 6/6;
-        Q.workers_nsdap -= 6/6;
+    } else if (Q.pro_republic_paramilitary && Q.year >= 1930 && !Q.return_to_normalcy) {
+        Q.workers_spd += 3*Q.paramilitary_delta/12;
+        Q.workers_nsdap -= 3*Q.paramilitary_delta/12;
+        Q.new_middle_nsdap -= 3*Q.paramilitary_delta/12;
+        Q.new_middle_spd += 2*Q.paramilitary_delta/12;
+        Q.new_middle_ddp += 1*Q.paramilitary_delta/12;
+        Q.old_middle_nsdap -= 1*Q.paramilitary_delta/12;
+        Q.old_middle_ddp += 1*Q.paramilitary_delta/12;
+        Q.rural_nsdap -= 1*Q.paramilitary_delta/12;
+        Q.unemployed_spd += 5*Q.paramilitary_delta/12;
+        Q.unemployed_nsdap -= 4*Q.paramilitary_delta/12;
+        Q.unemployed_kpd -= 1*Q.paramilitary_delta/12;
+        if (Q.catholics_nsdap >= 1) Q.catholics_nsdap -= 1*Q.paramilitary_delta/12;
+        if (Q.catholics_nsdap >= 1) Q.catholics_spd += 1*Q.paramilitary_delta/12;
+        if (Q.pro_republic < 50) Q.pro_republic += Q.paramilitary_delta / 20;
+    } else if (Q.far_left_paramilitary && Q.year >= 1930 && !Q.return_to_normalcy) {
+        Q.workers_kpd += 5*Q.paramilitary_delta/12;
+        Q.workers_nsdap -= 5*Q.paramilitary_delta/12;
+        Q.unemployed_kpd += 6*Q.paramilitary_delta/12;
+        Q.unemployed_nsdap -= 6*Q.paramilitary_delta/12;
+        Q.new_middle_kpd += 1*Q.paramilitary_delta/12;
+        Q.new_middle_nsdap -= 1*Q.paramilitary_delta/12;
+        Q.catholics_kpd += 1*Q.paramilitary_delta/12;
+        Q.catholics_nsdap -= 1*Q.paramilitary_delta/12;
+        Q.pro_republic -= 0.5;
+        Q.socialism += 0.5;
     }
+
+    if (Q.spd_wtb_plan_implemented && !Q.return_to_normalcy) {
+        if (Q.unemployed >= 15) {
+            Q.unemployed -= 10/12;
+        } else if (Q.unemployed >= 5 && Q.unemployed < 15) {
+            Q.unemployed -= 5/12;
+        } else if (Q.unemployed >= 0 && Q.unemployed < 5) {
+            Q.unemployed += 1/12;
+        } else {
+            Q.unemployed += 6/12;
+        }
+
+        Q.workers += 8/12;
+        Q.inflation += 3/12;
+        
+        if (Q.unemployed < 5) Q.inflation += 1;
+        Q.economic_growth += 2/12; 
+        if (Q.economic_growth > 5) Q.economic_growth -= 1/12;
+
+        Q.workers_spd += 18/12;
+        Q.new_middle_spd += 6/12;
+        Q.old_middle_spd += 6/12;
+        Q.rural_spd += 6/12;
+        Q.unemployed_spd += 12/12;
+        Q.workers_kpd -= 6/12;
+        Q.unemployed_kpd -= 6/12;
+        Q.workers_nsdap -= 12/12;
+        Q.unemployed_nsdap -= 6/12;
+    }
+
+    if (Q.spd_left_plan_implemented && !Q.return_to_normalcy) {
+        if (Q.unemployed >= 15) {
+            Q.unemployed -= 10/12;
+        } else if (Q.unemployed >= 5 && Q.unemployed < 15) {
+            Q.unemployed -= 5/12;
+        } else if (Q.unemployed >= 0 && Q.unemployed < 5) {
+            Q.unemployed += 1/12;
+        } else {
+            Q.unemployed += 6/12;
+        }
+
+        Q.workers += 8/12;
+        Q.inflation += 4/12;
+
+        if (Q.unemployed < 6) Q.inflation += 2;
+        if (Q.economic_growth < 5) Q.economic_growth += 1/12;
+
+        Q.socialism += 6/12;
+
+        Q.workers_spd += 24/12;
+        Q.unemployed_spd += 18/12;
+        Q.workers_kpd -= 12/12;
+        Q.unemployed_kpd -= 6/12;
+        Q.workers_nsdap -= 12/12;
+        Q.unemployed_nsdap -= 12/12;
+    }
+
 
     if (Q.pro_republic >= (Q.nsdap_votes + Q.dnvp_votes + Q.kpd_votes + Q.other_votes + 30)) {
         Q.dvp_left += 0.1
@@ -1228,11 +1302,6 @@ if ((!Q.rubicon && Q.month_actions >= 1) || (Q.rubicon && Q.month_actions >= 4))
         Q.ddp_ideology = "Left Liberalism"
     }
 
-    if (Q.spd_left + Q.spd_right >= 20) {
-        Q.spd_left *= 0.9;
-        Q.spd_right *= 0.9;
-    }
-
     if (Q.z_in_government && Q.z_leader == "Stegerwald" && Q.dnvp_in_government && Q.dnvp_leader == "Treviranus") {
         Q.cvp_merger_countdown -= 1;
     }
@@ -1250,43 +1319,34 @@ if ((!Q.rubicon && Q.month_actions >= 1) || (Q.rubicon && Q.month_actions >= 4))
         Q.demand_for_action_countdown = 8;
     }
     
+    if (Q.spd_toleration) Q.spd_patience -= (5 - Q.spd_relation/50);
+
+    if (Q.president == "Hindenburg") {
+
+        if (Q.spd_in_government) Q.hindenburg_angry += 2;
+        if (Q.spd_toleration) Q.hindenburg_angry += 1;
+
+        if (Q.dvp_left < 0) Q.hindenburg_angry += 1;
+
+        if (Q.pro_republic - Q.nsdap_votes < 50) Q.hindenburg_angry += 1;
+        if (Q.largest_party == "NSDAP" && Q.nsdap_r >= 26) Q.hindenburg_angry += 5;
+
+        if (Q.dnvp_left >= 0) Q.hindenburg_angry -= 3;
+        if (Q.kvp_formed) Q.hindenburg_angry -= 2;
+
+        if (Q.black_thursday_seen && !Q.works_program) Q.hindenburg_angry += 1;
+        if (Q.return_to_normalcy) Q.hindenburg_angry -= 3;
     
-    
-    if (Q.president == "Hindenburg" && Q.chancellor == "Brüning" && !Q.spd_in_government && Q.year >= 1930) {
-        Q.bruning_chancellor_time += 1;
+        if (Q.chancellor == "Brüning" && !Q.spd_in_government && Q.year >= 1930) {
+            Q.bruning_chancellor_time += 1;
         
-        if (Q.spd_toleration) {
-            Q.bruning_toleration_time += 1; 
-            Q.ddp_cohesion -= 0.25;
-            if (Q.dvp_in_government) Q.nationalist_dissent += 0.5;
-        } else if (!Q.spd_toleration) {
-            Q.bruning_toleration_time = 0;
-        }
-    }
-    if (!Q.spd_toleration) {
-        Q.bruning_toleration_time = 0;
-    }
-    if (Q.spd_toleration) {
-        Q.spd_patience -= (5-0.02*spd_relation);
-    }
-    
-    if (Q.bruning_chancellor_time == 1) {
-        Q.hindenburg_angry_bruning = 0;
-    }
-    if (Q.bruning_chancellor_time > 1) {
-        if (Q.largest_party == "NSDAP" && Q.nsdap_r >= 26) {
-            Q.hindenburg_angry_bruning += 5;
-        }
-        if (Q.spd_toleration) {
-            Q.hindenburg_angry_bruning += 1;
-        }
-        if (Q.dvp_left < 0) {
-            Q.hindenburg_angry_bruning += 1;
-        }
-        if (Q.dnvp_ideology == "Moderate") {
-            Q.hindenburg_angry_bruning -= 3;
-        } else if (Q.kvp_formed) {
-            Q.hindenburg_angry_bruning -= 2;
+            if (Q.spd_toleration) {
+                Q.bruning_toleration_time += 1; 
+                Q.ddp_cohesion -= 0.25;
+                if (Q.dvp_in_government) Q.nationalist_dissent += 0.5;
+            } else if (!Q.spd_toleration) {
+                Q.bruning_toleration_time = 0;
+            }
         }
     }
 

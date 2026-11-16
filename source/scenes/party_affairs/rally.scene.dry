@@ -8,7 +8,7 @@ card-image: img/protest.jpg
 
 = Rally
 
-Organizing rallies to rile up their constituents has mainly been a tactic used by the <span style="color: #E3000F;">**SPD**</span>. While our rallies will not have the effectiveness of the socialist parties, simply due to the party’s smaller voter base, we can still galvanize the crowd towards a common message. What will be the primary theme of this rally?
+Organizing rallies to rile up their constituents has mainly been a tactic used by the <span style="color: var(--spd-color);">**SPD**</span>. While our rallies will not have the effectiveness of the socialist parties, simply due to the party’s smaller voter base, we can still galvanize the crowd towards a common message. What will be the primary theme of this rally?
 
 - @attack_republic: Attack the republic’s foundations and gear towards nationalistic rhetoric.
 - @need_for_reform: The need for reform, both within the party, and in the nation.
@@ -28,7 +28,7 @@ unavailable-subtitle: Majority of the party does not support this.
 view-if: year = 1928 and month < 12
 on-arrival: new_middle_dvp += 2*(1-dissent); old_middle_dvp += 2*(1-dissent); workers_dvp += 1*(1-dissent); rural_dvp += 1*(1-dissent); liberal_strength += 3; labor_strength += 4; liberal_dissent -= 3; labor_dissent -= 3; dvp_left += 1;
 
-The nationalists and industrialists have grown suspicious of our motives, while the democratic parties and especially the <span style="color: #E3000F;">**SPD**</span> has become curious with the possibility of further cooperation. Voters from outside our traditional blocs have even taken an interest with our rally.
+The nationalists and industrialists have grown suspicious of our motives, while the democratic parties and especially the <span style="color: var(--spd-color);">**SPD**</span> has become curious with the possibility of further cooperation. Voters from outside our traditional blocs have even taken an interest with our rally.
 
 @democracy
 on-arrival: new_middle_dvp += 3*(1-dissent); democratization += 1; pro_republic += 1*(1 - dissent); new_middle_dvp += 3*(1-dissent) if democratization >= 3; old_middle_dvp += 3*(1-dissent) if democratization >= 3; workers_dvp += 2*(1-dissent) if democratization >= 3 and dvp_left >= 0; pro_republic += 4*(1 - dissent) if democratization >= 3; dvp_left += 1; liberal_strength += 5; liberal_dissent -= 5; nationalist_dissent += 5

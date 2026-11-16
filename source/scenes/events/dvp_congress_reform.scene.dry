@@ -34,7 +34,7 @@ new-page: true
 
 A party congress has been called within the <span style="color: var(--dvp-color);">**DVP**</span> over proposed internal reform that would turn the party into a genuine <span style="color: var(--dvp-color);">**People's Party**</span>, not one of industrial interests. 
 
-German industry isn't going to abandon their voice within the <span style="color: var(--dvp-color);">**DVP**</span> so easily, and this is likely to be the last chance Stresemann will have to maintain control of the party, with his declining health.[? if not in_grand_coalition: The left of our party has also been diminished by the current absence of a coalition including both parties. ?]
+German industry isn't going to abandon their voice within the <span style="color: var(--dvp-color);">**DVP**</span> so easily, and this is likely to be the last chance Stresemann will have to maintain control of the party, with his declining health.[? if not spd_in_government: The left of our party has also been diminished by the current absence of a coalition including both parties. ?]
 
 - @resultsdvp: The party votes...
 
@@ -47,7 +47,7 @@ face-image: img/portraits/StresemannGustav.jpg
 
 Stresemann rallies what's left of our party that aren't bought out by industry into adopting the proposed reform, not without any fierce opposition from the other half of the party. The industrialists have diverted their efforts on maintaining influence within the <span style="color: #3F7BC1;">**DNVP**</span> now, to make up for their loss.
 
-We have noticed an improvement in relations with the <span style="color: #E3000F;">**SPD**</span>[? if in_grand_coalition:, and a decrease in coalition tensions?]. The <span style="color: #DCCA4A;">**[+ ddp_name +]**</span> has also voiced approval to the actions of the congress and have opened up talks for further cooperation.
+We have noticed an improvement in relations with the <span style="color: var(--spd-color);">**SPD**</span>[? if in_grand_coalition:, and a decrease in coalition tensions?]. The <span style="color: #DCCA4A;">**[+ ddp_name +]**</span> has also voiced approval to the actions of the congress and have opened up talks for further cooperation.
 
 
 @right
@@ -56,4 +56,4 @@ face-image: img/portraits/ScholzErnst.jpg
 
 Stresemann has faced a resounding defeat at the hands of the right-wing industrial interests inside our party. They have capitalized on this defeat by restricting the powers of the party chairmanship under Stresemann towards the more conservative Reichstag delegation led by Ernst Scholz, the lead figure on the right-wing. 
 
-We have noticed an deterioration in relations with the <span style="color: #E3000F;">**SPD**</span>[? if in_grand_coalition:, and increased tension in the coalition?]. It is also a major setback for the efforts of our left wing to create a united bourgeois party.
+We have noticed an deterioration in relations with the <span style="color: var(--spd-color);">**SPD**</span>[? if spd_in_government and dvp_in_government:, and increased tension in the coalition?]. It is also a major setback for the efforts of our left wing to create a united bourgeois party.

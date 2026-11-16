@@ -32,12 +32,14 @@ Lower-income tax rates: [+ lower_tax_rates : taxation +]
 - @easy_discard
 - @cancel_advisor_action
 
+
 @raise_progressive
 subtitle: This does not change overall revenue. [? if lower_tax_rates < -5 : Lower-class tax rates are too low to cut anymore. ?] [? if upper_tax_rates > 5 : Upper-class tax rates are too high to increase. ?]
 choose-if: lower_tax_rates >= -5 and upper_tax_rates <= 5
 on-arrival: upper_tax_rates += 1; lower_tax_rates -= 1; coalition_dissent += 1 if (z_in_government or dnvp_in_government); workers_dvp += 4*(1-dissent); old_middle_dvp -= 4; new_middle_dvp -= 4; spd_patience += 25 if spd_toleration; spd_relation += 5; demand_for_action_countdown -= 4; capital_strike_progress += 1; capital_strike_progress += 1 if upper_tax_rates > 1; capital_strike_progress += 1 if upper_tax_rates > 3; new_middle_dvp -= 2 if upper_tax_rates > 1; old_middle_dvp -= 2 if upper_tax_rates > 1; industrialist_dissent += 10
 
 Making the tax system more progressive is popular among the workers, but it upsets our bourgeois voters.
+
 
 @raise_rich
 subtitle: +2 budget
@@ -55,7 +57,7 @@ unavailable-subtitle: Tax rates are already too high.
 choose-if: lower_tax_rates <= 5
 on-arrival: lower_tax_rates += 1; coalition_dissent += 1 if spd_in_government; budget += 2; workers_dvp -= 4; workers_dvp -= 5 if lower_tax_rates >= 2; labor_dissent += 3; progressive_dissent += 3; spd_patience -= 25 if spd_toleration; spd_relation -= 5;
 
-We have raised taxes for the poor and working class. This will seriously harm any efforts to work with the <span style="color: #E3000F;">**SPD**</span>.
+We have raised taxes for the poor and working class. This will seriously harm any efforts to work with the <span style="color: var(--spd-color);">**SPD**</span>.
 
 
 @cut_overall
@@ -65,6 +67,7 @@ choose-if: budget >= 3 and upper_tax_rates >= -5 and lower_tax_rates >= -5
 on-arrival: budget -= 3; upper_tax_rates -= 1; lower_tax_rates -= 1; new_middle_dvp += 4*(1-dissent); old_middle_dvp += 4*(1-dissent); workers_dvp += 2*(1-dissent); demand_for_action_countdown += 8; unemployed -= 1.5 if unemployed >= 5; capital_strike_progress -= 1 if upper_tax_rates < 0; inflation += 1; economic_growth += 0.6; industrialist_dissent -= 5; labor_dissent -= 3;
 
 Cutting taxes benefits most the rich and middle-class, who pay more taxes than the working class. Our bourgeois voters are happy at our orthodox economic course.
+
 
 @cut_poor
 title: Cut consumption taxes for the poor.
@@ -127,6 +130,7 @@ on-arrival: tariffs += 1; inflation += 1 if inflation > 0; inflation += 0.5 if i
 Increasing tariffs leads to higher prices for basic goods, increasing inflation and hurting consumption among the working class. Retaliatory tariffs reduce the competitiveness of German exports, raising unemployment among workers. They also lead to an atmosphere of international suspicion, reducing our ability to negotiate with other countries.
 
 On the other hand, agricultural producers and some small businesses benefit from higher tariffs, as farmers can now command higher prices for grain, and formerly uncompetitive businesses are now able to function.
+
 
 @lower_tariffs
 title: Lower tariffs on imports.

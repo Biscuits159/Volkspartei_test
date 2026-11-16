@@ -504,6 +504,9 @@ document.body.style.setProperty('--dvp-color', '#C0A054');
 document.body.style.setProperty('--dvp-ideologycolor', '#C0A054');
 Q.dvp_left = 4;
 
+Q.newspaper = 0;
+Q.radio = 0;
+
 Q.lvp_formed = 0;
 Q.nfvp_formed = 0;
 
@@ -579,7 +582,7 @@ Q.spd_name = "SPD";
 Q.spd_leader = "Wels";
 Q.spd_ideology = "Social Democracy";
 document.body.style.setProperty('--spd-color', '#E3000F');
-Q.spd_left = -3;
+Q.spd_left = 1;
 Q.sed_formed = 0;
 
 Q.sapd_formed = 0;
@@ -589,7 +592,6 @@ Q.aspd_radical = 0;
 
 Q.ddp_exist = 1;
 Q.ddp_name = "DDP";
-Q.ddp_full_name = "German Democratic Party";
 Q.ddp_leader = "Koch-Weser";
 Q.ddp_ideology = "Left Liberalism";
 document.body.style.setProperty('--ddp-color', '#DCCA4A');
@@ -606,14 +608,14 @@ Q.csrp_leader = "Wirth";
 Q.csrp_ideology = "Catholic Left";
 
 Q.z_exist = 1;
-Q.z_name = "Z";
-Q.z_full_name = "Center Party";
+Q.z_name = "Center";
 Q.z_leader = "Marx";
 Q.z_ideology = "Christian Democracy";
 document.body.style.setProperty('--z-color', '#000000');
-Q.z_left = -1;
+Q.stegerwald_path = 0;
 Q.cvp_formed = 0;
 Q.cvp_merger_countdown = 8;
+Q.cvp_left = 0;
 
 Q.bvp_exist = 1;
 Q.bvp_leader = "Speck";
@@ -642,7 +644,6 @@ Q.kvp_ideology = "Christian Conservatism";
 
 Q.dnvp_exist = 1;
 Q.dnvp_name = "DNVP";
-Q.dnvp_full_name = "German National People's Party";
 Q.dnvp_leader = "Westarp";
 Q.dnvp_ideology = "National Conservatism";
 document.body.style.setProperty('--dnvp-color', '#3F7BC1');
@@ -928,6 +929,7 @@ Q.judicial_reform = 0;
 Q.bureaucratic_reform = 0;
 Q.military_reform = 0;
 Q.womens_rights = 0;
+Q.lgbt_rights = 0;
 // level of welfare relative to 1928 (can go negative)
 Q.welfare = 0;
 // level of support for farmers
@@ -945,6 +947,7 @@ Q.soviet_relation = 0;
 // How much have we exposed the secret rearmament programs?
 Q.rearmament_exposed = 0;
 // reparations vs baseline: young plan is -1.
+Q.young_plan_ratified = 0;
 Q.reparations = 0;
 Q.reparations_negotiation = 0;
 // Our economic policy.
@@ -997,7 +1000,7 @@ Q.timers = ['advisor_action', 'crisis_program',
             'agricultural_policy', 'domestic_enemies', 'fiscal_policy', 'monetary_policy',
             'foreign_policy', 'judiciary', 'labor_affairs', 'military_policy',
             'police', 'prussian_affairs', 'landtag_policy', 'shuffle_cabinet', 'social_welfare',
-            'homosexual_rights', 'economic_policy', 'coalition_affairs',
+            'progressive_policies', 'economic_policy', 'coalition_affairs',
             'war_guilt', 'dealing_with_toleration',
             'constitutional_reform', 'labor_rights',
             'education_science', 'curriculum',
@@ -1021,7 +1024,7 @@ Q.rubicon_timers = ['advisor_action', 'crisis_program',
             'agricultural_policy', 'domestic_enemies', 'fiscal_policy', 'monetary_policy',
             'foreign_policy', 'judiciary', 'labor_affairs', 'military_policy',
             'police', 'prussian_affairs', 'shuffle_cabinet', 'social_welfare',
-            'homosexual_rights', 'economic_policy', 'coalition_affairs',
+            'progressive_policies', 'economic_policy', 'coalition_affairs',
             'war_guilt', 'dealing_with_toleration',
             'constitutional_reform', 'labor_rights',
             'education_science', 'curriculum',
@@ -1083,7 +1086,7 @@ Q.police_timer = 0;
 Q.shuffle_cabinet_timer = 0;
 Q.social_welfare_timer = 0;
 Q.war_guilt_timer = 0;
-Q.womens_rights_timer = 0;
+Q.progressive_policies_timer = 0;
 Q.economic_democracy_timer = 0;
 Q.coalition_affairs_timer = 0;
 //landtags
@@ -1216,6 +1219,6 @@ go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
 It is a hopeful moment for German democracy. The hyperinflation crisis that marked the republic’s early years has finally been quelled, and a sense of normalcy is returning. Our leader, Gustav Stresemann, has led the nation’s rapprochement between us and the Allied Powers, and the turmoil that the Great War had inflicted on Europe is slowly fading away.
 
-However, not all is well for us. The center-right coalition headed by Wilhelm Marx’s <span style="color: #000000;">**Zentrum**</span> has torn itself apart, and we have been caught in the crossfire. From the sidelines, the <span style="color: #E3000F;">**SPD**</span> awaits to pounce on this opportunity, eating away at the dominance of our fellow business-minded parties.
+However, not all is well for us. The center-right coalition headed by Wilhelm Marx’s <span style="color: #000000;">**Zentrum**</span> has torn itself apart, and we have been caught in the crossfire. From the sidelines, the <span style="color: var(--spd-color);">**SPD**</span> awaits to pounce on this opportunity, eating away at the dominance of our fellow business-minded parties.
 
 The coalition has collapsed, mainly due to disagreements with our partners regarding religious schools, and new elections have been called. The next elections are slated for May of this year.
