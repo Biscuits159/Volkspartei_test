@@ -773,7 +773,7 @@ go-to: endorsements
 
 [? if nsdap_candidate == "Hitler": <span style="color: #954B00;">**Adolf Hitler**</span> - supported by: ?][? if nsdap_candidate == "Göring": <span style="color: #954B00;">**Hermann Göring**</span> - supported by: ?]
 
-- <span style="color: #954B00;">**NSDAP**</span>
+[? if nsdap_candidate == "Hitler" or nsdap_candidate == "Göring": - <span style="color: #954B00;">**NSDAP**</span> ?]
 
 
 @hope
