@@ -743,7 +743,7 @@ go-to: endorsements
 
 [? if kvp_candidate == dvp_candidate and kvp_formed: - <span style="color: #455B95;">**KVP**</span> ?]
 
-[? if dnvp_candidate == dvp_candidate and dnvp_exist: - <span style="color: var(--dnvp-color);">**DNVP**</span> ?] ?]
+[? if dnvp_candidate == dvp_candidate and dnvp_exist: - <span style="color: var(--dnvp-color);">**DNVP**</span> ?]
 
 [? if spd_candidate == "Braun": <span style="color: var(--spd-color);">**Otto Braun**</span> - supported by: ?][? if spd_candidate == "Rosenfeld": <span style="color: var(--spd-color);">**Kurt Rosenfeld**</span> - supported by: ?]
 
