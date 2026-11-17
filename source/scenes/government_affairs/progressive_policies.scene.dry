@@ -45,7 +45,7 @@ We aim to fix inequalities within marriage law, including giving women the right
 max-visits: 1
 view-if: womens_rights > 2
 subtitle: [? if progressive_coalition < 50 : This is unlikely to succeed; we do not have majority support. ?]
-go-to: abortion_rights_fail if progressive_coalition < 50; abortion_rightse_success if progressive_coalition >= 50
+go-to: abortion_rights_fail if progressive_coalition < 50; abortion_rights_success if progressive_coalition >= 50
 
 @abortion_rights_fail
 on-arrival: z_relation -= 5; dnvp_relation -= 5; coalition_dissent += 1 if z_in_government or dnvp_in_government; catholics_dvp -= 3;

@@ -43,10 +43,10 @@ Impressed by the public support, Hindenburg is reconsidering his decision but in
 
 @campaign_hindenburg
 title: Hold a campaign for President Hindenburg
-subtitle: -2 resources
+subtitle: -1 resource
 unavailable-subtitle: Not enough resources.
-choose-if: resources >= 2
-on-arrival: hindenburg_run_points += 3; resources -= 2; dnvp_relation += 5*(1-dissent) if dnvp_left >= 0; cnblp_relation += 3*(1-dissent); wp_relation += 5*(1-dissent); dbp_relation += 5*(1-dissent); spd_relation -= 5; ddp_relation -= 3 if ddp_exist
+choose-if: resources >= 1
+on-arrival: hindenburg_run_points += 3; resources -= 1; dnvp_relation += 5*(1-dissent) if dnvp_left >= 0; cnblp_relation += 3*(1-dissent); wp_relation += 5*(1-dissent); dbp_relation += 5*(1-dissent); spd_relation -= 5; ddp_relation -= 3 if ddp_exist
 
 We hold rallies around Prussia, hoping to convince the aging Field Marshall to run for President once more. Our campaign grants us some goodwill among moderate and right-wing parties, whereas the <span style="color: var(--spd-color);">**[+ spd_name +]**</span> is upset at us for supporting a reactionary for the second time. 
 
@@ -54,7 +54,7 @@ We hold rallies around Prussia, hoping to convince the aging Field Marshall to r
 
 @hindenburg_choose
 title: We await his decision.
-go-to: hindenburg_drop_out if hindenburg_run_points < 7; hindenburg_run if hindenburg_run_points >= 7
+go-to: hindenburg_drop_out if hindenburg_run_points < 7; hindenburg_running if hindenburg_run_points >= 7
 
 @hindenburg_drop_out
 on-arrival: hindenburg_run = 0;

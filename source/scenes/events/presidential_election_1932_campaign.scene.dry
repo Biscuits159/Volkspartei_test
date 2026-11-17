@@ -217,7 +217,7 @@ go-to: campaign_menu
 
 @checkout
 title: Checkout your order.
-go-to: campaigning_hindenburg if dvp_candidate = "Hindenburg"; campaigning_eckener if dvp_candidate = "Eckener"; campaigning_braun if dvp_candidate = "Braun"
+go-to: campaigning_menu
 
 
 @newspaper
@@ -247,7 +247,7 @@ title: Cooperate with the Iron Front!
 subtitle: We can be more effective if we cooperate with more left-wing republicans.
 choose-if: spd_relation >= 50 and dvp_campaign != "Jarres" or dvp_campaign != "Westarp"
 unavailable-subtitle: Our relations with the <span style="color: var(--spd-color);">**SPD**</span> are not good enough.
-view-if: iron_front_formed and dvp_ideology = "Left" and dvp_candidate = spd_candidate
+view-if: iron_front_formed and dvp_left >= 0 and dvp_candidate = spd_candidate
 on-arrival: workers_spd += 2; new_middle_spd += 3; rural_z += 4 if z_candidate = dvp_candidate; new_middle_ddp += 5 if ddp_exist and ddp_candidate = dvp_candidate; old_middle_ddp += 3 if ddp_exist and ddp_candidate = dvp_candidate; new_middle_dvp += 3*(1 - dissent); old_middle_dvp += 2*(1 - dissent); pro_republic += 4*(1-dissent)
 
 Our cooperation allows us to greatly increase support for our unity candidate.

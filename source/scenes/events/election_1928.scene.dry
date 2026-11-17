@@ -323,7 +323,7 @@ if (Q.dstp_formed && !Q.dstp_collapse_seen) {
 on-departure: nazi_urgency = 1 if (nazi_urgency == 0 and nsdap_r >= 15)
 on-display: {!
 data = []
-if (Q..kpd_exist && Q.kpd_r) {
+if (Q.kpd_exist && Q.kpd_r) {
     data.push({
         "id": "kpd",
         "legend": Q.kpd_name,

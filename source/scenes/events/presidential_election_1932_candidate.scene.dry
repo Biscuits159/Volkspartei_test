@@ -23,12 +23,12 @@ Q.dnf_candidate = "Duesterberg";
 Q.kpd_candidate = "Thälmann";
 Q.sapd_candidate = "Thälmann";
 
-let count = 0;
-if (Q.nsdap_votes < 20) count++;
-if (Q.pro_republic > 60) count++;
-if (Q.weimar_votes > Q.antidem_votes) count++;
+Q.event_points = 0;
+if (Q.nsdap_votes < 20) Q.event_points += 1;
+if (Q.pro_republic > 60) Q.event_points += 1;
+if (Q.weimar_votes > Q.antidem_votes) Q.event_points += 1;
 Q.spd_campaign = 0
-if (Q.count >= 2) {
+if (Q.event_points >= 2) {
     Q.spd_campaign = 1;
     if (Q.spd_left >= 3) {
         Q.spd_candidate = "Rosenfeld";
@@ -65,15 +65,15 @@ if (Q.hindenburg_run) {
 
     if (Q.z_candidate != "Braun"){
         if (Q.stegerwald_path) Q.adenauer_candidacy = 1;
-        if (!Q.stegerwald_path and Q.chancellor != "Brüning" and Q.bourgeois_votes >= 40) Q.bruning_candidacy = 1;
-        if (!Q.stegerwald_path and Q.adenauer_candidacy == 0 and Q.bruning_candidacy == 0) Q.stegerwald_candidacy = 1;
+        if (!Q.stegerwald_path && Q.chancellor != "Brüning" && Q.bourgeois_votes >= 40) Q.bruning_candidacy = 1;
+        if (!Q.stegerwald_path && Q.adenauer_candidacy == 0 && Q.bruning_candidacy == 0) Q.stegerwald_candidacy = 1;
     }
-    if (Q.bourgeois_votes < 35 and Q.cvp_left < 0) Q.vorbeck_candidacy = 1;
-    if (Q.dnvp_ideology >= 0 and Q.bourgeois_votes >= 35) Q.westarp_candidacy = 1;
-    if (Q.adenauer_candidacy == 0 and Q.bruning_candidacy == 0 and Q.stegerwald_candidacy == 0 and Q.vorbeck_candidacy == 0 and Q.westarp_candidacy == 0) Q.vorbeck_candidacy = 1;
-    if (Q.westarp_candidacy and Q.vorbeck_candidacy) Q.westarp_candidacy = 0;
+    if (Q.bourgeois_votes < 35 && Q.cvp_left < 0) Q.vorbeck_candidacy = 1;
+    if (Q.dnvp_ideology >= 0 && Q.bourgeois_votes >= 35) Q.westarp_candidacy = 1;
+    if (Q.adenauer_candidacy == 0 && Q.bruning_candidacy == 0 && Q.stegerwald_candidacy == 0 && Q.vorbeck_candidacy == 0 && Q.westarp_candidacy == 0) Q.vorbeck_candidacy = 1;
+    if (Q.westarp_candidacy && Q.vorbeck_candidacy) Q.westarp_candidacy = 0;
 
-    if (Q.vorbeck_candidacy and Q.cvp_formed) {
+    if (Q.vorbeck_candidacy && Q.cvp_formed) {
         Q.vorbeck_candidacy = 0;
         Q.adenauer_candidacy = 0;
         Q.bruning_candidacy = 0;
@@ -101,7 +101,7 @@ if (Q.hindenburg_run) {
         if (!Q.reactionary_candidate) Q.reactionary_candidate = "Vorbeck";
     }
 
-    if (!Q.spd_campaign and Q.reactionary_candidate != "Westarp") Q.spd_candidate = Q.reactionary_candidate;
+    if (!Q.spd_campaign && Q.reactionary_candidate != "Westarp") Q.spd_candidate = Q.reactionary_candidate;
     if (!Q.spd_campaign) Q.ddp_candidate = Q.reactionary_candidate;
     if (!Q.spd_campaign) Q.csrp_candidate = Q.reactionary_candidate;
     if (Q.z_candidate != "Braun") Q.z_candidate = Q.reactionary_candidate;

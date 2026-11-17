@@ -147,17 +147,17 @@ go-to: hindenburg_wins if reactionary_majority == 1 and reactionary_candidate = 
 
 Results:
 
-[? if dvp_candidate == "Eckener" or Q.dvp_candidate == "Luther" or Q.dvp_candidate == "Jarres": [? if dvp_candidate [? if dvp_candidate == "Eckener": **Hugo** <span style="color: #000000;">**Ec**</span><span style="color: #DD0000;">**ken**</span><span style="color: #FFCC00;">**er**</span> - ?][? if dvp_candidate == "Luther": <span style="color: var(--dvp-color);">**Hans Luther**</span> - ?][? if dvp_candidate == "Jarres": <span style="color: var(--dvp-color);">**Karl Jarres**</span> - ?] [+ dvp_candidate_votes_disp +]% ?] ?]
+[? if dvp_candidate == "Eckener" or dvp_candidate == "Luther" or dvp_candidate == "Jarres": [? if dvp_candidate == "Eckener": **Hugo** <span style="color: #000000;">**Ec**</span><span style="color: #DD0000;">**ken**</span><span style="color: #FFCC00;">**er**</span> ?][? if dvp_candidate == "Luther": <span style="color: var(--dvp-color);">**Hans Luther**</span> ?][? if dvp_candidate == "Jarres": <span style="color: var(--dvp-color);">**Karl Jarres**</span> ?] - [+ dvp_candidate_votes_disp +]% ?]
 
 <span style="color: var(--kpd-color);">**Thälmann**</span> - [+ thalmann_votes_disp +]%
 
-[? if spd_campaign: [? if spd_candidate == "Braun": <span style="color: var(--spd-color);">**Braun**</span> - ?][? if spd_candidate == "Rosenfeld": <span style="color: var(--spd-color);">**Rosenfeld**</span> - ?] [+ spd_candidate_votes_disp +]% ?]
+[? if spd_campaign: [? if spd_candidate == "Braun": <span style="color: var(--spd-color);">**Otto Braun**</span> ?][? if spd_candidate == "Rosenfeld": <span style="color: var(--spd-color);">**Kurt Rosenfeld**</span> ?] - [+ spd_candidate_votes_disp +]% ?]
 
 [? if reactionary_candidate == "Hindenburg": <span style="color: #808080;">**Paul von Hindenburg**</span> ?][? if reactionary_candidate = "Adenauer":  <span style="color: var(--z-color);">**Konrad Adenauer**</span> ?][? if reactionary_candidate = "Brüning":  <span style="color: var(--z-color);">**Heinrich Brüning**</span> ?][? if reactionary_candidate = "Stegerwald":  <span style="color: var(--z-color);">**Adam Stegerwald**</span> ?][? if reactionary_candidate = "Vorbeck": <span style="color: #808080;">**Paul von Lettow-Vorbeck**</span> ?][? if reactionary_candidate = "Westarp":  <span style="color: var(--dnvp-color);">**Kuno von Westarp**</span>?] - [+ reactionary_votes_disp +]%
 
-[? if second_reactionary_candidate != 0: [? if second_reactionary_candidate = "Adenauer":  <span style="color: var(--z-color);">**Konrad Adenauer**</span> ?][? if second_reactionary_candidate = "Brüning":  <span style="color: var(--z-color);">**Heinrich Brüning**</span> ?][? if second_reactionary_candidate = "Stegerwald":  <span style="color: var(--z-color);">**Adam Stegerwald**</span> ?][? if second_reactionary_candidate = "Vorbeck": <span style="color: #808080;">**Paul von Lettow-Vorbeck**</span> ?][? if second_reactionary_candidate = "Westarp":  <span style="color: var(--dnvp-color);">**Kuno von Westarp**</span>?] - [+ second_reactionary_votes_disp +]% ?]
+[? if second_reactionary_candidate != 0: [? if second_reactionary_candidate = "Adenauer": <span style="color: var(--z-color);">**Konrad Adenauer**</span> ?][? if second_reactionary_candidate = "Brüning":  <span style="color: var(--z-color);">**Heinrich Brüning**</span> ?][? if second_reactionary_candidate = "Stegerwald":  <span style="color: var(--z-color);">**Adam Stegerwald**</span> ?][? if second_reactionary_candidate = "Vorbeck": <span style="color: #808080;">**Paul von Lettow-Vorbeck**</span> ?][? if second_reactionary_candidate = "Westarp":  <span style="color: var(--dnvp-color);">**Kuno von Westarp**</span>?] - [+ second_reactionary_votes_disp +]% ?]
 
-[? if dnvp_candidate = "Duesterberg": <span style="color: var(--dnvp-color);">**Duesterberg**</span> - [+ harzburg_votes_disp +]% ?][? if dnf_candidate = "Duesterberg" and dnf_formed: <span style="color: #003755;">**Duesterberg**</span> - [+ harzburg_votes_disp +]% ?]
+[? if dnvp_candidate = "Duesterberg": <span style="color: var(--dnvp-color);">**Duesterberg**</span> ?][? if dnf_candidate = "Duesterberg" and dnf_formed: <span style="color: #003755;">**Duesterberg**</span> ?] - [+ harzburg_votes_disp +]%
 
 <span style="color: #954B00;">**[+ nsdap_candidate +]**</span> - [+ hitler_votes_disp +]%
 
