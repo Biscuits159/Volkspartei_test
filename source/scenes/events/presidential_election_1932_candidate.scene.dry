@@ -7,7 +7,8 @@ on-arrival: {!
 Q.presidential_election_campaigning_seen = 1;
 
 Q.weimar_votes = Q.spd_votes + Q.ddp_votes + Q.z_votes;
-Q.bourgeois_votes = Q.ddp_votes + Q.dbp_votes + Q.csrp_votes + Q.z_votes + Q.bvp_votes + Q.csvd_votes + Q.dvp_votes + Q.wp_votes + Q.cnblp_votes + Q.kvp_votes + Q.dnvp_votes + Q.other_votes;
+Q.bourgeois_votes = Q.ddp_votes + Q.dbp_votes + Q.csrp_votes + Q.z_votes + Q.bvp_votes + Q.csvd_votes + Q.dvp_votes + Q.wp_votes + Q.cnblp_votes + Q.kvp_votes + Q.other_votes;
+if (Q.dnvp_left >= 0) Q.bourgeois_votes += Q.dnvp_votes;
 Q.antidem_votes = Q.kpd_votes + Q.dnf_votes + Q.nsdap_votes;
 if (Q.dnvp_left < 0) Q.antidem_votes += Q.dnvp_votes;
 
@@ -133,7 +134,7 @@ if (Q.hindenburg_run) {
 
     if (Q.reactionary_candidate == "Westarp") {
         Q.spd_campaign = 1;
-        Q.spd_candidate == "Braun";
+        Q.spd_candidate = "Braun";
         Q.ddp_candidate = Q.reactionary_candidate;
         Q.csrp_candidate = Q.reactionary_candidate;
     }
