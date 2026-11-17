@@ -165,7 +165,7 @@ Results:
 on-arrival: {!
 Q.presidential_election_r2_trigger = 1;
 
-if (Q.dnvp_candidate = "Duesterberg" || Q.dnf_candidate = "Duesterberg") Q.duesterberg_r1 = 1;
+if (Q.dnvp_candidate == "Duesterberg" || Q.dnf_candidate == "Duesterberg") Q.duesterberg_r1 = 1;
 
 if (Q.second_reactionary_votes > reactionary_votes) {
     if (Q.spd_candidate == Q.reactionary_candidate) Q.spd_candidate = Q.second_reactionary_candidate;
