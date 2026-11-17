@@ -117,10 +117,9 @@ Q.spd_candidate_votes_disp = Q.spd_candidate_votes.toFixed(1);
 Q.hitler_votes_disp = Q.hitler_votes.toFixed(1);
 Q.thalmann_votes_disp = Q.thalmann_votes.toFixed(1);
 !}
-go-to: calculation
-
-@calculation
 go-to: hindenburg_wins if reactionary_plurality and reactionary_candidate = "Hindenburg"; adenauer_wins if reactionary_plurality and reactionary_candidate == "Adenauer"; bruning_wins if reactionary_plurality and reactionary_candidate == "Brüning"; stegerwald_wins if reactionary_plurality and reactionary_candidate == "Stegerwald"; westarp_wins if reactionary_plurality and reactionary_candidate == "Westarp"; lettow_vorbeck_wins if reactionary_plurality and reactionary_candidate == "Lettow-Vorbeck"; eckener_wins if dvp_candidate_plurality and dvp_candidate == "Eckener"; luther_wins if dvp_candidate_plurality and dvp_candidate == "Luther"; jarres_wins if dvp_candidate_plurality and dvp_candidate == "Jarres"; braun_wins if spd_candidate_plurality and spd_candidate == "Braun"; rosenfeld_wins if spd_candidate_plurality and spd_candidate == "Rosenfeld"; thalmann_wins if thalmann_plurality; hitler_wins if hitler_plurality;
+
+Results:
 
 [? if dvp_candidate == "Eckener" or dvp_candidate == "Luther" or dvp_candidate == "Jarres": [? if dvp_candidate == "Eckener": **Hugo** <span style="color: #000000;">**Ec**</span><span style="color: #DD0000;">**ken**</span><span style="color: #FFCC00;">**er**</span> ?][? if dvp_candidate == "Luther": <span style="color: var(--dvp-color);">**Hans Luther**</span> ?][? if dvp_candidate == "Jarres": <span style="color: var(--dvp-color);">**Karl Jarres**</span> ?] - [+ dvp_candidate_votes_disp +]% ?]
 
