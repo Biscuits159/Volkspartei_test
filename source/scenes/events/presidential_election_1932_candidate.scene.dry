@@ -41,7 +41,7 @@ if (Q.event_points >= 2) {
         Q.spd_candidate = "Braun";
         Q.ddp_candidate = "Braun";
         Q.csrp_candidate = "Braun";
-        if (Q.z_leader == "Joos" or Q.z_leader == "Kaiser") Q.z_candidate = "Braun";
+        if (Q.z_leader == "Joos" || Q.z_leader == "Kaiser") Q.z_candidate = "Braun";
     } 
 }
 
