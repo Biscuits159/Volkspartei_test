@@ -1,7 +1,44 @@
 title: Post Event
 new-page: true
 on-arrival: {!
-// document.body.style.setProperty('--dvp-color', Q.dvp_color);
+
+if (!Q.lvp_formed && !Q.nfvp_formed) {
+    if (Q.dvp_leader = "Thiel") {
+        document.body.style.setProperty('--dvp-ideologycolor', '#C0A054');
+        Q.dvp_ideology = "Paternalistic Liberalism"
+    } else if (dvp_leader != "Stresemann" && dvp_leader != "Thiel" && Q.dvp_left < 0) {
+        document.body.style.setProperty('--dvp-ideologycolor', '#98C22C');
+        Q.dvp_ideology = "National Liberalism"
+    } else if (Q.dvp_left > 5) {
+        document.body.style.setProperty('--dvp-ideologycolor', '#DCCA4A');
+        Q.dvp_ideology = "Classical Liberalism"
+    } else {
+        document.body.style.setProperty('--dvp-ideologycolor', '#C0A054');
+        Q.dvp_ideology = "Conservative Liberalism"
+    }
+}
+
+if (Q.lvp_formed || Q.nfvp_formed) {
+    if (Q.dvp_ideology == "Social Liberalism") document.body.style.setProperty('--dvp-ideologycolor', '#E0B0FF');
+    if (Q.dvp_ideology == "Classical Liberalism") document.body.style.setProperty('--dvp-ideologycolor', '#DCCA4A');
+    if (Q.dvp_ideology == "Conservative Liberalism" || Q.dvp_ideology == "Paternalistic Liberalism" || Q.dvp_ideology == "National capitalism") document.body.style.setProperty('--dvp-ideologycolor', '#C0A054');
+    if (Q.dvp_ideology == "Liberal Conservatism") document.body.style.setProperty('--dvp-ideologycolor', '#0087DC');
+
+}
+
+if (Q.spd_return_to_origin) {
+    document.body.style.setProperty('--spd-color', '#D47B9B');
+}
+
+if (Q.dnvp_exist) {
+    if (Q.dnvp_left == -2) {
+        document.body.style.setProperty('--dnvp-color', '#003755');
+    } else if (Q.dnvp_left == 1) {
+        document.body.style.setProperty('--dnvp-color', '#0087DC');
+    } else {
+        document.body.style.setProperty('--dnvp-color', '#3F7BC1');      
+    }
+}
 
 Q.last_advisor_action = 0;
 Q.last_cabinet_action = 0;
@@ -223,6 +260,23 @@ if (Q.dissent < 0) {
     Q.dissent = 0;
 } else if (Q.dissent > 0.95) {
     Q.dissent = 0.95;
+}
+
+
+// Achievements:
+if (Q.year <= 1934) {
+    if (Q.cnblp_dvp && Q.dbp_dvp && Q.vrp_dvp && Q.wp_dvp) {
+        this.achieve('biggest_tent');
+    }
+    if (Q.small_privatizations == 3 && Q.big_privatizations == 2) {
+        this.achieve('full_privatization');
+    }
+    if (Q.in_bourgeois_coalition) {
+        this.achieve('bourgeois_coalition');
+    }
+    if (Q.in_dvp_majority) {
+        this.achieve('majority_party');
+    }
 }
 
 
@@ -1263,10 +1317,14 @@ if ((!Q.rubicon && Q.month_actions >= 1) || (Q.rubicon && Q.month_actions >= 4))
         Q.unemployed_nsdap -= 12/12;
     }
 
-
-    if (Q.pro_republic >= (Q.nsdap_votes + Q.dnvp_votes + Q.kpd_votes + Q.other_votes + 30)) {
-        Q.dvp_left += 0.1
+    if (!Q.lvp_formed && !Q.nfvp_formed) {
+        Q.nationalist_dissent *= 0.925
+        Q.industrialist_dissent *= 0.925
+        Q.liberal_dissent *= 0.925
+        Q.labor_dissent *= 0.925
     }
+
+    if (Q.pro_republic >= (Q.nsdap_votes + Q.dnvp_votes + Q.kpd_votes + Q.other_votes + 30)) Q.dvp_left += 0.1
     
     if (Q.liberal_strength > Q.nationalist_strength + (Q.industrialist_strength * 0.5)) {
         Q.dvp_left += 0.1
@@ -1274,25 +1332,7 @@ if ((!Q.rubicon && Q.month_actions >= 1) || (Q.rubicon && Q.month_actions >= 4))
         Q.dvp_left -= 0.1
     }
     
-    if (!Q.no_stresemann) {
-        Q.dvp_left += 0.1
-    }
-    
-    if (!Q.lvp_formed && !Q.nfvp_formed) {
-        if (Q.dvp_leader = "Thiel") {
-            document.body.style.setProperty('--dvp-ideologycolor', '#C0A054');
-            Q.dvp_ideology = "Paternalistic Liberalism"
-        } else if (dvp_leader != "Stresemann" && dvp_leader != "Thiel" && Q.dvp_left < 0) {
-            document.body.style.setProperty('--dvp-ideologycolor', '#98C22C');
-            Q.dvp_ideology = "National Liberalism"
-        } else if (Q.dvp_left > 5) {
-            document.body.style.setProperty('--dvp-ideologycolor', '#DCCA4A');
-            Q.dvp_ideology = "Classical Liberalism"
-        } else {
-            document.body.style.setProperty('--dvp-ideologycolor', '#C0A054');
-            Q.dvp_ideology = "Conservative Liberalism"
-        }
-    }
+    if (!Q.no_stresemann) Q.dvp_left += 0.1
     
     if (Q.ddp_left < -2) {
         Q.ddp_ideology = "Classical Liberalism"

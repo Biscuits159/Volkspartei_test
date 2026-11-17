@@ -164,7 +164,7 @@ title: Finally, we must select an interim leader to lead our party until our fir
 
 @dietrich
 subtitle: Dietrich was the former leader of the <span style="color: #DCCA4A;">**[+ ddp_name +]**</span>'s business wing.
-vief-if: lvp_left >= 0
+view-if: lvp_left >= 0
 on-arrival: dvp_leader = "Dietrich"; workers_dvp += 1*(1-dissent); new_middle_dvp += 4*(1-dissent); democratic_strength += 10; democratization += 1; democratic_dissent -= 5
 face-image: img/portraits/DietrichHermann.jpg
 go-to: lvp_formed
@@ -174,7 +174,7 @@ Supported by the party’s newly integrated Democrats and Progressives, along wi
 
 @curtius
 subtitle: Curtius belongs to the Stresemannite wing of our party.
-vief-if: lvp_left < 4
+view-if: lvp_left < 4
 on-arrival: dvp_leader = "Curtius"; new_middle_dvp += 4*(1-dissent); old_middle_dvp += 4*(1-dissent); liberal_strength += 10; democratization += 1; liberal_dissent -= 5
 face-image: img/portraits/CurtiusJulius.jpg
 go-to: lvp_formed
@@ -184,8 +184,8 @@ With assistance from our Liberal Wing, Julius Curtius retains Stresemann's path 
 
 @thiel
 subtitle: Thiel is a prominent labor leader.
-vief-if: lvp_left < 2
-on-arrival: dvp_leader = "Thiel"; workers_dvp += 5*(1-dissent); new_middle_dvp += 2*(1-dissent); labor_strength += 10; labor_dissent -= 5
+view-if: lvp_left < 2
+on-arrival: dvp_leader = "Thiel"; workers_dvp += 4*(1-dissent); new_middle_dvp += 2*(1-dissent); labor_strength += 10; labor_dissent -= 5
 face-image: img/portraits/ThielOtto.jpg
 go-to: lvp_formed
 

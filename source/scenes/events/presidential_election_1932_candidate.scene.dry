@@ -312,7 +312,7 @@ We will support [+ reactionary_candidate +] in this election.
 
 - @endorsements: Scout out potential endorsements.
 
-@support_reactionary
+@support_second_reactionary
 subtitle: This is the default option.
 view-if: second_reactionary_candidate != 0
 on-arrival: progressive_dissent += 10 if spd_campaign; dvp_candidate = second_reactionary_candidate

@@ -30,7 +30,6 @@ Since we are currently ruling as part of an emergency government, we may use qua
 
 @cancel_elections_2
 on-departure: next_election_year = next_election_year + 1; next_election_time = time + 12; pro_republic -= 10; spd_relation -= 8; z_relation -= 8; ddp_relation -= 10; kpd_relation -= 8; coup_progress += 2; workers_spd -= 4; new_middle_spd -= 5; old_middle_spd -= 5; rural_spd -= 5; catholics_spd -= 5; unemployed_spd -= 5; coup_progress += 2 if nsdap_normalized >= 0.3; coup_progress += 2 if nsdap_normalized + dnvp_normalized >= 0.5; sa_strength += 100 if coup_progress >= 7; sh_strength += 100 if coup_progress >= 7
-achievement: ausnahmezustand
 
 Fine. President [+ president +] has taken the unprecedented step of canceling these elections. New elections are scheduled for [+ next_election_month : month +] [+ next_election_year +].
 
@@ -593,7 +592,6 @@ title: <span style="color: var(--dvp-color);">**[+ dvp_name +]**</span> majority
 view-if: dvp_r >= 50
 subtitle: <span style="color: var(--dvp-color);">**[+ dvp_name +]**</span>: [+ dvp_r +]%
 on-arrival: dvp_in_government = 1; in_dvp_majority = 1; chancellor = "Empty"; chancellor_party = dvp_name; foreign_minister_party = dvp_name; foreign_minister = "Stresemann" if no_stresemann == 0; foreign_minister = "Curtius" if no_stresemann; interior_minister_party = dvp_name; interior_minister = "Jarres"; justice_minister_party = dvp_name; justice_minister = "Heinze" if ddp_exist; justice_minister = "Schiffer" if lvp_formed or nfvp_formed; labor_minister_party = dvp_name; labor_minister = "Thiel"; reichswehr_minister_party = dvp_name; reichswehr_minister = "Seeckt"; economic_minister_party = dvp_name; economic_minister = "Krohne" if ddp_exist; economic_minister = "Hamm" if lvp_formed or nfvp_formed; finance_minister_party = dvp_name; finance_minister = "Moldenhauer"; agriculture_minister_party = dvp_name; agriculture_minister = "Kanitz"; reichswehr_loyalty -= 0.05; 
-achievement: majority_party
 
 Finally, the <span style="color: var(--dvp-color);">**[+ dvp_name +]**</span> can govern alone! Our long campaign of electioneering has paid off. We do not need to worry about coalition government; anything is possible. 
 
@@ -892,7 +890,6 @@ title: We can form a Bourgeois Coalition.
 view-if: bourgeois_coalition >= 50
 subtitle: <span style="color: var(--dvp-color);">**[+ dvp_name +]**</span> + <span style="color: var(--z-color);">**[+ z_name +]**</span> + <span style="color: #69A2BE;">**BVP**</span> + [? if kvp_formed: <span style="color: #455B95;">**KVP**</span> + ?][? if ddp_exist: <span style="color: var(--ddp-color);">**[+ ddp_name +]**</span> + ?][? if dbp_exist: <span style="color: #38C538;">**DBP**</span> + ?][? if wp_exist: <span style="color: #B8996F;">**WP**</span> + ?][? if cnblp_exist: <span style="color: #7FCEB1;">**CNBLP**</span> + ?][? if csvd_exist: <span style="color: #8ED8E4;">**CSVD**</span> + ?][? if aspd_exist and aspd_radical == 0: <span style="color: #FE9E00;">**ASPD**</span> + ?][? if csrp_formed: <span style="color: #FF6B21;">**CSRP**</span> + ?] <span style="color: #909090;">**Others**</span> ([+ bourgeois_coalition +]%)
 on-arrival: leverage += 5; leverage += 5 if z_leader == "Brüning"; z_in_government = 1; ddp_in_government = 1 if lvp_formed or nfvp_formed; dvp_in_government = 1; in_bourgeois_coalition = 1; foreign_minister = "Brüning"; foreign_minister_party = z_name; interior_minister = "Wirth"; interior_minister_party = z_name if csrp_formed == 0; interior_minister_party = "CSRP" if csrp_formed; interior_minister = "Bolz" if social_catholics_dvp; interior_minister_party = z_name if social_catholics_dvp; justice_minister = "Guérard"; justice_minister_party = z_name; justice_minister = "Koch-Weser" if ddp_exist; justice_minister_party = ddp_name if ddp_exist; labor_minister = "Stegerwald"; labor_minister_party = z_name; reichswehr_minister = "Groener"; reichswehr_minister_party = "I"; economic_minister = "Hermes"; economic_minister_party = z_name; finance_minister = "Köhler"; finance_minister_party = z_name; agriculture_minister = "Hermes"; agriculture_minister_party = z_name; agriculture_minister = "Fehr" if dbp_exist; agriculture_minister_party = "DBP" if dbp_exist;
-achievement: bourgeois_coalition
 
 We have enough votes to form a "Bourgeois Coalition" government consisting of the <span style="color: var(--dvp-color);">**[+ dvp_name +]**</span>, <span style="color: var(--z-color);">**[+ z_name +]**</span>, [? if ddp_exist: <span style="color: var(--ddp-color);">**[+ ddp_name +]**</span>, ?][? if kvp_formed: <span style="color: #455B95;">**KVP**</span>, ?][? if wp_exist: <span style="color: #B8996F;">**WP**</span>, ?][? if cnblp_exist: <span style="color: #7FCEB1;">**CNBLP**</span>, ?][? if dbp_exist: <span style="color: #38C538;">**DBP**</span>, ?][? if csvd_exist: <span style="color: #8ED8E4;">**CSVD**</span>, ?][? if aspd_exist and aspd_radical == 0: <span style="color: #FE9E00;">**ASPD**</span>, ?][? if csrp_formed: <span style="color: #FF6B21;">**CSRP**</span>, ?] <span style="color: #69A2BE;">**BVP**</span> and small conservative parties!
 
@@ -1281,7 +1278,6 @@ The next elections are set for [+ next_election_month : month +] [+ next_electio
 @no_confidence_win
 view-if: no_confidence_votes <= 50
 on-arrival: in_minority_government = 1; in_emergency_government = 0;
-achievement: minderheitsregierung
 
 We have won the vote of no confidence, and are currently ruling under an <span style="color: var(--dvp-color);">**[+ dvp_name +]**</span> minority government. Now our task is to fix the country.
 
