@@ -4,30 +4,18 @@ on-arrival: {!
 
 if (!Q.lvp_formed && !Q.nfvp_formed) {
     if (Q.dvp_leader == "Thiel") {
-        document.body.style.setProperty('--dvp-ideologycolor', '#C0A054');
         Q.dvp_ideology = "Paternalistic Liberalism";
+        Q.dvp_ideologycolor = "#C0A054";
     } else if (Q.dvp_leader != "Stresemann" && Q.dvp_leader != "Thiel" && Q.dvp_left < 0) {
-        document.body.style.setProperty('--dvp-ideologycolor', '#98C22C');
         Q.dvp_ideology = "National Liberalism";
+        Q.dvp_ideologycolor = "#98C22C";
     } else if (Q.dvp_left > 5) {
-        document.body.style.setProperty('--dvp-ideologycolor', '#DCCA4A');
         Q.dvp_ideology = "Classical Liberalism";
+        Q.dvp_ideologycolor = "#DCCA4A";
     } else {
-        document.body.style.setProperty('--dvp-ideologycolor', '#C0A054');
         Q.dvp_ideology = "Conservative Liberalism";
+        Q.dvp_ideologycolor = "#C0A054";
     }
-}
-
-if (Q.lvp_formed || Q.nfvp_formed) {
-    if (Q.dvp_ideology == "Social Liberalism") document.body.style.setProperty('--dvp-ideologycolor', '#E0B0FF');
-    if (Q.dvp_ideology == "Classical Liberalism") document.body.style.setProperty('--dvp-ideologycolor', '#DCCA4A');
-    if (Q.dvp_ideology == "Conservative Liberalism" || Q.dvp_ideology == "Paternalistic Liberalism" || Q.dvp_ideology == "National capitalism") document.body.style.setProperty('--dvp-ideologycolor', '#C0A054');
-    if (Q.dvp_ideology == "Liberal Conservatism") document.body.style.setProperty('--dvp-ideologycolor', '#0087DC');
-
-}
-
-if (Q.spd_return_to_origin) {
-    document.body.style.setProperty('--spd-color', '#D47B9B');
 }
 
 if (Q.ddp_left < -2) {
@@ -38,15 +26,14 @@ if (Q.ddp_left < -2) {
     Q.ddp_ideology = "Left Liberalism";
 }
 
-if (Q.dnvp_exist) {
-    if (Q.dnvp_left == -2) {
-        document.body.style.setProperty('--dnvp-color', '#003755');
-    } else if (Q.dnvp_left == 1) {
-        document.body.style.setProperty('--dnvp-color', '#0087DC');
-    } else {
-        document.body.style.setProperty('--dnvp-color', '#3F7BC1');      
-    }
-}
+document.body.style.setProperty('--dvp-color', Q.dvp_color);
+document.body.style.setProperty('--dvp-ideologycolor', Q.dvp_ideologycolor);
+
+document.body.style.setProperty('--kpd-color', Q.kpd_color);
+document.body.style.setProperty('--spd-color', Q.spd_color);
+document.body.style.setProperty('--ddp-color', Q.ddp_color);
+document.body.style.setProperty('--z-color', Q.z_color);
+document.body.style.setProperty('--dnvp-color', Q.dnvp_color);
 
 Q.last_advisor_action = 0;
 Q.last_cabinet_action = 0;

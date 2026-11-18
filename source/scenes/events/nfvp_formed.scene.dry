@@ -8,7 +8,9 @@ Q.ddp_exist = 0;
 Q.vnr_exist = 0;
 
 Q.dvp_name = "NFVP";
-document.body.style.setProperty('--dvp-color', '#00A2DE');
+Q.dvp_color = "#00A2DE";
+Q.dvp_ideology = "Conservative Liberalism";
+Q.dvp_ideologycolor = "#C0A054";
 
 Q.democrats_dvp = 1;
 Q.progressives_dvp = 1;

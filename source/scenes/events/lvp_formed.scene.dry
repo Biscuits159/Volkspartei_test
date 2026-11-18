@@ -7,7 +7,9 @@ Q.lvp_formed = 1;
 Q.ddp_exist = 0;
 
 Q.dvp_name = "LVP";
-document.body.style.setProperty('--dvp-color', '#FFCC00');
+Q.dvp_color = "#FFCC00";
+Q.dvp_ideology = "Classical Liberalism";
+Q.dvp_ideologycolor = "#DCCA4A";
 
 Q.lvp_next_congress_year = Q.year + 1;
 Q.lvp_next_congress_month = Q.month;

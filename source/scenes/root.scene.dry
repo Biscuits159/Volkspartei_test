@@ -500,8 +500,8 @@ Q.dissent_percent = 5;
 Q.dvp_name = "DVP";
 Q.dvp_leader = "Stresemann";
 Q.dvp_ideology = "Conservative Liberalism";
-document.body.style.setProperty('--dvp-color', '#C0A054');
-document.body.style.setProperty('--dvp-ideologycolor', '#C0A054');
+Q.dvp_color = "#C0A054";
+Q.dvp_ideologycolor = "#C0A054";
 Q.dvp_left = 4;
 
 Q.newspaper = 0;
@@ -570,7 +570,7 @@ Q.kpd_exist = 1;
 Q.kpd_name = "KPD";
 Q.kpd_leader = "Thälmann";
 Q.kpd_ideology = "Marxism–Leninism";
-document.body.style.setProperty('--kpd-color', '#8B0000');
+Q.kpd_color = "#8B0000";
 Q.kpd_conciliators = 0;
 
 Q.sapd_formed = 0;
@@ -581,7 +581,7 @@ Q.spd_exist = 1;
 Q.spd_name = "SPD";
 Q.spd_leader = "Wels";
 Q.spd_ideology = "Social Democracy";
-document.body.style.setProperty('--spd-color', '#E3000F');
+Q.spd_color = "#E3000F";
 Q.spd_left = 1;
 Q.sed_formed = 0;
 
@@ -594,7 +594,7 @@ Q.ddp_exist = 1;
 Q.ddp_name = "DDP";
 Q.ddp_leader = "Koch-Weser";
 Q.ddp_ideology = "Left Liberalism";
-document.body.style.setProperty('--ddp-color', '#DCCA4A');
+Q.ddp_color = "#DCCA4A";
 Q.dstp_formed = 0;
 Q.ddp_left = 0;
 Q.ddp_cohesion = 15;
@@ -611,7 +611,7 @@ Q.z_exist = 1;
 Q.z_name = "Center";
 Q.z_leader = "Marx";
 Q.z_ideology = "Christian Democracy";
-document.body.style.setProperty('--z-color', '#000000');
+Q.z_color = "#000000";
 Q.stegerwald_path = 0;
 Q.cvp_formed = 0;
 Q.cvp_merger_countdown = 8;
@@ -646,7 +646,7 @@ Q.dnvp_exist = 1;
 Q.dnvp_name = "DNVP";
 Q.dnvp_leader = "Westarp";
 Q.dnvp_ideology = "National Conservatism";
-document.body.style.setProperty('--dnvp-color', '#3F7BC1');
+Q.dnvp_color = "#3F7BC1";
 Q.dnvp_left = 0; // 1 - Treviranus, 0 - Hergt, -1 - Westarp, -2 - Hugenberg
 
 Q.dnf_formed = 0;
