@@ -282,11 +282,11 @@ Q.rfb_force = Q.rfb_strength * Q.rfb_militancy;
 Q.prussia_force = Q.prussian_police_strength * Q.prussian_police_militancy * Q.prussian_police_loyalty;
 Q.total_force = Q.sa_force + Q.sh_force + Q.rb_force + Q.rfb_force + Q.prussia_force;
 
-Q.sa_force = Math.round((Q.sa_force/total_force)*100);
-Q.sh_force = Math.round((Q.sh_force/total_force)*100);
-Q.rb_force = Math.round((Q.rb_force/total_force)*100);
-Q.rfb_force = Math.round((Q.rfb_force/total_force)*100);
-Q.prussia_force = Math.round((Q.prussia_force/total_force)*100);
+Q.sa_force = Math.round((Q.sa_force/Q.total_force)*100);
+Q.sh_force = Math.round((Q.sh_force/Q.total_force)*100);
+Q.rb_force = Math.round((Q.rb_force/Q.total_force)*100);
+Q.rfb_force = Math.round((Q.rfb_force/Q.total_force)*100);
+Q.prussia_force = Math.round((Q.prussia_force/Q.total_force)*100);
 
 Q.far_right_force = Q.sh_force + Q.sa_force;
 Q.pro_republic_force = Q.rb_force + Q.prussia_force;
