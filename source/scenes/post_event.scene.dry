@@ -30,6 +30,14 @@ if (Q.spd_return_to_origin) {
     document.body.style.setProperty('--spd-color', '#D47B9B');
 }
 
+if (Q.ddp_left < -2) {
+    Q.ddp_ideology = "Classical Liberalism"
+} else if (Q.ddp_left > 2) {
+    Q.ddp_ideology = "Progressive Liberalism"
+} else {
+    Q.ddp_ideology = "Left Liberalism"
+}
+
 if (Q.dnvp_exist) {
     if (Q.dnvp_left == -2) {
         document.body.style.setProperty('--dnvp-color', '#003755');
@@ -1333,14 +1341,6 @@ if ((!Q.rubicon && Q.month_actions >= 1) || (Q.rubicon && Q.month_actions >= 4))
     }
     
     if (!Q.no_stresemann) Q.dvp_left += 0.1
-    
-    if (Q.ddp_left < -2) {
-        Q.ddp_ideology = "Classical Liberalism"
-    } else if (Q.ddp_left > 2) {
-        Q.ddp_ideology = "Progressive Liberalism"
-    } else {
-        Q.ddp_ideology = "Left Liberalism"
-    }
 
     if (Q.z_in_government && Q.z_leader == "Stegerwald" && Q.dnvp_in_government && Q.dnvp_leader == "Treviranus") {
         Q.cvp_merger_countdown -= 1;
