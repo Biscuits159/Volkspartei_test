@@ -3,18 +3,18 @@ new-page: true
 on-arrival: {!
 
 if (!Q.lvp_formed && !Q.nfvp_formed) {
-    if (Q.dvp_leader = "Thiel") {
+    if (Q.dvp_leader == "Thiel") {
         document.body.style.setProperty('--dvp-ideologycolor', '#C0A054');
-        Q.dvp_ideology = "Paternalistic Liberalism"
+        Q.dvp_ideology = "Paternalistic Liberalism";
     } else if (dvp_leader != "Stresemann" && dvp_leader != "Thiel" && Q.dvp_left < 0) {
         document.body.style.setProperty('--dvp-ideologycolor', '#98C22C');
-        Q.dvp_ideology = "National Liberalism"
+        Q.dvp_ideology = "National Liberalism";
     } else if (Q.dvp_left > 5) {
         document.body.style.setProperty('--dvp-ideologycolor', '#DCCA4A');
-        Q.dvp_ideology = "Classical Liberalism"
+        Q.dvp_ideology = "Classical Liberalism";
     } else {
         document.body.style.setProperty('--dvp-ideologycolor', '#C0A054');
-        Q.dvp_ideology = "Conservative Liberalism"
+        Q.dvp_ideology = "Conservative Liberalism";
     }
 }
 
@@ -31,11 +31,11 @@ if (Q.spd_return_to_origin) {
 }
 
 if (Q.ddp_left < -2) {
-    Q.ddp_ideology = "Classical Liberalism"
+    Q.ddp_ideology = "Classical Liberalism";
 } else if (Q.ddp_left > 2) {
-    Q.ddp_ideology = "Progressive Liberalism"
+    Q.ddp_ideology = "Progressive Liberalism";
 } else {
-    Q.ddp_ideology = "Left Liberalism"
+    Q.ddp_ideology = "Left Liberalism";
 }
 
 if (Q.dnvp_exist) {
