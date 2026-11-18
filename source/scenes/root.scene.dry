@@ -865,17 +865,19 @@ Q.dnvp_in_government = 1;
 Q.kpd_in_government = 0;
 Q.nsdap_in_government = 0;
 
+Q.in_dvp_majority = 0;
+Q.in_liberal_coalition = 0;
+Q.in_social_liberal_coalition = 0;
 Q.in_weimar_coalition = 0;
-// Grand coalition = SPD + Z + BVP + DDP + DVP
-// also includes the "new grand coalition" of SPD + Z + BVP + DDP + DVP + Others
 Q.in_grand_coalition = 0;
-// emergency government containing the SPD: only president Braun can do this.
-Q.in_emergency_government = 0;
-Q.in_spd_majority = 0;
-Q.grand_coalition_failed = 0;
-// if the SPD is ruling as part of a minority government
+Q.in_bourgeois_coalition = 0;
+Q.in_center_right_coalition = 1;
+Q.in_hindenburg_coalition = 0;
 Q.in_minority_government = 0;
-// national unity governmet
+Q.in_unity_government = 0;
+Q.in_far_right_coalition = 0;
+Q.in_hitler_right_coalition = 0;
+Q.in_emergency_government = 0;
 
 // if you're in a coalition, this is an incremental counter for how many times dissent has happened from the right.
 Q.coalition_dissent = 0;

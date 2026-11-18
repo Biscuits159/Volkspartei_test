@@ -20,10 +20,9 @@ if (Q.economic_growth) {
 
 Resources available: [+ resources +]
 
-<span style="color: var(--dvp-color);">**[+ dvp_name +]**</span> position: [? if dvp_toleration : toleration ?][? if dvp_in_government : in government - ?][? if dvp_toleration == 0 and dvp_in_government == 0 and dvp_caretaker == 0 : opposition ?][? if dvp_caretaker : caretaker government ?]
-[? if in_grand_coalition and dvp_in_government: Grand Coalition ?][? if in_bourgeois_coalition and dvp_in_government: Bourgeois Coalition ?][? if in_center_right_coalition and dvp_in_government: Center-Right Coalition ?][? if in_right_coalition and dvp_in_government: Right Coalition ?][? if in_dvp_majority and dvp_in_government: <span style="color: var(--dvp-color);">**[+ dvp_name +]**</span> majority ?][? if in_minority_government and dvp_in_government: minority government ?][? if in_emergency_government and dvp_in_government: emergency government ?][? if in_weimar_coalition and dvp_in_government: Weimar Coalition ?][? if in_liberal_coalition and dvp_in_government: Liberal Coalition ?]
+<span style="color: var(--dvp-color);">**[+ dvp_name +]**</span> position: [? if dvp_toleration : toleration ?][? if dvp_in_government : in government - ?][? if dvp_toleration == 0 and dvp_in_government == 0 and dvp_caretaker == 0 : opposition ?][? if dvp_caretaker: caretaker government ?][? if in_dvp_majority: <span style="color: var(--dvp-color);">**[+ dvp_name +]**</span> majority ?][? if in_liberal_coalition: Liberal Coalition ?][? if in_social_liberal_coalition and dvp_in_government: Social-Liberal Coalition ?][? if in_weimar_coalition and dvp_in_government: Weimar Coalition ?][? if in_grand_coalition: Grand Coalition ?][? if in_bourgeois_coalition: Bourgeois Coalition ?][? if in_center_right_coalition: Center-Right Coalition ?][? if in_hindenburg_coalition: Hindenburg Coalition ?][? if in_minority_government and dvp_in_government: minority government ?][? if in_emergency_government and dvp_in_government: emergency government ?][? if in_unity_government and dvp_in_government: unity government ?][? if in_far_right_coalition and dvp_in_government: Far-Right Coalition ?]
 
-[? if president == "Hindenburg": [+ hindenburg_angry : hindenburg_angry +] ?]
+[? if president == "Hindenburg": Hindenburg's approval: [+ hindenburg_angry : hindenburg_angry +] ?]
 
 [? if chancellor == "Papen": Hindenburg's confidence: [+ hindenburg_papen_r : confidence +]<br> ?]
 
@@ -45,9 +44,9 @@ Grassroots funding: [+ dues : funding +]
 
 = Government
 
-President: [+ president +] ([? if president_party == "I":<span style="color: #808080;">**I**</span> ?][? if president_party == kpd_name: <span style="color: var(--kpd-color);">**[+ kpd_name +]**</span> ?][? if president_party == spd_name: <span style="color: var(--spd-color);">**[+ spd_name +]**</span> ?][? if president_party == ddp_name: <span style="color: var(--ddp-color);">**[+ ddp_name +]**</span> ?][? if president_party == dvp_name: <span style="color: var(--dvp-color);">**[+ dvp_name +]**</span> ?][? if president_party == z_name: <span style="color: var(--z-color);">**[+ z_name +]**</span> ?][? if president_party == "KVP": <span style="color: #455B95;">**KVP**</span> ?][? if president_party == dnvp_name: <span style="color: var(--dnvp-color);">**[+ dnvp_name +]**</span> ?][? if president_party == "DNF": <span style="color: #003755;">**DNF**</span> ?][? if president_party == "NSDAP": <span style="color: #954B00;">**NSDAP**</span> ?])
+President: [+ president +] ([? if president_party == "I":<span style="color: #808080;">**I**</span>?][? if president_party == kpd_name: <span style="color: var(--kpd-color);">**[+ kpd_name +]**</span>?][? if president_party == spd_name: <span style="color: var(--spd-color);">**[+ spd_name +]**</span>?][? if president_party == ddp_name: <span style="color: var(--ddp-color);">**[+ ddp_name +]**</span>?][? if president_party == dvp_name: <span style="color: var(--dvp-color);">**[+ dvp_name +]**</span>?][? if president_party == z_name: <span style="color: var(--z-color);">**[+ z_name +]**</span>?][? if president_party == "KVP": <span style="color: #455B95;">**KVP**</span>?][? if president_party == dnvp_name: <span style="color: var(--dnvp-color);">**[+ dnvp_name +]**</span>?][? if president_party == "DNF": <span style="color: #003755;">**DNF**</span>?][? if president_party == "NSDAP": <span style="color: #954B00;">**NSDAP**</span>?])
 
-Chancellor: [+ chancellor +] ([? if chancellor_party == "I": <span style="color: #808080;">**I**</span> ?][? if chancellor_party == spd_name: <span style="color: var(--spd-color);">**[+ spd_name +]**</span> ?][? if chancellor_party == ddp_name: <span style="color: var(--ddp-color);">**[+ ddp_name +]**</span> ?][? if chancellor_party == dvp_name: <span style="color: var(--dvp-color);">**[+ dvp_name +]**</span> ?][? if chancellor_party == z_name:<span style="color: var(--z-color);">**[+ z_name +]**</span> ?][? if chancellor_party == "NSDAP":<span style="color: #954B00;">**NSDAP**</span> ?])
+Chancellor: [+ chancellor +] ([? if chancellor_party == "I": <span style="color: #808080;">**I**</span>?][? if chancellor_party == spd_name: <span style="color: var(--spd-color);">**[+ spd_name +]**</span>?][? if chancellor_party == ddp_name: <span style="color: var(--ddp-color);">**[+ ddp_name +]**</span>?][? if chancellor_party == dvp_name: <span style="color: var(--dvp-color);">**[+ dvp_name +]**</span>?][? if chancellor_party == z_name:<span style="color: var(--z-color);">**[+ z_name +]**</span>?][? if chancellor_party == "NSDAP":<span style="color: #954B00;">**NSDAP**</span>?])
 
 [? if dvp_in_government: Budget: [+ budget +] ?]
 
@@ -179,7 +178,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if nsdap_exist: <span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #954B00;">**NSDAP**</span>: <span style="color: #954B00;">[+ nsdap_ideology +]</span> ([+ nsdap_leader +]) ?]
 
-= [? if lvp_formed == 0 and nfvp_formed == 0: <span class="tooltip-text" title="As a smaller party, managing internal unrest is easier. Dissent among all factions will slowly tick down on its own.">Internal Factions</span> ?][? if lvp_formed or nfvp_formed: Internal Factions ?] of the <span style="color: var(--dvp-color);">**[+ dvp_name +]**</span>
+= [? if lvp_formed == 0 and nfvp_formed == 0: <span class="tooltip-text" title="As a smaller party, managing internal unrest is easier. Dissent among all factions will slowly tick down on its own.">Internal Factions</span>?][? if lvp_formed or nfvp_formed: Internal Factions ?] of the <span style="color: var(--dvp-color);">**[+ dvp_name +]**</span>
 
 [? if nationalists_dvp: {!<span class="tooltip-text" title="Born from the right-wing of the former NLP (National Liberal Party), they are skeptical or downright repulsed by any participation within the republic, and have been growing alongside Stresemann’s physical decline. Many espouse cooperation with the reactionary parties and adoption of Hugenburg’s radical rhetoric. [After the Great Depression;] Some have even been eying the Nazis’ growth and seek to deepen ties between the anti-parliamentary right." style="color: #3F7BC1;">!}**Nationalist**{!</span>!} strength: [+ nationalist_strength : strength +], dissent: [+ nationalist_dissent : dissent +] ?]
 
@@ -242,21 +241,23 @@ if (Q.sa_strength) {
 
 = Paramilitaries
 
-{!<span class="tooltip-text" title="The Reichsbanner Schwarz-Rot-Gold is a popular organization for defending democracy, mostly affiliated with the SPD.">Reichsbanner</span>!} Strength: [+ rb_strength_2 +] thousand
+{!<span class="tooltip-text" title="The *Reichsbanner* Schwarz-Rot-Gold is a popular organization for defending democracy, mostly affiliated with the SPD." style="color: var(--spd-color);">**Reichsbanner**</span>!} Strength: [+ rb_strength_2 +] thousand
 
-Reichsbanner Militarization: [+ rb_militancy : militancy +]
+<span style="color: var(--spd-color);">**Reichsbanner**</span> Militarization: [+ rb_militancy : militancy +]
 
-{!<span class="tooltip-text" title="The RFB (Rotfrontkämpferbund) is a communist group associated with the KPD.">RFB</span>!} Strength: [+ rfb_strength_2 +] thousand
+{!<span class="tooltip-text" title="The RFB (Rotfrontkämpferbund) is a communist group associated with the KPD." style="color: var(--kpd-color);">**RFB**</span>!} Strength: [+ rfb_strength_2 +] thousand
 
-RFB Militarization: [+ rfb_militancy : militancy +]
+<span style="color: var(--kpd-color);">**RFB**</span> Militarization: [+ rfb_militancy : militancy +]
 
-{!<span class="tooltip-text" title="The Stahlhelm is a right-wing organization of war veterans associated with the national-conservatives.">Stahlhelm</span>!} Strength: [+ sh_strength_2 +] thousand
+{!<span class="tooltip-text" title="The Stahlhelm is a right-wing organization of war veterans associated with the national-conservatives." style="color: var(--dnvp-color);">**Stahlhelm**</span>!} Strength: [+ sh_strength_2 +] thousand
 
-Stahlhelm Militarization: [+ sh_militancy : militancy +]
+<span style="color: var(--dnvp-color);">**Stahlhelm**</span> Militarization: [+ sh_militancy : militancy +]
 
-{!<span class="tooltip-text" title="The SA (Sturmabteilung) is the Nazi paramilitary.">SA</span>!} Strength: [+ sa_strength_2 +] thousand
+{!<span class="tooltip-text" title="The SA (Sturmabteilung) is the Nazi paramilitary." style="color: #954B00;">**SA**</span>!} Strength: [+ sa_strength_2 +] thousand
 
-SA Militarization: [+ sa_militancy : militancy +]
+<span style="color: #954B00;">**SA**</span> Militarization: [+ sa_militancy : militancy +]
+
+[? if year >= 1930: The streets are [? if far_right_paramilitary:[? if paramilitary_diff_very_high: overwhelmingly dominated by the <span style="color: #954B00;">far</span>-<span style="color: var(--dnvp-color);">right</span>?][? if paramilitary_diff_high: dominated by the <span style="color: #954B00;">far</span>-<span style="color: var(--dnvp-color);">right</span>?][? if paramilitary_diff_medium: controlled by the <span style="color: #954B00;">far</span>-<span style="color: var(--dnvp-color);">right</span>?][? if paramilitary_diff_low: in the slight control of the <span style="color: #954B00;">far</span>-<span style="color: var(--dnvp-color);">right</span>?][? if sa_paramilitary:, mainly by the violent <span style="color: #954B00;">**SA**</span>?]?][? if pro_republic_paramilitary:[? if paramilitary_diff_very_high: overwhelmingly dominated by republicans?][? if paramilitary_diff_high: dominated by republicans?][? if paramilitary_diff_medium: controlled by the republicans?][? if paramilitary_diff_low: in the slight control of the republicans?]?][? if far_left_paramilitary:[? if paramilitary_diff_very_high: overwhelmingly dominated by the <span style="color: var(--kpd-color);">**RFB**</span>?][? if paramilitary_diff_high: dominated by the <span style="color: var(--kpd-color);">**RFB**</span>?][? if paramilitary_diff_medium: controlled by the <span style="color: var(--kpd-color);">**RFB**</span>?][? if paramilitary_diff_low: in the slight control of the <span style="color: var(--kpd-color);">**RFB**</span>?]?]?]
 
 = Official military/paramilitaries
 
@@ -338,7 +339,7 @@ Catholics: <span style="color: #8B0000;">**KPD**</span>: [+ catholics_kpd_displa
 
 = Prussia
 
-Minister-President: [+ prussia_leader +] ([? if prussia_leader_party == spd_name:<span style="color: var(--spd-color);">**[+ spd_name +]**</span> ?][? if prussia_leader_party == ddp_name:<span style="color: #DCCA4A;">**[+ ddp_name +]**</span> ?][? if prussia_leader_party == z_name:<span style="color: #000000;">**[+ z_name +]**</span> ?][? if prussia_leader_party == dvp_name:<span style="color: var(--dvp-color);">**[+ dvp_name +]**</span> ?])
+Minister-President: [+ prussia_leader +] ([? if prussia_leader_party == spd_name:<span style="color: var(--spd-color);">**[+ spd_name +]**</span>?][? if prussia_leader_party == ddp_name:<span style="color: #DCCA4A;">**[+ ddp_name +]**</span>?][? if prussia_leader_party == z_name:<span style="color: #000000;">**[+ z_name +]**</span>?][? if prussia_leader_party == dvp_name:<span style="color: var(--dvp-color);">**[+ dvp_name +]**</span>?])
 
 Government: [? if in_dvp_majority_prussia: <span style="color: var(--dvp-color);">**[+ dvp_name +]**</span> Majority ?][? if in_weimar_coalition_prussia: Weimar Coalition ?][? if in_grand_coalition_prussia: Grand Coalition ?][? if in_bourgeois_coalition_prussia: Bourgeois Coalition ?][? if in_far_right_coalition_prussia: Far-Right Coalition ?]
 
