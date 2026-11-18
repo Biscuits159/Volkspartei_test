@@ -378,7 +378,7 @@ We can try to convince parties supporting other candidates to switch their suppo
 - @convince_cnblp: Convince the <span style="color: #7FCEB1;">**CNBLP**</span> to back [+ dvp_candidate +].
 - @convince_kvp: Convince the <span style="color: #455B95;">**KVP**</span> to back [+ dvp_candidate +].
 - @convince_dnvp: Convince the <span style="color: var(--dnvp-color);">**[+ dnvp_name +]**</span> to back [+ dvp_candidate +].
-- @views: View party endorsements.
+- @view_candidates: View party endorsements.
 - @hope: We have concluded negotiations with other parties.
 
 @convince_spd
@@ -470,7 +470,7 @@ max-visits: 1
 
 We try to convince the [+ z_name +] to support [+ dvp_candidate +].
 
-@convince_z_success_reactionary
+@convince_z_success
 on-arrival: {! 
     Q.z_relation += 3;
     Q.z_candidate = Q.dvp_candidate;
@@ -515,7 +515,7 @@ go-to: endorsements
 
 Thanks to our friendly relations and connections with their right wing, the [+ z_name +] is now campaigning for [+ dvp_candidate +] in the election.
 
-@convince_z_fail_reactionary
+@convince_z_fail
 on-arrival: z_relation -= 3
 go-to: endorsements
 

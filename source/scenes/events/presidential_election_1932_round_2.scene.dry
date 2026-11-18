@@ -163,7 +163,7 @@ on-arrival: president = "Westarp"; president_party = "KVP" if kvp_formed; presid
 Count Kuno von Westarp, one of the most famous figures of the nationalist Right, has been elected president.
 
 @lettow_vorbeck_wins
-on-arrival: president = "Lettow-Vorbeck"; president_party = "KVP" if kvp_formed; president_party = dnvp_name if dnvp_left >= 0; new_middle_kvp += 7 if kvp_formed; new_middle_dnvp += 7 if dnvp_left >= 0; old_middle_kvp += 7 if kvp_formed; old_middle_dnvp += 7 if dnvp_left >= 0; rural_kvp += 7 if kvp_formed; rural_dnvp += 7 if dnvp_left >= 0"
+on-arrival: president = "Lettow-Vorbeck"; president_party = "KVP" if kvp_formed; president_party = dnvp_name if dnvp_left >= 0; new_middle_kvp += 7 if kvp_formed; new_middle_dnvp += 7 if dnvp_left >= 0; old_middle_kvp += 7 if kvp_formed; old_middle_dnvp += 7 if dnvp_left >= 0; rural_kvp += 7 if kvp_formed; rural_dnvp += 7 if dnvp_left >= 0
 
 Paul von Lettow-Vorbeck, a nationalist not far different from Hindenburg, has been elected president.
 
