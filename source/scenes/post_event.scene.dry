@@ -299,7 +299,7 @@ Q.paramilitary_diff_low = 0;
 Q.paramilitary_diff_medium = 0;
 Q.paramilitary_diff_high = 0;
 Q.paramilitary_diff_very_high = 0;
-Q;paramilitary_delta = 0;
+Q.paramilitary_delta = 0;
 
 if (Q.far_right_force >= Q.pro_republic_force && Q.far_right_force >= Q.rfb_force) {
     Q.paramilitary_delta = Q.far_right_force - Q.pro_republic_paramilitary - Q.rfb_force;
