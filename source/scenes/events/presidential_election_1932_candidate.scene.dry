@@ -719,7 +719,7 @@ go-to: endorsements
 
 [? if other_candidate == second_reactionary_candidate: - <span style="color: #909090;">**Others**</span> ?]
 
-[? if dvp_candidate == "Eckener" or dvp_candidate == "Luther" or dvp_candidate == "Jarres": [? if dvp_candidate == "Eckener": **Hugo** <span style="color: #000000;">**Ec**</span><span style="color: #DD0000;">**ken**</span><span style="color: #FFCC00;">**er**</span> - supported by: ?][? if dvp_candidate == "Luther": <span style="color: var(--dvp-color);">**Hans Luther**</span> - supported by: ?][? if dvp_candidate == "Jarres": <span style="color: var(--dvp-color);">**Karl Jarres**</span> - supported by: ?]
+[? if dvp_candidate == "Eckener" or dvp_candidate == "Luther" or dvp_candidate == "Jarres": [? if dvp_candidate == "Eckener": **Hugo** <span style="color: #000000;">**Ec**</span><span style="color: #DD0000;">**ken**</span><span style="color: #FFCC00;">**er**</span> - supported by: ?][? if dvp_candidate == "Luther": <span style="color: var(--dvp-color);">**Hans Luther**</span> - supported by: ?][? if dvp_candidate == "Jarres": <span style="color: var(--dvp-color);">**Karl Jarres**</span> - supported by: ?] ?]
 
 [? if spd_candidate == dvp_candidate: - <span style="color: var(--spd-color);">**SPD**</span> ?]
 
