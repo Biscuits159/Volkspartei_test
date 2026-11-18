@@ -26,6 +26,7 @@ Since our union with the <span style="color: var(--ddp-color);">**[+ ddp_name +]
 
 
 @women_labor
+title: Expand women's workplace rights.
 subtitle: Paid maternal leave policies, equal pay policies, and so on.
 on-arrival: womens_rights += 1; new_middle_dvp += 4*(1-dissent); workers_dvp += 4*(1 - dissent); workers_dvp -= 4 if unemployed > 15; progressive_strength += 5; peoples_conservative_dissent += 5; economic_growth += 0.1;
 max-visits: 3
@@ -34,6 +35,7 @@ We have seen an increase in popularity for our party among the "new women" who w
 
 
 @women_family
+title: Reform marriage, divorce and property law.
 subtitle: Change family and inheritance law to treat women more equally.
 on-arrival: womens_rights += 1; new_middle_dvp += 2*(1-dissent); workers_dvp += 3*(1-dissent); old_middle_dvp -= 2; rural_dvp -= 2; catholics_dvp -= 4; coalition_dissent += 1 if z_in_government or dnvp_in_government; spd_relation += 5*(1-dissent); z_relation -= 4; dnvp_relation -= 4; spd_left -= 0.5; dvp_left += 0.5; progressive_strength += 7; democratic_strength += 4; peoples_conservative_dissent += 7;
 max-visits: 1
@@ -42,6 +44,7 @@ We aim to fix inequalities within marriage law, including giving women the right
 
 
 @abortion_rights
+title: Attempt to legalize abortion.
 max-visits: 1
 view-if: womens_rights > 2
 subtitle: [? if progressive_coalition < 50 : This is unlikely to succeed; we do not have majority support. ?]
@@ -59,6 +62,7 @@ With the support of a "progressive coalition" including the <span style="color: 
 
 
 @paragraph_175
+title: Reform Paragraph 175.
 subtitle: Paragraph 175, in effect since the founding of Germany, criminalizes homosexual acts.
 view-if: lgbt_rights == 0
 on-arrival: lgbt_rights += 1; spd_relation += 5*(1-dissent); z_relation -= 5; dnvp_relation -= 7; coalition_dissent += 1 if z_in_government or dnvp_in_government; catholics_dvp -= 4; spd_left -= 0.5; dvp_left += 0.5; progressive_strength += 5; economic_growth += 0.1;
@@ -67,6 +71,7 @@ We offer a compromise, homosexual acts will now be legal, but the age of consent
 
 
 @paragragh_183
+title: Repeal Paragraph 183.
 subtitle: Paragraph 183 criminalizes public homosexual displays and cross-dressing.
 unavailable-subtitle: We would need a progressive majority, which we do not have.
 view-if: lgbt_rights == 1
