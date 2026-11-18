@@ -7,7 +7,6 @@ Q.presidential_election_r2_trigger = 0
 Q.next_presidential_election_year = Q.year + 7
 Q.next_presidential_election_month = Q.month
 
-Q.nsdap_campaign = 1;
 if (!Q.hitler_deported) {
     Q.nsdap_candidate = "Hitler";
 } else {
@@ -745,5 +744,5 @@ go-to: endorsements_dvp if dvp_campaign; endorsements_reactionary if dvp_candida
 
 [? if nsdap_candidate == "Hitler": <span style="color: #954B00;">**Adolf Hitler**</span> - supported by: ?][? if nsdap_candidate == "Göring": <span style="color: #954B00;">**Hermann Göring**</span> - supported by: ?]
 
-[? if nsdap_campaign: - <span style="color: #954B00;">**NSDAP**</span> ?]
+<span>-</span> <span style="color: #954B00;">**NSDAP**</span>
 
