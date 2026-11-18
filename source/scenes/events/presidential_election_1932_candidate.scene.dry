@@ -185,60 +185,65 @@ view-if: hindenburg_run == 0
 - @westarp
 
 @adenauer
+title: Konrad Adenauer, the <span style="color: var(--z-color);">**[+ z_name +]**</span> candidate.
 face-image: img/portraits/AdenauerKonrad.jpg
 view-if: adenauer_candidacy
 max-visits: 1
 go-to: reactionary_candidates if second_reactionary_candidate != 0
 
-Konrad Adenauer, the <span style="color: var(--z-color);">**[+ z_name +]**</span> candidate. Mayor of Cologne since the Republic's founding and aligned with Stegerwald's policies, he too is a staunch supporter of an interconfessional party, expanding its electorate to Protestant voters.
+Mayor of Cologne since the Republic's founding and aligned with Stegerwald's policies, he too is a staunch supporter of an interconfessional party, expanding its electorate to Protestant voters.
 
 With local elections fast approaching, many parties have opted not to field their own candidates, instead consolidating their support behind a select few.
 
 - @harzburg: We await the decision of the Harzburg Front.
 
 @bruning
+title: Heinrich Brüning, the <span style="color: var(--z-color);">**[+ z_name +]**</span> candidate.
 face-image: img/portraits/BrüningHeinrich.jpg
 view-if: bruning_candidacy
 max-visits: 1
 go-to: reactionary_candidates if second_reactionary_candidate != 0
 
-Heinrich Brüning, the <span style="color: var(--z-color);">**[+ z_name +]**</span> candidate. A man we are all too familiar with, leader of the party's parliamentary group, he is now running for hte most powerful position in Germany. Despite Brüning's known commitment towards austerity, he is a flexible and intelligent figure, who's unlikely to even humor the <span style="color: #954B00;">**nazis**</span> in government.
+A man we are all too familiar with, leader of the party's parliamentary group, he is now running for hte most powerful position in Germany. Despite Brüning's known commitment towards austerity, he is a flexible and intelligent figure, who's unlikely to even humor the <span style="color: #954B00;">**nazis**</span> in government.
 
 With local elections fast approaching, many parties have opted not to field their own candidates, instead consolidating their support behind a select few.
 
 - @harzburg: We await the decision of the Harzburg Front.
 
 @stegerwald
+title: Adam Stegerwald, the <span style="color: var(--z-color);">**[+ z_name +]**</span> candidate.
 face-image: img/portraits/StegerwaldAdam.jpg
 view-if: stegerwald_candidacy
 max-visits: 1
 go-to: reactionary_candidates if second_reactionary_candidate != 0
 
-Adam Stegerwald, the <span style="color: var(--z-color);">**[+ z_name +]**</span> candidate. Despite his background as a unionist, he is situated firmly on the party's right and one of the most vocal proponents for the formation of an interconfessional party, or in his words, a Christian, democratic, German, and social party.
+Despite his background as a unionist, he is situated firmly on the party's right and one of the most vocal proponents for the formation of an interconfessional party, or in his words, a Christian, democratic, German, and social party.
 
 With local elections fast approaching, many parties have opted not to field their own candidates, instead consolidating their support behind a select few.
 
 - @harzburg: We await the decision of the Harzburg Front.
 
 @vorbeck
+title: Paul von Lettow-Vorbeck, an <span style="color: #808080;">**independent**</span>.
 face-image: img/portraits/LettowVorbeckPaul.jpg
 view-if: vorbeck_candidacy
 max-visits: 1
 go-to: reactionary_candidates if second_reactionary_candidate != 0
 
-Paul von Lettow-Vorbeck, an <span style="color: #808080;">**independent**</span>. Somehow, the German Right has done it again, prompted by the decreasing vote share of the bourgeois parties, another famous commander from the Great War was convinced to run for public office. However, the path for the *Lion of Africa* will be much harder than it was for Hindenburg, the Right is divided, and threatened by a rising <span style="color: #954B00;">**NSDAP**</span>.
+Somehow, the German Right has done it again, prompted by the decreasing vote share of the bourgeois parties, another famous commander from the Great War was convinced to run for public office. However, the path for the *Lion of Africa* will be much harder than it was for Hindenburg, the Right is divided, and threatened by a rising <span style="color: #954B00;">**NSDAP**</span>.
 
 With local elections fast approaching, many parties have opted not to field their own candidates, instead consolidating their support behind a select few.
 
 - @harzburg: We await the decision of the Harzburg Front.
 
 @westarp
+title: Count Kuno von Westarp, the [? if dnvp_left >= 0: <span style="color: var(--dnvp-color);">**[+ dnvp_name +]**</span> ?][? if kvp_formed: <span style="color: #455B95;">**KVP**</span> ?] candidate.
 face-image: img/portraits/WestarpKuno.jpg
 view-if: westarp_candidacy
 max-visits: 1
 go-to: reactionary_candidates if second_reactionary_candidate != 0
 
-Count Kuno von Westarp, the [? if dnvp_left >= 0: <span style="color: var(--dnvp-color);">**[+ dnvp_name +]**</span> ?][? if kvp_formed: <span style="color: #455B95;">**KVP**</span> ?] candidate. The longtime patriarch of the <span style="color: var(--dnvp-color);">**[+ dnvp_name +]**</span>, while a moderate within the party, and even somewhat receptive of participation within the *Weimar* system, his goal remains the restoraion of the Kaiserreich.
+The longtime patriarch of the <span style="color: var(--dnvp-color);">**[+ dnvp_name +]**</span>, while a moderate within the party, and even somewhat receptive of participation within the *Weimar* system, his goal remains the restoraion of the Kaiserreich.
 
 With local elections fast approaching, many parties have opted not to field their own candidates, instead consolidating their support behind a select few.
 
