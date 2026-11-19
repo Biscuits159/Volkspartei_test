@@ -110,6 +110,7 @@ Q.next_election_month_prussia = 5;
 
 // old landtag seats PRUSSIA
 Q.kpd_pl = 9.8;
+Q.sapd_pl = 0.0;
 Q.spd_pl = 25.3;
 Q.aspd_pl = 0.0;
 Q.z_pl = 18.0;
@@ -128,6 +129,7 @@ Q.other_pl = 1.7;
 
 // old election votes PRUSSIA
 Q.old_kpd_votes_prussia = 9.6;
+Q.old_sapd_votes_prussia = 0.0;
 Q.old_spd_votes_prussia = 24.9;
 Q.old_aspd_votes_prussia = 0.0;
 Q.old_z_votes_prussia = 17.6;
@@ -154,9 +156,10 @@ Q.in_grand_coalition_hamburg = 1
 Q.next_election_year_hamburg = 1928;
 Q.next_election_month_hamburg = 2;
 
+Q.kpd_hb = 16.9;
+Q.sapd_hb = 0.0;
 Q.spd_hb = 39.3;
 Q.aspd_hb = 0.0;
-Q.kpd_hb = 16.9;
 Q.z_hb = 1.3;
 Q.ddp_hb = 10.0;
 Q.dvp_hb = 11.2;
@@ -168,9 +171,10 @@ Q.dnf_hb = 0.0;
 Q.nsdap_hb = 1.3;
 Q.other_hb = 0.6;
 
+Q.old_kpd_votes_hamburg = 17.0;
+Q.old_sapd_votes_hamburg = 0.0;
 Q.old_spd_votes_hamburg = 38.1;
 Q.old_aspd_votes_hamburg = 0.0;
-Q.old_kpd_votes_hamburg = 17.0;
 Q.old_z_votes_hamburg = 1.5;
 Q.old_ddp_votes_hamburg = 10.1;
 Q.old_dvp_votes_hamburg = 11.2;
@@ -191,9 +195,10 @@ Q.in_right_coalition_bavaria = 1
 Q.next_election_year_bavaria = 1928;
 Q.next_election_month_bavaria = 5;
 
+Q.kpd_bl = 7.0;
+Q.sapd_bl = 0.0;
 Q.spd_bl = 17.8;
 Q.aspd_bl = 0.0;
-Q.kpd_bl = 7.0;
 Q.z_bl = 36.5;
 Q.csrp_bl = 0.0;
 Q.dbp_bl = 7.8;
@@ -207,9 +212,10 @@ Q.dnf_bl = 0.0;
 Q.nsdap_bl = 17.8;
 Q.other_bl = 2.3;
 
+Q.old_kpd_votes_bavaria = 8.3;
+Q.old_sapd_votes_bavaria = 0.0;
 Q.old_spd_votes_bavaria = 17.2;
 Q.old_aspd_votes_bavaria = 0.0;
-Q.old_kpd_votes_bavaria = 8.3;
 Q.old_z_votes_bavaria = 34.0;
 Q.old_csrp_votes_bavaria = 0.0;
 Q.old_dbp_votes_bavaria = 7.1;
@@ -232,9 +238,10 @@ Q.in_bourgeois_coalition_wurttemberg = 1
 Q.next_election_year_wurttemberg = 1928;
 Q.next_election_month_wurttemberg = 5;
 
+Q.kpd_wl = 12.5;
+Q.sapd_wl = 0.0;
 Q.spd_wl = 16.3;
 Q.aspd_wl = 0.0;
-Q.kpd_wl = 12.5;
 Q.z_wl = 21.3;
 Q.csrp_wl = 0.0;
 Q.ddp_wl = 11.2;
@@ -247,9 +254,10 @@ Q.dnf_wl = 0.0;
 Q.nsdap_wl = 3.7;
 Q.other_wl = 0.0;
 
+Q.old_kpd_votes_wurttemberg = 11.7;
+Q.old_sapd_votes_wurttemberg = 0.0;
 Q.old_spd_votes_wurttemberg = 16.0;
 Q.old_aspd_votes_wurttemberg = 0.0;
-Q.old_kpd_votes_wurttemberg = 11.7;
 Q.old_z_votes_wurttemberg = 20.9;
 Q.old_csrp_votes_wurttemberg = 0.0;
 Q.old_ddp_votes_wurttemberg = 10.6;
@@ -271,9 +279,10 @@ Q.in_bourgeois_coalition_saxony = 1
 Q.next_election_year_saxony = 1929;
 Q.next_election_month_saxony = 5;
 
+Q.kpd_sl = 14.6;
+Q.sapd_sl = 0.0;
 Q.spd_sl = 32.3;
 Q.aspd_sl = 4.2;
-Q.kpd_sl = 14.6;
 Q.z_sl = 0.0;
 Q.ddp_sl = 5.2;
 Q.dvp_sl = 12.5;
@@ -292,9 +301,10 @@ Q.old_aspd_sl = 4.2;
 Q.old_vnr_sl = 0.0;
 Q.old_vrp_sl = 4.2;
 
+Q.old_kpd_votes_saxony = 14.5;
+Q.old_sapd_votes_saxony = 0.0;
 Q.old_spd_votes_saxony = 32.1;
 Q.old_aspd_votes_saxony = 4.2;
-Q.old_kpd_votes_saxony = 14.5;
 Q.old_z_votes_saxony = 1.0;
 Q.old_ddp_votes_saxony = 4.7;
 Q.old_dvp_votes_saxony = 12.4;
@@ -311,8 +321,9 @@ Q.old_other_votes_saxony = 0.7;
 
 
 // hanover
-Q.spd_hl = 0.0;
 Q.kpd_hl = 0.0;
+Q.sapd_hl = 0.0;
+Q.spd_hl = 0.0;
 Q.z_hl = 0.0;
 Q.dhp_hl = 0.0;
 Q.dbp_hl = 0.0;
@@ -329,8 +340,9 @@ Q.other_hl = 0.0;
 
 Q.old_dhp_hl = 0.0;
 
-Q.old_spd_votes_hanover = 0.0;
 Q.old_kpd_votes_hanover = 0.0;
+Q.old_sapd_votes_hanover = 0.0;
+Q.old_spd_votes_hanover = 0.0;
 Q.old_z_votes_hanover = 0.0;
 Q.old_dhp_votes_hanover = 0.0;
 Q.old_dbp_votes_hanover = 0.0;
@@ -348,6 +360,7 @@ Q.old_other_votes_hanover = 0.0;
 
 // austria
 Q.kpd_al = 0.0;
+Q.sapd_al = 0.0;
 Q.spd_al = 0.0;
 Q.ddp_al = 0.0;
 Q.csrp_al = 0.0;
@@ -364,6 +377,7 @@ Q.vb_al = 0.0;
 Q.old_vb_al = 0.0;
 
 Q.old_kpd_votes_austria = 0.0;
+Q.old_sapd_votes_austria = 0.0;
 Q.old_spd_votes_austria = 0.0;
 Q.old_ddp_votes_austria = 0.0;
 Q.old_csrp_votes_austria = 0.0;
@@ -658,6 +672,16 @@ Q.nsdap_leader = "Hitler";
 Q.nsdap_ideology = "National Socialism";
 
 
+document.body.style.setProperty('--dvp-color', Q.dvp_color);
+document.body.style.setProperty('--dvp-ideologycolor', Q.dvp_ideologycolor);
+
+document.body.style.setProperty('--kpd-color', Q.kpd_color);
+document.body.style.setProperty('--spd-color', Q.spd_color);
+document.body.style.setProperty('--ddp-color', Q.ddp_color);
+document.body.style.setProperty('--z-color', Q.z_color);
+document.body.style.setProperty('--dnvp-color', Q.dnvp_color);
+
+
 Q.bourgeois_parliament_support = 0;
 Q.bourgeois_parliament = 0;
 Q.bourgeois_parliament_ddp = 0;
@@ -665,6 +689,12 @@ Q.bourgeois_parliament_wp = 0;
 
 
 // sapd isn't formed yet, but it may be formed
+Q.sapd_seats = 0;
+Q.sapd_r = 0;
+Q.old_sapd_r = 0;
+Q.sapd_votes = 0;
+Q.old_sapd_votes = 0;
+
 Q.kvp_seats = 0;
 Q.kvp_r = 0;
 Q.old_kvp_r = 0;
