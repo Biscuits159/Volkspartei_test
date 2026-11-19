@@ -171,7 +171,7 @@ if (Q.cvp_formed == 0) Q.grand_coalition_hanover = parseFloat((Q.grand_coalition
 
 Q.bourgeois_coalition_hanover = parseFloat((Q.ddp_hl + Q.z_hl + Q.dhp_hl + Q.dvp_hl + Q.other_hl + Q.kvp_hl + Q.wp_hl + Q.csvd_hl + Q.cnblp_hl).toFixed(1));
 
-if (Q.dnvp_left < 0) Q.far_right_coalition_hanover = parseFloat((Q.dnvp_hl + Q.nsdap_hl).toFixed(1));
+if (Q.dnvp_left < 1) Q.far_right_coalition_hanover = parseFloat((Q.dnvp_hl + Q.nsdap_hl).toFixed(1));
 if (Q.dnf_formed) Q.far_right_coalition_hanover = parseFloat((Q.dnf_hl + Q.nsdap_hl).toFixed(1));
 
 
@@ -400,7 +400,7 @@ Grand Coalition ([? if sapd_formed: <span style="color: #C40000;">**SAPD**</span
 
 Bourgeois Coalition (<span style="color: var(--z-color);">**[+ z_name +]**</span> [? if ddp_exist: + <span style="color: var(--ddp-color);">**[+ ddp_name +]**</span> ?]+ <span style="color: var(--dvp-color);">**[+ dvp_name +]**</span> + <span style="color: #63C489;">**DHP**</span> + [? if kvp_formed: <span style="color: #455B95;">**KVP**</span> + ?][? if wp_exist: <span style="color: #B8996F;">**WP**</span> + ?][? if cnblp_exist: <span style="color: #7FCEB1;">**CNBLP**</span> + ?][? if csvd_exist: <span style="color: #8ED8E4;">**CSVD**</span> + ?] <span style="color: #909090;">**Others**</span>): [+ bourgeois_coalition_hanover +]%
 
-Far-Right Coalition (<span style="color: #954B00;">**NSDAP**</span> + [? if dnvp_left < 0: <span style="color: var(--dnvp-color);">**[+ dnvp_name +]**</span>?][? if dnf_formed: <span style="color: #003755;">**DNF**</span>?]): [+ far_right_coalition_hanover +]%
+Far-Right Coalition (<span style="color: #954B00;">**NSDAP**</span> + [? if dnvp_left < 0 and dnf_formed == 0: <span style="color: var(--dnvp-color);">**[+ dnvp_name +]**</span>?][? if dnf_formed: <span style="color: #003755;">**DNF**</span>?]): [+ far_right_coalition_hanover +]%
 
 There are some potential coalition arrangements.
 
@@ -446,7 +446,7 @@ A Bourgeois Coalition is formed.
 @far_right_coalition_hanover
 title: Far-right Coalition is formed!
 view-if: far_right_coalition_hanover >= 50
-subtitle: <span style="color: #954B00;">**NSDAP**</span> + [? if dnvp_left < 0: <span style="color: var(--dnvp-color);">**[+ dnvp_name +]**</span>?][? if dnf_formed: <span style="color: #003755;">**DNF**</span>?] ([+ far_right_coalition_hanover +]%)
+subtitle: <span style="color: #954B00;">**NSDAP**</span> + [? if dnvp_left < 0 and dnf_formed == 0: <span style="color: var(--dnvp-color);">**[+ dnvp_name +]**</span>?][? if dnf_formed: <span style="color: #003755;">**DNF**</span>?] ([+ far_right_coalition_hanover +]%)
 on-arrival: in_far_right_coalition_hanover = 1;
 
 A Far-right Coalition is formed.
@@ -506,7 +506,7 @@ Gustav Noske was chosen. [? if in_popular_front_hanover: Despite the <span style
 title: Otto Schmidt, <span style="color: var(--dnvp-color);">**[+ dnvp_name +]**</span> candidate.
 subtitle: A commited völkist bridging the gap between the right of the <span style="color: var(--dnvp-color);">**[+ dnvp_name +]**</span> and the <span style="color: #954B00;">**NSDAP**</span>.
 view-if: in_far_right_coalition_hanover
-on-arrival: hanover_leader = "Schmidt"; hanover_leader_party = dnvp_name if dnvp_left < 0; hanover_leader_party = "DNF" if dnf_formed; rural_nsdap += 4; old_middle_nsdap += 2; nationalism += 2; pro_republic -= 3
+on-arrival: hanover_leader = "Schmidt"; hanover_leader_party = dnvp_name if dnvp_left < 0 and dnf_formed == 0; hanover_leader_party = "DNF" if dnf_formed; rural_nsdap += 4; old_middle_nsdap += 2; nationalism += 2; pro_republic -= 3
 face-image: img/portraits/SchmidtOtto.jpg
 
 Otto Schmidt was chosen.

@@ -142,7 +142,7 @@ if (Q.aspd_exist && Q.aspd_radical == 0) Q.grand_coalition_wurttemberg = parseFl
 Q.bourgeois_coalition_wurttemberg = parseFloat((Q.ddp_wl + Q.z_wl + Q.dvp_wl + Q.other_wl + Q.cnblp_wl + Q.kvp_wl + Q.csvd_wl + Q.csrp_wl).toFixed(1));
 if (Q.aspd_exist && Q.aspd_radical == 0) Q.bourgeois_coalition_wurttemberg = parseFloat((Q.bourgeois_coalition_wurttemberg + Q.aspd_wl).toFixed(1));
 
-if (Q.dnvp_left < 0) Q.far_right_coalition_wurttemberg = parseFloat((Q.dnvp_wl + Q.nsdap_wl).toFixed(1));
+if (Q.dnvp_left < 1) Q.far_right_coalition_wurttemberg = parseFloat((Q.dnvp_wl + Q.nsdap_wl).toFixed(1));
 if (Q.dnf_formed) Q.far_right_coalition_wurttemberg = parseFloat((Q.dnf_wl + Q.nsdap_wl).toFixed(1));
 
 
@@ -376,7 +376,7 @@ Grand Coalition ([? if sapd_formed: <span style="color: #C40000;">**SAPD**</span
 
 Bourgeois Coalition (<span style="color: #000000;">**[+ z_name +]**</span> [? if ddp_exist: + <span style="color: var(--ddp-color);">**[+ ddp_name +]**</span> ?] + <span style="color: var(--dvp-color);">**[+ dvp_name +]**</span> [? if kvp_formed: + <span style="color: #455B95;">**KVP**</span>?][? if cnblp_exist: + <span style="color: #006400;">**WBWB**</span>?][? if csvd_exist: + <span style="color: #8ED8E4;">**CSVD**</span>?][? if csrp_formed: + <span style="color: #FF6B21;">**CSRP**</span>?][? if aspd_exist and aspd_radical == 0: + <span style="color: #FE9E00;">**ASPD**</span>?] + <span style="color: #909090;">**Others**</span>): [+ bourgeois_coalition_wurttemberg +]%
 
-Far-Right Coalition (<span style="color: #954B00;">**NSDAP**</span> + [? if dnvp_left < 0: <span style="color: var(--dnvp-color);">**[+ dnvp_name +]**</span>?][? if dnf_formed: <span style="color: #003755;">**DNF**</span>?]): [+ far_right_coalition_wurttemberg +]%
+Far-Right Coalition (<span style="color: #954B00;">**NSDAP**</span> + [? if dnvp_left < 0 and dnf_formed == 0: <span style="color: var(--dnvp-color);">**[+ dnvp_name +]**</span>?][? if dnf_formed: <span style="color: #003755;">**DNF**</span>?]): [+ far_right_coalition_wurttemberg +]%
 
 There are some potential coalition arrangements.
 
@@ -437,7 +437,7 @@ A Bourgeois Coalition is formed.
 @far_right_coalition_wurttemberg
 title: Far-right Coalition is formed!
 view-if: far_right_coalition_wurttemberg >= 50
-subtitle: <span style="color: #954B00;">**NSDAP**</span> + [? if dnvp_left < 0: <span style="color: var(--dnvp-color);">**[+ dnvp_name +]**</span>?][? if dnf_formed: <span style="color: #003755;">**DNF**</span>?] ([+ far_right_coalition_wurttemberg +]%)
+subtitle: <span style="color: #954B00;">**NSDAP**</span> + [? if dnvp_left < 0 and dnf_formed == 0: <span style="color: var(--dnvp-color);">**[+ dnvp_name +]**</span>?][? if dnf_formed: <span style="color: #003755;">**DNF**</span>?] ([+ far_right_coalition_wurttemberg +]%)
 on-arrival: in_far_right_coalition_wurttemberg = 1;
 
 A Far-right Coalition is formed.

@@ -3,7 +3,7 @@ view-if: year = next_election_year_hamburg and month >= next_election_month_hamb
 new-page: true
 tags: event
 priority: 3
-on-arrival: next_election_year_hamburg = next_election_year_hamburg + 4; next_election_time_hamburg = time + 48; was_dvp_hamburg = 0; was_in_dvp_majority_hamburg = 0; was_in_popular_front_hamburg = 0; was_in_grand_coalition_hamburg = 0; was_in_bourgeois_coalition_hamburg = 0; was_in_far_right_coalition_hamburg = 0;
+on-arrival: next_election_year_hamburg = next_election_year_hamburg + 4; next_election_time_hamburg = time + 48; was_dvp_hamburg = 0; was_in_dvp_majority_hamburg = 0; was_in_left_front_hamburg = 0; was_in_grand_coalition_hamburg = 0; was_in_bourgeois_coalition_hamburg = 0; was_in_far_right_coalition_hamburg = 0;
 
 = Hamburg Elections, [+ month : month +] [+ year +]
 
@@ -123,7 +123,7 @@ if (new_party_sum > 0) {
 
 
 
-Q.popular_front_hamburg = parseFloat((Q.kpd_hb + Q.sapd_hb + Q.spd_hb + Q.ddp_hb).toFixed(1));
+Q.left_front_hamburg = parseFloat((Q.kpd_hb + Q.sapd_hb + Q.spd_hb).toFixed(1));
 
 Q.grand_coalition_hamburg = parseFloat((Q.sapd_hb + Q.spd_hb + Q.ddp_hb + Q.dvp_hb).toFixed(1));
 if (Q.cvp_formed == 0) Q.grand_coalition_hamburg = parseFloat((Q.grand_coalition_hamburg + Q.z_hb).toFixed(1));
@@ -132,7 +132,7 @@ if (Q.aspd_exist && Q.aspd_radical == 0) Q.grand_coalition_hamburg = parseFloat(
 Q.bourgeois_coalition_hamburg = parseFloat((Q.ddp_hb + Q.z_hb + Q.dvp_hb + Q.other_hb + Q.kvp_hb + Q.wp_hb + Q.csvd_hb).toFixed(1));
 if (Q.aspd_exist && Q.aspd_radical == 0) Q.bourgeois_coalition_hamburg = parseFloat((Q.bourgeois_coalition_hamburg + Q.aspd_hb).toFixed(1));
 
-if (Q.dnvp_left < 0) Q.far_right_coalition_hamburg = parseFloat((Q.dnvp_hb + Q.nsdap_hb).toFixed(1));
+if (Q.dnvp_left < 1) Q.far_right_coalition_hamburg = parseFloat((Q.dnvp_hb + Q.nsdap_hb).toFixed(1));
 if (Q.dnf_formed) Q.far_right_coalition_hamburg = parseFloat((Q.dnf_hb + Q.nsdap_hb).toFixed(1));
 
 
@@ -142,8 +142,8 @@ if (Q.dvp_hamburg) {
 }
 if (Q.in_dvp_majority_hamburg) {
     Q.was_in_dvp_majority_hamburg = 1
-} else if (Q.in_popular_front_hamburg) {
-    Q.was_in_popular_front_hamburg = 1
+} else if (Q.in_left_front_hamburg) {
+    Q.was_in_left_front_hamburg = 1
 } else if (Q.in_grand_coalition_hamburg) {
     Q.was_in_grand_coalition_hamburg = 1
 } else if (Q.in_bourgeois_coalition_hamburg) {
@@ -155,7 +155,7 @@ if (Q.in_dvp_majority_hamburg) {
 
 Q.dvp_hamburg = 0;
 Q.in_dvp_majority_hamburg = 0;
-Q.in_popular_front_hamburg = 0;
+Q.in_left_front_hamburg = 0;
 Q.in_grand_coalition_hamburg = 0;
 Q.in_bourgeois_coalition_hamburg = 0;
 Q.in_far_right_coalition_hamburg = 0;
@@ -353,26 +353,26 @@ Grand Coalition ([? if sapd_formed: <span style="color: #C40000;">**SAPD**</span
 
 Bourgeois Coalition (<span style="color: var(--z-color);">**[+ z_name +]**</span> + <span style="color: var(--dvp-color);">**[+ dvp_name +]**</span>[? if ddp_exist: + <span style="color: var(--ddp-color);">**[+ ddp_name +]**</span>?][? if kvp_formed: + <span style="color: #455B95;">**KVP**</span>?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span>?][? if csvd_exist: + <span style="color: #8ED8E4;">**CSVD**</span>?][? if aspd_exist and aspd_radical == 0: + <span style="color: #FE9E00;">**ASPD**</span>?] + <span style="color: #909090;">**Others**</span>): [+ bourgeois_coalition_hamburg +]%
 
-Far-Right Coalition (<span style="color: #954B00;">**NSDAP**</span> + [? if dnvp_left < 0: <span style="color: var(--dnvp-color);">**[+ dnvp_name +]**</span>?][? if dnf_formed: <span style="color: #003755;">**DNF**</span>?]): [+ far_right_coalition_hamburg +]%
+Far-Right Coalition (<span style="color: #954B00;">**NSDAP**</span> [? if dnvp_left < 0 and dnf_formed == 0: + <span style="color: var(--dnvp-color);">**[+ dnvp_name +]**</span>?][? if dnf_formed: + <span style="color: #003755;">**DNF**</span>?]): [+ far_right_coalition_hamburg +]%
 
 There are some potential coalition arrangements.
 
 @coalition_menu
 
 - @dvp_majority_hamburg
-- @popular_front_hamburg
+- @left_front_hamburg
 - @grand_coalition_hamburg
 - @bourgeois_coalition_hamburg
 - @far_right_coalition_hamburg
 - @no_majority
 
-@popular_front_hamburg
-title: A Popular Front forms.
-view-if: popular_front_hamburg >= 50
-subtitle: [? if kpd_exist: <span style="color: var(--kpd-color);">**[+ kpd_name +]**</span> + ?][? if sapd_formed: <span style="color: #C40000;">**SAPD**</span> + ?]<span style="color: var(--spd-color);">**[+ spd_name +]**</span>[? if ddp_exist: + <span style="color: var(--ddp-color);">**[+ ddp_name +]**</span> ?] ([+ popular_front_hamburg +]%)
-on-arrival: popular_front_hamburg = 1;
+@left_front_hamburg
+title: A Left Front forms.
+view-if: left_front_hamburg >= 50 and spd_left >= 0
+subtitle: [? if kpd_exist: <span style="color: var(--kpd-color);">**[+ kpd_name +]**</span> + ?][? if sapd_formed: <span style="color: #C40000;">**SAPD**</span> + ?]<span style="color: var(--spd-color);">**[+ spd_name +]**</span> ([+ left_front_hamburg +]%)
+on-arrival: in_left_front_hamburg = 1;
 
-A Popular Front forms.
+A Left Front forms.
 
 - @hamburg_mayor
 
@@ -399,7 +399,7 @@ A Bourgeois Coalition is formed.
 @far_right_coalition_hamburg
 title: Far-right Coalition is formed!
 view-if: far_right_coalition_hamburg >= 50
-subtitle: <span style="color: #954B00;">**NSDAP**</span> + [? if dnvp_left < 0: <span style="color: var(--dnvp-color);">**[+ dnvp_name +]**</span>?][? if dnf_formed: <span style="color: #003755;">**DNF**</span>?] ([+ far_right_coalition_hamburg +]%)
+subtitle: <span style="color: #954B00;">**NSDAP**</span> + [? if dnvp_left < 0 and dnf_formed == 0: <span style="color: var(--dnvp-color);">**[+ dnvp_name +]**</span>?][? if dnf_formed: <span style="color: #003755;">**DNF**</span>?] ([+ far_right_coalition_hamburg +]%)
 on-arrival: in_far_right_coalition_hamburg = 1;
 
 A Far-right Coalition is formed.
@@ -451,7 +451,7 @@ Carl Wilhelm Petersen was chosen.
 @ross
 title: Rudolf Ross, the <span style="color: var(--spd-color);">**[+ spd_name +]**</span> candidate.
 subtitle: He was Second Mayor under Petersen.
-view-if: in_grand_coalition_hamburg or in_popular_front_hamburg
+view-if: in_grand_coalition_hamburg or in_left_front_hamburg
 on-arrival: hamburg_leader = "Ross"; hamburg_leader_party = spd_name; socialism += 1
 
 Rudolf Ross was chosen.
@@ -467,8 +467,8 @@ Alfred Hugenberg was somehow chosen.
 
 @no_majority
 title: There is no clear governing majority.
-view-if: popular_front_hamburg < 50 and grand_coalition_hamburg < 50 and bourgeois_coalition_hamburg < 50 and far_right_coalition_hamburg < 50
-on-arrival: workers_kpd += 2; workers_nsdap += 1; unemployed_nsdap += 2; old_middle_nsdap += 1; new_middle_nsdap += 1; dvp_hamburg = 1 if was_dvp_hamburg; in_dvp_majority_hamburg = 1 if was_in_dvp_majority_hamburg; in_popular_front_hamburg = 1 if was_in_popular_front_hamburg; in_grand_coalition_hamburg = 1 if was_in_grand_coalition_hamburg; in_bourgeois_coalition_hamburg = 1 if was_in_bourgeois_coalition_hamburg; in_far_right_coalition_hamburg = 1 if was_in_far_right_coalition_hamburg;
+view-if: left_front_hamburg < 50 and grand_coalition_hamburg < 50 and bourgeois_coalition_hamburg < 50 and far_right_coalition_hamburg < 50
+on-arrival: workers_kpd += 2; workers_nsdap += 1; unemployed_nsdap += 2; old_middle_nsdap += 1; new_middle_nsdap += 1; dvp_hamburg = 1 if was_dvp_hamburg; in_dvp_majority_hamburg = 1 if was_in_dvp_majority_hamburg; in_left_front_hamburg = 1 if was_in_left_front_hamburg; in_grand_coalition_hamburg = 1 if was_in_grand_coalition_hamburg; in_bourgeois_coalition_hamburg = 1 if was_in_bourgeois_coalition_hamburg; in_far_right_coalition_hamburg = 1 if was_in_far_right_coalition_hamburg;
 
 There is no path to a majority government for now. The current government will stay in power as a minority coalition.
 

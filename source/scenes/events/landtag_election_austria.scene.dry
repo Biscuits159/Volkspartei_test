@@ -169,7 +169,7 @@ if (Q.cvp_formed == 0) Q.grand_coalition_austria = parseFloat((Q.grand_coalition
 
 Q.bourgeois_coalition_austria = parseFloat((Q.ddp_al + Q.z_al + Q.dvp_al + Q.kvp_al + Q.cnblp_al + Q.csrp_al + Q.other_al).toFixed(1));
 
-if (Q.dnvp_left < 0) Q.far_right_coalition_austria = parseFloat((Q.dnvp_al + Q.nsdap_al).toFixed(1));
+if (Q.dnvp_left < 1) Q.far_right_coalition_austria = parseFloat((Q.dnvp_al + Q.nsdap_al).toFixed(1));
 if (Q.dnf_formed) Q.far_right_coalition_austria = parseFloat((Q.dnf_al + Q.nsdap_al).toFixed(1));
 
 
@@ -378,7 +378,7 @@ Grand Coalition (<span style="color: var(--spd-color);">**[+ spd_name +]**</span
 
 Bourgeois Coalition (<span style="color: var(--z-color);">**CSP**</span> + <span style="color: var(--dvp-color);">**[+ dvp_name +]**</span>[? if ddp_exist: + <span style="color: var(--ddp-color);">**[+ ddp_name +]**</span> ?][? if kvp_formed: + <span style="color: #455B95;">**KVP**</span> ?][? if cnblp_exist: + <span style="color: #385A38;">**LB**</span> ?][? if csrp_formed: + <span style="color: #FF6B21;">**CSRP**</span>?] + <span style="color: #909090;">**Others**</span>): [+ bourgeois_coalition_austria +]%
 
-Far-Right Coalition (<span style="color: #954B00;">**NSDAP**</span> + [? if dnvp_left < 0: <span style="color: var(--dnvp-color);">**DNVP**</span>?][? if dnf_formed: <span style="color: #003755;">**DNF**</span>?]): [+ far_right_coalition_austria +]%
+Far-Right Coalition (<span style="color: #954B00;">**NSDAP**</span> + [? if dnvp_left < 0 and dnf_formed == 0: <span style="color: var(--dnvp-color);">**DNVP**</span>?][? if dnf_formed: <span style="color: #003755;">**DNF**</span>?]): [+ far_right_coalition_austria +]%
 
 There are some potential coalition arrangements.
 
@@ -424,7 +424,7 @@ A Bourgeois Coalition is formed.
 @far_right_coalition_austria
 title: A Far-Right Coalition is formed!
 view-if: far_right_coalition_austria >= 50
-subtitle: <span style="color: #954B00;">**NSDAP**</span> + [? if dnvp_left < 0: <span style="color: var(--dnvp-color);">**DNVP**</span>?][? if dnf_formed: <span style="color: #003755;">**DNF**</span>?] ([+ far_right_coalition_austria +]%)
+subtitle: <span style="color: #954B00;">**NSDAP**</span> + [? if dnvp_left < 0 and dnf_formed == 0: <span style="color: var(--dnvp-color);">**DNVP**</span>?][? if dnf_formed: <span style="color: #003755;">**DNF**</span>?] ([+ far_right_coalition_austria +]%)
 on-arrival: in_far_right_coalition_austria = 1;
 
 A Far-right Coalition is formed.
