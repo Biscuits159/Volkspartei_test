@@ -444,7 +444,7 @@ A Right Coalition is formed.
 @far_right_coalition_bavaria
 title: Far-right Coalition is formed!
 view-if: far_right_coalition_bavaria >= 50
-subtitle: <span style="color: #954B00;">**NSDAP**</span> + [? if dnvp_left < 1 adn dnf_formed == 0: <span style="color: var(--dnvp-color);">**[+ dnvp_name +]**</span>?][? if dnf_formed: <span style="color: #003755;">**DNF**</span>?] ([+ far_right_coalition_bavaria +]%)
+subtitle: <span style="color: #954B00;">**NSDAP**</span> + [? if dnvp_left < 1 and dnf_formed == 0: <span style="color: var(--dnvp-color);">**[+ dnvp_name +]**</span>?][? if dnf_formed: <span style="color: #003755;">**DNF**</span>?] ([+ far_right_coalition_bavaria +]%)
 on-arrival: in_far_right_coalition_bavaria = 1;
 
 A Far-right Coalition is formed.
