@@ -1341,8 +1341,8 @@ if ((!Q.rubicon && Q.month_actions >= 1) || (Q.rubicon && Q.month_actions >= 4))
     }
 
     if (Q.demand_for_action_countdown < 0) {
-        Q.new_middle_dvp *= 0.8;
-        Q.old_middle_dvp *= 0.8;
+        Q.new_middle_dvp *= 0.7;
+        Q.old_middle_dvp *= 0.7;
         Q.nationalist_dissent += 10;
         Q.industrialist_dissent += 15;
         Q.labor_dissent += 15;
@@ -1353,16 +1353,16 @@ if ((!Q.rubicon && Q.month_actions >= 1) || (Q.rubicon && Q.month_actions >= 4))
 
     if (Q.president == "Hindenburg") {
 
-        if (Q.spd_in_government) Q.hindenburg_angry += 2;
-        if (Q.spd_toleration) Q.hindenburg_angry += 1;
+        if (Q.spd_in_government) Q.hindenburg_angry += 3;
+        if (Q.spd_toleration) Q.hindenburg_angry += 2;
 
         if (Q.dvp_left < 0) Q.hindenburg_angry += 1;
 
         if (Q.pro_republic - Q.nsdap_votes < 50) Q.hindenburg_angry += 1;
         if (Q.largest_party == "NSDAP" && Q.nsdap_r >= 26) Q.hindenburg_angry += 5;
 
-        if (Q.dnvp_left >= 0) Q.hindenburg_angry -= 3;
-        if (Q.kvp_formed) Q.hindenburg_angry -= 2;
+        if (Q.dnvp_left >= 0) Q.hindenburg_angry -= 2;
+        if (Q.kvp_formed) Q.hindenburg_angry -= 1;
 
         if (Q.black_thursday_seen && !Q.works_program) Q.hindenburg_angry += 1;
         if (Q.return_to_normalcy) Q.hindenburg_angry -= 3;
