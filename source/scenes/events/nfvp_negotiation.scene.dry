@@ -20,7 +20,7 @@ if (Q.bourgeois_parliament) {
     Q.nfvp_formation_points += 1;
 }
 
-if (((Q.nationalist_strength + Q.industrialist_strength) >= (Q.liberal_strength + Q.labor_strength)) || Q.dvp_ideology == "Right") {
+if (((Q.nationalist_strength + Q.industrialist_strength) >= (Q.liberal_strength + Q.labor_strength)) || Q.dvp_left < 0) {
     Q.nfvp_formation_points -= 5;
 }
 !}
