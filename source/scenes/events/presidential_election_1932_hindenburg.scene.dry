@@ -46,7 +46,7 @@ title: Hold a campaign for President Hindenburg
 subtitle: -1 resource
 unavailable-subtitle: Not enough resources.
 choose-if: resources >= 1
-on-arrival: hindenburg_run_points += 3; resources -= 1; dnvp_relation += 5*(1-dissent) if dnvp_left >= 0; cnblp_relation += 3*(1-dissent); wp_relation += 5*(1-dissent); dbp_relation += 5*(1-dissent); spd_relation -= 5; ddp_relation -= 3 if ddp_exist
+on-arrival: hindenburg_run_points += 5; resources -= 1; dnvp_relation += 5*(1-dissent) if dnvp_left >= 0; cnblp_relation += 3*(1-dissent); wp_relation += 5*(1-dissent); dbp_relation += 5*(1-dissent); spd_relation -= 5; ddp_relation -= 3 if ddp_exist
 
 We hold rallies around Prussia, hoping to convince the aging Field Marshall to run for President once more. Our campaign grants us some goodwill among moderate and right-wing parties, whereas the <span style="color: var(--spd-color);">**[+ spd_name +]**</span> is upset at us for supporting a reactionary for the second time. 
 

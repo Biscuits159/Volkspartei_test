@@ -333,7 +333,7 @@ We will support [+ second_reactionary_candidate +] in this election.
 choose-if: dvp_left >= 0 and resources >= 1
 view-if: reactionary_candidate != "Hindenburg"
 unavailable-subtitle: [? if dvp_left < 0: Why would we run a republican candidate? ?][? if resources < 1: Not enough resources. (Need 1) ?]
-subtitle: After nominating him, we still have to convince the other parties to support him.
+subtitle: After nominating him, we still have to convince the other parties to support him. (-1 resource)
 on-departure: resources -= 1; nationalist_dissent += 10; dvp_candidate = "Eckener";
 
 We will run Hugo Eckener.
@@ -343,7 +343,7 @@ We will run Hugo Eckener.
 @run_jarres
 choose-if: dvp_left < 0 and resources >= 2
 unavailable-subtitle: [? if dvp_left >= 0: The party prefers running Luther. ?][? if resources < 2: Not enough resources. (Need 2) ?]
-subtitle: After nominating him, we still have to convince the other parties to support him.
+subtitle: After nominating him, we still have to convince the other parties to support him. (-2 resource)
 on-departure: resources -= 2; labor_dissent += 5; industrialist_strength += 10; nationalist_strength += 5; dvp_candidate = "Jarres";
 
 We will run Karl Jarres.
@@ -353,7 +353,7 @@ We will run Karl Jarres.
 @run_luther
 choose-if: dvp_left >= 0 and resources >= 2
 unavailable-subtitle: [? if dvp_left < 0: The party prefers running Jarres. ?][? if resources < 2: Not enough resources. (Need 2) ?]
-subtitle: After nominating him, we still have to convince the other parties to support him.
+subtitle: After nominating him, we still have to convince the other parties to support him. (-2 resource)
 on-departure: resources -= 2; liberal_strength += 5; nationalist_dissent += 10; dvp_candidate = "Luther";
 
 We will run Hans Luther.
@@ -389,7 +389,7 @@ We can try to convince parties supporting other candidates to switch their suppo
 @convince_spd
 view-if: dvp_candidate != "Westarp" and spd_candidate != dvp_candidate and spd_candidate != "Rosenfeld"
 choose-if: spd_votes < (antidem_votes - kpd_votes) and (dvp_candidate == "Luther" or dvp_candidate == "Eckener")
-unavailable-subtitle: The Social Democrats are stronger than the far-right. They are not satisfied with our candidate choice.
+unavailable-subtitle: The Social Democrats are stronger than the far-right. [? if dvp_candidate == "Jarres": They are not satisfied with our candidate choice. ?] 
 go-to: convince_spd_success if (dvp_left >= 0 and spd_relation >= 50); convince_spd_fail if (dvp_left < 0 or spd_relation < 50)
 max-visits: 1
 
@@ -696,7 +696,7 @@ go-to: endorsements
 
 [? if other_candidate == reactionary_candidate: - <span style="color: #909090;">**Others**</span> ?]
 
-[? if second_reactionary_candidate == "Adenauer":  <span style="color: var(--z-color);">**Konrad Adenauer**</span> ?][? if second_reactionary_candidate == "Brüning":  <span style="color: var(--z-color);">**Heinrich Brüning**</span> ?][? if second_reactionary_candidate == "Stegerwald":  <span style="color: var(--z-color);">**Adam Stegerwald**</span> ?][? if second_reactionary_candidate == "Vorbeck": <span style="color: #808080;">**Paul von Lettow-Vorbeck**</span> ?][? if second_reactionary_candidate == "Westarp":  <span style="color: var(--dnvp-color);">**Kuno von Westarp**</span>?] - supported by:
+[? if second_reactionary_candidate != 0: [? if second_reactionary_candidate == "Adenauer": <span style="color: var(--z-color);">**Konrad Adenauer**</span> ?][? if second_reactionary_candidate == "Brüning":  <span style="color: var(--z-color);">**Heinrich Brüning**</span> ?][? if second_reactionary_candidate == "Stegerwald":  <span style="color: var(--z-color);">**Adam Stegerwald**</span> ?][? if second_reactionary_candidate == "Vorbeck": <span style="color: #808080;">**Paul von Lettow-Vorbeck**</span> ?][? if second_reactionary_candidate == "Westarp":  <span style="color: var(--dnvp-color);">**Kuno von Westarp**</span>?] - supported by: ?]
 
 [? if spd_candidate == second_reactionary_candidate: - <span style="color: var(--spd-color);">**SPD**</span> ?]
 

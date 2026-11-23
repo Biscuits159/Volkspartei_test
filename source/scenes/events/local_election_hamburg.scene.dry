@@ -378,7 +378,7 @@ A Left Front forms.
 
 @grand_coalition_hamburg
 title: We can form a Grand Coalition.
-view-if: grand_coalition_hamburg >= 50 and not (lvp_formed or nfvp_formed)
+view-if: grand_coalition_hamburg >= 50
 subtitle: [? if sapd_formed: <span style="color: #C40000;">**SAPD**</span> + ?]<span style="color: var(--spd-color);">**[+ spd_name +]**</span> [? if cvp_formed == 0: + <span style="color: var(--z-color);">**[+ z_name +]**</span> ?] + <span style="color: var(--dvp-color);">**[+ dvp_name +]**</span>[? if ddp_exist: + <span style="color: var(--ddp-color);">**[+ ddp_name +]**</span> ?][? if aspd_exist and aspd_radical == 0: + <span style="color: #FE9E00;">**ASPD**</span>?] ([+ grand_coalition_hamburg +]%)
 on-arrival: in_grand_coalition_hamburg = 1; dvp_hamburg = 1;
 

@@ -313,7 +313,7 @@ on-arrival: {!
 @round2_convince_spd
 view-if: spd_candidate != dvp_candidate and dvp_candidate != "Westarp"
 choose-if: spd_votes < (antidem_votes - kpd_votes) and (dvp_candidate == "Luther" or dvp_candidate == "Eckener")
-unavailable-subtitle: The Social Democrats are stronger than the far-right. They are not satisfied with our candidate choice.
+unavailable-subtitle: The Social Democrats are stronger than the far-right. [? if dvp_candidate == "Jarres": They are not satisfied with our candidate choice. ?]
 go-to: r2_spd_failed if spd_relation < 40; r2_spd_success if spd_relation >= 40
 max-visits: 1
 

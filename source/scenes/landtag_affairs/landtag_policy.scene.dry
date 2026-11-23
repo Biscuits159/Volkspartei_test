@@ -24,7 +24,7 @@ We can enact policies in Prussia.
 - @cancel_advisor_action
 
 @local_policies
-on-arrival: new_middle_dvp += landtag_power*(1-dissent); old_middle_dvp += landtag_power*(1-dissent)
+on-arrival: new_middle_dvp += landtag_power*(1-dissent); old_middle_dvp += landtag_power*(1-dissent); demand_for_action_countdown += 6;
 
 Our policies help us improve the popularity of our party among our base, the middle class.
 

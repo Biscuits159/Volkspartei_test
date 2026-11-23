@@ -241,15 +241,15 @@ if (Q.sa_strength) {
 
 = Paramilitaries
 
-{!<span class="tooltip-text" title="The *Reichsbanner* Schwarz-Rot-Gold is a popular organization for defending democracy, mostly affiliated with the SPD." style="color: var(--spd-color);">**Reichsbanner**</span>!} Strength: [+ rb_strength_2 +] thousand
+<span class="tooltip-text" title="The Reichsbanner Schwarz-Rot-Gold is a popular organization for defending democracy, mostly affiliated with the SPD." style="color: var(--spd-color);">**Reichsbanner**</span> Strength: [+ rb_strength_2 +] thousand
 
 <span style="color: var(--spd-color);">**Reichsbanner**</span> Militarization: [+ rb_militancy : militancy +]
 
-{!<span class="tooltip-text" title="The RFB (Rotfrontkämpferbund) is a communist group associated with the KPD." style="color: var(--kpd-color);">**RFB**</span>!} Strength: [+ rfb_strength_2 +] thousand
+<span class="tooltip-text" title="The RFB (Rotfrontkämpferbund) is a communist group associated with the KPD." style="color: var(--kpd-color);">**RFB**</span> Strength: [+ rfb_strength_2 +] thousand
 
 <span style="color: var(--kpd-color);">**RFB**</span> Militarization: [+ rfb_militancy : militancy +]
 
-{!<span class="tooltip-text" title="The Stahlhelm is a right-wing organization of war veterans associated with the national-conservatives." style="color: var(--dnvp-color);">**Stahlhelm**</span>!} Strength: [+ sh_strength_2 +] thousand
+<span class="tooltip-text" title="The Stahlhelm is a right-wing organization of war veterans associated with the national-conservatives." style="color: var(--dnvp-color);">**Stahlhelm**</span> Strength: [+ sh_strength_2 +] thousand
 
 <span style="color: var(--dnvp-color);">**Stahlhelm**</span> Militarization: [+ sh_militancy : militancy +]
 

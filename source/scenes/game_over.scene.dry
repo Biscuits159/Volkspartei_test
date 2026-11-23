@@ -1,8 +1,11 @@
 title: Game Over.
 new-page: true
 go-to: eg_menu
-on-arrival: game_over = 1;
-
+on-arrival: {!
+Q.game_over = 1;
+// Achievements:
+this.achieve('game_completed');
+!}
 = End
 
 
