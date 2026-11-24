@@ -17,10 +17,10 @@ The right wing of the party rallied behind Alfred Hugenberg, an industrialist an
 @resultsdnvp
 on-arrival: {!
 Q.event_points = 0;
-Q.event_points += (Q.pro_republic - 70)/10;
-Q.event_points -= (Q.nationalism - 60)/10;
+Q.event_points += (Q.pro_republic - 65)/10;
+Q.event_points -= (Q.nationalism - 65)/10;
 if (Q.dnvp_in_government) Q.event_points += 1;
-if (Q.dvp_left >= 0) Q.event_points -= Q.dnvp_relation/100;
+if (Q.dvp_left < 0) Q.event_points += Q.dnvp_relation/100;
 !}
 go-to: hergt if event_points >= 1; triumvirate if event_points >= 0 and event_points < 1; hugenberg if event_points < 0
 

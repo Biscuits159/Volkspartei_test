@@ -253,7 +253,7 @@ if (Q.sa_strength) {
 
 <span style="color: var(--dnvp-color);">**Stahlhelm**</span> Militarization: [+ sh_militancy : militancy +]
 
-{!<span class="tooltip-text" title="The SA (Sturmabteilung) is the Nazi paramilitary." style="color: #954B00;">**SA**</span>!} Strength: [+ sa_strength_2 +] thousand
+<span class="tooltip-text" title="The SA (Sturmabteilung) is the Nazi paramilitary." style="color: #954B00;">**SA**</span> Strength: [+ sa_strength_2 +] thousand
 
 <span style="color: #954B00;">**SA**</span> Militarization: [+ sa_militancy : militancy +]
 

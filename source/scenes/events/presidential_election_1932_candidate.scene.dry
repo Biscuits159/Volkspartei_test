@@ -343,7 +343,7 @@ We will run Hugo Eckener.
 @run_jarres
 choose-if: dvp_left < 0 and resources >= 2
 unavailable-subtitle: [? if dvp_left >= 0: The party prefers running Luther. ?][? if resources < 2: Not enough resources. (Need 2) ?]
-subtitle: After nominating him, we still have to convince the other parties to support him. (-2 resource)
+subtitle: After nominating him, we still have to convince the other parties to support him. (-2 resources)
 on-departure: resources -= 2; labor_dissent += 5; industrialist_strength += 10; nationalist_strength += 5; dvp_candidate = "Jarres";
 
 We will run Karl Jarres.
@@ -353,7 +353,7 @@ We will run Karl Jarres.
 @run_luther
 choose-if: dvp_left >= 0 and resources >= 2
 unavailable-subtitle: [? if dvp_left < 0: The party prefers running Jarres. ?][? if resources < 2: Not enough resources. (Need 2) ?]
-subtitle: After nominating him, we still have to convince the other parties to support him. (-2 resource)
+subtitle: After nominating him, we still have to convince the other parties to support him. (-2 resources)
 on-departure: resources -= 2; liberal_strength += 5; nationalist_dissent += 10; dvp_candidate = "Luther";
 
 We will run Hans Luther.
@@ -492,6 +492,7 @@ on-arrival: {!
             if (Q.kvp_candidate == Q.reactionary_candidate) Q.kvp_candidate = Q.dvp_candidate;
             if (Q.dnvp_candidate == Q.reactionary_candidate) Q.dnvp_candidate = Q.dvp_candidate;
             if (Q.other_candidate == Q.reactionary_candidate) Q.other_candidate = Q.dvp_candidate;
+            Q.reactionary_candidate = 0;
         } else {
             if (Q.spd_candidate == Q.reactionary_candidate) Q.spd_candidate = Q.dvp_candidate;
             if (Q.ddp_candidate == Q.reactionary_candidate) Q.ddp_candidate = Q.dvp_candidate
@@ -638,6 +639,7 @@ on-arrival: {!
             if (Q.wp_candidate == Q.reactionary_candidate) Q.wp_candidate = Q.dvp_candidate;
             if (Q.kvp_candidate == Q.reactionary_candidate) Q.kvp_candidate = Q.dvp_candidate;
             if (Q.other_candidate == Q.reactionary_candidate) Q.other_candidate = Q.dvp_candidate;
+            Q.reactionary_candidate = 0;
         } else {
             if (Q.ddp_candidate == Q.reactionary_candidate) Q.ddp_candidate = Q.second_reactionary_candidate
             if (Q.dbp_candidate == Q.reactionary_candidate) Q.ddp_candidate = Q.second_reactionary_candidate;
