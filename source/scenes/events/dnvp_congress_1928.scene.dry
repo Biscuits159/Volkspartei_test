@@ -20,7 +20,6 @@ Q.event_points = 0;
 Q.event_points += (Q.pro_republic - 60)/10;
 Q.event_points -= (Q.nationalism - 60)/10;
 if (Q.dnvp_in_government) Q.event_points += 1;
-Q.event_points += Q.dnvp_relation/100;
 !}
 go-to: hergt if event_points >= 1; triumvirate if event_points >= 0.5 and event_points < 1; hugenberg if event_points < 0.5
 
