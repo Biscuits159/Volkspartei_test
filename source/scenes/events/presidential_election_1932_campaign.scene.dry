@@ -112,7 +112,7 @@ WIP
 
 [? if bvp_candidate == dvp_candidate: - <span style="color: #69A2BE;">**BVP**</span> ?]
 
-[? if dvp_candidate == "Eckener" or dvp_candidate == "Luther" or dvp_candidate == "Jarres": - <span style="color: var(--dvp-color);">**[+ dvp_name +]**</span> ?]
+<span style="color: var(--dvp-color);">**[+ dvp_name +]**</span>
 
 [? if csvd_candidate == dvp_candidate and csvd_exist: - <span style="color: #8ED8E4;">**CSVD**</span> ?]
 
@@ -128,7 +128,7 @@ WIP
 
 [? if spd_campaign: [? if spd_candidate == "Braun": <span style="color: var(--spd-color);">**Otto Braun**</span> - supported by: ?][? if spd_candidate == "Rosenfeld": <span style="color: var(--spd-color);">**Kurt Rosenfeld**</span> - supported by: ?]
 
-[? if spd_campaign: - <span style="color: var(--spd-color);">**SPD**</span> ?]
+<span>-</span> <span style="color: var(--spd-color);">**SPD**</span>
 
 [? if ddp_candidate == spd_candidate and ddp_exist: - <span style="color: var(--ddp-color);">**[+ ddp_name +]**</span> ?]
 
