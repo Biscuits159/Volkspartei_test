@@ -98,47 +98,47 @@ WIP
 
 [? if other_candidate == second_reactionary_candidate: - <span style="color: #909090;">**Others**</span> ?]
 
-[? if dvp_candidate == "Eckener" or dvp_candidate == "Luther" or dvp_candidate == "Jarres": [? if dvp_candidate == "Eckener": **Hugo** <span style="color: #000000;">**Ec**</span><span style="color: #DD0000;">**ken**</span><span style="color: #FFCC00;">**er**</span> - supported by: ?][? if dvp_candidate == "Luther": <span style="color: var(--dvp-color);">**Hans Luther**</span> - supported by: ?][? if dvp_candidate == "Jarres": <span style="color: var(--dvp-color);">**Karl Jarres**</span> - supported by: ?]
+[? if dvp_candidate == "Eckener": **Hugo** <span style="color: #000000;">**Ec**</span><span style="color: #DD0000;">**ken**</span><span style="color: #FFCC00;">**er**</span> - supported by: ?][? if dvp_candidate == "Luther": <span style="color: var(--dvp-color);">**Hans Luther**</span> - supported by: ?][? if dvp_candidate == "Jarres": <span style="color: var(--dvp-color);">**Karl Jarres**</span> - supported by: ?]
 
-[? if spd_candidate == dvp_candidate: - <span style="color: var(--spd-color);">**SPD**</span> ?]
+[? if spd_candidate == dvp_candidate and dvp_campaign: - <span style="color: var(--spd-color);">**SPD**</span> ?]
 
-[? if ddp_candidate == dvp_candidate and ddp_exist: - <span style="color: var(--ddp-color);">**[+ ddp_name +]**</span> ?]
+[? if ddp_candidate == dvp_candidate and dvp_campaign and ddp_exist: - <span style="color: var(--ddp-color);">**[+ ddp_name +]**</span> ?]
 
-[? if dbp_candidate == dvp_candidate and dbp_exist: - <span style="color: #38C538;">**DBP**</span> ?]
+[? if dbp_candidate == dvp_candidate and dvp_campaign and dbp_exist: - <span style="color: #38C538;">**DBP**</span> ?]
 
-[? if csrp_candidate == dvp_candidate and csrp_exist: - <span style="color: #FF6B21;">**CSRP**</span> ?]
+[? if csrp_candidate == dvp_candidate and dvp_campaign and csrp_exist: - <span style="color: #FF6B21;">**CSRP**</span> ?]
 
-[? if z_candidate == dvp_candidate: - <span style="color: var(--z-color);">**Z**</span> ?]
+[? if z_candidate == dvp_candidate and dvp_campaign: - <span style="color: var(--z-color);">**Z**</span> ?]
 
-[? if bvp_candidate == dvp_candidate: - <span style="color: #69A2BE;">**BVP**</span> ?]
+[? if bvp_candidate == dvp_candidate and dvp_campaign: - <span style="color: #69A2BE;">**BVP**</span> ?]
 
-<span style="color: var(--dvp-color);">**[+ dvp_name +]**</span>
+[? if dvp_campaign: - <span style="color: var(--dvp-color);">**[+ dvp_name +]**</span> ?]
 
-[? if csvd_candidate == dvp_candidate and csvd_exist: - <span style="color: #8ED8E4;">**CSVD**</span> ?]
+[? if csvd_candidate == dvp_candidate and dvp_campaign and csvd_exist: - <span style="color: #8ED8E4;">**CSVD**</span> ?]
 
-[? if wp_candidate == dvp_candidate and wp_exist: - <span style="color: #B8996F;">**WP**</span> ?]
+[? if wp_candidate == dvp_candidate and dvp_campaign and wp_exist: - <span style="color: #B8996F;">**WP**</span> ?]
 
-[? if cnblp_candidate == dvp_candidate and cnblp_exist: - <span style="color: #7FCEB1;">**CNBLP**</span> ?]
+[? if cnblp_candidate == dvp_candidate and dvp_campaign and cnblp_exist: - <span style="color: #7FCEB1;">**CNBLP**</span> ?]
 
-[? if kvp_candidate == dvp_candidate and kvp_formed: - <span style="color: #455B95;">**KVP**</span> ?]
+[? if kvp_candidate == dvp_candidate and dvp_campaign and kvp_formed: - <span style="color: #455B95;">**KVP**</span> ?]
 
-[? if dnvp_candidate == dvp_candidate and dnvp_exist: - <span style="color: var(--dnvp-color);">**DNVP**</span> ?] 
+[? if dnvp_candidate == dvp_candidate and dvp_campaign and dnvp_exist: - <span style="color: var(--dnvp-color);">**DNVP**</span> ?] 
 
-[? if other_candidate == dvp_candidate: - <span style="color: #909090;">**Others**</span> ?] ?]
+[? if other_candidate == dvp_candidate and dvp_campaign: - <span style="color: #909090;">**Others**</span> ?]
 
-[? if spd_campaign: [? if spd_candidate == "Braun": <span style="color: var(--spd-color);">**Otto Braun**</span> - supported by: ?][? if spd_candidate == "Rosenfeld": <span style="color: var(--spd-color);">**Kurt Rosenfeld**</span> - supported by: ?]
+[? if spd_candidate == "Braun": <span style="color: var(--spd-color);">**Otto Braun**</span> - supported by: ?][? if spd_candidate == "Rosenfeld": <span style="color: var(--spd-color);">**Kurt Rosenfeld**</span> - supported by: ?]
 
-<span>-</span> <span style="color: var(--spd-color);">**SPD**</span>
+[? if spd_campaign: - <span style="color: var(--spd-color);">**SPD**</span> ?]
 
-[? if ddp_candidate == spd_candidate and ddp_exist: - <span style="color: var(--ddp-color);">**[+ ddp_name +]**</span> ?]
+[? if ddp_candidate == spd_candidate and spd_campaign and ddp_exist: - <span style="color: var(--ddp-color);">**[+ ddp_name +]**</span> ?]
 
-[? if dbp_candidate == spd_candidate and dbp_exist: - <span style="color: #38C538;">**DBP**</span> ?]
+[? if dbp_candidate == spd_candidate and spd_campaign and dbp_exist: - <span style="color: #38C538;">**DBP**</span> ?]
 
-[? if csrp_candidate == spd_candidate and csrp_exist: - <span style="color: #FF6B21;">**CSRP**</span> ?]
+[? if csrp_candidate == spd_candidate and spd_campaign and csrp_exist: - <span style="color: #FF6B21;">**CSRP**</span> ?]
 
-[? if z_candidate == spd_candidate: - <span style="color: var(--z-color);">**Z**</span> ?]
+[? if z_candidate == spd_candidate and spd_campaign: - <span style="color: var(--z-color);">**Z**</span> ?]
 
-[? if dvp_candidate == spd_candidate: - <span style="color: var(--dvp-color);">**[+ dvp_name +]**</span> ?] ?]
+[? if dvp_candidate == spd_candidate and spd_campaign: - <span style="color: var(--dvp-color);">**[+ dvp_name +]**</span> ?]
 
 <span style="color: #8B0000;">**Ernst Thälmann**</span> - supported by:
 
