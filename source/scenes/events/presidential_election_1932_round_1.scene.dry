@@ -265,6 +265,7 @@ on-arrival: {!
     if (Q.kvp_candidate == Q.dvp_candidate) Q.kvp_candidate = Q.reactionary_candidate;
     if (Q.dnvp_candidate == Q.dvp_candidate) Q.dnvp_candidate = Q.reactionary_candidate;
     Q.dvp_candidate = Q.spd_candidate;
+    Q.dvp_campaign = 0;
 !}
 
 @round2_reactionary
@@ -292,6 +293,7 @@ on-arrival: {!
     if (Q.kvp_candidate == Q.dvp_candidate) Q.kvp_candidate = Q.reactionary_candidate;
     if (Q.dnvp_candidate == Q.dvp_candidate) Q.dnvp_candidate = Q.reactionary_candidate;
     Q.dvp_candidate = Q.reactionary_candidate;
+    Q.dvp_campaign = 0;
 !}
 
 
