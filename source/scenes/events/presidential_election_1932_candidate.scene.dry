@@ -333,7 +333,7 @@ We will support [+ second_reactionary_candidate +] in this election.
 choose-if: dvp_left >= 0 and resources >= 1
 view-if: reactionary_candidate != "Hindenburg"
 unavailable-subtitle: [? if dvp_left < 0: Why would we run a republican candidate? ?][? if resources < 1: Not enough resources. (Need 1) ?]
-subtitle: After nominating him, we still have to convince the other parties to support him. (-1 resource)
+subtitle: After nominating him, we still have to convince the other parties to support him. -1 resource
 on-departure: resources -= 1; nationalist_dissent += 10; dvp_candidate = "Eckener";
 
 We will run Hugo Eckener.
@@ -343,7 +343,7 @@ We will run Hugo Eckener.
 @run_jarres
 choose-if: dvp_left < 0 and resources >= 2
 unavailable-subtitle: [? if dvp_left >= 0: The party prefers running Luther. ?][? if resources < 2: Not enough resources. (Need 2) ?]
-subtitle: After nominating him, we still have to convince the other parties to support him. (-2 resources)
+subtitle: After nominating him, we still have to convince the other parties to support him. -2 resources
 on-departure: resources -= 2; labor_dissent += 5; industrialist_strength += 10; nationalist_strength += 5; dvp_candidate = "Jarres";
 
 We will run Karl Jarres.
@@ -353,7 +353,7 @@ We will run Karl Jarres.
 @run_luther
 choose-if: dvp_left >= 0 and resources >= 2
 unavailable-subtitle: [? if dvp_left < 0: The party prefers running Jarres. ?][? if resources < 2: Not enough resources. (Need 2) ?]
-subtitle: After nominating him, we still have to convince the other parties to support him. (-2 resources)
+subtitle: After nominating him, we still have to convince the other parties to support him. -2 resources
 on-departure: resources -= 2; liberal_strength += 5; nationalist_dissent += 10; dvp_candidate = "Luther";
 
 We will run Hans Luther.
