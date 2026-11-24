@@ -268,7 +268,7 @@ on-arrival: {!
 !}
 
 @round2_reactionary
-view-if: dvp_candidate != reactionary_candidate
+view-if: dvp_candidate != reactionary_candidate and reactionary_candidate != 0
 on-arrival: {!
     if (Q.spd_campaign && Q.ddp_candidate == Q.dvp_candidate) {
         Q.ddp_candidate = Q.spd_candidate;

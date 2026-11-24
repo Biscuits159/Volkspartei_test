@@ -511,7 +511,7 @@ Grand Coalition ([? if sapd_formed: <span style="color: #C40000;">**SAPD**</span
 
 Bourgeois Coalition (<span style="color: var(--dvp-color);">**[+ dvp_name +]**</span> [? if ddp_exist: + <span style="color: var(--ddp-color);">**[+ ddp_name +]**</span> ?] [? if kvp_formed: + <span style="color: #455B95;">**KVP**</span> ?][? if dnvp_left >= 0 and dnvp_exist: + <span style="color: var(--dnvp-color);">**[+ dnvp_name +]**</span> ?][? if wp_exist: + <span style="color: #B8996F;">**WP**</span> ?][? if vrp_exist: + <span style="color: #0075EB;">**VRP**</span> ?][? if vnr_exist: + <span style="color: #D3D3A9;">**VNR**</span> ?][? if cnblp_exist: + <span style="color: #7FCEB1;">**SLV**</span> ?][? if csvd_exist: + <span style="color: #8ED8E4;">**CSVD**</span> ?] + <span style="color: #FE9E00;">**ASPD**</span> + <span style="color: var(--z-color);">**[+ z_name +]**</span> + <span style="color: #909090;">**Others**</span>): [+ bourgeois_coalition_saxony +]%
 
-Far-Right Coalition (<span style="color: #954B00;">**NSDAP**</span> + [? if dnvp_left < 0 and dnf_formed == 0: <span style="color: var(--dnvp-color);">**[+ dnvp_name +]**</span>?][? if dnf_formed: <span style="color: #003755;">**DNF**</span>?]): [+ far_right_coalition_saxony +]%
+Far-Right Coalition (<span style="color: #954B00;">**NSDAP**</span> + [? if dnf_formed == 0: <span style="color: var(--dnvp-color);">**[+ dnvp_name +]**</span>?][? if dnf_formed: <span style="color: #003755;">**DNF**</span>?]): [+ far_right_coalition_saxony +]%
 
 There are some potential coalition arrangements.
 
@@ -587,7 +587,7 @@ We have formed a Bourgeois Coalition with toleration from the Far-Right.
 @far_right_coalition_saxony
 title: Far-right Coalition is formed!
 view-if: far_right_coalition_saxony >= 50
-subtitle: <span style="color: #954B00;">**NSDAP**</span> + [? if dnvp_left < 0 and dnf_formed == 0: <span style="color: var(--dnvp-color);">**[+ dnvp_name +]**</span>?][? if dnf_formed: <span style="color: #003755;">**DNF**</span>?] ([+ far_right_coalition_saxony +]%)
+subtitle: <span style="color: #954B00;">**NSDAP**</span> + [? if dnf_formed == 0: <span style="color: var(--dnvp-color);">**[+ dnvp_name +]**</span>?][? if dnf_formed: <span style="color: #003755;">**DNF**</span>?] ([+ far_right_coalition_saxony +]%)
 on-arrival: in_far_right_coalition_saxony = 1;
 
 A Far-right Coalition is formed.

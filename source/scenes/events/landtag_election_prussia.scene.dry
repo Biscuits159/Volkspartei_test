@@ -485,7 +485,7 @@ Grand Coalition ([? if sapd_formed: <span style="color: #C40000;">**SAPD**</span
 
 Bourgeois Coalition (<span style="color: var(--z-color);">**[+ z_name +]**</span> [? if ddp_exist: + <span style="color: var(--ddp-color);">**[+ ddp_name +]**</span> ?]+ <span style="color: var(--dvp-color);">**[+ dvp_name +]**</span> + [? if kvp_formed: <span style="color: #455B95;">**KVP**</span> +  ?][? if wp_exist: <span style="color: #B8996F;">**WP**</span> +  ?][? if dbp_exist: <span style="color: #38C538;">**DBP**</span> +  ?][? if cnblp_exist: <span style="color: #7FCEB1;">**CNBLP**</span> +  ?][? if csvd_exist: <span style="color: #8ED8E4;">**CSVD**</span> +  ?][? if csrp_formed: <span style="color: #FF6B21;">**CSRP**</span> +  ?][? if aspd_exist and aspd_radical == 0: <span style="color: #FE9E00;">**ASPD**</span> + ?] <span style="color: #909090;">**Others**</span>): [+ bourgeois_coalition_prussia +]%
 
-Far-Right Coalition (<span style="color: #954B00;">**NSDAP**</span> + [? if dnvp_left < 0 and dnf_formed == 0: <span style="color: var(--dnvp-color);">**[+ dnvp_name +]**</span>?][? if dnf_formed: <span style="color: #003755;">**DNF**</span>?]): [+ far_right_coalition_prussia +]%
+Far-Right Coalition (<span style="color: #954B00;">**NSDAP**</span> + [? if dnf_formed == 0: <span style="color: var(--dnvp-color);">**[+ dnvp_name +]**</span>?][? if dnf_formed: <span style="color: #003755;">**DNF**</span>?]): [+ far_right_coalition_prussia +]%
 
 There are some potential coalition arrangements.
 
@@ -569,7 +569,7 @@ A Bourgeois Coalition is formed.
 @far_right_coalition_prussia
 title: Far-right Coalition is formed!
 view-if: far_right_coalition_prussia >= 50
-subtitle: <span style="color: #954B00;">**NSDAP**</span> + [? if dnvp_left < 0 and dnf_formed == 0: <span style="color: var(--dnvp-color);">**[+ dnvp_name +]**</span>?][? if dnf_formed: <span style="color: #003755;">**DNF**</span>?] ([+ far_right_coalition_prussia +]%)
+subtitle: <span style="color: #954B00;">**NSDAP**</span> + [? if dnf_formed == 0: <span style="color: var(--dnvp-color);">**[+ dnvp_name +]**</span>?][? if dnf_formed: <span style="color: #003755;">**DNF**</span>?] ([+ far_right_coalition_prussia +]%)
 on-arrival: in_far_right_coalition_prussia = 1;
 
 A Far-right Coalition is formed.
