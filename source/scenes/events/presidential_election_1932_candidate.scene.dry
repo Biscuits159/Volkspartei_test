@@ -72,7 +72,7 @@ if (Q.hindenburg_run) {
         if (!Q.stegerwald_path && Q.adenauer_candidacy == 0 && Q.bruning_candidacy == 0) Q.stegerwald_candidacy = 1;
     }
     if (Q.bourgeois_votes < 35 && Q.cvp_left < 0) Q.vorbeck_candidacy = 1;
-    if (Q.dnvp_ideology >= 0 && Q.bourgeois_votes >= 35) Q.westarp_candidacy = 1;
+    if (Q.dnvp_left >= 0 && Q.bourgeois_votes >= 35) Q.westarp_candidacy = 1;
     if (Q.adenauer_candidacy == 0 && Q.bruning_candidacy == 0 && Q.stegerwald_candidacy == 0 && Q.vorbeck_candidacy == 0 && Q.westarp_candidacy == 0) Q.vorbeck_candidacy = 1;
     if (Q.westarp_candidacy && Q.vorbeck_candidacy) Q.westarp_candidacy = 0;
 
@@ -485,21 +485,25 @@ on-arrival: {!
             if (Q.ddp_candidate == Q.reactionary_candidate) Q.ddp_candidate = Q.dvp_candidate
             if (Q.dbp_candidate == Q.reactionary_candidate) Q.ddp_candidate = Q.dvp_candidate;
             if (Q.csrp_candidate == Q.reactionary_candidate) Q.csrp_candidate = Q.dvp_candidate;
+            if (Q.bvp_candidate == Q.reactionary_candidate) Q.bvp_candidate = Q.dvp_candidate;
             if (Q.csvd_candidate == Q.reactionary_candidate) Q.csvd_candidate = Q.dvp_candidate;
             if (Q.cnblp_candidate == Q.reactionary_candidate) Q.cnblp_candidate = Q.dvp_candidate;
             if (Q.wp_candidate == Q.reactionary_candidate) Q.wp_candidate = Q.dvp_candidate;
             if (Q.kvp_candidate == Q.reactionary_candidate) Q.kvp_candidate = Q.dvp_candidate;
             if (Q.dnvp_candidate == Q.reactionary_candidate) Q.dnvp_candidate = Q.dvp_candidate;
+            if (Q.other_candidate == Q.reactionary_candidate) Q.other_candidate = Q.dvp_candidate;
         } else {
             if (Q.spd_candidate == Q.reactionary_candidate) Q.spd_candidate = Q.dvp_candidate;
             if (Q.ddp_candidate == Q.reactionary_candidate) Q.ddp_candidate = Q.dvp_candidate
             if (Q.dbp_candidate == Q.reactionary_candidate) Q.ddp_candidate = Q.dvp_candidate;
             if (Q.csrp_candidate == Q.reactionary_candidate) Q.csrp_candidate = Q.dvp_candidate;
+            if (Q.bvp_candidate == Q.reactionary_candidate) Q.bvp_candidate = Q.dvp_candidate;
             if (Q.csvd_candidate == Q.reactionary_candidate) Q.csvd_candidate = Q.second_reactionary_candidate;
             if (Q.cnblp_candidate == Q.reactionary_candidate) Q.cnblp_candidate = Q.second_reactionary_candidate;
             if (Q.wp_candidate == Q.reactionary_candidate) Q.wp_candidate = Q.second_reactionary_candidate;
             if (Q.kvp_candidate == Q.reactionary_candidate) Q.kvp_candidate = Q.second_reactionary_candidate;
             if (Q.dnvp_candidate == Q.reactionary_candidate) Q.dnvp_candidate = Q.second_reactionary_candidate;
+            if (Q.other_candidate == Q.reactionary_candidate) Q.other_candidate = Q.second_reactionary_candidate;
             Q.reactionary_candidate = Q.second_reactionary_candidate;
             Q.second_reactionary_candidate = 0;
         }
@@ -508,11 +512,13 @@ on-arrival: {!
         if (Q.ddp_candidate == Q.second_reactionary_candidate) Q.ddp_candidate = Q.dvp_candidate
         if (Q.dbp_candidate == Q.second_reactionary_candidate) Q.ddp_candidate = Q.dvp_candidate;
         if (Q.csrp_candidate == Q.second_reactionary_candidate) Q.csrp_candidate = Q.dvp_candidate;
+        if (Q.bvp_candidate == Q.second_reactionary_candidate) Q.bvp_candidate = Q.dvp_candidate;
         if (Q.csvd_candidate == Q.second_reactionary_candidate) Q.csvd_candidate = Q.reactionary_candidate;
         if (Q.cnblp_candidate == Q.second_reactionary_candidate) Q.cnblp_candidate = Q.reactionary_candidate;
         if (Q.wp_candidate == Q.second_reactionary_candidate) Q.wp_candidate = Q.reactionary_candidate;
         if (Q.kvp_candidate == Q.second_reactionary_candidate) Q.kvp_candidate = Q.reactionary_candidate;
         if (Q.dnvp_candidate == Q.second_reactionary_candidate) Q.dnvp_candidate = Q.reactionary_candidate;
+        if (Q.other_candidate == Q.second_reactionary_candidate) Q.other_candidate = Q.reactionary_candidate;
         Q.second_reactionary_candidate = 0;
     }
 !}
@@ -626,19 +632,23 @@ on-arrival: {!
             if (Q.dbp_candidate == Q.reactionary_candidate) Q.ddp_candidate = Q.dvp_candidate;
             if (Q.csrp_candidate == Q.reactionary_candidate) Q.csrp_candidate = Q.dvp_candidate;
             if (Q.z_candidate == Q.reactionary_candidate) Q.z_candidate = Q.dvp_candidate;
+            if (Q.bvp_candidate == Q.reactionary_candidate) Q.bvp_candidate = Q.dvp_candidate;
             if (Q.csvd_candidate == Q.reactionary_candidate) Q.csvd_candidate = Q.dvp_candidate;
             if (Q.cnblp_candidate == Q.reactionary_candidate) Q.cnblp_candidate = Q.dvp_candidate;
             if (Q.wp_candidate == Q.reactionary_candidate) Q.wp_candidate = Q.dvp_candidate;
             if (Q.kvp_candidate == Q.reactionary_candidate) Q.kvp_candidate = Q.dvp_candidate;
+            if (Q.other_candidate == Q.reactionary_candidate) Q.other_candidate = Q.dvp_candidate;
         } else {
             if (Q.ddp_candidate == Q.reactionary_candidate) Q.ddp_candidate = Q.second_reactionary_candidate
             if (Q.dbp_candidate == Q.reactionary_candidate) Q.ddp_candidate = Q.second_reactionary_candidate;
             if (Q.csrp_candidate == Q.reactionary_candidate) Q.csrp_candidate = Q.second_reactionary_candidate;
             if (Q.z_candidate == Q.reactionary_candidate) Q.z_candidate = Q.second_reactionary_candidate;
+            if (Q.bvp_candidate == Q.reactionary_candidate) Q.bvp_candidate = Q.second_reactionary_candidate;
             if (Q.csvd_candidate == Q.reactionary_candidate) Q.csvd_candidate = Q.second_reactionary_candidate;
             if (Q.cnblp_candidate == Q.reactionary_candidate) Q.cnblp_candidate = Q.second_reactionary_candidate;
             if (Q.wp_candidate == Q.reactionary_candidate) Q.wp_candidate = Q.second_reactionary_candidate;
             if (Q.kvp_candidate == Q.reactionary_candidate) Q.kvp_candidate = Q.second_reactionary_candidate;
+            if (Q.other_candidate == Q.reactionary_candidate) Q.other_candidate = Q.second_reactionary_candidate;
             Q.reactionary_candidate = Q.second_reactionary_candidate;
             Q.second_reactionary_candidate = 0;
         }
@@ -647,10 +657,12 @@ on-arrival: {!
         if (Q.dbp_candidate == Q.second_reactionary_candidate) Q.ddp_candidate = Q.reactionary_candidate;
         if (Q.csrp_candidate == Q.second_reactionary_candidate) Q.csrp_candidate = Q.reactionary_candidate;
         if (Q.z_candidate == Q.second_reactionary_candidate) Q.z_candidate = Q.reactionary_candidate;
+        if (Q.bvp_candidate == Q.second_reactionary_candidate) Q.bvp_candidate = Q.reactionary_candidate;
         if (Q.csvd_candidate == Q.second_reactionary_candidate) Q.csvd_candidate = Q.reactionary_candidate;
         if (Q.cnblp_candidate == Q.second_reactionary_candidate) Q.cnblp_candidate = Q.reactionary_candidate;
         if (Q.wp_candidate == Q.second_reactionary_candidate) Q.wp_candidate = Q.reactionary_candidate;
         if (Q.kvp_candidate == Q.second_reactionary_candidate) Q.kvp_candidate = Q.reactionary_candidate;
+        if (Q.other_candidate == Q.second_reactionary_candidate) Q.other_candidate = Q.reactionary_candidate;
         Q.second_reactionary_candidate = 0;
     }
 !}
@@ -668,7 +680,7 @@ Unfortunately, the [+ dnvp_name +] has refused to support [+ dvp_candidate +] fo
 @view_candidates
 go-to: endorsements
 
-[? if reactionary_candidate == "Hindenburg": <span style="color: #808080;">**Paul von Hindenburg**</span> ?][? if reactionary_candidate == "Adenauer": <span style="color: var(--z-color);">**Konrad Adenauer**</span> ?][? if reactionary_candidate == "Brüning": <span style="color: var(--z-color);">**Heinrich Brüning**</span> ?][? if reactionary_candidate == "Stegerwald": <span style="color: var(--z-color);">**Adam Stegerwald**</span> ?][? if reactionary_candidate == "Vorbeck": <span style="color: #808080;">**Paul von Lettow-Vorbeck**</span> ?][? if reactionary_candidate == "Westarp": <span style="color: var(--dnvp-color);">**Kuno von Westarp**</span>?] - supported by:
+[? if reactionary_candidate == "Hindenburg": <span style="color: #808080;">**Paul von Hindenburg**</span> - supported by: ?][? if reactionary_candidate == "Adenauer": <span style="color: var(--z-color);">**Konrad Adenauer**</span> - supported by: ?][? if reactionary_candidate == "Brüning": <span style="color: var(--z-color);">**Heinrich Brüning**</span> - supported by: ?][? if reactionary_candidate == "Stegerwald": <span style="color: var(--z-color);">**Adam Stegerwald**</span> - supported by: ?][? if reactionary_candidate == "Vorbeck": <span style="color: #808080;">**Paul von Lettow-Vorbeck**</span> - supported by: ?][? if reactionary_candidate == "Westarp": <span style="color: var(--dnvp-color);">**Kuno von Westarp**</span> - supported by: ?]
 
 [? if spd_candidate == reactionary_candidate: - <span style="color: var(--spd-color);">**SPD**</span> ?]
 
@@ -696,7 +708,7 @@ go-to: endorsements
 
 [? if other_candidate == reactionary_candidate: - <span style="color: #909090;">**Others**</span> ?]
 
-[? if second_reactionary_candidate != 0: [? if second_reactionary_candidate == "Adenauer": <span style="color: var(--z-color);">**Konrad Adenauer**</span> ?][? if second_reactionary_candidate == "Brüning":  <span style="color: var(--z-color);">**Heinrich Brüning**</span> ?][? if second_reactionary_candidate == "Stegerwald":  <span style="color: var(--z-color);">**Adam Stegerwald**</span> ?][? if second_reactionary_candidate == "Vorbeck": <span style="color: #808080;">**Paul von Lettow-Vorbeck**</span> ?][? if second_reactionary_candidate == "Westarp":  <span style="color: var(--dnvp-color);">**Kuno von Westarp**</span>?] - supported by: ?]
+[? if second_reactionary_candidate == "Adenauer": <span style="color: var(--z-color);">**Konrad Adenauer**</span> - supported by: ?][? if second_reactionary_candidate == "Brüning": <span style="color: var(--z-color);">**Heinrich Brüning**</span> - supported by: ?][? if second_reactionary_candidate == "Stegerwald": <span style="color: var(--z-color);">**Adam Stegerwald**</span> - supported by: ?][? if second_reactionary_candidate == "Vorbeck": <span style="color: #808080;">**Paul von Lettow-Vorbeck**</span> - supported by: ?][? if second_reactionary_candidate == "Westarp": <span style="color: var(--dnvp-color);">**Kuno von Westarp**</span> - supported by: ?]
 
 [? if spd_candidate == second_reactionary_candidate: - <span style="color: var(--spd-color);">**SPD**</span> ?]
 
