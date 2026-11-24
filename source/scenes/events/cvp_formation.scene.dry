@@ -46,27 +46,28 @@ on-arrival: cvp_balance += 2; spd_relation += 5; z_relation -= 5; pro_republic -
 
 The <span style="color: #000000;">**CVP**</span> will fully support a constitutional monarchy, along with the restoration of the other German royal houses, under Wilhelm II or the Crown Prince.
 
-- @cvp_foreign_relations
+- @foreign_relations
 
 @no_official_republic
 on-arrival: cvp_balance += 1; pro_republic -= 3; workers_z -= 1; old_middle_z -= 2; rural_z -= 2; old_middle_dnf += 2; rural_dnf += 2; rural_cnblp += 1;
 
 Talks eventually reach a standstill, with neither side able to sway a majority of members. The ensuing compromise is that the party will refrain from officially endorosing the return of the monarchy, while pushing for expanded presidential powers.
 
-- @cvp_foreign_relations
+- @foreign_relations
 
 @endorse_republic
 on-arrival: cvp_balance -= 2; z_relation += 5; pro_republic += 5; workers_z += 5; new_middle_z += 2; old_middle_z -= 5; rural_z -= 5; old_middle_dnf += 5; rural_dnf += 7; rural_cnblp += 2;
 
 The agrarian and authoritarian wings were soundly defeated in their efforts. The <span style="color: #000000;">**CVP**</span> will be a party committed to the Republic and parliamentarianism, with presidential decrees as a last resort.
 
-- @cvp_foreign_relations
+- @foreign_relations
 
 
-@cvp_foreign_relations
+@foreign_relations
+title: On Foreign Relations.
 go-to: foreign_aggressive if cvp_balance < -2; foreign_pragmatic if cvp_balance >= -2 and cvp_balance < 2; foreign_less_angry if cvp_balance >= 2
 
-On Foreign Relations. It is unlikely that the new party will ever fully accept Locarno or end secret rearmament. Nonetheless, the truth of the matter is that unilaterally ending reparations is simply not feasible, and the <span style="color: #000000;">**Center**</span>'s opposition to aggressive remilitarization remains fierce.
+It is unlikely that the new party will ever fully accept Locarno or end secret rearmament. Nonetheless, the truth of the matter is that unilaterally ending reparations is simply not feasible, and the <span style="color: #000000;">**Center**</span>'s opposition to aggressive remilitarization remains fierce.
 
 @foreign_aggressive
 on-arrival: cvp_balance += 1; nationalism += 5; pro_republic -= 5; west_relation -= 1; east_relation -= 2; z_relation -= 5; new_middle_z -= 4; old_middle_z += 6; rural_z += 3; old_middle_dnf -= 5; rural_dnf -= 3;
@@ -90,9 +91,10 @@ Surprisingly, the <span style="color: #000000;">**CVP**</span> will pursue a dip
 
 
 @economic_platform
+title: On the economy, welfare and the depression.
 go-to: austerity if cvp_balance < -2; public_works if cvp_balance >= -2 and cvp_balance < 2; social_market if cvp_balance >= 2
 
-On the economy, welfare and the depression. With such a broad electorate, finding an amenable economic platform will be one of the biggest first hurdles of the new party. Stegerwald and the Christian Unions will attempt to push the party away from Austerity.
+With such a broad electorate, finding an amenable economic platform will be one of the biggest first hurdles of the new party. Stegerwald and the Christian Unions will attempt to push the party away from Austerity.
 
 @austerity
 on-arrival: cvp_balance += 2; workers_z -= 3; new_middle_z -= 2; old_middle_z += 6; rural_z += 2; unemployed_z -= 3; old_middle_dnf -= 2; rural_dnf -= 2;
@@ -117,9 +119,10 @@ An ascendant Christian Labor wing has forced its program against the Nationalist
 
 
 @cooperation_others
+title: On coalitions and inter-party relations.
 go-to: support_bourgeois if cvp_balance < 2; support_weimar if cvp_balance >= 2
 
-On coalitions and inter-party relations. Truthfully, the only question that matters on this topic is how opposed to the <span style="color: var(--spd-color);">**SPD**</span> will the new party be. Regardless, we can be certain of their cooperation with us.
+Truthfully, the only question that matters on this topic is how opposed to the <span style="color: var(--spd-color);">**SPD**</span> will the new party be. Regardless, we can be certain of their cooperation with us.
 
 @support_bourgeois
 on-arrival: cvp_balance += 1; z_relation += 10; workers_spd += 3; unemployed_spd += 2; workers_z -= 3; new_middle_z += 2; old_middle_z += 10; rural_z += 8; unemployed_z -= 2; old_middle_dnf -= 5; rural_dnf -= 3; rural_cnblp -= 3; rural_nsdap -= 3;
