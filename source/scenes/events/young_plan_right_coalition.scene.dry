@@ -29,8 +29,8 @@ Heinrich Brüning welcomes us into the new cabinet. Now, we have our pick of min
 
 @negotiate
 subtitle: We will transfer some resources to the <span style="color: var(--dnvp-color);">**[+ dnvp_name +]**</span> and promise to oppose the plan, knowing a referendum has no chance of succeeding. -2 resources
-unavailable-subtitle: The party will not allow this. [? if resources < 2: Not enough resources. ?]
-choose-if: (liberal_strength*0.7 < (nationalist_strength + industrialist_strength*0.5)) and resources >= 2
+unavailable-subtitle: The party will not allow this. [? if dnvp_relation < 50: Our relations with the <span style="color: var(--dnvp-color);">**[+ dnvp_name +]**</span> aren't high enough. ?][? if dnvp_leader == "Hugenberg": Hugenberg isn't interested in negotiating. ?][? if resources < 2: Not enough resources. ?]
+choose-if: (liberal_strength*0.7 < (nationalist_strength + industrialist_strength*0.5)) and resources >= 2 and dnvp_relation >= 50 and dnvp_leader != "Hugenberg"
 on-arrival: young_plan_dnvp_promise = 1; coalition_dissent += 1; spd_relation -= 5; nationalist_strength += 10; industrialist_strength += 5; liberal_dissent += 10; labor_dissent += 5;
 
 @new_elections
