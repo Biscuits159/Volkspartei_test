@@ -259,7 +259,7 @@ if (Q.cvp_formed == 0) Q.grand_coalition_saxony = parseFloat((Q.grand_coalition_
 Q.bourgeois_coalition_saxony = parseFloat((Q.aspd_sl + Q.ddp_sl + Q.z_sl + Q.dvp_sl + Q.vnr_sl + Q.vrp_sl + Q.wp_sl + Q.other_sl + Q.cnblp_sl + Q.kvp_sl + Q.csvd_sl).toFixed(1));
 if (Q.dnvp_left >= 0) Q.bourgeois_coalition_saxony = parseFloat((Q.bourgeois_coalition_saxony + Q.dnvp_sl).toFixed(1));
 
-if (Q.dnvp_left < 1) Q.far_right_coalition_saxony = parseFloat((Q.dnvp_sl + Q.nsdap_sl).toFixed(1));
+if (!Q.dnf_formed) Q.far_right_coalition_saxony = parseFloat((Q.dnvp_sl + Q.nsdap_sl).toFixed(1));
 if (Q.dnf_formed) Q.far_right_coalition_saxony = parseFloat((Q.dnf_sl + Q.nsdap_sl).toFixed(1));
 
 

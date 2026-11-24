@@ -133,7 +133,7 @@ if (Q.aspd_exist && Q.aspd_radical == 0) Q.bourgeois_coalition_bavaria = parseFl
 
 Q.right_coalition_bavaria = parseFloat((Q.z_bl + Q.dvp_bl + Q.other_bl + Q.dbp_bl + Q.kvp_bl + Q.dnvp_bl + Q.wp_bl + Q.csvd_bl).toFixed(1));
 
-if (Q.dnvp_left < 1) Q.far_right_coalition_bavaria = parseFloat((Q.dnvp_bl + Q.nsdap_bl).toFixed(1));
+if (!Q.dnf_formed) Q.far_right_coalition_bavaria = parseFloat((Q.dnvp_bl + Q.nsdap_bl).toFixed(1));
 if (Q.dnf_formed) Q.far_right_coalition_bavaria = parseFloat((Q.dnf_bl + Q.nsdap_bl).toFixed(1));
 
 

@@ -169,7 +169,7 @@ if (Q.cvp_formed == 0) Q.grand_coalition_austria = parseFloat((Q.grand_coalition
 
 Q.bourgeois_coalition_austria = parseFloat((Q.ddp_al + Q.z_al + Q.dvp_al + Q.kvp_al + Q.cnblp_al + Q.csrp_al + Q.other_al).toFixed(1));
 
-if (Q.dnvp_left < 1) Q.far_right_coalition_austria = parseFloat((Q.dnvp_al + Q.nsdap_al).toFixed(1));
+if (!Q.dnf_formed) Q.far_right_coalition_austria = parseFloat((Q.dnvp_al + Q.nsdap_al).toFixed(1));
 if (Q.dnf_formed) Q.far_right_coalition_austria = parseFloat((Q.dnf_al + Q.nsdap_al).toFixed(1));
 
 

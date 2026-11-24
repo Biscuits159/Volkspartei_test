@@ -285,9 +285,9 @@ The <span style="color: var(--kpd-color);">**KPD**</span> will run Ernst Thälma
 
 
 @socialist
-go-to: braun if spd_candidate = "Braun"; reactionary_spd if spd_candidate = reactionary_candidate or spd_candidate = second_reactionary_candidate
+go-to: spd_run if spd_campaign; reactionary_spd if spd_candidate = reactionary_candidate or spd_candidate = second_reactionary_candidate
 
-@braun
+@spd_run
 face-image: img/portraits/BraunOtto.jpg
 
 The <span style="color: var(--spd-color);">**[+ spd_name +]**</span> will run Otto Braun, [? if prussia_leader != "Braun": former ?] Prussian Minister-President and candidate in the 1925 election. [? if ddp_exist and z_candidate != "Braun": The <span style="color: var(--ddp-color);">**[+ ddp_name +]**</span> is expected to support him. ?][? if z_candidate = "Braun": The <span style="color: var(--spd-color);">**Social Democrats**</span> have managed to rally the *Weimar* parties for a second 1925. ?]

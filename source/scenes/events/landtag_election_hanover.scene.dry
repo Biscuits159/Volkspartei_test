@@ -171,7 +171,7 @@ if (Q.cvp_formed == 0) Q.grand_coalition_hanover = parseFloat((Q.grand_coalition
 
 Q.bourgeois_coalition_hanover = parseFloat((Q.ddp_hl + Q.z_hl + Q.dhp_hl + Q.dvp_hl + Q.other_hl + Q.kvp_hl + Q.wp_hl + Q.csvd_hl + Q.cnblp_hl).toFixed(1));
 
-if (Q.dnvp_left < 1) Q.far_right_coalition_hanover = parseFloat((Q.dnvp_hl + Q.nsdap_hl).toFixed(1));
+if (!Q.dnf_formed) Q.far_right_coalition_hanover = parseFloat((Q.dnvp_hl + Q.nsdap_hl).toFixed(1));
 if (Q.dnf_formed) Q.far_right_coalition_hanover = parseFloat((Q.dnf_hl + Q.nsdap_hl).toFixed(1));
 
 

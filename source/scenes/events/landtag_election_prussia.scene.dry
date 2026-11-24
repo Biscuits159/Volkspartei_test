@@ -244,7 +244,7 @@ if (Q.aspd_exist && Q.aspd_radical == 0) Q.grand_coalition_prussia = parseFloat(
 Q.bourgeois_coalition_prussia = parseFloat((Q.ddp_pl + Q.csrp_pl + Q.z_pl + Q.dvp_pl + Q.other_pl + Q.kvp_pl + Q.wp_pl + Q.dbp_pl + Q.cnblp_pl + Q.csvd_pl).toFixed(1));
 if (Q.aspd_exist && Q.aspd_radical == 0) Q.bourgeois_coalition_prussia = parseFloat((Q.bourgeois_coalition_prussia + Q.aspd_pl).toFixed(1));
 
-if (Q.dnvp_left < 1) Q.far_right_coalition_prussia = parseFloat((Q.dnvp_pl + Q.nsdap_pl).toFixed(1));
+if (!Q.dnf_formed) Q.far_right_coalition_prussia = parseFloat((Q.dnvp_pl + Q.nsdap_pl).toFixed(1));
 if (Q.dnf_formed) Q.far_right_coalition_prussia = parseFloat((Q.dnf_pl + Q.nsdap_pl).toFixed(1));
 
 

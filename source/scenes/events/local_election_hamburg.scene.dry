@@ -132,7 +132,7 @@ if (Q.aspd_exist && Q.aspd_radical == 0) Q.grand_coalition_hamburg = parseFloat(
 Q.bourgeois_coalition_hamburg = parseFloat((Q.ddp_hb + Q.z_hb + Q.dvp_hb + Q.other_hb + Q.kvp_hb + Q.wp_hb + Q.csvd_hb).toFixed(1));
 if (Q.aspd_exist && Q.aspd_radical == 0) Q.bourgeois_coalition_hamburg = parseFloat((Q.bourgeois_coalition_hamburg + Q.aspd_hb).toFixed(1));
 
-if (Q.dnvp_left < 1) Q.far_right_coalition_hamburg = parseFloat((Q.dnvp_hb + Q.nsdap_hb).toFixed(1));
+if (!Q.dnf_formed) Q.far_right_coalition_hamburg = parseFloat((Q.dnvp_hb + Q.nsdap_hb).toFixed(1));
 if (Q.dnf_formed) Q.far_right_coalition_hamburg = parseFloat((Q.dnf_hb + Q.nsdap_hb).toFixed(1));
 
 

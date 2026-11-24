@@ -43,21 +43,24 @@ The agrarian and authoritarian factions of the <span style="color: #3F7BC1;">**D
 
 @endorse_monarchy
 on-arrival: cvp_balance += 2; spd_relation += 5; z_relation -= 5; pro_republic -= 5; workers_z -= 5; new_middle_z -= 2; old_middle_z += 7; rural_z += 7; unemployed_z -= 2; catholics_z -= 5; old_middle_dnf -= 5; rural_dnf -= 5; rural_cnblp -= 2;
-go-to: foreign_relations
 
 The <span style="color: #000000;">**CVP**</span> will fully support a constitutional monarchy, along with the restoration of the other German royal houses, under Wilhelm II or the Crown Prince.
 
+- @foreign_relations
+
 @no_official_republic
 on-arrival: cvp_balance += 1; pro_republic -= 3; workers_z -= 1; old_middle_z -= 2; rural_z -= 2; old_middle_dnf += 2; rural_dnf += 2; rural_cnblp += 1;
-go-to: foreign_relations
 
 Talks eventually reach a standstill, with neither side able to sway a majority of members. The ensuing compromise is that the party will refrain from officially endorosing the return of the monarchy, while pushing for expanded presidential powers.
 
+- @foreign_relations
+
 @endorse_republic
 on-arrival: cvp_balance -= 2; z_relation += 5; pro_republic += 5; workers_z += 5; new_middle_z += 2; old_middle_z -= 5; rural_z -= 5; old_middle_dnf += 5; rural_dnf += 7; rural_cnblp += 2;
-go-to: foreign_relations
 
 The agrarian and authoritarian wings were soundly defeated in their efforts. The <span style="color: #000000;">**CVP**</span> will be a party committed to the Republic and parliamentarianism, with presidential decrees as a last resort.
+
+- @foreign_relations
 
 
 @foreign_relations
@@ -67,20 +70,23 @@ On Foreign Relations. It is unlikely that the new party will ever fully accept L
 
 @foreign_aggressive
 on-arrival: cvp_balance += 1; nationalism += 5; pro_republic -= 5; west_relation -= 1; east_relation -= 2; z_relation -= 5; new_middle_z -= 4; old_middle_z += 6; rural_z += 3; old_middle_dnf -= 5; rural_dnf -= 3;
-go-to: economic_platform
 
 The <span style="color: #000000;">**CVP**</span>'s policy shall be continued rearmament and to recover Germany's lost territories, with force if necessary, as well as pursuing a union with Austria.
 
+- @economic_platform
+
 @foreign_pragmatic
-go-to: economic_platform
 
 In the end, pragmatism wins the day. Reparations must, and will continue to, be paid, while the lost territories ought to be recovered through forceful diplomacy.
 
+- @economic_platform
+
 @foreign_less_angry
 on-arrival: cvp_balance -= 2; nationalism -= 5; pro_republic += 5; z_relation += 5; new_middle_z += 5; old_middle_z -= 8; rural_z -= 4; old_middle_dnf += 8;  rural_dnf += 4;
-go-to: economic_platform
 
 Surprisingly, the <span style="color: #000000;">**CVP**</span> will pursue a diplomatic settlement over Germany's eastern borders and even scale down the secret rearmament effort.
+
+- @economic_platform
 
 
 @economic_platform
@@ -90,21 +96,24 @@ On the economy, welfare and the depression. With such a broad electorate, findin
 
 @austerity
 on-arrival: cvp_balance += 2; workers_z -= 3; new_middle_z -= 2; old_middle_z += 6; rural_z += 2; unemployed_z -= 3; old_middle_dnf -= 2; rural_dnf -= 2;
-go-to: cooperation_others
 
 The Christian Unions were completely defeated, as the new party vows to adhere to strong fiscal discipline, cutting welfare as necessary.
 
+- @cooperation_others
+
 @public_works
 on-arrival: cvp_balance += 1; workers_z -= 2; new_middle_z += 2; old_middle_z += 4; unemployed_z -= 2; old_middle_dnf -= 2;
-go-to: cooperation_others
 
 Even with Brüning has fiscal orthodoxy seemingly ahead, fierce opposition from their labor wing has forced a compromise. The <span style="color: #000000;">**CVP**</span> will experiment with limited works programs and expanded credit for business.
 
+- @cooperation_others
+
 @social_market
 on-arrival: cvp_balance -= 2; workers_z += 9; new_middle_z += 5; old_middle_z -= 6; rural_z -= 5; unemployed_z += 9; new_middle_dnf -= 2; old_middle_dnf += 2; rural_dnf += 2; unemployed_nsdap -= 3;
-go-to: cooperation_others
 
 An ascendant Christian Labor wing has forced its program against the Nationalists tide. In government, the <span style="color: #000000;">**CVP**</span> will implement a 'Social Market Economy', as a middle way between capitalism and <span style="color: var(--spd-color);">socialism</span>.
+
+- @cooperation_others
 
 
 @cooperation_others
