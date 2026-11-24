@@ -13,7 +13,7 @@ The internal dissent that has always plagued the <span style="color: var(--dnvp-
 - @resultsdnvp: The congress unfolds...
 
 @resultsdnvp
-go-to: statusquo if young_plan_signatures >= 10 and pro_republic < 70; treviranus if young_plan_signatures < 10 or pro_republic >= 70
+go-to: statusquo if young_plan_signatures >= 10 and pro_republic < 60; treviranus if young_plan_signatures < 10 or pro_republic >= 60
 
 @statusquo
 on-arrival: dnvp_leader = "Hergt"; dnvp_ideology = "National Conservatism"; dnvp_color = "#3F7BC1"; dnvp_left = 0; dvp_left += 1; old_middle_dnvp += 3; rural_dnvp += 3

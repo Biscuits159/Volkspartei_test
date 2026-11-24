@@ -176,11 +176,11 @@ Results:
 
 [? if dvp_campaign: [? if dvp_candidate = "Eckener" and dvp_campaign: <span style="color: #000000;">**Ec**</span><span style="color: #DD0000;">**ken**</span><span style="color: #FFCC00;">**er**</span> ?][? if dvp_candidate = "Jarres" and dvp_campaign: <span style="color: #C0A054;">**Jarres**</span> ?][? if dvp_candidate = "Luther" and dvp_campaign: <span style="color: #C0A054;">**Luther**</span> ?][? if dvp_candidate = "Heuss" and dvp_campaign: <span style="color: #DCCA4A;">**Heuss**</span> ?][? if dvp_candidate = "Hellpach" and dvp_campaign: <span style="color: #DCCA4A;">**Hellpach**</span> ?] - [+ dvp_candidate_votes_disp +]% ?]
 
-[? if spd_campaign: <span style="color: var(--spd-color);">**Schumacher**</span> - [+ braun_votes_disp +]% ?]
+[? if spd_campaign: <span style="color: var(--spd-color);">**Schumacher**</span> - [+ spd_candidate_votes_disp +]% ?]
 
-[? if ddp_campaign: <span style="color: #DCCA4A;">**Heuss**</span> - [+ heuss_votes_disp +]% ?]
+[? if ddp_campaign: <span style="color: #DCCA4A;">**Heuss**</span> - [+ ddp_candidate_votes_disp +]% ?]
 
-[? if z_campaign: <span style="color: #000000;">**Adenauer**</span> - [+ adenauer_votes_disp +]% ?]
+[? if z_campaign: <span style="color: #000000;">**Adenauer**</span> - [+ z_candidate_votes_disp +]% ?]
 
 [? if hugenberg_campaign: [? if dnf_candidate = "Hugenberg" and dnf_formed: <span style="color: #003755;">**Hugenberg**</span>?][? if dnvp_candidate = "Hugenberg" and dnvp_left < 0: <span style="color: #3F7BC1;">**Hugenberg**</span>?] - [+ hugenberg_votes_disp +]% ?]
 

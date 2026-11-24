@@ -1188,7 +1188,7 @@ if ((!Q.rubicon && Q.month_actions >= 1) || (Q.rubicon && Q.month_actions >= 4))
             Q.unemployed += 6/12;
         }
 
-        Q.workers += 8/12;
+        Q.workers += 4/12;
         Q.inflation += 3/12;
         
         if (Q.unemployed < 5) Q.inflation += 1;
@@ -1218,9 +1218,8 @@ if ((!Q.rubicon && Q.month_actions >= 1) || (Q.rubicon && Q.month_actions >= 4))
         }
 
         Q.workers += 8/12;
-        Q.inflation += 4/12;
+        Q.inflation += 2/12;
 
-        if (Q.unemployed < 6) Q.inflation += 2;
         if (Q.economic_growth < 5) Q.economic_growth += 1/12;
 
         Q.socialism += 6/12;

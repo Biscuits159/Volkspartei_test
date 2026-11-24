@@ -152,7 +152,7 @@ max-visits: 1
 We try to convince the <span style="color: var(--spd-color);">**SPD**</span> to support [+ dvp_candidate +].
 
 @convince_spd_success_dvp
-on-arrival: spd_candidate = dvp_candidate; spd_campaign = 0; ddp_candidate = "Adenauer" if ddp_candidate = "Schumacher" and adenauer_campaign; ddp_candidate = dvp_candidate if ddp_candidate = "Schumacher"; csrp_candidate = "Adenauer" if csrp_candidate = "Schumacher" and adenauer_campaign; csrp_candidate = dvp_candidate if csrp_candidate = "Schumacher";
+on-arrival: spd_candidate = dvp_candidate; spd_campaign = 0; ddp_candidate = "Adenauer" if ddp_candidate = "Schumacher" and z_campaign; ddp_candidate = dvp_candidate if ddp_candidate = "Schumacher"; csrp_candidate = "Adenauer" if csrp_candidate = "Schumacher" and z_campaign; csrp_candidate = dvp_candidate if csrp_candidate = "Schumacher";
 go-to: endorsements_dvp
 
 Thanks to our friendly relations, the <span style="color: var(--spd-color);">**SPD**</span> is now campaigning for [+ dvp_candidate +] in the election.
@@ -232,7 +232,7 @@ max-visits: 1
 We try to convince the <span style="color: var(--z-color);">**Center Party**</span> to support [+ dvp_candidate +].
 
 @convince_z_success_dvp
-on-arrival: z_candidate = dvp_candidate; adenauer_campaign = 0; dbp_candidate = reactionary_candidate if dbp_candidate = "Adenauer" and reactionary_campaign; dbp_candidate = dvp_candidate if dbp_candidate = "Adenauer"; bvp_candidate = reactionary_candidate if bvp_candidate = "Adenauer" and reactionary_campaign; bvp_candidate = dvp_candidate if bvp_candidate = "Adenauer"; csvd_candidate = reactionary_candidate if csvd_candidate = "Adenauer" and reactionary_campaign; csvd_candidate = dvp_candidate if csvd_candidate = "Adenauer";
+on-arrival: z_candidate = dvp_candidate; z_campaign = 0; dbp_candidate = reactionary_candidate if dbp_candidate = "Adenauer" and reactionary_campaign; dbp_candidate = dvp_candidate if dbp_candidate = "Adenauer"; bvp_candidate = reactionary_candidate if bvp_candidate = "Adenauer" and reactionary_campaign; bvp_candidate = dvp_candidate if bvp_candidate = "Adenauer"; csvd_candidate = reactionary_candidate if csvd_candidate = "Adenauer" and reactionary_campaign; csvd_candidate = dvp_candidate if csvd_candidate = "Adenauer";
 go-to: endorsements_dvp
 
 Thanks to our friendly relations, the <span style="color: var(--z-color);">**Center Party**</span> is now campaigning for [+ dvp_candidate +] in the election.
@@ -321,7 +321,7 @@ max-visits: 1
 We try to convince the <span style="color: var(--spd-color);">**SPD**</span> to support [+ dvp_candidate +].
 
 @convince_spd_success_z
-on-arrival: spd_candidate = dvp_candidate; spd_campaign = 0; ddp_candidate = dvp_candidate if ddp_candidate = "Schumacher"; csrp_candidate = "Heuss" if csrp_candidate = "Schumacher" and heuss_campaign; csrp_candidate = dvp_candidate if csrp_candidate = "Schumacher"
+on-arrival: spd_candidate = dvp_candidate; spd_campaign = 0; ddp_candidate = dvp_candidate if ddp_candidate = "Schumacher"; csrp_candidate = "Heuss" if csrp_candidate = "Schumacher" and ddp_campaign; csrp_candidate = dvp_candidate if csrp_candidate = "Schumacher"
 go-to: endorsements_adenauer
 
 Thanks to our friendly relations, the <span style="color: var(--spd-color);">**SPD**</span> is now campaigning for [+ dvp_candidate +] in the election.
@@ -340,7 +340,7 @@ max-visits: 1
 We try to convince the <span style="color: var(--ddp-color);">**[+ddp_name+]**</span> to support [+ dvp_candidate +].
 
 @convince_ddp_success_z
-on-arrival: ddp_candidate = dvp_candidate; heuss_campaign = 0;
+on-arrival: ddp_candidate = dvp_candidate; ddp_campaign = 0;
 go-to: endorsements_adenauer
 
 Thanks to our friendly relations, the <span style="color: var(--ddp-color);">**[+ddp_name+]**</span> is now campaigning for [+ dvp_candidate +] in the election.
@@ -467,7 +467,7 @@ max-visits: 1
 We try to convince the <span style="color: var(--z-color);">**Center Party**</span> to support [+ dvp_candidate +].
 
 @convince_z_success_ddp
-on-arrival: z_candidate = dvp_candidate; adenauer_campaign = 0; dbp_candidate = reactionary_candidate if dbp_candidate = "Adenauer" and reactionary_campaign; dbp_candidate = dvp_candidate if dbp_candidate = "Adenauer"; bvp_candidate = reactionary_candidate if bvp_candidate = "Adenauer" and reactionary_campaign; bvp_candidate = dvp_candidate if bvp_candidate = "Adenauer"; csvd_candidate = reactionary_candidate if csvd_candidate = "Adenauer" and reactionary_campaign; csvd_candidate = dvp_candidate if csvd_candidate = "Adenauer";
+on-arrival: z_candidate = dvp_candidate; z_campaign = 0; dbp_candidate = reactionary_candidate if dbp_candidate = "Adenauer" and reactionary_campaign; dbp_candidate = dvp_candidate if dbp_candidate = "Adenauer"; bvp_candidate = reactionary_candidate if bvp_candidate = "Adenauer" and reactionary_campaign; bvp_candidate = dvp_candidate if bvp_candidate = "Adenauer"; csvd_candidate = reactionary_candidate if csvd_candidate = "Adenauer" and reactionary_campaign; csvd_candidate = dvp_candidate if csvd_candidate = "Adenauer";
 go-to: endorsements_heuss
 
 Thanks to our friendly relations, the <span style="color: var(--z-color);">**Center Party**</span> is now campaigning for [+ dvp_candidate +] in the election.
@@ -535,7 +535,7 @@ max-visits: 1
 We try to convince the <span style="color: var(--ddp-color);">**[+ddp_name+]**</span> to support [+ dvp_candidate +].
 
 @convince_ddp_success_spd
-on-arrival: ddp_candidate = dvp_candidate; heuss_campaign = 0;
+on-arrival: ddp_candidate = dvp_candidate; ddp_campaign = 0;
 go-to: endorsements_schumacher
 
 Thanks to our friendly relations, the <span style="color: var(--ddp-color);">**[+ddp_name+]**</span> is now campaigning for [+ dvp_candidate +] in the election.
@@ -573,7 +573,7 @@ max-visits: 1
 We try to convince the <span style="color: var(--z-color);">**Center Party**</span> to support [+ dvp_candidate +].
 
 @convince_z_success_spd
-on-arrival: z_candidate = dvp_candidate; adenauer_campaign = 0; dbp_candidate = reactionary_candidate if dbp_candidate = "Adenauer" and reactionary_campaign; dbp_candidate = dvp_candidate if dbp_candidate = "Adenauer"; bvp_candidate = reactionary_candidate if bvp_candidate = "Adenauer" and reactionary_campaign; bvp_candidate = dvp_candidate if bvp_candidate = "Adenauer"; csvd_candidate = reactionary_candidate if csvd_candidate = "Adenauer" and reactionary_campaign; csvd_candidate = dvp_candidate if csvd_candidate = "Adenauer";
+on-arrival: z_candidate = dvp_candidate; z_campaign = 0; dbp_candidate = reactionary_candidate if dbp_candidate = "Adenauer" and reactionary_campaign; dbp_candidate = dvp_candidate if dbp_candidate = "Adenauer"; bvp_candidate = reactionary_candidate if bvp_candidate = "Adenauer" and reactionary_campaign; bvp_candidate = dvp_candidate if bvp_candidate = "Adenauer"; csvd_candidate = reactionary_candidate if csvd_candidate = "Adenauer" and reactionary_campaign; csvd_candidate = dvp_candidate if csvd_candidate = "Adenauer";
 go-to: endorsements_schumacher
 
 Thanks to our friendly relations, the <span style="color: var(--z-color);">**Center Party**</span> is now campaigning for [+ dvp_candidate +] in the election.
@@ -654,33 +654,33 @@ go-to: endorsements_dvp if dvp_campaign; endorsements_reactionary if dvp_candida
 
 [? if dvp_candidate == "Eckener" and dvp_campaign: **Hugo** <span style="color: var(--z-color);">**Ec**</span><span style="color: #DD0000;">**ken**</span><span style="color: #FFCC00;">**er**</span> - supported by: ?][? if dvp_candidate == "Jarres" and dvp_campaign: <span style="color: #C0A054;">**Karl Jarres**</span> - supported by: ?][? if dvp_candidate == "Luther" and dvp_campaign: <span style="color: #C0A054;">**Hans Luther**</span> - supported by: ?][? if dvp_candidate == "Heuss" and dvp_campaign: <span style="color: var(--ddp-color);">**Theodor Heuss**</span> - supported by: ?][? if dvp_candidate == "Hellpach" and dvp_campaign: <span style="color: var(--ddp-color);">**Willy Hellpach**</span> - supported by: ?]
 
-[? if spd_candidate == "Eckener" or spd_candidate == "Luther" or (spd_candidate == "Heuss" and not heuss_campaign) or spd_candidate == "Hellpach" or spd_candidate == "Jarres": - <span style="color: var(--spd-color);">**SPD**</span> ?]
+[? if spd_candidate == "Eckener" or spd_candidate == "Luther" or (spd_candidate == "Heuss" and not ddp_campaign) or spd_candidate == "Hellpach" or spd_candidate == "Jarres": - <span style="color: var(--spd-color);">**SPD**</span> ?]
 
-[? if (ddp_candidate == "Eckener" or ddp_candidate == "Luther" or (ddp_candidate == "Heuss" and not heuss_campaign) or ddp_candidate == "Hellpach" or ddp_candidate == "Jarres") and ddp_exist: - <span style="color: var(--ddp-color);">**[+ ddp_name +]**</span> ?]
+[? if (ddp_candidate == "Eckener" or ddp_candidate == "Luther" or (ddp_candidate == "Heuss" and not ddp_campaign) or ddp_candidate == "Hellpach" or ddp_candidate == "Jarres") and ddp_exist: - <span style="color: var(--ddp-color);">**[+ ddp_name +]**</span> ?]
 
-[? if (dbp_candidate == "Eckener" or dbp_candidate == "Luther" or (dbp_candidate == "Heuss" and not heuss_campaign) or dbp_candidate == "Hellpach" or dbp_candidate == "Jarres") and dbp_exist: - <span style="color: #38C538;">**DBP**</span> ?]
+[? if (dbp_candidate == "Eckener" or dbp_candidate == "Luther" or (dbp_candidate == "Heuss" and not ddp_campaign) or dbp_candidate == "Hellpach" or dbp_candidate == "Jarres") and dbp_exist: - <span style="color: #38C538;">**DBP**</span> ?]
 
-[? if (csrp_candidate == "Eckener" or csrp_candidate == "Luther" or (csrp_candidate == "Heuss" and not heuss_campaign) or csrp_candidate == "Hellpach" or csrp_candidate == "Jarres") and csrp_exist: - <span style="color: #FF6B21;">**CSRP**</span> ?]
+[? if (csrp_candidate == "Eckener" or csrp_candidate == "Luther" or (csrp_candidate == "Heuss" and not ddp_campaign) or csrp_candidate == "Hellpach" or csrp_candidate == "Jarres") and csrp_exist: - <span style="color: #FF6B21;">**CSRP**</span> ?]
 
-[? if z_candidate == "Eckener" or z_candidate == "Luther" or (z_candidate == "Heuss" and not heuss_campaign) or z_candidate == "Hellpach" or z_candidate == "Jarres": - <span style="color: var(--z-color);">**Z**</span> ?]
+[? if z_candidate == "Eckener" or z_candidate == "Luther" or (z_candidate == "Heuss" and not ddp_campaign) or z_candidate == "Hellpach" or z_candidate == "Jarres": - <span style="color: var(--z-color);">**Z**</span> ?]
 
-[? if bvp_candidate == "Eckener" or bvp_candidate == "Luther" or (bvp_candidate == "Heuss" and not heuss_campaign) or bvp_candidate == "Hellpach" or bvp_candidate == "Jarres": - <span style="color: #69A2BE;">**BVP**</span> ?]
+[? if bvp_candidate == "Eckener" or bvp_candidate == "Luther" or (bvp_candidate == "Heuss" and not ddp_campaign) or bvp_candidate == "Hellpach" or bvp_candidate == "Jarres": - <span style="color: #69A2BE;">**BVP**</span> ?]
 
-[? if dvp_candidate == "Eckener" or dvp_candidate == "Luther" or (dvp_candidate == "Heuss" and not heuss_campaign) or dvp_candidate == "Hellpach" or dvp_candidate == "Jarres": - <span style="color: var(--dvp-color);">**[+ dvp_name +]**</span> ?]
+[? if dvp_candidate == "Eckener" or dvp_candidate == "Luther" or (dvp_candidate == "Heuss" and not ddp_campaign) or dvp_candidate == "Hellpach" or dvp_candidate == "Jarres": - <span style="color: var(--dvp-color);">**[+ dvp_name +]**</span> ?]
 
-[? if (csvd_candidate == "Eckener" or csvd_candidate == "Luther" or (csvd_candidate == "Heuss" and not heuss_campaign) or csvd_candidate == "Hellpach" or csvd_candidate == "Jarres") and csvd_exist: - <span style="color: #8ED8E4;">**CSVD**</span> ?]
+[? if (csvd_candidate == "Eckener" or csvd_candidate == "Luther" or (csvd_candidate == "Heuss" and not ddp_campaign) or csvd_candidate == "Hellpach" or csvd_candidate == "Jarres") and csvd_exist: - <span style="color: #8ED8E4;">**CSVD**</span> ?]
 
-[? if (wp_candidate == "Eckener" or wp_candidate == "Luther" or (wp_candidate == "Heuss" and not heuss_campaign) or wp_candidate == "Hellpach" or wp_candidate == "Jarres") and wp_exist: - <span style="color: #B8996F;">**WP**</span> ?]
+[? if (wp_candidate == "Eckener" or wp_candidate == "Luther" or (wp_candidate == "Heuss" and not ddp_campaign) or wp_candidate == "Hellpach" or wp_candidate == "Jarres") and wp_exist: - <span style="color: #B8996F;">**WP**</span> ?]
 
-[? if (cnblp_candidate == "Eckener" or cnblp_candidate == "Luther" or (cnblp_candidate == "Heuss" and not heuss_campaign) or cnblp_candidate == "Hellpach" or cnblp_candidate == "Jarres") and cnblp_exist: - <span style="color: #7FCEB1;">**CNBLP**</span> ?]
+[? if (cnblp_candidate == "Eckener" or cnblp_candidate == "Luther" or (cnblp_candidate == "Heuss" and not ddp_campaign) or cnblp_candidate == "Hellpach" or cnblp_candidate == "Jarres") and cnblp_exist: - <span style="color: #7FCEB1;">**CNBLP**</span> ?]
 
-[? if (kvp_candidate == "Eckener" or kvp_candidate == "Luther" or (kvp_candidate == "Heuss" and not heuss_campaign) or kvp_candidate == "Hellpach" or kvp_candidate == "Jarres") and kvp_formed: - <span style="color: #455B95;">**KVP**</span> ?]
+[? if (kvp_candidate == "Eckener" or kvp_candidate == "Luther" or (kvp_candidate == "Heuss" and not ddp_campaign) or kvp_candidate == "Hellpach" or kvp_candidate == "Jarres") and kvp_formed: - <span style="color: #455B95;">**KVP**</span> ?]
 
-[? if dnvp_candidate == "Eckener" or dnvp_candidate == "Luther" or (dnvp_candidate == "Heuss" and not heuss_campaign) or dnvp_candidate == "Hellpach" or dnvp_candidate == "Jarres": - <span style="color: #3F7BC1;">**DNVP**</span> ?]
+[? if dnvp_candidate == "Eckener" or dnvp_candidate == "Luther" or (dnvp_candidate == "Heuss" and not ddp_campaign) or dnvp_candidate == "Hellpach" or dnvp_candidate == "Jarres": - <span style="color: #3F7BC1;">**DNVP**</span> ?]
 
-[? if (dnf_candidate == "Eckener" or dnf_candidate == "Luther" or (dnf_candidate == "Heuss" and not heuss_campaign) or dnf_candidate == "Hellpach" or dnf_candidate == "Jarres") and dnf_formed: - <span style="color: #003755;">**DNF**</span> ?]
+[? if (dnf_candidate == "Eckener" or dnf_candidate == "Luther" or (dnf_candidate == "Heuss" and not ddp_campaign) or dnf_candidate == "Hellpach" or dnf_candidate == "Jarres") and dnf_formed: - <span style="color: #003755;">**DNF**</span> ?]
 
-[? if adenauer_campaign: <span style="color: var(--z-color);">**Konrad Adenauer**</span> - supported by: ?]
+[? if z_campaign: <span style="color: var(--z-color);">**Konrad Adenauer**</span> - supported by: ?]
 
 [? if spd_candidate == "Adenauer": - <span style="color: var(--spd-color);">**SPD**</span> ?]
 
@@ -698,21 +698,21 @@ go-to: endorsements_dvp if dvp_campaign; endorsements_reactionary if dvp_candida
 
 [? if csvd_candidate == "Adenauer" and csvd_exist: - <span style="color: #8ED8E4;">**CSVD**</span> ?]
 
-[? if heuss_campaign: <span style="color: var(--ddp-color);">**Theodor Heuss**</span> - supported by: ?]
+[? if ddp_campaign: <span style="color: var(--ddp-color);">**Theodor Heuss**</span> - supported by: ?]
 
-[? if spd_candidate == "Heuss" and heuss_campaign: - <span style="color: var(--spd-color);">**SPD**</span> ?]
+[? if spd_candidate == "Heuss" and ddp_campaign: - <span style="color: var(--spd-color);">**SPD**</span> ?]
 
-[? if ddp_candidate == "Heuss" and ddp_exist and heuss_campaign: - <span style="color: var(--ddp-color);">**[+ ddp_name +]**</span> ?]
+[? if ddp_candidate == "Heuss" and ddp_exist and ddp_campaign: - <span style="color: var(--ddp-color);">**[+ ddp_name +]**</span> ?]
 
-[? if dbp_candidate == "Heuss" and dbp_exist and heuss_campaign: - <span style="color: #38C538;">**DBP**</span> ?]
+[? if dbp_candidate == "Heuss" and dbp_exist and ddp_campaign: - <span style="color: #38C538;">**DBP**</span> ?]
 
-[? if csrp_candidate == "Heuss" and csrp_exist and heuss_campaign: - <span style="color: #FF6B21;">**CSRP**</span> ?]
+[? if csrp_candidate == "Heuss" and csrp_exist and ddp_campaign: - <span style="color: #FF6B21;">**CSRP**</span> ?]
 
-[? if z_candidate == "Heuss" and heuss_campaign: - <span style="color: var(--z-color);">**Z**</span> ?]
+[? if z_candidate == "Heuss" and ddp_campaign: - <span style="color: var(--z-color);">**Z**</span> ?]
 
-[? if bvp_candidate == "Heuss" and heuss_campaign: - <span style="color: #69A2BE;">**BVP**</span> ?]
+[? if bvp_candidate == "Heuss" and ddp_campaign: - <span style="color: #69A2BE;">**BVP**</span> ?]
 
-[? if dvp_candidate == "Heuss" and heuss_campaign: - <span style="color: var(--dvp-color);">**[+ dvp_name +]**</span> ?]
+[? if dvp_candidate == "Heuss" and ddp_campaign: - <span style="color: var(--dvp-color);">**[+ dvp_name +]**</span> ?]
 
 [? if spd_campaign: <span style="color: var(--spd-color);">**Kurt Schumacher**</span> - supported by: ?]
 
