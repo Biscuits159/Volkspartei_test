@@ -46,24 +46,24 @@ on-arrival: cvp_balance += 2; spd_relation += 5; z_relation -= 5; pro_republic -
 
 The <span style="color: #000000;">**CVP**</span> will fully support a constitutional monarchy, along with the restoration of the other German royal houses, under Wilhelm II or the Crown Prince.
 
-- @foreign_relations
+- @cvp_foreign_relations
 
 @no_official_republic
 on-arrival: cvp_balance += 1; pro_republic -= 3; workers_z -= 1; old_middle_z -= 2; rural_z -= 2; old_middle_dnf += 2; rural_dnf += 2; rural_cnblp += 1;
 
 Talks eventually reach a standstill, with neither side able to sway a majority of members. The ensuing compromise is that the party will refrain from officially endorosing the return of the monarchy, while pushing for expanded presidential powers.
 
-- @foreign_relations
+- @cvp_foreign_relations
 
 @endorse_republic
 on-arrival: cvp_balance -= 2; z_relation += 5; pro_republic += 5; workers_z += 5; new_middle_z += 2; old_middle_z -= 5; rural_z -= 5; old_middle_dnf += 5; rural_dnf += 7; rural_cnblp += 2;
 
 The agrarian and authoritarian wings were soundly defeated in their efforts. The <span style="color: #000000;">**CVP**</span> will be a party committed to the Republic and parliamentarianism, with presidential decrees as a last resort.
 
-- @foreign_relations
+- @cvp_foreign_relations
 
 
-@foreign_relations
+@cvp_foreign_relations
 go-to: foreign_aggressive if cvp_balance < -2; foreign_pragmatic if cvp_balance >= -2 and cvp_balance < 2; foreign_less_angry if cvp_balance >= 2
 
 On Foreign Relations. It is unlikely that the new party will ever fully accept Locarno or end secret rearmament. Nonetheless, the truth of the matter is that unilaterally ending reparations is simply not feasible, and the <span style="color: #000000;">**Center**</span>'s opposition to aggressive remilitarization remains fierce.
