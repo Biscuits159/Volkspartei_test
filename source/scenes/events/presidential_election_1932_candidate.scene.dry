@@ -296,7 +296,7 @@ The <span style="color: var(--spd-color);">**[+ spd_name +]**</span> will run Ot
 
 - @dvp: So, what is our decision? Should we run our own candidate, or support [+ reactionary_candidate +]?
 
-@braun
+@rosenfeld
 face-image: img/portraits/RosenfeldKurt.jpg
 
 The <span style="color: var(--spd-color);">**[+ spd_name +]**</span> will run Kurt Rosenfeld, a minor figure from their Left faction. [? if ddp_exist: The <span style="color: var(--ddp-color);">**[+ ddp_name +]**</span> is expected to support him. ?]

@@ -232,7 +232,7 @@ max-visits: 1
 We try to convince the <span style="color: var(--z-color);">**[+ z_name +]**</span> to support [+ dvp_candidate +].
 
 @convince_z_success_dvp
-{! 
+on-arrival: {! 
     Q.z_relation += 3;
     Q.z_campaign = 0;
     if (Q.reactionary_candidate == "Adenauer") {
@@ -307,13 +307,6 @@ on-arrival: csvd_relation -= 3
 go-to: endorsements_dvp
 
 Unfortunately, the <span style="color: #8ED8E4;">**CSVD**</span> has refused to support [+ dvp_candidate +] for the presidency.
-
-
-
-
-
-
-
 
 
 
