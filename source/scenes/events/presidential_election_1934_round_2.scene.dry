@@ -109,6 +109,14 @@ if (Q.z_campaign) {
     if (Q.dvp_candidate == Q.z_candidate) Q.z_candidate_votes += Q.dvp_normalized;
 }
 
+Q.reactionary_votes = Math.round(Q.reactionary_votes*1000)/10;
+Q.dvp_candidate_votes = Math.round(Q.dvp_candidate_votes*1000)/10;
+Q.spd_candidate_votes = Math.round(Q.spd_candidate_votes*1000)/10;
+Q.ddp_candidate_votes = Math.round(Q.ddp_candidate_votes*1000)/10;
+Q.z_candidate_votes = Math.round(Q.z_candidate_votes*1000)/10;
+Q.hugenberg_votes = Math.round(Q.hugenberg_votes*1000)/10;
+Q.hitler_votes = Math.round(Q.hitler_votes*1000)/10;
+Q.thalmann_votes = Math.round(Q.thalmann_votes*1000)/10;
 
 // check for plurality
 if (Q.reactionary_votes >= Q.hitler_votes && Q.reactionary_votes >= Q.spd_candidate_votes && Q.reactionary_votes >= Q.ddp_candidate_votes && Q.reactionary_votes >= Q.z_candidate_votes && Q.reactionary_votes >= Q.thalmann_votes && Q.reactionary_votes >= Q.hugenberg_votes && Q.reactionary_votes >= Q.dvp_candidate_votes) {
