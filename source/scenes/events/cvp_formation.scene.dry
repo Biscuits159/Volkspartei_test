@@ -106,7 +106,7 @@ The Christian Unions were completely defeated, as the new party vows to adhere t
 @public_works
 on-arrival: cvp_balance += 1; workers_z -= 2; new_middle_z += 2; old_middle_z += 4; unemployed_z -= 2; old_middle_dnf -= 2;
 
-Even with Brüning has fiscal orthodoxy seemingly ahead, fierce opposition from their labor wing has forced a compromise. The <span style="color: #000000;">**CVP**</span> will experiment with limited works programs and expanded credit for business.
+Even with Brüning's fiscal orthodoxy seemingly ahead, fierce opposition from their labor wing has forced a compromise. The <span style="color: #000000;">**CVP**</span> will experiment with limited works programs and expanded credit for business.
 
 - @cooperation_others
 

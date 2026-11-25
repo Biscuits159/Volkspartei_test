@@ -9,12 +9,12 @@ tags: party_affairs
 
 = Building a Liberal People's Party
 
-WIP
+It has long been the dream of many liberals to have a single, unified party dedicated to our values. We came close to this in the earliest days of the Republic, but personal crises and disagreements led to the stagnation of the idea. Is it time to revisit the question of liberal unity? 
 
 - @support_liberal_peoples_party: Yes, we must unite with [+ ddp_name +]!
 - @build_support: We must build additional support before uniting with [+ ddp_name +].
 - @support_liberal_peoples_party_hard: Despite strong opposition from the Industrialist and Nationalist factions, we will unite with [+ ddp_name +].
-- @no_new_ideas: No, we will not do this.
+- @no_new_ideas: We are separate from the DDP for a reason. There is little to gain trying to unite with them. 
 - @root: Perhaps we can discuss this at a later time.
 - @easy_discard
 - @cancel_advisor_action

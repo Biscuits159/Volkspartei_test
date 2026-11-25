@@ -137,7 +137,7 @@ We can try to convince parties supporting other candidates to switch their suppo
 - @convince_ddp_dvp: Convince the <span style="color: var(--ddp-color);">**[+ ddp_name +]**</span> to back [+ dvp_candidate +].
 - @convince_dbp_dvp: Convince the <span style="color: #38C538;">**DBP**</span> to back [+ dvp_candidate +].
 - @convince_csrp_dvp: Convince the <span style="color: #FF6B21;">**CSRP**</span> to back [+ dvp_candidate +].
-- @convince_z_dvp: Convince the <span style="color: var(--z-color);">**Center Party**</span> to back [+ dvp_candidate +].
+- @convince_z_dvp: Convince the <span style="color: var(--z-color);">**[+ z_name +]**</span> to back [+ dvp_candidate +].
 - @convince_bvp_dvp: Convince the <span style="color: #69A2BE;">**BVP**</span> to back [+ dvp_candidate +].
 - @convince_csvd_dvp: Convince the <span style="color: #8ED8E4;">**CSVD**</span> to back [+ dvp_candidate +].
 - @view_candidates: View party endorsements.
@@ -229,19 +229,45 @@ view-if: z_candidate != dvp_candidate
 go-to: convince_z_success_dvp if (z_relation >= 45 and (dvp_candidate = "Luther" or dvp_candidate = "Hellpach")) or (z_relation >= 55 and dvp_candidate = "Jarres") or (z_relation >= 35 and (dvp_candidate = "Heuss" or dvp_candidate = "Eckener")); convince_z_fail_dvp if not ((z_relation >= 45 and dvp_candidate = "Luther" or dvp_candidate = "Hellpach") or (z_relation >= 55 and dvp_candidate = "Jarres") or (z_relation >= 35 and dvp_candidate = "Heuss" or dvp_candidate = "Eckener"))
 max-visits: 1
 
-We try to convince the <span style="color: var(--z-color);">**Center Party**</span> to support [+ dvp_candidate +].
+We try to convince the <span style="color: var(--z-color);">**[+ z_name +]**</span> to support [+ dvp_candidate +].
 
 @convince_z_success_dvp
-on-arrival: z_candidate = dvp_candidate; z_campaign = 0; dbp_candidate = reactionary_candidate if dbp_candidate = "Adenauer" and reactionary_campaign; dbp_candidate = dvp_candidate if dbp_candidate = "Adenauer"; bvp_candidate = reactionary_candidate if bvp_candidate = "Adenauer" and reactionary_campaign; bvp_candidate = dvp_candidate if bvp_candidate = "Adenauer"; csvd_candidate = reactionary_candidate if csvd_candidate = "Adenauer" and reactionary_campaign; csvd_candidate = dvp_candidate if csvd_candidate = "Adenauer";
+{! 
+    Q.z_relation += 3;
+    Q.z_campaign = 0;
+    if (Q.reactionary_candidate == "Adenauer") {
+        if (Q.spd_candidate == Q.reactionary_candidate) Q.spd_candidate = Q.dvp_candidate;
+        if (Q.ddp_candidate == Q.reactionary_candidate) Q.ddp_candidate = Q.dvp_candidate
+        if (Q.dbp_candidate == Q.reactionary_candidate) Q.ddp_candidate = Q.dvp_candidate;
+        if (Q.csrp_candidate == Q.reactionary_candidate) Q.csrp_candidate = Q.dvp_candidate;
+        if (Q.bvp_candidate == Q.reactionary_candidate) Q.bvp_candidate = Q.dvp_candidate;
+        if (Q.csvd_candidate == Q.reactionary_candidate) Q.csvd_candidate = Q.dvp_candidate;
+        if (Q.cnblp_candidate == Q.reactionary_candidate) Q.cnblp_candidate = Q.dvp_candidate;
+        if (Q.wp_candidate == Q.reactionary_candidate) Q.wp_candidate = Q.dvp_candidate;
+        if (Q.kvp_candidate == Q.reactionary_candidate) Q.kvp_candidate = Q.dvp_candidate;
+        if (Q.dnvp_candidate == Q.reactionary_candidate) Q.dnvp_candidate = Q.dvp_candidate;
+        if (Q.other_candidate == Q.reactionary_candidate) Q.other_candidate = Q.dvp_candidate;
+        Q.reactionary_candidate = 0;
+        Q.reactionary_campaign = 0;
+    } else {
+        if (Q.dbp_candidate == Q.z_candidate) Q.dbp_candidate = Q.reactionary_candidate;
+        if (Q.bvp_candidate == Q.z_candidate) Q.bvp_candidate = Q.reactionary_candidate;
+        if (Q.csvd_candidate == Q.z_candidate) Q.csvd_candidate = Q.reactionary_candidate;
+        if (Q.dbp_candidate == Q.z_candidate) Q.dbp_candidate = Q.reactionary_candidate;
+        if (Q.dbp_candidate == Q.z_candidate) Q.dbp_candidate = Q.reactionary_candidate;
+        if (Q.dbp_candidate == Q.z_candidate) Q.dbp_candidate = Q.reactionary_candidate;
+    }
+    Q.z_candidate = Q.dvp_candidate;
+!}
 go-to: endorsements_dvp
 
-Thanks to our friendly relations, the <span style="color: var(--z-color);">**Center Party**</span> is now campaigning for [+ dvp_candidate +] in the election.
+Thanks to our friendly relations, the <span style="color: var(--z-color);">**[+ z_name +]**</span> is now campaigning for [+ dvp_candidate +] in the election.
 
 @convince_z_fail_dvp
 on-arrival: z_relation -= 3
 go-to: endorsements_dvp
 
-Unfortunately, the <span style="color: var(--z-color);">**Center Party**</span> has refused to support [+ dvp_candidate +] for the presidency.
+Unfortunately, the <span style="color: var(--z-color);">**[+ z_name +]**</span> has refused to support [+ dvp_candidate +] for the presidency.
 
 
 @convince_bvp_dvp
@@ -293,7 +319,7 @@ Unfortunately, the <span style="color: #8ED8E4;">**CSVD**</span> has refused to 
 
 @support_adenauer
 subtitle: <span style="color: var(--z-color);">**Zentrum**</span>’s rational pick from the city of Cologne, a good pick for the Democratic <span style="color: var(--z-color);">**Center**</span>.
-view-if: z_campaign
+view-if: z_campaign or reactionary_candidate == "Adenauer"
 choose-if: dvp_left >= 0
 unavailable-subtitle: His unwavering commitment to the republic along with our more radical tilt has stifled the possibility.
 on-arrival: dvp_candidate = "Adenauer"
@@ -396,7 +422,7 @@ We can try to convince parties supporting other candidates to switch their suppo
 - @convince_spd_ddp: Convince the <span style="color: var(--spd-color);">**SPD**</span> to back [+ dvp_candidate +].
 - @convince_dbp_ddp: Convince the <span style="color: #38C538;">**DBP**</span> to back [+ dvp_candidate +].
 - @convince_csrp_ddp: Convince the <span style="color: #FF6B21;">**CSRP**</span> to back [+ dvp_candidate +].
-- @convince_z_ddp: Convince the <span style="color: var(--z-color);">**Center Party**</span> to back [+ dvp_candidate +].
+- @convince_z_ddp: Convince the <span style="color: var(--z-color);">**[+ z_name +]**</span> to back [+ dvp_candidate +].
 - @convince_bvp_ddp: Convince the <span style="color: #69A2BE;">**BVP**</span> to back [+ dvp_candidate +].
 - @view_candidates: View party endorsements.
 - @hope: We have concluded negotiations with other parties.
@@ -464,18 +490,44 @@ view-if: z_candidate != dvp_candidate
 go-to: convince_z_success_ddp if z_relation >= 40; convince_z_fail_ddp if not z_relation >= 40
 max-visits: 1
 
-We try to convince the <span style="color: var(--z-color);">**Center Party**</span> to support [+ dvp_candidate +].
+We try to convince the <span style="color: var(--z-color);">**[+ z_name +]**</span> to support [+ dvp_candidate +].
 
 @convince_z_success_ddp
-on-arrival: z_candidate = dvp_candidate; z_campaign = 0; dbp_candidate = reactionary_candidate if dbp_candidate = "Adenauer" and reactionary_campaign; dbp_candidate = dvp_candidate if dbp_candidate = "Adenauer"; bvp_candidate = reactionary_candidate if bvp_candidate = "Adenauer" and reactionary_campaign; bvp_candidate = dvp_candidate if bvp_candidate = "Adenauer"; csvd_candidate = reactionary_candidate if csvd_candidate = "Adenauer" and reactionary_campaign; csvd_candidate = dvp_candidate if csvd_candidate = "Adenauer";
+on-arrival: {! 
+    Q.z_relation += 3;
+    Q.z_campaign = 0;
+    if (Q.reactionary_candidate == "Adenauer") {
+        if (Q.spd_candidate == Q.reactionary_candidate) Q.spd_candidate = Q.dvp_candidate;
+        if (Q.ddp_candidate == Q.reactionary_candidate) Q.ddp_candidate = Q.dvp_candidate
+        if (Q.dbp_candidate == Q.reactionary_candidate) Q.ddp_candidate = Q.dvp_candidate;
+        if (Q.csrp_candidate == Q.reactionary_candidate) Q.csrp_candidate = Q.dvp_candidate;
+        if (Q.bvp_candidate == Q.reactionary_candidate) Q.bvp_candidate = Q.dvp_candidate;
+        if (Q.csvd_candidate == Q.reactionary_candidate) Q.csvd_candidate = Q.dvp_candidate;
+        if (Q.cnblp_candidate == Q.reactionary_candidate) Q.cnblp_candidate = Q.dvp_candidate;
+        if (Q.wp_candidate == Q.reactionary_candidate) Q.wp_candidate = Q.dvp_candidate;
+        if (Q.kvp_candidate == Q.reactionary_candidate) Q.kvp_candidate = Q.dvp_candidate;
+        if (Q.dnvp_candidate == Q.reactionary_candidate) Q.dnvp_candidate = Q.dvp_candidate;
+        if (Q.other_candidate == Q.reactionary_candidate) Q.other_candidate = Q.dvp_candidate;
+        Q.reactionary_candidate = 0;
+        Q.reactionary_campaign = 0;
+    } else {
+        if (Q.dbp_candidate == Q.z_candidate) Q.dbp_candidate = Q.reactionary_candidate;
+        if (Q.bvp_candidate == Q.z_candidate) Q.bvp_candidate = Q.reactionary_candidate;
+        if (Q.csvd_candidate == Q.z_candidate) Q.csvd_candidate = Q.reactionary_candidate;
+        if (Q.dbp_candidate == Q.z_candidate) Q.dbp_candidate = Q.reactionary_candidate;
+        if (Q.dbp_candidate == Q.z_candidate) Q.dbp_candidate = Q.reactionary_candidate;
+        if (Q.dbp_candidate == Q.z_candidate) Q.dbp_candidate = Q.reactionary_candidate;
+    }
+    Q.z_candidate = Q.dvp_candidate;
+!}
 go-to: endorsements_heuss
 
-Thanks to our friendly relations, the <span style="color: var(--z-color);">**Center Party**</span> is now campaigning for [+ dvp_candidate +] in the election.
+Thanks to our friendly relations, the <span style="color: var(--z-color);">**[+ z_name +]**</span> is now campaigning for [+ dvp_candidate +] in the election.
 
 @convince_z_fail_ddp
 go-to: endorsements_heuss
 
-Unfortunately, the <span style="color: var(--z-color);">**Center Party**</span> has refused to support [+ dvp_candidate +] for the presidency.
+Unfortunately, the <span style="color: var(--z-color);">**[+ z_name +]**</span> has refused to support [+ dvp_candidate +] for the presidency.
 
 
 @convince_bvp_ddp
@@ -522,7 +574,7 @@ We can try to convince parties supporting other candidates to switch their suppo
 
 - @convince_ddp_spd: Convince the <span style="color: var(--ddp-color);">**[+ddp_name+]**</span> to back [+ dvp_candidate +].
 - @convince_dbp_spd: Convince the <span style="color: #38C538;">**DBP**</span> to back [+ dvp_candidate +].
-- @convince_z_spd: Convince the <span style="color: var(--z-color);">**Center Party**</span> to back [+ dvp_candidate +].
+- @convince_z_spd: Convince the <span style="color: var(--z-color);">**[+ z_name +]**</span> to back [+ dvp_candidate +].
 - @view_candidates: View party endorsements.
 - @hope: We have concluded negotiations with other parties.
 
@@ -570,18 +622,44 @@ view-if: z_candidate != dvp_candidate
 go-to: convince_z_success_spd if z_relation >= 40; convince_z_fail_spd if z_relation < 40
 max-visits: 1
 
-We try to convince the <span style="color: var(--z-color);">**Center Party**</span> to support [+ dvp_candidate +].
+We try to convince the <span style="color: var(--z-color);">**[+ z_name +]**</span> to support [+ dvp_candidate +].
 
 @convince_z_success_spd
-on-arrival: z_candidate = dvp_candidate; z_campaign = 0; dbp_candidate = reactionary_candidate if dbp_candidate = "Adenauer" and reactionary_campaign; dbp_candidate = dvp_candidate if dbp_candidate = "Adenauer"; bvp_candidate = reactionary_candidate if bvp_candidate = "Adenauer" and reactionary_campaign; bvp_candidate = dvp_candidate if bvp_candidate = "Adenauer"; csvd_candidate = reactionary_candidate if csvd_candidate = "Adenauer" and reactionary_campaign; csvd_candidate = dvp_candidate if csvd_candidate = "Adenauer";
+on-arrival: {! 
+    Q.z_relation += 3;
+    Q.z_campaign = 0;
+    if (Q.reactionary_candidate == "Adenauer") {
+        if (Q.spd_candidate == Q.reactionary_candidate) Q.spd_candidate = Q.dvp_candidate;
+        if (Q.ddp_candidate == Q.reactionary_candidate) Q.ddp_candidate = Q.dvp_candidate
+        if (Q.dbp_candidate == Q.reactionary_candidate) Q.ddp_candidate = Q.dvp_candidate;
+        if (Q.csrp_candidate == Q.reactionary_candidate) Q.csrp_candidate = Q.dvp_candidate;
+        if (Q.bvp_candidate == Q.reactionary_candidate) Q.bvp_candidate = Q.dvp_candidate;
+        if (Q.csvd_candidate == Q.reactionary_candidate) Q.csvd_candidate = Q.dvp_candidate;
+        if (Q.cnblp_candidate == Q.reactionary_candidate) Q.cnblp_candidate = Q.dvp_candidate;
+        if (Q.wp_candidate == Q.reactionary_candidate) Q.wp_candidate = Q.dvp_candidate;
+        if (Q.kvp_candidate == Q.reactionary_candidate) Q.kvp_candidate = Q.dvp_candidate;
+        if (Q.dnvp_candidate == Q.reactionary_candidate) Q.dnvp_candidate = Q.dvp_candidate;
+        if (Q.other_candidate == Q.reactionary_candidate) Q.other_candidate = Q.dvp_candidate;
+        Q.reactionary_candidate = 0;
+        Q.reactionary_campaign = 0;
+    } else {
+        if (Q.dbp_candidate == Q.z_candidate) Q.dbp_candidate = Q.reactionary_candidate;
+        if (Q.bvp_candidate == Q.z_candidate) Q.bvp_candidate = Q.reactionary_candidate;
+        if (Q.csvd_candidate == Q.z_candidate) Q.csvd_candidate = Q.reactionary_candidate;
+        if (Q.dbp_candidate == Q.z_candidate) Q.dbp_candidate = Q.reactionary_candidate;
+        if (Q.dbp_candidate == Q.z_candidate) Q.dbp_candidate = Q.reactionary_candidate;
+        if (Q.dbp_candidate == Q.z_candidate) Q.dbp_candidate = Q.reactionary_candidate;
+    }
+    Q.z_candidate = Q.dvp_candidate;
+!}
 go-to: endorsements_schumacher
 
-Thanks to our friendly relations, the <span style="color: var(--z-color);">**Center Party**</span> is now campaigning for [+ dvp_candidate +] in the election.
+Thanks to our friendly relations, the <span style="color: var(--z-color);">**[+ z_name +]**</span> is now campaigning for [+ dvp_candidate +] in the election.
 
 @convince_z_fail_spd
 go-to: endorsements_schumacher
 
-Unfortunately, the <span style="color: var(--z-color);">**Center Party**</span> has refused to support [+ dvp_candidate +] for the presidency.
+Unfortunately, the <span style="color: var(--z-color);">**[+ z_name +]**</span> has refused to support [+ dvp_candidate +] for the presidency.
 
 
 
@@ -590,6 +668,7 @@ Unfortunately, the <span style="color: var(--z-color);">**Center Party**</span> 
 
 
 @support_reactionary
+view-if: reactionary_candidate == "Westarp"
 subtitle: The old bulwark of the German conservative movement, still as vigorous as ever.
 on-arrival: progressive_dissent += 15; democratic_dissent += 10; dvp_candidate = reactionary_candidate
 
@@ -630,11 +709,15 @@ Hopefully, the [+ dvp_candidate +] coalition is strong enough.
 @view_candidates
 go-to: endorsements_dvp if dvp_campaign; endorsements_reactionary if dvp_candidate == reactionary_candidate; endorsements_schumacher if dvp_candidate == "Schumacher"; endorsements_adenauer if dvp_candidate == "Adenauer"; endorsements_hugenberg if dvp_candidate == "Hugenberg"
 
-[? if reactionary_candidate == "Westarp": [? if kvp_formed: <span style="color: #455B95;">**Kuno von Westarp**</span>?][? if dnvp_left >= 0: <span style="color: #3F7BC1;">**Kuno von Westarp**</span>?] ?] - supported by:
+[? if reactionary_candidate == "Westarp": [? if kvp_formed: <span style="color: #455B95;">**Kuno von Westarp**</span>?][? if dnvp_left >= 0: <span style="color: #3F7BC1;">**Kuno von Westarp**</span>?] - supported by: ?][? if reactionary_candidate == "Adenauer": <span style="color: var(--z-color);">**Konrad Adenauer**</span> - supported by: ?]
+
+[? if spd_campaign == reactionary_candidate and dbp_exist: - <span style="color: var(--spd-color);">**[+ spd_name +]**</span> ?]
+
+[? if ddp_campaign == reactionary_candidate and ddp_exist: - <span style="color: var(--ddp-color);">**[+ ddp_name +]**</span> ?]
 
 [? if dbp_candidate == reactionary_candidate and dbp_exist: - <span style="color: #38C538;">**DBP**</span> ?]
 
-[? if z_candidate == reactionary_candidate: - <span style="color: var(--z-color);">**Z**</span> ?]
+[? if z_candidate == reactionary_candidate: - <span style="color: var(--z-color);">**[+ z_name +]**</span> ?]
 
 [? if bvp_candidate == reactionary_candidate: - <span style="color: #69A2BE;">**BVP**</span> ?]
 
@@ -648,7 +731,7 @@ go-to: endorsements_dvp if dvp_campaign; endorsements_reactionary if dvp_candida
 
 [? if kvp_candidate == reactionary_candidate and kvp_formed: - <span style="color: #455B95;">**KVP**</span> ?]
 
-[? if dnvp_candidate == reactionary_candidate: - <span style="color: #3F7BC1;">**DNVP**</span> ?]
+[? if dnvp_candidate == reactionary_candidate and dnvp_exist: - <span style="color: #3F7BC1;">**DNVP**</span> ?]
 
 [? if other_candidate == reactionary_candidate: - <span style="color: #909090;">**Others**</span> ?]
 
@@ -682,21 +765,21 @@ go-to: endorsements_dvp if dvp_campaign; endorsements_reactionary if dvp_candida
 
 [? if z_campaign: <span style="color: var(--z-color);">**Konrad Adenauer**</span> - supported by: ?]
 
-[? if spd_candidate == "Adenauer": - <span style="color: var(--spd-color);">**SPD**</span> ?]
+[? if spd_candidate == "Adenauer" and z_campaign: - <span style="color: var(--spd-color);">**SPD**</span> ?]
 
-[? if ddp_candidate == "Adenauer" and ddp_exist: - <span style="color: var(--ddp-color);">**[+ ddp_name +]**</span> ?]
+[? if ddp_candidate == "Adenauer" and z_campaign and ddp_exist: - <span style="color: var(--ddp-color);">**[+ ddp_name +]**</span> ?]
 
-[? if dbp_candidate == "Adenauer" and dbp_exist: - <span style="color: #38C538;">**DBP**</span> ?]
+[? if dbp_candidate == "Adenauer" and z_campaign and dbp_exist: - <span style="color: #38C538;">**DBP**</span> ?]
 
-[? if csrp_candidate == "Adenauer" and csrp_exist: - <span style="color: #FF6B21;">**CSRP**</span> ?]
+[? if csrp_candidate == "Adenauer" and z_campaign and csrp_exist: - <span style="color: #FF6B21;">**CSRP**</span> ?]
 
-[? if z_candidate == "Adenauer": - <span style="color: var(--z-color);">**Z**</span> ?]
+[? if z_candidate == "Adenauer" and z_campaign: - <span style="color: var(--z-color);">**Z**</span> ?]
 
-[? if bvp_candidate == "Adenauer": - <span style="color: #69A2BE;">**BVP**</span> ?]
+[? if bvp_candidate == "Adenauer" and z_campaign: - <span style="color: #69A2BE;">**BVP**</span> ?]
 
-[? if dvp_candidate == "Adenauer": - <span style="color: var(--dvp-color);">**[+ dvp_name +]**</span> ?]
+[? if dvp_candidate == "Adenauer" and z_campaign: - <span style="color: var(--dvp-color);">**[+ dvp_name +]**</span> ?]
 
-[? if csvd_candidate == "Adenauer" and csvd_exist: - <span style="color: #8ED8E4;">**CSVD**</span> ?]
+[? if csvd_candidate == "Adenauer" and z_campaign and csvd_exist: - <span style="color: #8ED8E4;">**CSVD**</span> ?]
 
 [? if ddp_campaign: <span style="color: var(--ddp-color);">**Theodor Heuss**</span> - supported by: ?]
 

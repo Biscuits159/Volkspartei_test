@@ -8,7 +8,7 @@ tags: parliamentary_affairs
 
 = Negotiations with Right-Wing parties
 
-<span style="color: #000000;">**Zentrum**</span> has been the leading bourgeoise party and our closest major ally throughout the republic, while the <span style="color: #3F7BC1;">**DNVP**</span> [? if kvp_formed: and the <span style="color: #455B95;">**KVP**</span> ?] remain our closest ideological allies. What should we do to strengthen out ties?
+<span style="color: #000000;">**Zentrum**</span> has been the leading bourgeois party and our closest major ally throughout the course of the republic, while the <span style="color: #3F7BC1;">**DNVP**</span> remain aligned with us on many important issues [? if kvp_formed: and the <span style="color: #455B95;">**KVP**</span> ?] seemingly stand now as our closest ideological partners. What should we do to strengthen our ties with these parties?
 
 - @center: Strengthen our bonds with the Catholic Center Party.
 - @kvp: Strengthen our bonds with the Conservative People's Party.
@@ -24,7 +24,7 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; z_relation += 7*(1-dissent)
 
-The Zentrum has been one of our closest allies through the course of the Republic.
+Despite our disagreements regarding secularism, Zentrum has been one of our closest allies through the course of the Republic.
 
 @kvp
 subtitle: -1 resources

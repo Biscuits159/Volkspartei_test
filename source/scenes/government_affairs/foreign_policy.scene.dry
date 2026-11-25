@@ -10,7 +10,8 @@ go-to: fp_menu
 
 = Foreign Policy
 
-What should our foreign policy priority be?
+Foreign policy is an expertise strongly associated with our party. The diplomatically gifted Gustav Stresseman, our founder, [? if no_stresemann == 0: is?][? if no_stresemann: was?] especially noted for his contributions to peace in Europe.
+What should our foreign policy priority be? 
 
 @fp_menu
 
@@ -40,7 +41,7 @@ The key to peace in Europe is a rapproachment between France and Germany. We are
 title: Improve our relations with our eastern neighbors.
 on-arrival: east_relation += 2;
 
-We also aim to improve relations with our eastern neighbors, Poland and Czechoslovakia, who are righfully terrified of German aggression. Hopefully we can convince them of our peaceful intentions.
+We aim to improve relations with our eastern neighbors, Poland and Czechoslovakia, who are terrified of German aggression. Hopefully we can keep at least some cordiality with them. 
 
 
 @customs_union
@@ -107,11 +108,9 @@ This has reduced tensions within our government, and our party has gotten credit
 @expose
 title: Expose the secret rearmament plans of the previous foreign ministry!
 view-if: rearmament_exposed == 0
-on-arrival: west_relation += 2; east_relation += 1; nationalism -= 5*(1-dissent); pro_republic += 5*(1-dissent); coalition_dissent += 1 if (dnvp_in_government or z_in_government); rearmament_exposed += 1; reparations_negotiation += 3; coup_progress += 2; hindenburg_angry += 25;
+on-arrival: west_relation -= 1; east_relation -= 1; nationalism -= 2*(1-dissent); nationalism -= 3*(1-dissent) if grand_coalition_prussia; pro_republic += 5*(1-dissent); coalition_dissent += 1 if (dnvp_in_government or z_in_government); rearmament_exposed += 1; reparations_negotiation -= 1; coup_progress += 2; hindenburg_angry += 25;
 
-The previous foreign ministry, despite its benevolent and peaceful face, was secretly helping the Reichswehr to build up its forces, in contravention of the Treaty of Versailles.
-
-The Allies are grateful of our exposure and repudiation of militarism. Our partners in the coalition are less supportive.
+We've exposed our secret rearmament plans, in clear contravention of the Treaty of Versailles. Since we were that previous foreign ministry, our relations with the Allies have been damaged. At least the public is now aware of our actions, and are now conscious of Germany's growing militarism.
 
 
 @concordat_negotiate

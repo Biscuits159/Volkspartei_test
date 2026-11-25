@@ -57,9 +57,7 @@ if (Q.nfvp_peoples_conservatives_success) {
 }
 
 
-if (Q.in_weimar_coalition == 1) {
-  Q.dvp_in_government = 1
-}
+if (Q.ddp_in_government == 1) Q.dvp_in_government = 1;
 
 if (Q.in_liberal_coalition == 1) {
   Q.in_liberal_coalition = 0

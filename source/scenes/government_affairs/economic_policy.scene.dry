@@ -9,7 +9,7 @@ card-image: img/portraits/KrohneRudolf.jpg
 
 = Economic Policy
 
-For us, economic policy involves deregulation and privatization.
+[? if dvp_left < 0: Our economic agenda involves responsible policy such as deregulation and privatisation. However, it may bring us into conflict with statist coalition partners. ?][? if dvp_left >= 0: Despite our shift in rhetoric, our economic agenda remains skeptical of state intervention and heavy regulation. Thus, our purpose in the Economic Ministry is still one of laissez-faire reforms, though this may alienate those drawn to our new positions. ?]
 
 - @deregulate_businesses
 - @targeted_privatizations

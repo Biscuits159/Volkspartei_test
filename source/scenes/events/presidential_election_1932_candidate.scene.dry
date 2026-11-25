@@ -287,20 +287,27 @@ The <span style="color: var(--kpd-color);">**KPD**</span> will run Ernst Thälma
 
 
 @socialist
-go-to: spd_run if spd_campaign; reactionary_spd if spd_candidate = reactionary_candidate or spd_candidate = second_reactionary_candidate
+go-to: braun if spd_candidate == "Braun"; rosenfeld if spd_candidate == "Rosenfeld"; reactionary_spd if spd_candidate = reactionary_candidate or spd_candidate = second_reactionary_candidate
 
-@spd_run
+@braun
 face-image: img/portraits/BraunOtto.jpg
 
 The <span style="color: var(--spd-color);">**[+ spd_name +]**</span> will run Otto Braun, [? if prussia_leader != "Braun": former ?] Prussian Minister-President and candidate in the 1925 election. [? if ddp_exist and z_candidate != "Braun": The <span style="color: var(--ddp-color);">**[+ ddp_name +]**</span> is expected to support him. ?][? if z_candidate = "Braun": The <span style="color: var(--spd-color);">**Social Democrats**</span> have managed to rally the *Weimar* parties for a second 1925. ?]
 
-- @dvp: So, what is our decision? Should we run our own candidate, or support Hindenburg?
+- @dvp: So, what is our decision? Should we run our own candidate, or support [+ reactionary_candidate +]?
+
+@braun
+face-image: img/portraits/RosenfeldKurt.jpg
+
+The <span style="color: var(--spd-color);">**[+ spd_name +]**</span> will run Kurt Rosenfeld, a minor figure from their Left faction. [? if ddp_exist: The <span style="color: var(--ddp-color);">**[+ ddp_name +]**</span> is expected to support him. ?]
+
+- @dvp: So, what is our decision? Should we run our own candidate, or support [+ reactionary_candidate +]?
 
 @reactionary_spd
 
 Alarmed by the current state of the Republic, the <span style="color: var(--spd-color);">**[+ spd_name +]**</span> has chosen not to run a candidate, and instead to support a bourgeoisie nominee, in hopes that they might not detroy democracy.
 
-- @dvp: So, what is our decision? Should we run our own candidate, or support Hindenburg?
+- @dvp: So, what is our decision? Should we run our own candidate, or support [+ reactionary_candidate +]?
 
 
 @dvp
@@ -335,7 +342,7 @@ We will support [+ second_reactionary_candidate +] in this election.
 choose-if: dvp_left >= 0 and resources >= 1
 view-if: reactionary_candidate != "Hindenburg"
 unavailable-subtitle: [? if dvp_left < 0: Why would we run a republican candidate? ?][? if resources < 1: Not enough resources. (Need 1) ?]
-subtitle: After nominating him, we still have to convince the other parties to support him. -1 resource
+subtitle: -1 resource - After nominating him, we still have to convince the other parties to support him.
 on-departure: resources -= 1; nationalist_dissent += 10; dvp_campaign = 1; dvp_candidate = "Eckener";
 
 We will run Hugo Eckener.
@@ -345,7 +352,7 @@ We will run Hugo Eckener.
 @run_jarres
 choose-if: dvp_left < 0 and resources >= 2
 unavailable-subtitle: [? if dvp_left >= 0: The party prefers running Luther. ?][? if resources < 2: Not enough resources. (Need 2) ?]
-subtitle: After nominating him, we still have to convince the other parties to support him. -2 resources
+subtitle: -2 resources - After nominating him, we still have to convince the other parties to support him.
 on-departure: resources -= 2; labor_dissent += 5; industrialist_strength += 10; nationalist_strength += 5; dvp_campaign = 1; dvp_candidate = "Jarres";
 
 We will run Karl Jarres.
@@ -355,7 +362,7 @@ We will run Karl Jarres.
 @run_luther
 choose-if: dvp_left >= 0 and resources >= 2
 unavailable-subtitle: [? if dvp_left < 0: The party prefers running Jarres. ?][? if resources < 2: Not enough resources. (Need 2) ?]
-subtitle: After nominating him, we still have to convince the other parties to support him. -2 resources
+subtitle: -2 resources - After nominating him, we still have to convince the other parties to support him.
 on-departure: resources -= 2; liberal_strength += 5; nationalist_dissent += 10; dvp_campaign = 1; dvp_candidate = "Luther";
 
 We will run Hans Luther.

@@ -258,23 +258,6 @@ if (Q.dissent < 0) {
 }
 
 
-// Achievements:
-if (Q.year <= 1934) {
-    if (Q.cnblp_dvp && Q.dbp_dvp && Q.vrp_dvp && Q.wp_dvp) {
-        this.achieve('biggest_tent');
-    }
-    if (Q.small_privatizations == 3 && Q.big_privatizations == 2) {
-        this.achieve('full_privatization');
-    }
-    if (Q.in_bourgeois_coalition) {
-        this.achieve('bourgeois_coalition');
-    }
-    if (Q.in_dvp_majority) {
-        this.achieve('majority_party');
-    }
-}
-
-
 Q.sa_force = Q.sa_strength * Q.sa_militancy;
 Q.sh_force = Q.sh_strength * Q.sh_militancy;
 Q.rb_force = Q.rb_strength * Q.rb_militancy;
@@ -679,8 +662,6 @@ if ((!Q.rubicon && Q.month_actions >= 1) || (Q.rubicon && Q.month_actions >= 4))
         Q.sa_strength += (50*(100 - Q.pro_republic) / 100) /12;
         if (Q.sa_banned) Q.sa_strength -= (50*(100 - Q.pro_republic) / 100) /12;
     } else if (Q.year == 1930) {
-        Q.unemployed += 1/12; 
-        Q.inflation -= 2/12;
         Q.unemployed_kpd += 2/12;
         Q.workers_spd += 8/12;
         Q.new_middle_spd += 3/12;
@@ -720,7 +701,7 @@ if ((!Q.rubicon && Q.month_actions >= 1) || (Q.rubicon && Q.month_actions >= 4))
         Q.catholics_other -= 3/12;
         if (!Q.works_program) { 
             Q.inflation -= 2/12;
-            if (Q.month < 7) Q.unemployed += 1/12; 
+            if (Q.month < 7) Q.unemployed += 2/12; 
             if (Q.month >= 7) Q.unemployed += 3/12; 
             Q.workers_kpd += 3/12;
             Q.workers_spd -= 3/12;
@@ -750,13 +731,13 @@ if ((!Q.rubicon && Q.month_actions >= 1) || (Q.rubicon && Q.month_actions >= 4))
         if (Q.sa_banned) Q.sa_strength -= (50*(100 - Q.pro_republic) / 100) /12;
     } else if (Q.year == 1931) {
         Q.unemployed += 5/12;
-        Q.inflation -= 5/12;
+        Q.inflation -= 4/12;
         if (Q.works_program) {
-            Q.unemployed -= 4/12;
-            Q.inflation += 3/12;
+            Q.unemployed -= 6/12;
+            Q.inflation += 5/12;
             if (Q.works_program > 1) {
-                Q.unemployed -= 1.5/12;
-                Q.inflation += 1/12;
+                Q.unemployed -= 3/12;
+                Q.inflation += 2/12;
             }
         }
         Q.workers_spd += 7/12;

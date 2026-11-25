@@ -3,28 +3,23 @@ subtitle: The <span style="color: var(--dvp-color);">**DVP**</span> decides thei
 face-image: img/dvp.jpg
 view-if: year = 1928 and month = 12
 on-arrival: {!
-Q.dvp_reform_points = 0
+Q.event_points = 0;
 if (Q.spd_relation >= 50) {
-    Q.dvp_reform_points += 1;
+    Q.event_points += 1;
 } else if (Q.spd_relation < 35) {
-    Q.dvp_reform_points -= 1;
+    Q.event_points -= 1;
 }
 
 if ((Q.liberal_strength + Q.labor_strength) > (Q.nationalist_strength + Q.industrialist_strength)) {
-    Q.dvp_reform_points += 1;
+    Q.event_points += 1;
 } else {
-    Q.dvp_reform_points -= 1;
+    Q.event_points -= 1;
 }
-if (Q.dvp_left < 0) {
-    Q.dvp_reform_points -= 1;
-}
+if (Q.liberal_strength > (Q.nationalist_strength + Q.industrialist_strength)) Q.event_points += 1;
+if (Q.liberal_strength > 2*(Q.nationalist_strength + Q.industrialist_strength)) Q.event_points += 3;
+if (Q.dvp_left >= 0) Q.event_points += 1;
 
-if (Q.in_grand_coalition && Q.in_grand_coalition_prussia) {
-    Q.dvp_reform_points += 3;
-}
-if (!Q.in_grand_coalition) {
-    Q.dvp_reform_points -= 1;
-}
+if (Q.in_grand_coalition && Q.in_grand_coalition_prussia) Q.event_points += 3;
 !}
 max-visits: 1
 tags: event
@@ -39,7 +34,7 @@ German industry isn't going to abandon their voice within the <span style="color
 - @resultsdvp: The party votes...
 
 @resultsdvp
-go-to: left if dvp_reform_points >= 3; right if dvp_reform_points < 3
+go-to: left if event_points >= 3; right if event_points < 3
 
 @left
 on-arrival: dvp_left += 7; spd_relation += 5; workers_dvp += 1; workers_other -= 1; new_middle_dvp += 3; new_middle_other -= 1; new_middle_wp -= 2; old_middle_dvp += 2; old_middle_wp -= 2; rural_dvp += 1; rural_other -= 1; catholics_z -= 1; catholics_dvp += 1; coalition_dissent -= 2 if in_grand_coalition; dvp_reform = 1; pro_republic += 3
